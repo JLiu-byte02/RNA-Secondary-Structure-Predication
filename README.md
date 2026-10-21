@@ -1,1 +1,1 @@
-# RSSP---RNA-Secondary-Structure-Predication
+# RNA-Secondary-Structure-Predication
