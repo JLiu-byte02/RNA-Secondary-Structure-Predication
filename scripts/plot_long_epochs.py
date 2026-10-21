@@ -123,11 +123,11 @@ class Figures:
         checks={}
         if self.qa_dir:
             commands={
-                'text':[sys.executable,str(self.qa_dir/'audit_pdf_text.py'),str(self.destination/f'{name}.pdf'),'--min-pt','7','--json'],
-                'collision':[sys.executable,str(self.qa_dir/'audit_figure_collisions.py'),str(self.destination/f'{name}.pdf'),
-                    '--json-out',str(self.qa/f'{name}.collision.json'),'--overlay-pdf',str(self.qa/f'{name}.collision.pdf'),'--json']}
+                'text':[sys.executable,str(self.qa_dir/'audit_pdf_text.py'),f'{name}.pdf','--min-pt','7','--json'],
+                'collision':[sys.executable,str(self.qa_dir/'audit_figure_collisions.py'),f'{name}.pdf',
+                    '--json-out',f'qa/{name}.collision.json','--overlay-pdf',f'qa/{name}.collision.pdf','--json']}
             for kind,command in commands.items():
-                completed=subprocess.run(command,text=True,encoding='utf8',capture_output=True)
+                completed=subprocess.run(command,text=True,encoding='utf8',capture_output=True,cwd=self.destination)
                 checks[kind]={'exit_code':completed.returncode}
                 (self.qa/f'{name}.{kind}.stdout.json').write_text(completed.stdout,encoding='utf8')
                 if completed.stderr:(self.qa/f'{name}.{kind}.stderr.txt').write_text(completed.stderr,encoding='utf8')
@@ -219,6 +219,11 @@ def main():
             'selected_TS0_F1_change_30_to_50':float(by_budget[50]['TS0_rna_macro_exact_f1_mean'])-float(by_budget[30]['TS0_rna_macro_exact_f1_mean']),
             'selected_bprna_new_F1_change_30_to_50':float(by_budget[50]['bprna_new_rna_macro_exact_f1_mean'])-float(by_budget[30]['bprna_new_rna_macro_exact_f1_mean'])}
     figures=Figures(report)
+    if figures.qa_dir:
+        checked=subprocess.run([sys.executable,str(figures.qa_dir/'validate_figure.py'),
+            'scripts/plot_long_epochs.py','--backend','python','--json'],cwd=ROOT,text=True,encoding='utf8',capture_output=True)
+        (figures.qa/'source_preflight.json').write_text(checked.stdout,encoding='utf8')
+        if checked.returncode:raise RuntimeError('Plotting source preflight failed: '+checked.stdout)
     write_json(figures.destination/'figure_contract.json',dict(question='Does training longer improve generalization enough to justify the cost, and how does B0 compare with E?',
         observed_evidence=observed,archetype='quantitative trajectory and paired comparison figures',backend='Python/Matplotlib',
         export=dict(width_mm=183,height_mm=118,minimum_font_pt=7,formats=['svg','pdf','png'],editable_text=True),
