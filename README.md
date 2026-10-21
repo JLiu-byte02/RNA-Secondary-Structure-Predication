@@ -1,4 +1,16 @@
-# RNA ThermoFusion FAST-v1
+# RNA ThermoFusion
+
+## 全量 TR0 多种子实验
+
+新增独立的 `FULL-TR0-v1` 流程：TR0 10,682 条训练，VL0 1,286 条验证，TS0 1,288 条及 bpRNA-new 5,388 条最终测试。E0/E1/E2 均使用种子 17、23、41。协议、数据角色及恢复方法见 [全量实验说明](docs/FULL_TR0_PROTOCOL.md)。既有 FAST-v1 的源代码、输出和报告保留。
+
+```bash
+source ./activate.sh
+nohup python -u scripts/reproduce_full_tr0.py > logs/full_cluster.log 2>&1 < /dev/null &
+cat outputs/full_tr0/cluster_status.json
+```
+
+## 已完成的 FAST-v1 开发实验
 
 冻结 RiNALMo-Giga 表征，在原 B0 配对预测头上联合训练一个热力学残差纠错 CNN，使用固定家族留出划分比较 E0（无物理信息）、E1（BPP）和 E2（BPP + 真实 stack 联合概率）。历史报告见 [RNA_ThermoFusion_Result.md](RNA_ThermoFusion_Result.md)。2026-10-21 已在新服务器独立完成三种子共 9 组正式实验，并通过全部产物验收；详见 [本次复现报告](reports/reproduction_2026-10-21/README_results.md) 和 [执行说明](reports/reproduction_2026-10-21/REPRODUCTION_NOTES.md)。
 
