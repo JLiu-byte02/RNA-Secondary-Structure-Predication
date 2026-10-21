@@ -1,0 +1,55 @@
+{
+  "status": "verified_checkpoint_continuation",
+  "mode": "E2_bpp_stack",
+  "seed": 41,
+  "original_job_id": "9173",
+  "replacement_job_id": "9175",
+  "node": "gpu0003",
+  "original_gpu_index": 0,
+  "replacement_gpu_index": 1,
+  "reason": "A compute process outside this Slurm job shares its allocated GPU; a second allocated GPU is idle.",
+  "unrelated_process_memory_observed_MiB": 18648,
+  "unrelated_process_signalled": false,
+  "submitted_unix": 1792599962.6386921,
+  "switch_started_unix": 1792600037.284285,
+  "original_cancel_requested_unix": 1792600039.5948582,
+  "checkpoint": {
+    "epoch": 17,
+    "checkpoint_sha256": "c3828f3b64b2b2fe822f7bf4df20b0edcb6e1452951a7da3054487589b972a8d",
+    "parameter_state_sha256": "d6f69cec3b2356a32849b555417a663fb5c43fb8d8979196f09f7c9955a96f99",
+    "optimizer_step_counts": [
+      45407
+    ],
+    "cuda_rng_states": 1,
+    "code_hash": "8d04fe832025806812b7983aa1dba5df4bfc3a18d64857dd98af38db29db2e86",
+    "config_hash": "aa5edd7869f2bbd08025c9afb65c462071d16b89ab557b33e91f14c3f637c16e",
+    "input_provenance_hash": "f0d1515a9a53d504134c67ad690b01a9590965f32f510c3d631e4a1073cbdb36",
+    "retained_prefix_sha256": "2fc27392ee7a713f034957557cde4be1a13d9b357950ab6a5d555fca91dd4d8c",
+    "retained_prefix_epochs": 17,
+    "next_epoch": 18,
+    "retained_epoch_checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed41/epoch17.pt",
+    "retained_epoch_checkpoint_sha256": "7eb73f1ede21275d8ab8afd1ffb02d62cbca50204ea81632fbbab84828c38528",
+    "retained_epoch_checkpoint_state_verified": true
+  },
+  "original_job_accounting_after_cancel": "9173|CANCELLED by 10048|0:0|2026-10-21T23:37:05|2026-10-22T00:27:17|00:50:12",
+  "numerical_runtime_changed": false,
+  "cost_note": "Completed-epoch training durations retain both attempts. Interrupted partial work, loading and overlapping reservation are additional wall/resource costs, recorded separately from epoch curves.",
+  "resume_verification": {
+    "passed": true,
+    "retained_epochs": 17,
+    "first_resumed_epoch": 18,
+    "first_resumed_optimizer_step_counts": [
+      48078
+    ],
+    "retained_prefix_sha256": "2fc27392ee7a713f034957557cde4be1a13d9b357950ab6a5d555fca91dd4d8c",
+    "numerical_runtime_changed": false,
+    "pre_migration_complete_new_epochs": 7,
+    "pre_migration_mean_epoch_seconds": 334.82070736986185,
+    "post_migration_probe_epochs": [
+      18,
+      19,
+      20
+    ],
+    "post_migration_mean_epoch_seconds": 166.8150500167782
+  }
+}

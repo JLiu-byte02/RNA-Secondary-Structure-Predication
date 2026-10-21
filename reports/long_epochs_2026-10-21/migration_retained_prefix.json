@@ -1,0 +1,1192 @@
+[
+  {
+    "epoch": 1,
+    "score": 0.6126418903011075,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.019883966951125518,
+      "candidate_accuracy": 0.9958858260186076,
+      "candidate_balanced_accuracy": 0.7776217207902019,
+      "candidate_confusion": {
+        "tp": 19001,
+        "fp": 6690,
+        "tn": 5265700,
+        "fn": 15142
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.5840939394381155,
+          "recall": 0.6655596129808294,
+          "rna_macro_exact_f1": 0.6092711727849026
+        },
+        "0.2": {
+          "precision": 0.6210153261638663,
+          "recall": 0.6316560656176032,
+          "rna_macro_exact_f1": 0.6126418903011075
+        },
+        "0.3": {
+          "precision": 0.6484833603817824,
+          "recall": 0.5983684265891944,
+          "rna_macro_exact_f1": 0.606392791371824
+        },
+        "0.4": {
+          "precision": 0.6693619053162472,
+          "recall": 0.5657308812778018,
+          "rna_macro_exact_f1": 0.5939593031149968
+        },
+        "0.5": {
+          "precision": 0.6900571534516781,
+          "recall": 0.5285499360144419,
+          "rna_macro_exact_f1": 0.5747972635608743
+        },
+        "0.6": {
+          "precision": 0.7017848361733406,
+          "recall": 0.48040074404543315,
+          "rna_macro_exact_f1": 0.5409063396023414
+        },
+        "0.7": {
+          "precision": 0.7105619220711262,
+          "recall": 0.4225816911621796,
+          "rna_macro_exact_f1": 0.49418449394089886
+        },
+        "0.8": {
+          "precision": 0.6938582609960849,
+          "recall": 0.33824117488677874,
+          "rna_macro_exact_f1": 0.414806799835208
+        },
+        "0.9": {
+          "precision": 0.5654430188474877,
+          "recall": 0.20819186931141315,
+          "rna_macro_exact_f1": 0.27395109656113037
+        }
+      },
+      "seconds": 28.742411518935114
+    },
+    "origin": "verified_previous_stage",
+    "mean_pair_loss": 0.029915166936096894,
+    "n_steps": 10682,
+    "training_seconds": 180.75914931297302,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 2,
+    "score": 0.6293259315794315,
+    "threshold": 0.3,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.018942232302286477,
+      "candidate_accuracy": 0.9960571243031938,
+      "candidate_balanced_accuracy": 0.8032276713494766,
+      "candidate_confusion": {
+        "tp": 20755,
+        "fp": 7535,
+        "tn": 5264855,
+        "fn": 13388
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.5691644753678717,
+          "recall": 0.6940256253426079,
+          "rna_macro_exact_f1": 0.6123807441271015
+        },
+        "0.2": {
+          "precision": 0.6134592266670046,
+          "recall": 0.6677128743440749,
+          "rna_macro_exact_f1": 0.6276163343277158
+        },
+        "0.3": {
+          "precision": 0.6468115659015208,
+          "recall": 0.6393766575266042,
+          "rna_macro_exact_f1": 0.6293259315794315
+        },
+        "0.4": {
+          "precision": 0.6709967716095143,
+          "recall": 0.6039934502268898,
+          "rna_macro_exact_f1": 0.6186779895864073
+        },
+        "0.5": {
+          "precision": 0.6941278676327935,
+          "recall": 0.5677387312573616,
+          "rna_macro_exact_f1": 0.6033014977229209
+        },
+        "0.6": {
+          "precision": 0.719972993074074,
+          "recall": 0.5263700809793506,
+          "rna_macro_exact_f1": 0.5792879834986621
+        },
+        "0.7": {
+          "precision": 0.7279778385728616,
+          "recall": 0.4738734085324266,
+          "rna_macro_exact_f1": 0.5386948269793898
+        },
+        "0.8": {
+          "precision": 0.71591702008387,
+          "recall": 0.4011837064359553,
+          "rna_macro_exact_f1": 0.47463859206505027
+        },
+        "0.9": {
+          "precision": 0.6217655939498572,
+          "recall": 0.28269279312696655,
+          "rna_macro_exact_f1": 0.35457917726085736
+        }
+      },
+      "seconds": 21.628005950246006
+    },
+    "origin": "verified_previous_stage",
+    "mean_pair_loss": 0.01845903501320785,
+    "n_steps": 10682,
+    "training_seconds": 171.88605284690857,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 3,
+    "score": 0.635110455961021,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.018258771739616226,
+      "candidate_accuracy": 0.9961788610378942,
+      "candidate_balanced_accuracy": 0.8064752648708895,
+      "candidate_confusion": {
+        "tp": 20974,
+        "fp": 7108,
+        "tn": 5265282,
+        "fn": 13169
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.5802315540446115,
+          "recall": 0.6929297352511714,
+          "rna_macro_exact_f1": 0.6187551686264116
+        },
+        "0.2": {
+          "precision": 0.625029981052857,
+          "recall": 0.6711618097531216,
+          "rna_macro_exact_f1": 0.635110455961021
+        },
+        "0.3": {
+          "precision": 0.6555208365962797,
+          "recall": 0.6412072426250239,
+          "rna_macro_exact_f1": 0.6348629473455747
+        },
+        "0.4": {
+          "precision": 0.6813562003506446,
+          "recall": 0.6094548994161372,
+          "rna_macro_exact_f1": 0.6262678495406442
+        },
+        "0.5": {
+          "precision": 0.7053288782584427,
+          "recall": 0.5732811452989163,
+          "rna_macro_exact_f1": 0.6103452374353695
+        },
+        "0.6": {
+          "precision": 0.7242675048981312,
+          "recall": 0.5286563072271218,
+          "rna_macro_exact_f1": 0.5828093442359347
+        },
+        "0.7": {
+          "precision": 0.7321826812546766,
+          "recall": 0.4733931373119392,
+          "rna_macro_exact_f1": 0.5403323741009556
+        },
+        "0.8": {
+          "precision": 0.7070831897105148,
+          "recall": 0.3947919788641354,
+          "rna_macro_exact_f1": 0.469832569892592
+        },
+        "0.9": {
+          "precision": 0.611270784407799,
+          "recall": 0.27689747554056554,
+          "rna_macro_exact_f1": 0.34534664482132266
+        }
+      },
+      "seconds": 21.909045557957143
+    },
+    "origin": "verified_previous_stage",
+    "mean_pair_loss": 0.017219891426697588,
+    "n_steps": 10682,
+    "training_seconds": 173.06393361091614,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 4,
+    "score": 0.6367419523665739,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.01802582784736812,
+      "candidate_accuracy": 0.9961879064918657,
+      "candidate_balanced_accuracy": 0.7999325614436656,
+      "candidate_confusion": {
+        "tp": 20524,
+        "fp": 6610,
+        "tn": 5265780,
+        "fn": 13619
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.5867400058678471,
+          "recall": 0.6922859781939738,
+          "rna_macro_exact_f1": 0.623045579201698
+        },
+        "0.2": {
+          "precision": 0.6304522509491535,
+          "recall": 0.6675418531033356,
+          "rna_macro_exact_f1": 0.6367419523665739
+        },
+        "0.3": {
+          "precision": 0.6635701968661032,
+          "recall": 0.6380777842550935,
+          "rna_macro_exact_f1": 0.6367202145600384
+        },
+        "0.4": {
+          "precision": 0.6880162824997464,
+          "recall": 0.6022394066735682,
+          "rna_macro_exact_f1": 0.6255846433566009
+        },
+        "0.5": {
+          "precision": 0.7120556585234687,
+          "recall": 0.5647268743763606,
+          "rna_macro_exact_f1": 0.6082560913417993
+        },
+        "0.6": {
+          "precision": 0.7341441830102818,
+          "recall": 0.5185475582534654,
+          "rna_macro_exact_f1": 0.5792275189091011
+        },
+        "0.7": {
+          "precision": 0.739645662812575,
+          "recall": 0.4587763726617027,
+          "rna_macro_exact_f1": 0.5307434887174206
+        },
+        "0.8": {
+          "precision": 0.7147057372525427,
+          "recall": 0.380431039302161,
+          "rna_macro_exact_f1": 0.4578289704451881
+        },
+        "0.9": {
+          "precision": 0.6068579598209918,
+          "recall": 0.2628122513651749,
+          "rna_macro_exact_f1": 0.3286983364118489
+        }
+      },
+      "seconds": 21.42293077800423
+    },
+    "origin": "verified_previous_stage",
+    "mean_pair_loss": 0.016357946321661435,
+    "n_steps": 10682,
+    "training_seconds": 171.77081537246704,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 5,
+    "score": 0.6409645492159514,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.017819896825347264,
+      "candidate_accuracy": 0.9962532975862017,
+      "candidate_balanced_accuracy": 0.8100191431894345,
+      "candidate_confusion": {
+        "tp": 21215,
+        "fp": 6954,
+        "tn": 5265436,
+        "fn": 12928
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.5927064961289192,
+          "recall": 0.6945942416084007,
+          "rna_macro_exact_f1": 0.6283361756943535
+        },
+        "0.2": {
+          "precision": 0.6343484652151524,
+          "recall": 0.6707197346368281,
+          "rna_macro_exact_f1": 0.6409645492159514
+        },
+        "0.3": {
+          "precision": 0.6640330243188002,
+          "recall": 0.6435799567776841,
+          "rna_macro_exact_f1": 0.6402835075915785
+        },
+        "0.4": {
+          "precision": 0.687252451341609,
+          "recall": 0.6116295166282322,
+          "rna_macro_exact_f1": 0.6310343468808067
+        },
+        "0.5": {
+          "precision": 0.7112039238951284,
+          "recall": 0.5784097415712214,
+          "rna_macro_exact_f1": 0.6170448907169517
+        },
+        "0.6": {
+          "precision": 0.7315795609941023,
+          "recall": 0.536703586118162,
+          "rna_macro_exact_f1": 0.5908207385970555
+        },
+        "0.7": {
+          "precision": 0.7454944785673684,
+          "recall": 0.4905585310681197,
+          "rna_macro_exact_f1": 0.5557962232458631
+        },
+        "0.8": {
+          "precision": 0.7273814636632259,
+          "recall": 0.42499534346943013,
+          "rna_macro_exact_f1": 0.4982464176725602
+        },
+        "0.9": {
+          "precision": 0.6568873193068913,
+          "recall": 0.32045700582768727,
+          "rna_macro_exact_f1": 0.3943750149854883
+        }
+      },
+      "seconds": 21.655670362059027
+    },
+    "origin": "verified_previous_stage",
+    "mean_pair_loss": 0.015618530843651026,
+    "n_steps": 10682,
+    "training_seconds": 172.87254309654236,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 6,
+    "score": 0.6392903611153734,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.017844158424080856,
+      "candidate_accuracy": 0.996233510655639,
+      "candidate_balanced_accuracy": 0.8007557312971629,
+      "candidate_confusion": {
+        "tp": 20579,
+        "fp": 6423,
+        "tn": 5265967,
+        "fn": 13564
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.5938254783712195,
+          "recall": 0.693841481333786,
+          "rna_macro_exact_f1": 0.6284219562869984
+        },
+        "0.2": {
+          "precision": 0.6339712931734849,
+          "recall": 0.6691265328357585,
+          "rna_macro_exact_f1": 0.6392903611153734
+        },
+        "0.3": {
+          "precision": 0.6654209028905275,
+          "recall": 0.6394613877006674,
+          "rna_macro_exact_f1": 0.6379360466852397
+        },
+        "0.4": {
+          "precision": 0.692046623044509,
+          "recall": 0.6049709726117908,
+          "rna_macro_exact_f1": 0.6274507301694511
+        },
+        "0.5": {
+          "precision": 0.7145463251534345,
+          "recall": 0.5655998965093699,
+          "rna_macro_exact_f1": 0.607276034351471
+        },
+        "0.6": {
+          "precision": 0.7322884429677726,
+          "recall": 0.5234656580276975,
+          "rna_macro_exact_f1": 0.5806516373466448
+        },
+        "0.7": {
+          "precision": 0.7371741337907864,
+          "recall": 0.4673228638928198,
+          "rna_macro_exact_f1": 0.5360220685532245
+        },
+        "0.8": {
+          "precision": 0.7171221913547107,
+          "recall": 0.393762232827043,
+          "rna_macro_exact_f1": 0.4679566693167325
+        },
+        "0.9": {
+          "precision": 0.6327437850805702,
+          "recall": 0.29057677940212595,
+          "rna_macro_exact_f1": 0.3598688217279577
+        }
+      },
+      "seconds": 21.581640630029142
+    },
+    "origin": "verified_previous_stage",
+    "mean_pair_loss": 0.014932511875587603,
+    "n_steps": 10682,
+    "training_seconds": 173.03621625900269,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 7,
+    "score": 0.6409630805102335,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.01774784312452471,
+      "candidate_accuracy": 0.9962857104629331,
+      "candidate_balanced_accuracy": 0.8020187040246594,
+      "candidate_confusion": {
+        "tp": 20664,
+        "fp": 6231,
+        "tn": 5266159,
+        "fn": 13479
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.5955700270997206,
+          "recall": 0.6930169719827488,
+          "rna_macro_exact_f1": 0.6290733371681126
+        },
+        "0.2": {
+          "precision": 0.6390507498547151,
+          "recall": 0.6665379369192554,
+          "rna_macro_exact_f1": 0.6409630805102335
+        },
+        "0.3": {
+          "precision": 0.6704995186444518,
+          "recall": 0.6375590941451551,
+          "rna_macro_exact_f1": 0.6396401900050782
+        },
+        "0.4": {
+          "precision": 0.6978677991835968,
+          "recall": 0.6060376977035139,
+          "rna_macro_exact_f1": 0.6311588603873927
+        },
+        "0.5": {
+          "precision": 0.7195870352177427,
+          "recall": 0.5693966771391185,
+          "rna_macro_exact_f1": 0.6135040903436519
+        },
+        "0.6": {
+          "precision": 0.7381040125029878,
+          "recall": 0.5258011764709231,
+          "rna_macro_exact_f1": 0.5854078610146057
+        },
+        "0.7": {
+          "precision": 0.7472597402287113,
+          "recall": 0.47542488483340695,
+          "rna_macro_exact_f1": 0.5470439570512702
+        },
+        "0.8": {
+          "precision": 0.7321998908661117,
+          "recall": 0.4090153706817614,
+          "rna_macro_exact_f1": 0.4847915191525537
+        },
+        "0.9": {
+          "precision": 0.653377838471445,
+          "recall": 0.31718267692264573,
+          "rna_macro_exact_f1": 0.3903118966128755
+        }
+      },
+      "seconds": 21.491803934331983
+    },
+    "origin": "verified_previous_stage",
+    "mean_pair_loss": 0.01434455069553575,
+    "n_steps": 10682,
+    "training_seconds": 174.84589982032776,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 8,
+    "score": 0.6467462849278245,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.017682789018205258,
+      "candidate_accuracy": 0.9962736498576378,
+      "candidate_balanced_accuracy": 0.7944760161837294,
+      "candidate_confusion": {
+        "tp": 20146,
+        "fp": 5777,
+        "tn": 5266613,
+        "fn": 13997
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.6071153990274651,
+          "recall": 0.6937807800948479,
+          "rna_macro_exact_f1": 0.6365920485305675
+        },
+        "0.2": {
+          "precision": 0.6523181604383766,
+          "recall": 0.6639208591708571,
+          "rna_macro_exact_f1": 0.6467462849278245
+        },
+        "0.3": {
+          "precision": 0.685535507062696,
+          "recall": 0.6324767650904668,
+          "rna_macro_exact_f1": 0.6443299220890122
+        },
+        "0.4": {
+          "precision": 0.7090020652921231,
+          "recall": 0.5959976547706033,
+          "rna_macro_exact_f1": 0.6304616079583858
+        },
+        "0.5": {
+          "precision": 0.7275295148440024,
+          "recall": 0.5562494926243164,
+          "rna_macro_exact_f1": 0.6079826122450405
+        },
+        "0.6": {
+          "precision": 0.7430672922842961,
+          "recall": 0.5139914487810624,
+          "rna_macro_exact_f1": 0.5784215299125337
+        },
+        "0.7": {
+          "precision": 0.7479874073855117,
+          "recall": 0.46229492349854523,
+          "rna_macro_exact_f1": 0.5361618643805233
+        },
+        "0.8": {
+          "precision": 0.726970088266145,
+          "recall": 0.39949086767531006,
+          "rna_macro_exact_f1": 0.47594716100482803
+        },
+        "0.9": {
+          "precision": 0.6553565329717936,
+          "recall": 0.30680873784336266,
+          "rna_macro_exact_f1": 0.3792251982966432
+        }
+      },
+      "seconds": 21.458832622040063
+    },
+    "origin": "verified_previous_stage",
+    "mean_pair_loss": 0.01374544237771124,
+    "n_steps": 10682,
+    "training_seconds": 170.71171307563782,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 9,
+    "score": 0.6466658809284753,
+    "threshold": 0.3,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.018133271853079332,
+      "candidate_accuracy": 0.9962476441774696,
+      "candidate_balanced_accuracy": 0.809128781330989,
+      "candidate_confusion": {
+        "tp": 21154,
+        "fp": 6923,
+        "tn": 5265467,
+        "fn": 12989
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.6047405627346505,
+          "recall": 0.6912009662331148,
+          "rna_macro_exact_f1": 0.634173205357596
+        },
+        "0.2": {
+          "precision": 0.6452315790955392,
+          "recall": 0.6672067241461337,
+          "rna_macro_exact_f1": 0.6452003477810555
+        },
+        "0.3": {
+          "precision": 0.6771114951770801,
+          "recall": 0.6425800133409917,
+          "rna_macro_exact_f1": 0.6466658809284753
+        },
+        "0.4": {
+          "precision": 0.6990282083176994,
+          "recall": 0.6132362927748645,
+          "rna_macro_exact_f1": 0.6380782671772368
+        },
+        "0.5": {
+          "precision": 0.7191236346082851,
+          "recall": 0.579950702080235,
+          "rna_macro_exact_f1": 0.6227085418545698
+        },
+        "0.6": {
+          "precision": 0.7368667821008308,
+          "recall": 0.5414217249572971,
+          "rna_macro_exact_f1": 0.5989416390512342
+        },
+        "0.7": {
+          "precision": 0.7476855508341769,
+          "recall": 0.49262820704920157,
+          "rna_macro_exact_f1": 0.5621436344949418
+        },
+        "0.8": {
+          "precision": 0.7421132973467519,
+          "recall": 0.42593792783220485,
+          "rna_macro_exact_f1": 0.5010524573371683
+        },
+        "0.9": {
+          "precision": 0.6754509644886793,
+          "recall": 0.3329914650779444,
+          "rna_macro_exact_f1": 0.40244750161699727
+        }
+      },
+      "seconds": 22.00214768992737
+    },
+    "origin": "verified_previous_stage",
+    "mean_pair_loss": 0.013244157116693394,
+    "n_steps": 10682,
+    "training_seconds": 171.903160572052,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 10,
+    "score": 0.6459146469650655,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.018514031778804806,
+      "candidate_accuracy": 0.9962685617897787,
+      "candidate_balanced_accuracy": 0.797557940461378,
+      "candidate_confusion": {
+        "tp": 20358,
+        "fp": 6016,
+        "tn": 5266374,
+        "fn": 13785
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.6199943198015913,
+          "recall": 0.6854560490490339,
+          "rna_macro_exact_f1": 0.6400446976289885
+        },
+        "0.2": {
+          "precision": 0.6606175457529955,
+          "recall": 0.6550325464236595,
+          "rna_macro_exact_f1": 0.6459146469650655
+        },
+        "0.3": {
+          "precision": 0.6873170742272152,
+          "recall": 0.6246777102107095,
+          "rna_macro_exact_f1": 0.6406240387415257
+        },
+        "0.4": {
+          "precision": 0.7084362946814335,
+          "recall": 0.5924044570955712,
+          "rna_macro_exact_f1": 0.6275660902681065
+        },
+        "0.5": {
+          "precision": 0.7257787588289855,
+          "recall": 0.5581591590807639,
+          "rna_macro_exact_f1": 0.6087168375134946
+        },
+        "0.6": {
+          "precision": 0.7371357898004653,
+          "recall": 0.5213590939523426,
+          "rna_macro_exact_f1": 0.5837234047367841
+        },
+        "0.7": {
+          "precision": 0.747168825242175,
+          "recall": 0.4766893330786472,
+          "rna_macro_exact_f1": 0.5479916449994217
+        },
+        "0.8": {
+          "precision": 0.7402050148460863,
+          "recall": 0.41854338941113356,
+          "rna_macro_exact_f1": 0.4940151533889923
+        },
+        "0.9": {
+          "precision": 0.6796363061570037,
+          "recall": 0.3356939334085475,
+          "rna_macro_exact_f1": 0.40651512574696996
+        }
+      },
+      "seconds": 21.77049002191052
+    },
+    "origin": "verified_previous_stage",
+    "mean_pair_loss": 0.012762707211640231,
+    "n_steps": 10682,
+    "training_seconds": 167.79558992385864,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 11,
+    "score": 0.646640864782763,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.018396866288019068,
+      "candidate_accuracy": 0.9962444405791879,
+      "candidate_balanced_accuracy": 0.8008194294751516,
+      "candidate_confusion": {
+        "tp": 20583,
+        "fp": 6369,
+        "tn": 5266021,
+        "fn": 13560
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.6147511948930299,
+          "recall": 0.6873191366352309,
+          "rna_macro_exact_f1": 0.6376956326076825
+        },
+        "0.2": {
+          "precision": 0.6566931667757656,
+          "recall": 0.6607625250337085,
+          "rna_macro_exact_f1": 0.646640864782763
+        },
+        "0.3": {
+          "precision": 0.6827582625498856,
+          "recall": 0.6303204485543686,
+          "rna_macro_exact_f1": 0.641345378757539
+        },
+        "0.4": {
+          "precision": 0.7025773839881791,
+          "recall": 0.6010003848495611,
+          "rna_macro_exact_f1": 0.6316440447076324
+        },
+        "0.5": {
+          "precision": 0.7219500140996236,
+          "recall": 0.5679625910554471,
+          "rna_macro_exact_f1": 0.6145528394988341
+        },
+        "0.6": {
+          "precision": 0.7375935380672073,
+          "recall": 0.5332315686813481,
+          "rna_macro_exact_f1": 0.5923600731506794
+        },
+        "0.7": {
+          "precision": 0.7504449629430008,
+          "recall": 0.49016331569733723,
+          "rna_macro_exact_f1": 0.559230061746674
+        },
+        "0.8": {
+          "precision": 0.7488629242843369,
+          "recall": 0.43246967442588313,
+          "rna_macro_exact_f1": 0.5084048471626986
+        },
+        "0.9": {
+          "precision": 0.6938243052853303,
+          "recall": 0.346623709238434,
+          "rna_macro_exact_f1": 0.4198430823087743
+        }
+      },
+      "seconds": 23.694513947237283
+    },
+    "origin": "new_stage",
+    "mean_pair_loss": 0.012317477756289521,
+    "n_steps": 10682,
+    "training_seconds": 304.9783828048967,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 12,
+    "score": 0.6458212865029523,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.01848240456249475,
+      "candidate_accuracy": 0.9962983364091018,
+      "candidate_balanced_accuracy": 0.7898617122127889,
+      "candidate_confusion": {
+        "tp": 19828,
+        "fp": 5328,
+        "tn": 5267062,
+        "fn": 14315
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.6300681141708475,
+          "recall": 0.678106935698839,
+          "rna_macro_exact_f1": 0.6417882211562533
+        },
+        "0.2": {
+          "precision": 0.6728878701808044,
+          "recall": 0.6450734990586839,
+          "rna_macro_exact_f1": 0.6458212865029523
+        },
+        "0.3": {
+          "precision": 0.6996698871654857,
+          "recall": 0.6131074416683971,
+          "rna_macro_exact_f1": 0.6380309136473077
+        },
+        "0.4": {
+          "precision": 0.7204724928565818,
+          "recall": 0.5802955153000495,
+          "rna_macro_exact_f1": 0.6226782750684859
+        },
+        "0.5": {
+          "precision": 0.7350759267630812,
+          "recall": 0.5437354333871232,
+          "rna_macro_exact_f1": 0.5999090946968159
+        },
+        "0.6": {
+          "precision": 0.7437987894668795,
+          "recall": 0.5040202182196308,
+          "rna_macro_exact_f1": 0.5710769967897251
+        },
+        "0.7": {
+          "precision": 0.7498003654471758,
+          "recall": 0.4601695246499021,
+          "rna_macro_exact_f1": 0.5338569865088792
+        },
+        "0.8": {
+          "precision": 0.7346027255448598,
+          "recall": 0.40315110240378754,
+          "rna_macro_exact_f1": 0.4798174791909773
+        },
+        "0.9": {
+          "precision": 0.6688403414931768,
+          "recall": 0.3206827936458469,
+          "rna_macro_exact_f1": 0.39258824629973577
+        }
+      },
+      "seconds": 32.41605518339202
+    },
+    "origin": "new_stage",
+    "mean_pair_loss": 0.011873076131862694,
+    "n_steps": 10682,
+    "training_seconds": 303.3021810101345,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 13,
+    "score": 0.644747006825624,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.01846843774826507,
+      "candidate_accuracy": 0.9962350182313009,
+      "candidate_balanced_accuracy": 0.8052086236673042,
+      "candidate_confusion": {
+        "tp": 20885,
+        "fp": 6721,
+        "tn": 5265669,
+        "fn": 13258
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.6155910608996047,
+          "recall": 0.6842397451790184,
+          "rna_macro_exact_f1": 0.6371532772861225
+        },
+        "0.2": {
+          "precision": 0.6553678652213581,
+          "recall": 0.6572211776018512,
+          "rna_macro_exact_f1": 0.644747006825624
+        },
+        "0.3": {
+          "precision": 0.6788541941584215,
+          "recall": 0.6284719563763672,
+          "rna_macro_exact_f1": 0.6395289655007979
+        },
+        "0.4": {
+          "precision": 0.7002065871492701,
+          "recall": 0.5993704886492981,
+          "rna_macro_exact_f1": 0.6291863994620105
+        },
+        "0.5": {
+          "precision": 0.7160239712220853,
+          "recall": 0.5683188456063397,
+          "rna_macro_exact_f1": 0.6140440706878652
+        },
+        "0.6": {
+          "precision": 0.7298296796404973,
+          "recall": 0.5333293877865979,
+          "rna_macro_exact_f1": 0.5923720066998416
+        },
+        "0.7": {
+          "precision": 0.7428106792445284,
+          "recall": 0.49186823320145684,
+          "rna_macro_exact_f1": 0.5625818419400311
+        },
+        "0.8": {
+          "precision": 0.7479639410101127,
+          "recall": 0.4376655851250721,
+          "rna_macro_exact_f1": 0.5162197068009909
+        },
+        "0.9": {
+          "precision": 0.7064043996672247,
+          "recall": 0.35270165740156517,
+          "rna_macro_exact_f1": 0.43002004540769284
+        }
+      },
+      "seconds": 32.339837696868926
+    },
+    "origin": "new_stage",
+    "mean_pair_loss": 0.011502485190519147,
+    "n_steps": 10682,
+    "training_seconds": 350.29648465896025,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 14,
+    "score": 0.6421179583558136,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.01877560314620541,
+      "candidate_accuracy": 0.996193559900598,
+      "candidate_balanced_accuracy": 0.7916713151391028,
+      "candidate_confusion": {
+        "tp": 19956,
+        "fp": 6012,
+        "tn": 5266378,
+        "fn": 14187
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.6234339256512096,
+          "recall": 0.6763686931315266,
+          "rna_macro_exact_f1": 0.6382907253325955
+        },
+        "0.2": {
+          "precision": 0.663775836722694,
+          "recall": 0.6440605161594791,
+          "rna_macro_exact_f1": 0.6421179583558136
+        },
+        "0.3": {
+          "precision": 0.6884580628486221,
+          "recall": 0.6130145596482701,
+          "rna_macro_exact_f1": 0.634643464796951
+        },
+        "0.4": {
+          "precision": 0.7086681341000626,
+          "recall": 0.580863568886911,
+          "rna_macro_exact_f1": 0.6209237964201781
+        },
+        "0.5": {
+          "precision": 0.725090124632077,
+          "recall": 0.5470658781645532,
+          "rna_macro_exact_f1": 0.6019518524322522
+        },
+        "0.6": {
+          "precision": 0.7363742867335357,
+          "recall": 0.5077483008455591,
+          "rna_macro_exact_f1": 0.5753489836632739
+        },
+        "0.7": {
+          "precision": 0.7400840073984546,
+          "recall": 0.4653682188192374,
+          "rna_macro_exact_f1": 0.5410885041438629
+        },
+        "0.8": {
+          "precision": 0.7398109154923876,
+          "recall": 0.4124274851853047,
+          "rna_macro_exact_f1": 0.4941268003783316
+        },
+        "0.9": {
+          "precision": 0.7043798330478535,
+          "recall": 0.33514672635778975,
+          "rna_macro_exact_f1": 0.417217856387296
+        }
+      },
+      "seconds": 32.478332362137735
+    },
+    "origin": "new_stage",
+    "mean_pair_loss": 0.01110598499655179,
+    "n_steps": 10682,
+    "training_seconds": 350.84828938310966,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 15,
+    "score": 0.6452692897603522,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.019889310658450305,
+      "candidate_accuracy": 0.9961568127438386,
+      "candidate_balanced_accuracy": 0.8196896253274897,
+      "candidate_confusion": {
+        "tp": 21883,
+        "fp": 8134,
+        "tn": 5264256,
+        "fn": 12260
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.6153253029210618,
+          "recall": 0.6862917225198478,
+          "rna_macro_exact_f1": 0.6383093926368618
+        },
+        "0.2": {
+          "precision": 0.6480183824932271,
+          "recall": 0.6635595054295261,
+          "rna_macro_exact_f1": 0.6452692897603522
+        },
+        "0.3": {
+          "precision": 0.6703241734875361,
+          "recall": 0.6397229873480205,
+          "rna_macro_exact_f1": 0.6424196782947148
+        },
+        "0.4": {
+          "precision": 0.6869538190116868,
+          "recall": 0.6161553574488653,
+          "rna_macro_exact_f1": 0.6357990884186331
+        },
+        "0.5": {
+          "precision": 0.7061469993315502,
+          "recall": 0.593461074826566,
+          "rna_macro_exact_f1": 0.6278524365486856
+        },
+        "0.6": {
+          "precision": 0.7204845364797354,
+          "recall": 0.565317184123688,
+          "rna_macro_exact_f1": 0.6122880419654451
+        },
+        "0.7": {
+          "precision": 0.7283760285659302,
+          "recall": 0.5330063172662806,
+          "rna_macro_exact_f1": 0.5903618020317479
+        },
+        "0.8": {
+          "precision": 0.7427927085196816,
+          "recall": 0.48756810103571574,
+          "rna_macro_exact_f1": 0.5561571258048438
+        },
+        "0.9": {
+          "precision": 0.7291303630282848,
+          "recall": 0.4177440003990561,
+          "rna_macro_exact_f1": 0.4927844126173808
+        }
+      },
+      "seconds": 32.42419080529362
+    },
+    "origin": "new_stage",
+    "mean_pair_loss": 0.01079288004037693,
+    "n_steps": 10682,
+    "training_seconds": 347.12793904403225,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 16,
+    "score": 0.6434266166514749,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.019255563785869134,
+      "candidate_accuracy": 0.9962176811111888,
+      "candidate_balanced_accuracy": 0.7943605538497653,
+      "candidate_confusion": {
+        "tp": 20140,
+        "fp": 6068,
+        "tn": 5266322,
+        "fn": 14003
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.6275236561743283,
+          "recall": 0.6753444273363524,
+          "rna_macro_exact_f1": 0.6397561402445017
+        },
+        "0.2": {
+          "precision": 0.6663232879843551,
+          "recall": 0.6447636134526721,
+          "rna_macro_exact_f1": 0.6434266166514749
+        },
+        "0.3": {
+          "precision": 0.6933550626281271,
+          "recall": 0.6161717072759777,
+          "rna_macro_exact_f1": 0.6378142443891924
+        },
+        "0.4": {
+          "precision": 0.7142317627271126,
+          "recall": 0.5872401094781582,
+          "rna_macro_exact_f1": 0.6261831232830253
+        },
+        "0.5": {
+          "precision": 0.7277155271969331,
+          "recall": 0.5543780475843217,
+          "rna_macro_exact_f1": 0.6079915934720767
+        },
+        "0.6": {
+          "precision": 0.7390638348254354,
+          "recall": 0.5200878921198026,
+          "rna_macro_exact_f1": 0.5851151065810962
+        },
+        "0.7": {
+          "precision": 0.7508570702875106,
+          "recall": 0.48119744647351875,
+          "rna_macro_exact_f1": 0.5556499796817558
+        },
+        "0.8": {
+          "precision": 0.7518578747110021,
+          "recall": 0.4320915446052067,
+          "rna_macro_exact_f1": 0.5134558870685197
+        },
+        "0.9": {
+          "precision": 0.7204361509976965,
+          "recall": 0.3545313901367546,
+          "rna_macro_exact_f1": 0.436113063801703
+        }
+      },
+      "seconds": 31.607759810984135
+    },
+    "origin": "new_stage",
+    "mean_pair_loss": 0.010486363209275075,
+    "n_steps": 10682,
+    "training_seconds": 342.43803785415366,
+    "gradients_verified": true
+  },
+  {
+    "epoch": 17,
+    "score": 0.6446456372879945,
+    "threshold": 0.2,
+    "validation": {
+      "n": 1286,
+      "mean_pair_bce": 0.019482884899752126,
+      "candidate_accuracy": 0.9961977057336683,
+      "candidate_balanced_accuracy": 0.8096274308485347,
+      "candidate_confusion": {
+        "tp": 21190,
+        "fp": 7224,
+        "tn": 5265166,
+        "fn": 12953
+      },
+      "threshold_metrics": {
+        "0.1": {
+          "precision": 0.6246725443154857,
+          "recall": 0.6805701451203999,
+          "rna_macro_exact_f1": 0.6404554069605576
+        },
+        "0.2": {
+          "precision": 0.6585367569230961,
+          "recall": 0.6533333287825235,
+          "rna_macro_exact_f1": 0.6446456372879945
+        },
+        "0.3": {
+          "precision": 0.6821407111018898,
+          "recall": 0.6280419263025033,
+          "rna_macro_exact_f1": 0.6406514580586354
+        },
+        "0.4": {
+          "precision": 0.7013316870078029,
+          "recall": 0.600709969375185,
+          "rna_macro_exact_f1": 0.6309068536297743
+        },
+        "0.5": {
+          "precision": 0.715853479833274,
+          "recall": 0.5735892427741787,
+          "rna_macro_exact_f1": 0.617615910561846
+        },
+        "0.6": {
+          "precision": 0.7302536799977916,
+          "recall": 0.5435726229564122,
+          "rna_macro_exact_f1": 0.6004920589584576
+        },
+        "0.7": {
+          "precision": 0.7408850563312368,
+          "recall": 0.5072725214357814,
+          "rna_macro_exact_f1": 0.5762889973813672
+        },
+        "0.8": {
+          "precision": 0.7453568382588284,
+          "recall": 0.4586384375699151,
+          "rna_macro_exact_f1": 0.5370309216726352
+        },
+        "0.9": {
+          "precision": 0.7248419672838659,
+          "recall": 0.38575685112155655,
+          "rna_macro_exact_f1": 0.46882493365212874
+        }
+      },
+      "seconds": 31.534261975903064
+    },
+    "origin": "new_stage",
+    "mean_pair_loss": 0.010222087430498366,
+    "n_steps": 10682,
+    "training_seconds": 344.753636833746,
+    "gradients_verified": true
+  }
+]

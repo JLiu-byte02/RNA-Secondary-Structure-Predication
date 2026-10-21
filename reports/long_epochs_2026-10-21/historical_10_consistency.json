@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "selected_epoch_and_threshold_comparisons": 9,
+  "cohort_aggregate_comparisons": 9,
+  "scope": "Same selected E checkpoints, thresholds and complete-truth metrics at budget 10; historical early-stopping cost remains a distinct protocol."
+}

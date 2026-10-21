@@ -1,0 +1,10 @@
+[
+  {
+    "id": "9173",
+    "status": "CANCELLED",
+    "exit_code": "0:0",
+    "name": "train_E2_bpp_stack_seed41",
+    "reason": "resource_contention_migration",
+    "replacement_job_id": "9175"
+  }
+]

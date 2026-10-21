@@ -1,0 +1,30 @@
+protocol: LONG-50-v1
+seed: 17
+seeds: [17, 23, 41]
+modes: [B0, E0_no_thermo, E1_bpp, E2_bpp_stack]
+budgets: [10, 20, 30, 40, 50]
+max_epochs: 50
+early_stopping: false
+train_split: TR0
+select_split: VL0
+threshold_split: VL0
+test_splits: [TS0, bprna_new]
+encoder: public_generic_frozen_RiNALMo_Giga
+initial_lr: 0.0001
+optimizer: AdamW
+weight_decay: 0.0001
+batch_size: 1
+gradient_accumulation: 4
+clip_grad_norm: 1.0
+precision: CUDA_BF16_parameters_optimizer_FP32
+thresholds: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+threshold_tie: lowest_threshold
+epoch_tie: earliest_epoch
+final_threshold: one_per_method_per_budget_maximum_three_seed_mean_VL0_F1
+label_policy: full_original_truth_primary_old_B0_eligible_candidate_BCE_training
+primary_truth: full_original_pairs
+continuation: verified_previous_last_epoch_and_AdamW_state_for_E_modes
+test_policy: all_budgets_locked_before_any_new_test_no_test_based_budget_selection
+convergence_fraction: 0.95
+convergence_absolute_tolerance: 0.001
+candidate_accuracy_threshold: 0.5

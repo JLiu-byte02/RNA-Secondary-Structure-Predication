@@ -200,7 +200,7 @@ def main():
 
 ## B0 的过程与公平性
 
-B0 是原始175,553参数 PairHead，不含纠错 CNN，不读取 P/Q/距离作为模型证据；E系列为186,306参数。同一随机种子的四个 PairHead 初始化逐张量相同，B0和E使用相同训练集合、候选损失、优化器、BF16、梯度累积、解码、完整真值、验证与测试规则。B0从头训练50轮，E从已验证的最后 epoch 与 AdamW 状态继续至50轮；继承前缀的每轮VL0曲线重新推理并精确重现，旧输出保持原样。E2/seed23的旧轨迹在9轮早停，本次从第10轮继续。
+B0 是原始175,553参数 PairHead，保留原有卷积残差块，不含额外的 CorrectionCNN，不读取 P/Q/距离作为模型证据；E系列为186,306参数。同一随机种子的四个 PairHead 初始化逐张量相同，B0和E使用相同训练集合、候选损失、优化器、BF16、梯度累积、解码、完整真值、验证与测试规则。B0从头训练50轮，E从已验证的最后 epoch 与 AdamW 状态继续至50轮；继承前缀的每轮VL0曲线重新推理并精确重现，旧输出保持原样。E2/seed23的旧轨迹在9轮早停，本次从第10轮继续。
 
 全部方法关闭提前停止，以完整观测50轮轨迹；学习率固定1e-4，没有新增调度器。历史10轮上限+patience3的表格单独保存在 historical_10_epoch_with_early_stopping.csv，不能与本研究的固定10轮前缀视为完全相同停止策略，也不混入此前家族留出 B0 的开发分数。
 
@@ -237,9 +237,29 @@ B0 是原始175,553参数 PairHead，不含纠错 CNN，不读取 P/Q/距离作�
 固定预算共 {validation['budget_cohort_evaluations']} 个方法/种子/预算/集合组合，对应 {validation['conceptual_predictions']:,} 条逻辑预测。相同checkpoint/阈值/集合的重复组合复用完全相同、校验SHA256的预测文件；独立复算 {validation['unique_prediction_files_independently_recomputed']} 份不同预测文件、{validation['unique_predictions_independently_recomputed']:,} 条独立记录。完整选择锁定、源代码指纹、逐种子结果、配对差值和检查记录随报告保存。
 
 服务器模型及逐RNA预测在 outputs/long_epochs/，表征复用 embeddings/full/。图表、脚本及源数据与报告统一管理。历史测试集曾出现在项目方法决策材料中，本研究保持预先固定的预算与选择规则，不声称整个项目历史从未查看这些测试集。
+
+## 图表与源数据
+
+图表由 `python scripts/plot_long_epochs.py` 在上述真实结果验证后生成。细线为各种子，粗线为均值，阴影或误差线为三种子样本SD；不平滑、不剔除数据。可编辑SVG/PDF、300dpi PNG、数据哈希和实际字体/碰撞检查见 [figures/figure_manifest.json](figures/figure_manifest.json)。每张单图使用自己的清晰轴范围，跨图数值比较须读取刻度。
+
+![轮末验证F1](figures/validation_f1_by_epoch.png)
+
+![在线训练损失](figures/training_loss_by_epoch.png)
+
+![轮末验证损失](figures/validation_loss_by_epoch.png)
+
+![TS0预算比较](figures/TS0_f1_vs_budget.png)
+
+![bpRNA-new预算比较](figures/bprna_new_f1_vs_budget.png)
+
+![B0配对比较：TS0](figures/TS0_paired_vs_B0.png)
+
+![B0配对比较：bpRNA-new](figures/bprna_new_paired_vs_B0.png)
+
+其余两张图为 [验证选择包络](figures/validation_best_so_far.png) 和 [验证收益与训练耗时](figures/validation_vs_time.png)。选择包络单调来自规则，不能视为轮末性能持续改善。
 '''
     (REPORT/'README_results.md').write_text(text,encoding='utf8')
-    write_json(REPORT/'delivered_files.json',{p.name:dict(bytes=p.stat().st_size,sha256=file_hash(p)) for p in REPORT.iterdir() if p.is_file() and p.name!='delivered_files.json'})
+    write_json(REPORT/'delivered_files.json',{p.relative_to(REPORT).as_posix():dict(bytes=p.stat().st_size,sha256=file_hash(p)) for p in sorted(REPORT.rglob('*')) if p.is_file() and p.name!='delivered_files.json'})
     archive=ROOT/'.tmp/long_epoch_reports_2026-10-21.tar.gz'
     with tarfile.open(archive,'w:gz') as handle:handle.add(REPORT,arcname=str(REPORT.relative_to(ROOT)))
     print(json.dumps(dict(report=str(REPORT),archive=str(archive),bytes=archive.stat().st_size,epochs=len(epochs),budget_rows=len(aggregate))))

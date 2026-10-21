@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "trajectories": 12,
+  "epochs_per_trajectory": 50,
+  "budget_cohort_evaluations": 180,
+  "conceptual_predictions": 477720,
+  "unique_prediction_files_independently_recomputed": 69,
+  "unique_predictions_independently_recomputed": 183126,
+  "fresh_forward_cohort_evaluations": 69,
+  "selection_lock_sha256": "bc31ac847f96fa315dd53df6fdece152ec11a2e1a122bd8258f5b1e783befeca",
+  "test_scores_used_for_selection": false
+}

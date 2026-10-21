@@ -1,0 +1,62 @@
+{
+  "question": "Does training longer improve generalization enough to justify the cost, and how does B0 compare with E?",
+  "observed_evidence": {
+    "B0": {
+      "best_epochs": [
+        21,
+        11,
+        17
+      ],
+      "last_epoch_VL0_F1_change_10_to_50": -0.009443551515176618,
+      "selected_TS0_F1_change_30_to_50": 0.0,
+      "selected_bprna_new_F1_change_30_to_50": 0.0
+    },
+    "E0_no_thermo": {
+      "best_epochs": [
+        15,
+        7,
+        13
+      ],
+      "last_epoch_VL0_F1_change_10_to_50": -0.014194151871185001,
+      "selected_TS0_F1_change_30_to_50": 0.0,
+      "selected_bprna_new_F1_change_30_to_50": 0.0
+    },
+    "E1_bpp": {
+      "best_epochs": [
+        9,
+        15,
+        10
+      ],
+      "last_epoch_VL0_F1_change_10_to_50": -0.01685277071872382,
+      "selected_TS0_F1_change_30_to_50": 0.0,
+      "selected_bprna_new_F1_change_30_to_50": 0.0
+    },
+    "E2_bpp_stack": {
+      "best_epochs": [
+        16,
+        11,
+        8
+      ],
+      "last_epoch_VL0_F1_change_10_to_50": -0.013322329261639676,
+      "selected_TS0_F1_change_30_to_50": 0.0,
+      "selected_bprna_new_F1_change_30_to_50": 0.0
+    }
+  },
+  "archetype": "quantitative trajectory and paired comparison figures",
+  "backend": "Python/Matplotlib",
+  "export": {
+    "width_mm": 183,
+    "height_mm": 118,
+    "minimum_font_pt": 7,
+    "formats": [
+      "svg",
+      "pdf",
+      "png"
+    ],
+    "editable_text": true
+  },
+  "uncertainty": "n=3 fixed paired seeds; sample SD, not confidence intervals; no significance claims",
+  "data_integrity": "All 600 epoch rows and all 20 budget aggregates retained; no outliers excluded or smoothed.",
+  "timing_definition": "Completed-epoch training segments include verified historical prefixes. Queue, validation, loading, aborted partial epochs and overlapping reservations are separate; see all-attempt Slurm accounting.",
+  "interpretation": "Raw epoch F1 and selection envelope are distinct. Online train BCE and end-of-epoch validation BCE use different parameter states."
+}

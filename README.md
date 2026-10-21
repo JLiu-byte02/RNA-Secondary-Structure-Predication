@@ -1,8 +1,19 @@
 # RNA ThermoFusion
 
-## B0 / E 系列长轮数研究（进行中）
+## B0 / E 系列长轮数研究（已完成）
 
 固定50轮，比较10、20、30、40、50轮预算，纳入原始纯PairHead基线B0与E0/E1/E2，均使用种子17、23、41和相同TR0/VL0/TS0/bpRNA-new。逐轮记录结构F1、在线训练BCE、VL0 BCE、候选accuracy/balanced accuracy及耗时；统一锁定全部VL0选择后再测试。方案和公平性约束见 [长轮数协议](docs/LONG_EPOCHS_PROTOCOL.md)。本流程接续已完成的全量TR0阶段，E保留原轨迹和优化器状态，B0从头训练。
+
+2026-10-22 已完成全部12条50轮轨迹及固定预算测试，25个最终Slurm作业正常退出。600条逐轮记录、180组预算评估通过独立复核；完整表格、损失、收敛、资源成本及9张图见 [50轮研究报告](reports/long_epochs_2026-10-21/README_results.md)。以下为50轮预算内仅按VL0选择的模型，完整真值RNA-macro exact F1，三种子均值 ± 样本SD。
+
+| 方法 | TS0 | bpRNA-new |
+|---|---:|---:|
+| B0 | 0.592580 ± 0.005368 | 0.447211 ± 0.017243 |
+| E0 | 0.606881 ± 0.003306 | 0.490575 ± 0.015918 |
+| E1 | 0.647345 ± 0.001965 | 0.608500 ± 0.012973 |
+| E2 | 0.646372 ± 0.001406 | 0.607976 ± 0.015212 |
+
+30→50轮没有改变任何种子的所选检查点，平均每种子额外训练45–59分钟。所有12条轨迹都出现训练BCE下降、验证BCE上升及轮末F1从峰值回落；增加轮数没有带来持续的泛化改善。10→50轮的bpRNA-new所选模型F1也均下降，说明VL0上的小幅选择收益未转化为该测试集收益。此结论限于当前固定学习率与训练协议，三种子SD不代表置信区间。
 
 ```bash
 source ./activate.sh
@@ -12,6 +23,8 @@ cat outputs/long_epochs/cluster_status.json
 ```
 
 最终表格及报告由入口生成于 `reports/long_epochs_2026-10-21/`，原始模型和逐RNA预测保存在 `outputs/long_epochs/`。完成状态需同时满足 supervisor 的 `completed` 与 `artifact_validation.json` 的 `passed: true`。
+
+新环境应先完成下文的环境安装、FAST-v1准备及全量TR0流程，使完整输入和E系列历史检查点可用，再运行长轮数入口。报告图表使用独立的 `requirements-plot.txt`，运行 `python scripts/plot_long_epochs.py`；图表定义和复现说明见 [图表契约](docs/LONG_EPOCHS_FIGURES.md)。
 
 ## 全量 TR0 多种子实验
 

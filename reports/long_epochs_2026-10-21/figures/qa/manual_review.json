@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "date": "2026-10-22",
+  "figures_inspected": 9,
+  "method": "Visually inspected every actual exported PNG after final render; read final PDF font/collision and render-time alignment audits.",
+  "source_warnings_reviewed": "PNG previews at 300 dpi with editable SVG/PDF match this project-report contract; no journal TIFF/600 dpi deliverable requested.",
+  "limitations": "Seed SD is not a confidence interval. Single-axes figures use individually labelled ranges; raw epoch F1 and selected-budget F1 are distinct."
+}

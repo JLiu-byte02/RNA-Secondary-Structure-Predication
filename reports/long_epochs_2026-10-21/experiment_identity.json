@@ -1,0 +1,24 @@
+{
+  "training_source": {
+    "sha256": "8d04fe832025806812b7983aa1dba5df4bfc3a18d64857dd98af38db29db2e86",
+    "files": {
+      "scripts/_common.py": "e2d8b415538a09eaa10abe931c957a823c2db42ca52406883801a2518a53645a",
+      "scripts/cache_thermo.py": "b333dca8b9bc5680edcaa3bc2df6a75a95f4130411945f5c9dbeae321db85c31",
+      "scripts/full_protocol.py": "a47bdaac891c077225d1d09afd4f4f65116b5d48bb6d7858f7b31745b63cc9c0",
+      "scripts/run_thermo_fast.py": "0f71acc15887e79fcf46be4678cf8be9e67f6bf3dddb32e7a86efca851cb12de",
+      "scripts/long_protocol.py": "4574b6cb153fc6a6f1b242663634fc5640b9586e45679156feba67e64dd3c23d",
+      "scripts/long_models.py": "23b11b734c8d9ae4c79fb574a763edec3eefe581ec9155709ea360e157629837",
+      "scripts/long_metrics.py": "494f126f49cec812416150bf41486d5a4c2e54f54f4cc166b45f06421bd7321d",
+      "scripts/run_long_epochs.py": "f427939f5821631e85aedaabc232b7bd2651bafd9a483dba46369040409197d9",
+      "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/decoder.py": "003a068bd35535fe34c860c4e74f23de46a435e6f055ed6beceb8f68e0475533",
+      "src/losses.py": "522c69575875efe2ff6c9a4544410ff61cdaf591d44d4a5840904c59267d9c76",
+      "src/metrics.py": "b86863fab8aa5662be274439e52b92cda31e13472b5163967e7efcac3ac0a14d",
+      "src/pair_head.py": "fb9e45fa42e6b871cf4ac7417b47a811af4d8366d7f2458f15d6447fbc7e8dca",
+      "src/stem_candidates.py": "c0b371627e8d91b2488686c40fec3731570c903a3c901ba8f778ffd847b782e8",
+      "src/utils.py": "5a67b62355ec5affa6e3f125348784ce66905c64f7df2a7ca72f6c2230fb23f0"
+    }
+  },
+  "git_commit": "9a13234c58b29b757e3cd11f6ac0c6f494ae79de",
+  "config_sha256": "cb6409d3286fd859481857f2d48564acaf1f39628be411cc6a1a9553e039abf6"
+}

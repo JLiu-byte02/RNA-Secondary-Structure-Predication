@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "archive_sha256": "50c16e8fc7630e518b8a66379bd0daf324f640e873b8211fa1e4b5737778803a",
+  "delivered_files_checked": 19,
+  "epoch_rows": 600,
+  "budget_cohort_rows": 180,
+  "logical_predictions": 477720,
+  "aggregate_rows_independently_recomputed": 20,
+  "convergence_rows_independently_recomputed": 12,
+  "slurm_jobs_verified": 25,
+  "historical_10_cohort_aggregates_verified": 9,
+  "source": "Downloaded actual completed-study archive; no generated or synthetic metrics."
+}

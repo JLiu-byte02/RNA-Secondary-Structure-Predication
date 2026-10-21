@@ -1,0 +1,3528 @@
+{
+  "protocol": "LONG-50-v1",
+  "locked_unix": 1792606238.4223201,
+  "selection_split": "VL0",
+  "test_scores_used": false,
+  "budgets": [
+    10,
+    20,
+    30,
+    40,
+    50
+  ],
+  "seeds": [
+    17,
+    23,
+    41
+  ],
+  "choices": {
+    "B0/seed17/budget10": {
+      "mode": "B0",
+      "seed": 17,
+      "budget": 10,
+      "epoch": 8,
+      "checkpoint_path": "outputs/long_epochs/B0/seed17/epoch8.pt",
+      "checkpoint_sha256": "84ce235b744fe5e031a7e9c2c1b54a006ce2a3ac1461c72faa16b81bf508c6a2",
+      "parameter_state_sha256": "90b31b7c9c8f9ea46aab1e513a8060b35566e7e1310220b6a632a3c98f5e754d",
+      "epochs_sha256": "46734bec00ce1115cc56c657c79b1e309761a523dbd24e1840251ee98d524ea4",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.5846774643741782,
+          "recall": 0.622532121136943,
+          "rna_macro_exact_f1": 0.5921726438159408
+        },
+        "0.2": {
+          "precision": 0.6342098127604922,
+          "recall": 0.5855150807986422,
+          "rna_macro_exact_f1": 0.5934432786863831
+        },
+        "0.3": {
+          "precision": 0.6679288872440275,
+          "recall": 0.5553518760465045,
+          "rna_macro_exact_f1": 0.5853140657814608
+        },
+        "0.4": {
+          "precision": 0.6883047234338376,
+          "recall": 0.5230620088923889,
+          "rna_macro_exact_f1": 0.5684829628564374
+        },
+        "0.5": {
+          "precision": 0.7067355519027263,
+          "recall": 0.4865966844222661,
+          "rna_macro_exact_f1": 0.5451119944619299
+        },
+        "0.6": {
+          "precision": 0.716062373821471,
+          "recall": 0.44705538059382094,
+          "rna_macro_exact_f1": 0.5147719999845037
+        },
+        "0.7": {
+          "precision": 0.7032154472870954,
+          "recall": 0.40177811793777407,
+          "rna_macro_exact_f1": 0.47599664868714625
+        },
+        "0.8": {
+          "precision": 0.6836333696247997,
+          "recall": 0.3394691092872249,
+          "rna_macro_exact_f1": 0.41614375003257226
+        },
+        "0.9": {
+          "precision": 0.6005062318131421,
+          "recall": 0.24623112378880097,
+          "rna_macro_exact_f1": 0.3112077960298489
+        }
+      },
+      "threshold": 0.2
+    },
+    "B0/seed17/budget20": {
+      "mode": "B0",
+      "seed": 17,
+      "budget": 20,
+      "epoch": 15,
+      "checkpoint_path": "outputs/long_epochs/B0/seed17/epoch15.pt",
+      "checkpoint_sha256": "6f9fd3b038d693b44864adaead1b78e6eefd2e5e746f7c9ea4b4cd9bff322e56",
+      "parameter_state_sha256": "150982ae281ba9b4c249f6da2b814200c2a6d2ed23c401322eab279908ec06e2",
+      "epochs_sha256": "46734bec00ce1115cc56c657c79b1e309761a523dbd24e1840251ee98d524ea4",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6204447693455127,
+          "recall": 0.6000898403682259,
+          "rna_macro_exact_f1": 0.599094198766266
+        },
+        "0.2": {
+          "precision": 0.6648798651137867,
+          "recall": 0.5588672502018541,
+          "rna_macro_exact_f1": 0.5898388784166214
+        },
+        "0.3": {
+          "precision": 0.690793146677384,
+          "recall": 0.5264323211577501,
+          "rna_macro_exact_f1": 0.5745200899088172
+        },
+        "0.4": {
+          "precision": 0.7049427873238969,
+          "recall": 0.49331094164879535,
+          "rna_macro_exact_f1": 0.5530972761006651
+        },
+        "0.5": {
+          "precision": 0.7151873440093431,
+          "recall": 0.4625331044536404,
+          "rna_macro_exact_f1": 0.5307468004813477
+        },
+        "0.6": {
+          "precision": 0.7102346495493165,
+          "recall": 0.430474079333555,
+          "rna_macro_exact_f1": 0.5033662203266258
+        },
+        "0.7": {
+          "precision": 0.7061404343359471,
+          "recall": 0.39433051559534127,
+          "rna_macro_exact_f1": 0.4711233540247951
+        },
+        "0.8": {
+          "precision": 0.6858993250899003,
+          "recall": 0.3502756913421764,
+          "rna_macro_exact_f1": 0.427599155868672
+        },
+        "0.9": {
+          "precision": 0.6339840784722299,
+          "recall": 0.28845960616511673,
+          "rna_macro_exact_f1": 0.36002341642449887
+        }
+      },
+      "threshold": 0.1
+    },
+    "B0/seed17/budget30": {
+      "mode": "B0",
+      "seed": 17,
+      "budget": 30,
+      "epoch": 21,
+      "checkpoint_path": "outputs/long_epochs/B0/seed17/epoch21.pt",
+      "checkpoint_sha256": "109d2525d4b619a0a2c830a584ad6737b3677bb9ee4d64088985da38fd3eb107",
+      "parameter_state_sha256": "1d39d4df11af82d71bd5cd481e2295c19a65120ec826a87fdeea6cc681597aaa",
+      "epochs_sha256": "46734bec00ce1115cc56c657c79b1e309761a523dbd24e1840251ee98d524ea4",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.5866806153044399,
+          "recall": 0.6274530036155108,
+          "rna_macro_exact_f1": 0.5963595348874492
+        },
+        "0.2": {
+          "precision": 0.6252175912261557,
+          "recall": 0.6032496929350324,
+          "rna_macro_exact_f1": 0.6024026601061105
+        },
+        "0.3": {
+          "precision": 0.651651381922235,
+          "recall": 0.5828347449058388,
+          "rna_macro_exact_f1": 0.5999046756456878
+        },
+        "0.4": {
+          "precision": 0.6713100034985452,
+          "recall": 0.56119935891967,
+          "rna_macro_exact_f1": 0.5923365336421866
+        },
+        "0.5": {
+          "precision": 0.69032674404168,
+          "recall": 0.5415695186510552,
+          "rna_macro_exact_f1": 0.5834713870975798
+        },
+        "0.6": {
+          "precision": 0.7019029191181001,
+          "recall": 0.5175332442385379,
+          "rna_macro_exact_f1": 0.5691818348818286
+        },
+        "0.7": {
+          "precision": 0.7084565251979198,
+          "recall": 0.49049874067314775,
+          "rna_macro_exact_f1": 0.5508003015823626
+        },
+        "0.8": {
+          "precision": 0.7141258163842679,
+          "recall": 0.45473920484439345,
+          "rna_macro_exact_f1": 0.5230487234682765
+        },
+        "0.9": {
+          "precision": 0.7031204426844999,
+          "recall": 0.400190235973069,
+          "rna_macro_exact_f1": 0.4747659600900239
+        }
+      },
+      "threshold": 0.2
+    },
+    "B0/seed17/budget40": {
+      "mode": "B0",
+      "seed": 17,
+      "budget": 40,
+      "epoch": 21,
+      "checkpoint_path": "outputs/long_epochs/B0/seed17/epoch21.pt",
+      "checkpoint_sha256": "109d2525d4b619a0a2c830a584ad6737b3677bb9ee4d64088985da38fd3eb107",
+      "parameter_state_sha256": "1d39d4df11af82d71bd5cd481e2295c19a65120ec826a87fdeea6cc681597aaa",
+      "epochs_sha256": "46734bec00ce1115cc56c657c79b1e309761a523dbd24e1840251ee98d524ea4",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.5866806153044399,
+          "recall": 0.6274530036155108,
+          "rna_macro_exact_f1": 0.5963595348874492
+        },
+        "0.2": {
+          "precision": 0.6252175912261557,
+          "recall": 0.6032496929350324,
+          "rna_macro_exact_f1": 0.6024026601061105
+        },
+        "0.3": {
+          "precision": 0.651651381922235,
+          "recall": 0.5828347449058388,
+          "rna_macro_exact_f1": 0.5999046756456878
+        },
+        "0.4": {
+          "precision": 0.6713100034985452,
+          "recall": 0.56119935891967,
+          "rna_macro_exact_f1": 0.5923365336421866
+        },
+        "0.5": {
+          "precision": 0.69032674404168,
+          "recall": 0.5415695186510552,
+          "rna_macro_exact_f1": 0.5834713870975798
+        },
+        "0.6": {
+          "precision": 0.7019029191181001,
+          "recall": 0.5175332442385379,
+          "rna_macro_exact_f1": 0.5691818348818286
+        },
+        "0.7": {
+          "precision": 0.7084565251979198,
+          "recall": 0.49049874067314775,
+          "rna_macro_exact_f1": 0.5508003015823626
+        },
+        "0.8": {
+          "precision": 0.7141258163842679,
+          "recall": 0.45473920484439345,
+          "rna_macro_exact_f1": 0.5230487234682765
+        },
+        "0.9": {
+          "precision": 0.7031204426844999,
+          "recall": 0.400190235973069,
+          "rna_macro_exact_f1": 0.4747659600900239
+        }
+      },
+      "threshold": 0.2
+    },
+    "B0/seed17/budget50": {
+      "mode": "B0",
+      "seed": 17,
+      "budget": 50,
+      "epoch": 21,
+      "checkpoint_path": "outputs/long_epochs/B0/seed17/epoch21.pt",
+      "checkpoint_sha256": "109d2525d4b619a0a2c830a584ad6737b3677bb9ee4d64088985da38fd3eb107",
+      "parameter_state_sha256": "1d39d4df11af82d71bd5cd481e2295c19a65120ec826a87fdeea6cc681597aaa",
+      "epochs_sha256": "46734bec00ce1115cc56c657c79b1e309761a523dbd24e1840251ee98d524ea4",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.5866806153044399,
+          "recall": 0.6274530036155108,
+          "rna_macro_exact_f1": 0.5963595348874492
+        },
+        "0.2": {
+          "precision": 0.6252175912261557,
+          "recall": 0.6032496929350324,
+          "rna_macro_exact_f1": 0.6024026601061105
+        },
+        "0.3": {
+          "precision": 0.651651381922235,
+          "recall": 0.5828347449058388,
+          "rna_macro_exact_f1": 0.5999046756456878
+        },
+        "0.4": {
+          "precision": 0.6713100034985452,
+          "recall": 0.56119935891967,
+          "rna_macro_exact_f1": 0.5923365336421866
+        },
+        "0.5": {
+          "precision": 0.69032674404168,
+          "recall": 0.5415695186510552,
+          "rna_macro_exact_f1": 0.5834713870975798
+        },
+        "0.6": {
+          "precision": 0.7019029191181001,
+          "recall": 0.5175332442385379,
+          "rna_macro_exact_f1": 0.5691818348818286
+        },
+        "0.7": {
+          "precision": 0.7084565251979198,
+          "recall": 0.49049874067314775,
+          "rna_macro_exact_f1": 0.5508003015823626
+        },
+        "0.8": {
+          "precision": 0.7141258163842679,
+          "recall": 0.45473920484439345,
+          "rna_macro_exact_f1": 0.5230487234682765
+        },
+        "0.9": {
+          "precision": 0.7031204426844999,
+          "recall": 0.400190235973069,
+          "rna_macro_exact_f1": 0.4747659600900239
+        }
+      },
+      "threshold": 0.2
+    },
+    "B0/seed23/budget10": {
+      "mode": "B0",
+      "seed": 23,
+      "budget": 10,
+      "epoch": 9,
+      "checkpoint_path": "outputs/long_epochs/B0/seed23/epoch9.pt",
+      "checkpoint_sha256": "a26c7a7ff0f5d7ca3b3bc0277d18908c8d78a3a9d228346b31913ea385625adb",
+      "parameter_state_sha256": "3ec1f372937f00fbf272468a00c85ae8786f206cc6e2712928292462455b0416",
+      "epochs_sha256": "883db12c62b7311198bb6287ff82302b480820754149d406e67d95d8d12f395e",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.5916947491555467,
+          "recall": 0.6246307917652886,
+          "rna_macro_exact_f1": 0.5970298175793771
+        },
+        "0.2": {
+          "precision": 0.6413788891766138,
+          "recall": 0.5861265752746252,
+          "rna_macro_exact_f1": 0.597544755361253
+        },
+        "0.3": {
+          "precision": 0.6697416583752644,
+          "recall": 0.5500634713375397,
+          "rna_macro_exact_f1": 0.5841659289629058
+        },
+        "0.4": {
+          "precision": 0.6919123526479686,
+          "recall": 0.5185743280116104,
+          "rna_macro_exact_f1": 0.5663414891490642
+        },
+        "0.5": {
+          "precision": 0.7062826868295841,
+          "recall": 0.4843106988962909,
+          "rna_macro_exact_f1": 0.5428174925129078
+        },
+        "0.6": {
+          "precision": 0.7065784035790393,
+          "recall": 0.44518819674840715,
+          "rna_macro_exact_f1": 0.5109763379929805
+        },
+        "0.7": {
+          "precision": 0.7023204522907402,
+          "recall": 0.4007721786500669,
+          "rna_macro_exact_f1": 0.47163094571692465
+        },
+        "0.8": {
+          "precision": 0.6758185597223204,
+          "recall": 0.34526680355416006,
+          "rna_macro_exact_f1": 0.415940843806162
+        },
+        "0.9": {
+          "precision": 0.5953941674037279,
+          "recall": 0.26395277513244125,
+          "rna_macro_exact_f1": 0.32602021516228136
+        }
+      },
+      "threshold": 0.2
+    },
+    "B0/seed23/budget20": {
+      "mode": "B0",
+      "seed": 23,
+      "budget": 20,
+      "epoch": 11,
+      "checkpoint_path": "outputs/long_epochs/B0/seed23/epoch11.pt",
+      "checkpoint_sha256": "bbea7c7f80bd35eafaaa9290f5f5b93437e702ee594d7ca512b9d7f0ede03f6a",
+      "parameter_state_sha256": "c84022622d4ec2bc444f51308249026e661597bd09c34dd52ebb295ebc4a12d1",
+      "epochs_sha256": "883db12c62b7311198bb6287ff82302b480820754149d406e67d95d8d12f395e",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.5732184486049291,
+          "recall": 0.6311785648000418,
+          "rna_macro_exact_f1": 0.5904476916057506
+        },
+        "0.2": {
+          "precision": 0.622879473001791,
+          "recall": 0.6026706807291512,
+          "rna_macro_exact_f1": 0.5991611698408904
+        },
+        "0.3": {
+          "precision": 0.6515992659525786,
+          "recall": 0.5753734259721058,
+          "rna_macro_exact_f1": 0.5932950407444527
+        },
+        "0.4": {
+          "precision": 0.6745351036287202,
+          "recall": 0.5494784913960646,
+          "rna_macro_exact_f1": 0.5833158886139667
+        },
+        "0.5": {
+          "precision": 0.6891836483018348,
+          "recall": 0.5243431132984339,
+          "rna_macro_exact_f1": 0.5689965162033176
+        },
+        "0.6": {
+          "precision": 0.6998420621662366,
+          "recall": 0.49663971334452495,
+          "rna_macro_exact_f1": 0.5506540765262854
+        },
+        "0.7": {
+          "precision": 0.7031466645795953,
+          "recall": 0.4622889444377207,
+          "rna_macro_exact_f1": 0.5245129879169813
+        },
+        "0.8": {
+          "precision": 0.7046103443728492,
+          "recall": 0.4210324712788259,
+          "rna_macro_exact_f1": 0.49031823034606686
+        },
+        "0.9": {
+          "precision": 0.6767205802537759,
+          "recall": 0.34932263625657023,
+          "rna_macro_exact_f1": 0.422721412153352
+        }
+      },
+      "threshold": 0.1
+    },
+    "B0/seed23/budget30": {
+      "mode": "B0",
+      "seed": 23,
+      "budget": 30,
+      "epoch": 11,
+      "checkpoint_path": "outputs/long_epochs/B0/seed23/epoch11.pt",
+      "checkpoint_sha256": "bbea7c7f80bd35eafaaa9290f5f5b93437e702ee594d7ca512b9d7f0ede03f6a",
+      "parameter_state_sha256": "c84022622d4ec2bc444f51308249026e661597bd09c34dd52ebb295ebc4a12d1",
+      "epochs_sha256": "883db12c62b7311198bb6287ff82302b480820754149d406e67d95d8d12f395e",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.5732184486049291,
+          "recall": 0.6311785648000418,
+          "rna_macro_exact_f1": 0.5904476916057506
+        },
+        "0.2": {
+          "precision": 0.622879473001791,
+          "recall": 0.6026706807291512,
+          "rna_macro_exact_f1": 0.5991611698408904
+        },
+        "0.3": {
+          "precision": 0.6515992659525786,
+          "recall": 0.5753734259721058,
+          "rna_macro_exact_f1": 0.5932950407444527
+        },
+        "0.4": {
+          "precision": 0.6745351036287202,
+          "recall": 0.5494784913960646,
+          "rna_macro_exact_f1": 0.5833158886139667
+        },
+        "0.5": {
+          "precision": 0.6891836483018348,
+          "recall": 0.5243431132984339,
+          "rna_macro_exact_f1": 0.5689965162033176
+        },
+        "0.6": {
+          "precision": 0.6998420621662366,
+          "recall": 0.49663971334452495,
+          "rna_macro_exact_f1": 0.5506540765262854
+        },
+        "0.7": {
+          "precision": 0.7031466645795953,
+          "recall": 0.4622889444377207,
+          "rna_macro_exact_f1": 0.5245129879169813
+        },
+        "0.8": {
+          "precision": 0.7046103443728492,
+          "recall": 0.4210324712788259,
+          "rna_macro_exact_f1": 0.49031823034606686
+        },
+        "0.9": {
+          "precision": 0.6767205802537759,
+          "recall": 0.34932263625657023,
+          "rna_macro_exact_f1": 0.422721412153352
+        }
+      },
+      "threshold": 0.2
+    },
+    "B0/seed23/budget40": {
+      "mode": "B0",
+      "seed": 23,
+      "budget": 40,
+      "epoch": 11,
+      "checkpoint_path": "outputs/long_epochs/B0/seed23/epoch11.pt",
+      "checkpoint_sha256": "bbea7c7f80bd35eafaaa9290f5f5b93437e702ee594d7ca512b9d7f0ede03f6a",
+      "parameter_state_sha256": "c84022622d4ec2bc444f51308249026e661597bd09c34dd52ebb295ebc4a12d1",
+      "epochs_sha256": "883db12c62b7311198bb6287ff82302b480820754149d406e67d95d8d12f395e",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.5732184486049291,
+          "recall": 0.6311785648000418,
+          "rna_macro_exact_f1": 0.5904476916057506
+        },
+        "0.2": {
+          "precision": 0.622879473001791,
+          "recall": 0.6026706807291512,
+          "rna_macro_exact_f1": 0.5991611698408904
+        },
+        "0.3": {
+          "precision": 0.6515992659525786,
+          "recall": 0.5753734259721058,
+          "rna_macro_exact_f1": 0.5932950407444527
+        },
+        "0.4": {
+          "precision": 0.6745351036287202,
+          "recall": 0.5494784913960646,
+          "rna_macro_exact_f1": 0.5833158886139667
+        },
+        "0.5": {
+          "precision": 0.6891836483018348,
+          "recall": 0.5243431132984339,
+          "rna_macro_exact_f1": 0.5689965162033176
+        },
+        "0.6": {
+          "precision": 0.6998420621662366,
+          "recall": 0.49663971334452495,
+          "rna_macro_exact_f1": 0.5506540765262854
+        },
+        "0.7": {
+          "precision": 0.7031466645795953,
+          "recall": 0.4622889444377207,
+          "rna_macro_exact_f1": 0.5245129879169813
+        },
+        "0.8": {
+          "precision": 0.7046103443728492,
+          "recall": 0.4210324712788259,
+          "rna_macro_exact_f1": 0.49031823034606686
+        },
+        "0.9": {
+          "precision": 0.6767205802537759,
+          "recall": 0.34932263625657023,
+          "rna_macro_exact_f1": 0.422721412153352
+        }
+      },
+      "threshold": 0.2
+    },
+    "B0/seed23/budget50": {
+      "mode": "B0",
+      "seed": 23,
+      "budget": 50,
+      "epoch": 11,
+      "checkpoint_path": "outputs/long_epochs/B0/seed23/epoch11.pt",
+      "checkpoint_sha256": "bbea7c7f80bd35eafaaa9290f5f5b93437e702ee594d7ca512b9d7f0ede03f6a",
+      "parameter_state_sha256": "c84022622d4ec2bc444f51308249026e661597bd09c34dd52ebb295ebc4a12d1",
+      "epochs_sha256": "883db12c62b7311198bb6287ff82302b480820754149d406e67d95d8d12f395e",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.5732184486049291,
+          "recall": 0.6311785648000418,
+          "rna_macro_exact_f1": 0.5904476916057506
+        },
+        "0.2": {
+          "precision": 0.622879473001791,
+          "recall": 0.6026706807291512,
+          "rna_macro_exact_f1": 0.5991611698408904
+        },
+        "0.3": {
+          "precision": 0.6515992659525786,
+          "recall": 0.5753734259721058,
+          "rna_macro_exact_f1": 0.5932950407444527
+        },
+        "0.4": {
+          "precision": 0.6745351036287202,
+          "recall": 0.5494784913960646,
+          "rna_macro_exact_f1": 0.5833158886139667
+        },
+        "0.5": {
+          "precision": 0.6891836483018348,
+          "recall": 0.5243431132984339,
+          "rna_macro_exact_f1": 0.5689965162033176
+        },
+        "0.6": {
+          "precision": 0.6998420621662366,
+          "recall": 0.49663971334452495,
+          "rna_macro_exact_f1": 0.5506540765262854
+        },
+        "0.7": {
+          "precision": 0.7031466645795953,
+          "recall": 0.4622889444377207,
+          "rna_macro_exact_f1": 0.5245129879169813
+        },
+        "0.8": {
+          "precision": 0.7046103443728492,
+          "recall": 0.4210324712788259,
+          "rna_macro_exact_f1": 0.49031823034606686
+        },
+        "0.9": {
+          "precision": 0.6767205802537759,
+          "recall": 0.34932263625657023,
+          "rna_macro_exact_f1": 0.422721412153352
+        }
+      },
+      "threshold": 0.2
+    },
+    "B0/seed41/budget10": {
+      "mode": "B0",
+      "seed": 41,
+      "budget": 10,
+      "epoch": 9,
+      "checkpoint_path": "outputs/long_epochs/B0/seed41/epoch9.pt",
+      "checkpoint_sha256": "060e0bc188082f7d7f0e2b363dc920ba11e1d210aecc37e8579d19fd94a603c3",
+      "parameter_state_sha256": "85c1a246c8d4b9af8208073baf4a3d3c453cb80618888b5ed15a4463b1a12e37",
+      "epochs_sha256": "4d7e1d2692b410fddad47152955d05692f81534c8a8bce407b9dd603d988fd0d",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.5719732500672622,
+          "recall": 0.626259564082308,
+          "rna_macro_exact_f1": 0.5871305461544818
+        },
+        "0.2": {
+          "precision": 0.6217617311840056,
+          "recall": 0.5971462274801828,
+          "rna_macro_exact_f1": 0.5943852861607376
+        },
+        "0.3": {
+          "precision": 0.6557710684541102,
+          "recall": 0.5687362765620321,
+          "rna_macro_exact_f1": 0.5890941800299927
+        },
+        "0.4": {
+          "precision": 0.6776556953466801,
+          "recall": 0.5394065926539986,
+          "rna_macro_exact_f1": 0.5761650735731407
+        },
+        "0.5": {
+          "precision": 0.6942967802979927,
+          "recall": 0.5113606019905799,
+          "rna_macro_exact_f1": 0.5593705101858623
+        },
+        "0.6": {
+          "precision": 0.7063992889688653,
+          "recall": 0.4801642566464467,
+          "rna_macro_exact_f1": 0.5380174578632791
+        },
+        "0.7": {
+          "precision": 0.7003393013221132,
+          "recall": 0.4388189350210248,
+          "rna_macro_exact_f1": 0.5036309143312255
+        },
+        "0.8": {
+          "precision": 0.6867920363863045,
+          "recall": 0.3882030777609788,
+          "rna_macro_exact_f1": 0.45673679889453117
+        },
+        "0.9": {
+          "precision": 0.6317060755778245,
+          "recall": 0.3089558552223541,
+          "rna_macro_exact_f1": 0.37444750132321736
+        }
+      },
+      "threshold": 0.2
+    },
+    "B0/seed41/budget20": {
+      "mode": "B0",
+      "seed": 41,
+      "budget": 20,
+      "epoch": 17,
+      "checkpoint_path": "outputs/long_epochs/B0/seed41/epoch17.pt",
+      "checkpoint_sha256": "9d68e2ec7fc0b24f0ffb81a7bfecae5ae47d428fecd351244d34c049812d153c",
+      "parameter_state_sha256": "b6b951bbc5e2d5ee95964998f6d39ac8071d498d28fc77129399f6e8dbbb4608",
+      "epochs_sha256": "4d7e1d2692b410fddad47152955d05692f81534c8a8bce407b9dd603d988fd0d",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6057224754287677,
+          "recall": 0.6142656070081274,
+          "rna_macro_exact_f1": 0.5986649963215818
+        },
+        "0.2": {
+          "precision": 0.6506279528222983,
+          "recall": 0.5804093904728551,
+          "rna_macro_exact_f1": 0.5982349801947425
+        },
+        "0.3": {
+          "precision": 0.679321896192664,
+          "recall": 0.5500079105917978,
+          "rna_macro_exact_f1": 0.5869313446417161
+        },
+        "0.4": {
+          "precision": 0.696506067614205,
+          "recall": 0.521090726440539,
+          "rna_macro_exact_f1": 0.5712826379667787
+        },
+        "0.5": {
+          "precision": 0.7069918541119966,
+          "recall": 0.4938827893312183,
+          "rna_macro_exact_f1": 0.5533956230256816
+        },
+        "0.6": {
+          "precision": 0.7152061069636976,
+          "recall": 0.46451272063601334,
+          "rna_macro_exact_f1": 0.5317618344680882
+        },
+        "0.7": {
+          "precision": 0.7203917749753893,
+          "recall": 0.4292393580341656,
+          "rna_macro_exact_f1": 0.5031647692650363
+        },
+        "0.8": {
+          "precision": 0.710043948642323,
+          "recall": 0.38615461175097576,
+          "rna_macro_exact_f1": 0.46356933457628
+        },
+        "0.9": {
+          "precision": 0.6778203557228323,
+          "recall": 0.3227590508868044,
+          "rna_macro_exact_f1": 0.3990933511680977
+        }
+      },
+      "threshold": 0.1
+    },
+    "B0/seed41/budget30": {
+      "mode": "B0",
+      "seed": 41,
+      "budget": 30,
+      "epoch": 17,
+      "checkpoint_path": "outputs/long_epochs/B0/seed41/epoch17.pt",
+      "checkpoint_sha256": "9d68e2ec7fc0b24f0ffb81a7bfecae5ae47d428fecd351244d34c049812d153c",
+      "parameter_state_sha256": "b6b951bbc5e2d5ee95964998f6d39ac8071d498d28fc77129399f6e8dbbb4608",
+      "epochs_sha256": "4d7e1d2692b410fddad47152955d05692f81534c8a8bce407b9dd603d988fd0d",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6057224754287677,
+          "recall": 0.6142656070081274,
+          "rna_macro_exact_f1": 0.5986649963215818
+        },
+        "0.2": {
+          "precision": 0.6506279528222983,
+          "recall": 0.5804093904728551,
+          "rna_macro_exact_f1": 0.5982349801947425
+        },
+        "0.3": {
+          "precision": 0.679321896192664,
+          "recall": 0.5500079105917978,
+          "rna_macro_exact_f1": 0.5869313446417161
+        },
+        "0.4": {
+          "precision": 0.696506067614205,
+          "recall": 0.521090726440539,
+          "rna_macro_exact_f1": 0.5712826379667787
+        },
+        "0.5": {
+          "precision": 0.7069918541119966,
+          "recall": 0.4938827893312183,
+          "rna_macro_exact_f1": 0.5533956230256816
+        },
+        "0.6": {
+          "precision": 0.7152061069636976,
+          "recall": 0.46451272063601334,
+          "rna_macro_exact_f1": 0.5317618344680882
+        },
+        "0.7": {
+          "precision": 0.7203917749753893,
+          "recall": 0.4292393580341656,
+          "rna_macro_exact_f1": 0.5031647692650363
+        },
+        "0.8": {
+          "precision": 0.710043948642323,
+          "recall": 0.38615461175097576,
+          "rna_macro_exact_f1": 0.46356933457628
+        },
+        "0.9": {
+          "precision": 0.6778203557228323,
+          "recall": 0.3227590508868044,
+          "rna_macro_exact_f1": 0.3990933511680977
+        }
+      },
+      "threshold": 0.2
+    },
+    "B0/seed41/budget40": {
+      "mode": "B0",
+      "seed": 41,
+      "budget": 40,
+      "epoch": 17,
+      "checkpoint_path": "outputs/long_epochs/B0/seed41/epoch17.pt",
+      "checkpoint_sha256": "9d68e2ec7fc0b24f0ffb81a7bfecae5ae47d428fecd351244d34c049812d153c",
+      "parameter_state_sha256": "b6b951bbc5e2d5ee95964998f6d39ac8071d498d28fc77129399f6e8dbbb4608",
+      "epochs_sha256": "4d7e1d2692b410fddad47152955d05692f81534c8a8bce407b9dd603d988fd0d",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6057224754287677,
+          "recall": 0.6142656070081274,
+          "rna_macro_exact_f1": 0.5986649963215818
+        },
+        "0.2": {
+          "precision": 0.6506279528222983,
+          "recall": 0.5804093904728551,
+          "rna_macro_exact_f1": 0.5982349801947425
+        },
+        "0.3": {
+          "precision": 0.679321896192664,
+          "recall": 0.5500079105917978,
+          "rna_macro_exact_f1": 0.5869313446417161
+        },
+        "0.4": {
+          "precision": 0.696506067614205,
+          "recall": 0.521090726440539,
+          "rna_macro_exact_f1": 0.5712826379667787
+        },
+        "0.5": {
+          "precision": 0.7069918541119966,
+          "recall": 0.4938827893312183,
+          "rna_macro_exact_f1": 0.5533956230256816
+        },
+        "0.6": {
+          "precision": 0.7152061069636976,
+          "recall": 0.46451272063601334,
+          "rna_macro_exact_f1": 0.5317618344680882
+        },
+        "0.7": {
+          "precision": 0.7203917749753893,
+          "recall": 0.4292393580341656,
+          "rna_macro_exact_f1": 0.5031647692650363
+        },
+        "0.8": {
+          "precision": 0.710043948642323,
+          "recall": 0.38615461175097576,
+          "rna_macro_exact_f1": 0.46356933457628
+        },
+        "0.9": {
+          "precision": 0.6778203557228323,
+          "recall": 0.3227590508868044,
+          "rna_macro_exact_f1": 0.3990933511680977
+        }
+      },
+      "threshold": 0.2
+    },
+    "B0/seed41/budget50": {
+      "mode": "B0",
+      "seed": 41,
+      "budget": 50,
+      "epoch": 17,
+      "checkpoint_path": "outputs/long_epochs/B0/seed41/epoch17.pt",
+      "checkpoint_sha256": "9d68e2ec7fc0b24f0ffb81a7bfecae5ae47d428fecd351244d34c049812d153c",
+      "parameter_state_sha256": "b6b951bbc5e2d5ee95964998f6d39ac8071d498d28fc77129399f6e8dbbb4608",
+      "epochs_sha256": "4d7e1d2692b410fddad47152955d05692f81534c8a8bce407b9dd603d988fd0d",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6057224754287677,
+          "recall": 0.6142656070081274,
+          "rna_macro_exact_f1": 0.5986649963215818
+        },
+        "0.2": {
+          "precision": 0.6506279528222983,
+          "recall": 0.5804093904728551,
+          "rna_macro_exact_f1": 0.5982349801947425
+        },
+        "0.3": {
+          "precision": 0.679321896192664,
+          "recall": 0.5500079105917978,
+          "rna_macro_exact_f1": 0.5869313446417161
+        },
+        "0.4": {
+          "precision": 0.696506067614205,
+          "recall": 0.521090726440539,
+          "rna_macro_exact_f1": 0.5712826379667787
+        },
+        "0.5": {
+          "precision": 0.7069918541119966,
+          "recall": 0.4938827893312183,
+          "rna_macro_exact_f1": 0.5533956230256816
+        },
+        "0.6": {
+          "precision": 0.7152061069636976,
+          "recall": 0.46451272063601334,
+          "rna_macro_exact_f1": 0.5317618344680882
+        },
+        "0.7": {
+          "precision": 0.7203917749753893,
+          "recall": 0.4292393580341656,
+          "rna_macro_exact_f1": 0.5031647692650363
+        },
+        "0.8": {
+          "precision": 0.710043948642323,
+          "recall": 0.38615461175097576,
+          "rna_macro_exact_f1": 0.46356933457628
+        },
+        "0.9": {
+          "precision": 0.6778203557228323,
+          "recall": 0.3227590508868044,
+          "rna_macro_exact_f1": 0.3990933511680977
+        }
+      },
+      "threshold": 0.2
+    },
+    "E0_no_thermo/seed17/budget10": {
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "budget": 10,
+      "epoch": 9,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed17/epoch9.pt",
+      "checkpoint_sha256": "97499ed43c2e4cae4e159e95f3e4e0f76b64a48287ab55439bc28d85e50b05e4",
+      "parameter_state_sha256": "2a66ead2ceabad092d0162dc98da0a281ff7d48ad0d245ef75fab5698a8429d8",
+      "epochs_sha256": "d2f1a4a2aafc1eea9cce9ffa904da853655a42e14cd1795dcbff7eb15bfb33a9",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.605013110997761,
+          "recall": 0.635562425730242,
+          "rna_macro_exact_f1": 0.6087517978678945
+        },
+        "0.2": {
+          "precision": 0.645042544557682,
+          "recall": 0.6048515441955398,
+          "rna_macro_exact_f1": 0.6110937832347253
+        },
+        "0.3": {
+          "precision": 0.6686714724481142,
+          "recall": 0.5759298859261225,
+          "rna_macro_exact_f1": 0.6017047181065756
+        },
+        "0.4": {
+          "precision": 0.6889895988831006,
+          "recall": 0.5511865761800817,
+          "rna_macro_exact_f1": 0.5904512895253837
+        },
+        "0.5": {
+          "precision": 0.7030042191595199,
+          "recall": 0.5245138820698514,
+          "rna_macro_exact_f1": 0.5745834973438806
+        },
+        "0.6": {
+          "precision": 0.7137574420246835,
+          "recall": 0.49554187502506475,
+          "rna_macro_exact_f1": 0.5547465446803058
+        },
+        "0.7": {
+          "precision": 0.713152846619167,
+          "recall": 0.4587681986030856,
+          "rna_macro_exact_f1": 0.525152797247805
+        },
+        "0.8": {
+          "precision": 0.7109037032840347,
+          "recall": 0.40841101138215885,
+          "rna_macro_exact_f1": 0.48148216037460373
+        },
+        "0.9": {
+          "precision": 0.6654475846095861,
+          "recall": 0.3209972403271822,
+          "rna_macro_exact_f1": 0.39366636858300746
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed17/budget20": {
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "budget": 20,
+      "epoch": 15,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed17/epoch15.pt",
+      "checkpoint_sha256": "cd3f6dc20fceac8ba59883f12f9fdaf4dc0f093a237b0a34e6b70bf0c4defc18",
+      "parameter_state_sha256": "60e245b80aae70f5fe71ea51d6b8c25d6639d6b339856a21d826998d10932cab",
+      "epochs_sha256": "d2f1a4a2aafc1eea9cce9ffa904da853655a42e14cd1795dcbff7eb15bfb33a9",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6324450165948403,
+          "recall": 0.6206355042012708,
+          "rna_macro_exact_f1": 0.615618814362107
+        },
+        "0.2": {
+          "precision": 0.666705594970397,
+          "recall": 0.5849918603904387,
+          "rna_macro_exact_f1": 0.6088554651812681
+        },
+        "0.3": {
+          "precision": 0.6887215062456207,
+          "recall": 0.5564555184266361,
+          "rna_macro_exact_f1": 0.5970682398421906
+        },
+        "0.4": {
+          "precision": 0.7036738455146372,
+          "recall": 0.5301203980627115,
+          "rna_macro_exact_f1": 0.5817807985297777
+        },
+        "0.5": {
+          "precision": 0.7158056804317035,
+          "recall": 0.5074216922997226,
+          "rna_macro_exact_f1": 0.567007093677523
+        },
+        "0.6": {
+          "precision": 0.7264352690306266,
+          "recall": 0.48271221393311936,
+          "rna_macro_exact_f1": 0.5492118199618926
+        },
+        "0.7": {
+          "precision": 0.7239473635786483,
+          "recall": 0.45225511740505986,
+          "rna_macro_exact_f1": 0.5233349235088032
+        },
+        "0.8": {
+          "precision": 0.7136934010912274,
+          "recall": 0.4125675722708523,
+          "rna_macro_exact_f1": 0.4880922470255175
+        },
+        "0.9": {
+          "precision": 0.6859095441970451,
+          "recall": 0.34774134690152436,
+          "rna_macro_exact_f1": 0.42348364648176173
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed17/budget30": {
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "budget": 30,
+      "epoch": 15,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed17/epoch15.pt",
+      "checkpoint_sha256": "cd3f6dc20fceac8ba59883f12f9fdaf4dc0f093a237b0a34e6b70bf0c4defc18",
+      "parameter_state_sha256": "60e245b80aae70f5fe71ea51d6b8c25d6639d6b339856a21d826998d10932cab",
+      "epochs_sha256": "d2f1a4a2aafc1eea9cce9ffa904da853655a42e14cd1795dcbff7eb15bfb33a9",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6324450165948403,
+          "recall": 0.6206355042012708,
+          "rna_macro_exact_f1": 0.615618814362107
+        },
+        "0.2": {
+          "precision": 0.666705594970397,
+          "recall": 0.5849918603904387,
+          "rna_macro_exact_f1": 0.6088554651812681
+        },
+        "0.3": {
+          "precision": 0.6887215062456207,
+          "recall": 0.5564555184266361,
+          "rna_macro_exact_f1": 0.5970682398421906
+        },
+        "0.4": {
+          "precision": 0.7036738455146372,
+          "recall": 0.5301203980627115,
+          "rna_macro_exact_f1": 0.5817807985297777
+        },
+        "0.5": {
+          "precision": 0.7158056804317035,
+          "recall": 0.5074216922997226,
+          "rna_macro_exact_f1": 0.567007093677523
+        },
+        "0.6": {
+          "precision": 0.7264352690306266,
+          "recall": 0.48271221393311936,
+          "rna_macro_exact_f1": 0.5492118199618926
+        },
+        "0.7": {
+          "precision": 0.7239473635786483,
+          "recall": 0.45225511740505986,
+          "rna_macro_exact_f1": 0.5233349235088032
+        },
+        "0.8": {
+          "precision": 0.7136934010912274,
+          "recall": 0.4125675722708523,
+          "rna_macro_exact_f1": 0.4880922470255175
+        },
+        "0.9": {
+          "precision": 0.6859095441970451,
+          "recall": 0.34774134690152436,
+          "rna_macro_exact_f1": 0.42348364648176173
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed17/budget40": {
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "budget": 40,
+      "epoch": 15,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed17/epoch15.pt",
+      "checkpoint_sha256": "cd3f6dc20fceac8ba59883f12f9fdaf4dc0f093a237b0a34e6b70bf0c4defc18",
+      "parameter_state_sha256": "60e245b80aae70f5fe71ea51d6b8c25d6639d6b339856a21d826998d10932cab",
+      "epochs_sha256": "d2f1a4a2aafc1eea9cce9ffa904da853655a42e14cd1795dcbff7eb15bfb33a9",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6324450165948403,
+          "recall": 0.6206355042012708,
+          "rna_macro_exact_f1": 0.615618814362107
+        },
+        "0.2": {
+          "precision": 0.666705594970397,
+          "recall": 0.5849918603904387,
+          "rna_macro_exact_f1": 0.6088554651812681
+        },
+        "0.3": {
+          "precision": 0.6887215062456207,
+          "recall": 0.5564555184266361,
+          "rna_macro_exact_f1": 0.5970682398421906
+        },
+        "0.4": {
+          "precision": 0.7036738455146372,
+          "recall": 0.5301203980627115,
+          "rna_macro_exact_f1": 0.5817807985297777
+        },
+        "0.5": {
+          "precision": 0.7158056804317035,
+          "recall": 0.5074216922997226,
+          "rna_macro_exact_f1": 0.567007093677523
+        },
+        "0.6": {
+          "precision": 0.7264352690306266,
+          "recall": 0.48271221393311936,
+          "rna_macro_exact_f1": 0.5492118199618926
+        },
+        "0.7": {
+          "precision": 0.7239473635786483,
+          "recall": 0.45225511740505986,
+          "rna_macro_exact_f1": 0.5233349235088032
+        },
+        "0.8": {
+          "precision": 0.7136934010912274,
+          "recall": 0.4125675722708523,
+          "rna_macro_exact_f1": 0.4880922470255175
+        },
+        "0.9": {
+          "precision": 0.6859095441970451,
+          "recall": 0.34774134690152436,
+          "rna_macro_exact_f1": 0.42348364648176173
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed17/budget50": {
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "budget": 50,
+      "epoch": 15,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed17/epoch15.pt",
+      "checkpoint_sha256": "cd3f6dc20fceac8ba59883f12f9fdaf4dc0f093a237b0a34e6b70bf0c4defc18",
+      "parameter_state_sha256": "60e245b80aae70f5fe71ea51d6b8c25d6639d6b339856a21d826998d10932cab",
+      "epochs_sha256": "d2f1a4a2aafc1eea9cce9ffa904da853655a42e14cd1795dcbff7eb15bfb33a9",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6324450165948403,
+          "recall": 0.6206355042012708,
+          "rna_macro_exact_f1": 0.615618814362107
+        },
+        "0.2": {
+          "precision": 0.666705594970397,
+          "recall": 0.5849918603904387,
+          "rna_macro_exact_f1": 0.6088554651812681
+        },
+        "0.3": {
+          "precision": 0.6887215062456207,
+          "recall": 0.5564555184266361,
+          "rna_macro_exact_f1": 0.5970682398421906
+        },
+        "0.4": {
+          "precision": 0.7036738455146372,
+          "recall": 0.5301203980627115,
+          "rna_macro_exact_f1": 0.5817807985297777
+        },
+        "0.5": {
+          "precision": 0.7158056804317035,
+          "recall": 0.5074216922997226,
+          "rna_macro_exact_f1": 0.567007093677523
+        },
+        "0.6": {
+          "precision": 0.7264352690306266,
+          "recall": 0.48271221393311936,
+          "rna_macro_exact_f1": 0.5492118199618926
+        },
+        "0.7": {
+          "precision": 0.7239473635786483,
+          "recall": 0.45225511740505986,
+          "rna_macro_exact_f1": 0.5233349235088032
+        },
+        "0.8": {
+          "precision": 0.7136934010912274,
+          "recall": 0.4125675722708523,
+          "rna_macro_exact_f1": 0.4880922470255175
+        },
+        "0.9": {
+          "precision": 0.6859095441970451,
+          "recall": 0.34774134690152436,
+          "rna_macro_exact_f1": 0.42348364648176173
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed23/budget10": {
+      "mode": "E0_no_thermo",
+      "seed": 23,
+      "budget": 10,
+      "epoch": 7,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed23/epoch7.pt",
+      "checkpoint_sha256": "051d882bc70524f83bf349e428d103e527e188d393590e5f011b239397393ea2",
+      "parameter_state_sha256": "bf02bb36d5baaf3f8ac090f03e88dd16f31c08c4a384e8b0d1f2fe13f0102d54",
+      "epochs_sha256": "8bd7fc7822ca028e785a2373367a4ada10fe032c2dd2dcc7bc9ecdc467d096c5",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6301113960306146,
+          "recall": 0.6228333164286778,
+          "rna_macro_exact_f1": 0.6134339260439969
+        },
+        "0.2": {
+          "precision": 0.6786112389556885,
+          "recall": 0.5789260236447239,
+          "rna_macro_exact_f1": 0.6042771600846116
+        },
+        "0.3": {
+          "precision": 0.6973745675678162,
+          "recall": 0.53954857377646,
+          "rna_macro_exact_f1": 0.583317769527878
+        },
+        "0.4": {
+          "precision": 0.7101367879505228,
+          "recall": 0.504772739691212,
+          "rna_macro_exact_f1": 0.5609248050184003
+        },
+        "0.5": {
+          "precision": 0.7171219131943345,
+          "recall": 0.46991485394943117,
+          "rna_macro_exact_f1": 0.5347755323158114
+        },
+        "0.6": {
+          "precision": 0.7148021113259356,
+          "recall": 0.43311768789601035,
+          "rna_macro_exact_f1": 0.5044595915757245
+        },
+        "0.7": {
+          "precision": 0.702061486873269,
+          "recall": 0.38620100909926897,
+          "rna_macro_exact_f1": 0.46197587929205963
+        },
+        "0.8": {
+          "precision": 0.6710128792576009,
+          "recall": 0.32489041986093625,
+          "rna_macro_exact_f1": 0.4018328692387466
+        },
+        "0.9": {
+          "precision": 0.5980367342882746,
+          "recall": 0.23737561354128842,
+          "rna_macro_exact_f1": 0.30558161538145595
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed23/budget20": {
+      "mode": "E0_no_thermo",
+      "seed": 23,
+      "budget": 20,
+      "epoch": 7,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed23/epoch7.pt",
+      "checkpoint_sha256": "051d882bc70524f83bf349e428d103e527e188d393590e5f011b239397393ea2",
+      "parameter_state_sha256": "bf02bb36d5baaf3f8ac090f03e88dd16f31c08c4a384e8b0d1f2fe13f0102d54",
+      "epochs_sha256": "8bd7fc7822ca028e785a2373367a4ada10fe032c2dd2dcc7bc9ecdc467d096c5",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6301113960306146,
+          "recall": 0.6228333164286778,
+          "rna_macro_exact_f1": 0.6134339260439969
+        },
+        "0.2": {
+          "precision": 0.6786112389556885,
+          "recall": 0.5789260236447239,
+          "rna_macro_exact_f1": 0.6042771600846116
+        },
+        "0.3": {
+          "precision": 0.6973745675678162,
+          "recall": 0.53954857377646,
+          "rna_macro_exact_f1": 0.583317769527878
+        },
+        "0.4": {
+          "precision": 0.7101367879505228,
+          "recall": 0.504772739691212,
+          "rna_macro_exact_f1": 0.5609248050184003
+        },
+        "0.5": {
+          "precision": 0.7171219131943345,
+          "recall": 0.46991485394943117,
+          "rna_macro_exact_f1": 0.5347755323158114
+        },
+        "0.6": {
+          "precision": 0.7148021113259356,
+          "recall": 0.43311768789601035,
+          "rna_macro_exact_f1": 0.5044595915757245
+        },
+        "0.7": {
+          "precision": 0.702061486873269,
+          "recall": 0.38620100909926897,
+          "rna_macro_exact_f1": 0.46197587929205963
+        },
+        "0.8": {
+          "precision": 0.6710128792576009,
+          "recall": 0.32489041986093625,
+          "rna_macro_exact_f1": 0.4018328692387466
+        },
+        "0.9": {
+          "precision": 0.5980367342882746,
+          "recall": 0.23737561354128842,
+          "rna_macro_exact_f1": 0.30558161538145595
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed23/budget30": {
+      "mode": "E0_no_thermo",
+      "seed": 23,
+      "budget": 30,
+      "epoch": 7,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed23/epoch7.pt",
+      "checkpoint_sha256": "051d882bc70524f83bf349e428d103e527e188d393590e5f011b239397393ea2",
+      "parameter_state_sha256": "bf02bb36d5baaf3f8ac090f03e88dd16f31c08c4a384e8b0d1f2fe13f0102d54",
+      "epochs_sha256": "8bd7fc7822ca028e785a2373367a4ada10fe032c2dd2dcc7bc9ecdc467d096c5",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6301113960306146,
+          "recall": 0.6228333164286778,
+          "rna_macro_exact_f1": 0.6134339260439969
+        },
+        "0.2": {
+          "precision": 0.6786112389556885,
+          "recall": 0.5789260236447239,
+          "rna_macro_exact_f1": 0.6042771600846116
+        },
+        "0.3": {
+          "precision": 0.6973745675678162,
+          "recall": 0.53954857377646,
+          "rna_macro_exact_f1": 0.583317769527878
+        },
+        "0.4": {
+          "precision": 0.7101367879505228,
+          "recall": 0.504772739691212,
+          "rna_macro_exact_f1": 0.5609248050184003
+        },
+        "0.5": {
+          "precision": 0.7171219131943345,
+          "recall": 0.46991485394943117,
+          "rna_macro_exact_f1": 0.5347755323158114
+        },
+        "0.6": {
+          "precision": 0.7148021113259356,
+          "recall": 0.43311768789601035,
+          "rna_macro_exact_f1": 0.5044595915757245
+        },
+        "0.7": {
+          "precision": 0.702061486873269,
+          "recall": 0.38620100909926897,
+          "rna_macro_exact_f1": 0.46197587929205963
+        },
+        "0.8": {
+          "precision": 0.6710128792576009,
+          "recall": 0.32489041986093625,
+          "rna_macro_exact_f1": 0.4018328692387466
+        },
+        "0.9": {
+          "precision": 0.5980367342882746,
+          "recall": 0.23737561354128842,
+          "rna_macro_exact_f1": 0.30558161538145595
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed23/budget40": {
+      "mode": "E0_no_thermo",
+      "seed": 23,
+      "budget": 40,
+      "epoch": 7,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed23/epoch7.pt",
+      "checkpoint_sha256": "051d882bc70524f83bf349e428d103e527e188d393590e5f011b239397393ea2",
+      "parameter_state_sha256": "bf02bb36d5baaf3f8ac090f03e88dd16f31c08c4a384e8b0d1f2fe13f0102d54",
+      "epochs_sha256": "8bd7fc7822ca028e785a2373367a4ada10fe032c2dd2dcc7bc9ecdc467d096c5",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6301113960306146,
+          "recall": 0.6228333164286778,
+          "rna_macro_exact_f1": 0.6134339260439969
+        },
+        "0.2": {
+          "precision": 0.6786112389556885,
+          "recall": 0.5789260236447239,
+          "rna_macro_exact_f1": 0.6042771600846116
+        },
+        "0.3": {
+          "precision": 0.6973745675678162,
+          "recall": 0.53954857377646,
+          "rna_macro_exact_f1": 0.583317769527878
+        },
+        "0.4": {
+          "precision": 0.7101367879505228,
+          "recall": 0.504772739691212,
+          "rna_macro_exact_f1": 0.5609248050184003
+        },
+        "0.5": {
+          "precision": 0.7171219131943345,
+          "recall": 0.46991485394943117,
+          "rna_macro_exact_f1": 0.5347755323158114
+        },
+        "0.6": {
+          "precision": 0.7148021113259356,
+          "recall": 0.43311768789601035,
+          "rna_macro_exact_f1": 0.5044595915757245
+        },
+        "0.7": {
+          "precision": 0.702061486873269,
+          "recall": 0.38620100909926897,
+          "rna_macro_exact_f1": 0.46197587929205963
+        },
+        "0.8": {
+          "precision": 0.6710128792576009,
+          "recall": 0.32489041986093625,
+          "rna_macro_exact_f1": 0.4018328692387466
+        },
+        "0.9": {
+          "precision": 0.5980367342882746,
+          "recall": 0.23737561354128842,
+          "rna_macro_exact_f1": 0.30558161538145595
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed23/budget50": {
+      "mode": "E0_no_thermo",
+      "seed": 23,
+      "budget": 50,
+      "epoch": 7,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed23/epoch7.pt",
+      "checkpoint_sha256": "051d882bc70524f83bf349e428d103e527e188d393590e5f011b239397393ea2",
+      "parameter_state_sha256": "bf02bb36d5baaf3f8ac090f03e88dd16f31c08c4a384e8b0d1f2fe13f0102d54",
+      "epochs_sha256": "8bd7fc7822ca028e785a2373367a4ada10fe032c2dd2dcc7bc9ecdc467d096c5",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6301113960306146,
+          "recall": 0.6228333164286778,
+          "rna_macro_exact_f1": 0.6134339260439969
+        },
+        "0.2": {
+          "precision": 0.6786112389556885,
+          "recall": 0.5789260236447239,
+          "rna_macro_exact_f1": 0.6042771600846116
+        },
+        "0.3": {
+          "precision": 0.6973745675678162,
+          "recall": 0.53954857377646,
+          "rna_macro_exact_f1": 0.583317769527878
+        },
+        "0.4": {
+          "precision": 0.7101367879505228,
+          "recall": 0.504772739691212,
+          "rna_macro_exact_f1": 0.5609248050184003
+        },
+        "0.5": {
+          "precision": 0.7171219131943345,
+          "recall": 0.46991485394943117,
+          "rna_macro_exact_f1": 0.5347755323158114
+        },
+        "0.6": {
+          "precision": 0.7148021113259356,
+          "recall": 0.43311768789601035,
+          "rna_macro_exact_f1": 0.5044595915757245
+        },
+        "0.7": {
+          "precision": 0.702061486873269,
+          "recall": 0.38620100909926897,
+          "rna_macro_exact_f1": 0.46197587929205963
+        },
+        "0.8": {
+          "precision": 0.6710128792576009,
+          "recall": 0.32489041986093625,
+          "rna_macro_exact_f1": 0.4018328692387466
+        },
+        "0.9": {
+          "precision": 0.5980367342882746,
+          "recall": 0.23737561354128842,
+          "rna_macro_exact_f1": 0.30558161538145595
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed41/budget10": {
+      "mode": "E0_no_thermo",
+      "seed": 41,
+      "budget": 10,
+      "epoch": 9,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed41/epoch9.pt",
+      "checkpoint_sha256": "81b7cec5760933648348eceeeebcdbf3dbfd02377d5314501c79c8d043a4ed94",
+      "parameter_state_sha256": "5ef38466acd5aeecb17b27fe7551084ee85f7139e9d998d94808d82dd6970458",
+      "epochs_sha256": "37e06544c22f537d82def0762abf826210e8516191a070d288846246e3852c7a",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.611079265756398,
+          "recall": 0.6355484419832412,
+          "rna_macro_exact_f1": 0.6116179410369272
+        },
+        "0.2": {
+          "precision": 0.6587528859904304,
+          "recall": 0.6032185335623536,
+          "rna_macro_exact_f1": 0.6138342209037018
+        },
+        "0.3": {
+          "precision": 0.6870946822040139,
+          "recall": 0.5745718903298556,
+          "rna_macro_exact_f1": 0.6046570131310817
+        },
+        "0.4": {
+          "precision": 0.7088291706986071,
+          "recall": 0.5477118663902037,
+          "rna_macro_exact_f1": 0.5916323161577979
+        },
+        "0.5": {
+          "precision": 0.7264333089312526,
+          "recall": 0.5178922547294758,
+          "rna_macro_exact_f1": 0.5729598101090845
+        },
+        "0.6": {
+          "precision": 0.7354054101204797,
+          "recall": 0.4854621096702412,
+          "rna_macro_exact_f1": 0.5491926969468518
+        },
+        "0.7": {
+          "precision": 0.7339551412639244,
+          "recall": 0.445838491211215,
+          "rna_macro_exact_f1": 0.5164423944151502
+        },
+        "0.8": {
+          "precision": 0.7169469719246669,
+          "recall": 0.39105103034612526,
+          "rna_macro_exact_f1": 0.46623060137418204
+        },
+        "0.9": {
+          "precision": 0.6615106423928876,
+          "recall": 0.3104312810208727,
+          "rna_macro_exact_f1": 0.3819433252972725
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed41/budget20": {
+      "mode": "E0_no_thermo",
+      "seed": 41,
+      "budget": 20,
+      "epoch": 13,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed41/epoch13.pt",
+      "checkpoint_sha256": "b6dd764b9c27b67dc83422d545f35f47a17ae193b84b387279d465d888800c42",
+      "parameter_state_sha256": "6a737a7b6d95ba09d5f420442a8522743f1135ab6ac729b5f03e2713da1904a8",
+      "epochs_sha256": "37e06544c22f537d82def0762abf826210e8516191a070d288846246e3852c7a",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.601281847080034,
+          "recall": 0.6437105950197246,
+          "rna_macro_exact_f1": 0.6109406413025249
+        },
+        "0.2": {
+          "precision": 0.6410104148189111,
+          "recall": 0.6170262799912561,
+          "rna_macro_exact_f1": 0.6165404926638751
+        },
+        "0.3": {
+          "precision": 0.6668384626180357,
+          "recall": 0.5912322404500405,
+          "rna_macro_exact_f1": 0.611549448330707
+        },
+        "0.4": {
+          "precision": 0.6884615748922288,
+          "recall": 0.5658185536008264,
+          "rna_macro_exact_f1": 0.6021244351768801
+        },
+        "0.5": {
+          "precision": 0.711397073893054,
+          "recall": 0.5405577004741972,
+          "rna_macro_exact_f1": 0.5905327833136833
+        },
+        "0.6": {
+          "precision": 0.7211382546685764,
+          "recall": 0.5118976061794659,
+          "rna_macro_exact_f1": 0.5730593496816899
+        },
+        "0.7": {
+          "precision": 0.7347529171373682,
+          "recall": 0.4778980973665842,
+          "rna_macro_exact_f1": 0.5491259598841415
+        },
+        "0.8": {
+          "precision": 0.7374634579867193,
+          "recall": 0.4328477622411449,
+          "rna_macro_exact_f1": 0.511909520428447
+        },
+        "0.9": {
+          "precision": 0.7193313871169438,
+          "recall": 0.3617690432980271,
+          "rna_macro_exact_f1": 0.4439192948517405
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed41/budget30": {
+      "mode": "E0_no_thermo",
+      "seed": 41,
+      "budget": 30,
+      "epoch": 13,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed41/epoch13.pt",
+      "checkpoint_sha256": "b6dd764b9c27b67dc83422d545f35f47a17ae193b84b387279d465d888800c42",
+      "parameter_state_sha256": "6a737a7b6d95ba09d5f420442a8522743f1135ab6ac729b5f03e2713da1904a8",
+      "epochs_sha256": "37e06544c22f537d82def0762abf826210e8516191a070d288846246e3852c7a",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.601281847080034,
+          "recall": 0.6437105950197246,
+          "rna_macro_exact_f1": 0.6109406413025249
+        },
+        "0.2": {
+          "precision": 0.6410104148189111,
+          "recall": 0.6170262799912561,
+          "rna_macro_exact_f1": 0.6165404926638751
+        },
+        "0.3": {
+          "precision": 0.6668384626180357,
+          "recall": 0.5912322404500405,
+          "rna_macro_exact_f1": 0.611549448330707
+        },
+        "0.4": {
+          "precision": 0.6884615748922288,
+          "recall": 0.5658185536008264,
+          "rna_macro_exact_f1": 0.6021244351768801
+        },
+        "0.5": {
+          "precision": 0.711397073893054,
+          "recall": 0.5405577004741972,
+          "rna_macro_exact_f1": 0.5905327833136833
+        },
+        "0.6": {
+          "precision": 0.7211382546685764,
+          "recall": 0.5118976061794659,
+          "rna_macro_exact_f1": 0.5730593496816899
+        },
+        "0.7": {
+          "precision": 0.7347529171373682,
+          "recall": 0.4778980973665842,
+          "rna_macro_exact_f1": 0.5491259598841415
+        },
+        "0.8": {
+          "precision": 0.7374634579867193,
+          "recall": 0.4328477622411449,
+          "rna_macro_exact_f1": 0.511909520428447
+        },
+        "0.9": {
+          "precision": 0.7193313871169438,
+          "recall": 0.3617690432980271,
+          "rna_macro_exact_f1": 0.4439192948517405
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed41/budget40": {
+      "mode": "E0_no_thermo",
+      "seed": 41,
+      "budget": 40,
+      "epoch": 13,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed41/epoch13.pt",
+      "checkpoint_sha256": "b6dd764b9c27b67dc83422d545f35f47a17ae193b84b387279d465d888800c42",
+      "parameter_state_sha256": "6a737a7b6d95ba09d5f420442a8522743f1135ab6ac729b5f03e2713da1904a8",
+      "epochs_sha256": "37e06544c22f537d82def0762abf826210e8516191a070d288846246e3852c7a",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.601281847080034,
+          "recall": 0.6437105950197246,
+          "rna_macro_exact_f1": 0.6109406413025249
+        },
+        "0.2": {
+          "precision": 0.6410104148189111,
+          "recall": 0.6170262799912561,
+          "rna_macro_exact_f1": 0.6165404926638751
+        },
+        "0.3": {
+          "precision": 0.6668384626180357,
+          "recall": 0.5912322404500405,
+          "rna_macro_exact_f1": 0.611549448330707
+        },
+        "0.4": {
+          "precision": 0.6884615748922288,
+          "recall": 0.5658185536008264,
+          "rna_macro_exact_f1": 0.6021244351768801
+        },
+        "0.5": {
+          "precision": 0.711397073893054,
+          "recall": 0.5405577004741972,
+          "rna_macro_exact_f1": 0.5905327833136833
+        },
+        "0.6": {
+          "precision": 0.7211382546685764,
+          "recall": 0.5118976061794659,
+          "rna_macro_exact_f1": 0.5730593496816899
+        },
+        "0.7": {
+          "precision": 0.7347529171373682,
+          "recall": 0.4778980973665842,
+          "rna_macro_exact_f1": 0.5491259598841415
+        },
+        "0.8": {
+          "precision": 0.7374634579867193,
+          "recall": 0.4328477622411449,
+          "rna_macro_exact_f1": 0.511909520428447
+        },
+        "0.9": {
+          "precision": 0.7193313871169438,
+          "recall": 0.3617690432980271,
+          "rna_macro_exact_f1": 0.4439192948517405
+        }
+      },
+      "threshold": 0.1
+    },
+    "E0_no_thermo/seed41/budget50": {
+      "mode": "E0_no_thermo",
+      "seed": 41,
+      "budget": 50,
+      "epoch": 13,
+      "checkpoint_path": "outputs/long_epochs/E0_no_thermo/seed41/epoch13.pt",
+      "checkpoint_sha256": "b6dd764b9c27b67dc83422d545f35f47a17ae193b84b387279d465d888800c42",
+      "parameter_state_sha256": "6a737a7b6d95ba09d5f420442a8522743f1135ab6ac729b5f03e2713da1904a8",
+      "epochs_sha256": "37e06544c22f537d82def0762abf826210e8516191a070d288846246e3852c7a",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.601281847080034,
+          "recall": 0.6437105950197246,
+          "rna_macro_exact_f1": 0.6109406413025249
+        },
+        "0.2": {
+          "precision": 0.6410104148189111,
+          "recall": 0.6170262799912561,
+          "rna_macro_exact_f1": 0.6165404926638751
+        },
+        "0.3": {
+          "precision": 0.6668384626180357,
+          "recall": 0.5912322404500405,
+          "rna_macro_exact_f1": 0.611549448330707
+        },
+        "0.4": {
+          "precision": 0.6884615748922288,
+          "recall": 0.5658185536008264,
+          "rna_macro_exact_f1": 0.6021244351768801
+        },
+        "0.5": {
+          "precision": 0.711397073893054,
+          "recall": 0.5405577004741972,
+          "rna_macro_exact_f1": 0.5905327833136833
+        },
+        "0.6": {
+          "precision": 0.7211382546685764,
+          "recall": 0.5118976061794659,
+          "rna_macro_exact_f1": 0.5730593496816899
+        },
+        "0.7": {
+          "precision": 0.7347529171373682,
+          "recall": 0.4778980973665842,
+          "rna_macro_exact_f1": 0.5491259598841415
+        },
+        "0.8": {
+          "precision": 0.7374634579867193,
+          "recall": 0.4328477622411449,
+          "rna_macro_exact_f1": 0.511909520428447
+        },
+        "0.9": {
+          "precision": 0.7193313871169438,
+          "recall": 0.3617690432980271,
+          "rna_macro_exact_f1": 0.4439192948517405
+        }
+      },
+      "threshold": 0.1
+    },
+    "E1_bpp/seed17/budget10": {
+      "mode": "E1_bpp",
+      "seed": 17,
+      "budget": 10,
+      "epoch": 9,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed17/epoch9.pt",
+      "checkpoint_sha256": "33e2069f2fccb2d26543f009438f167e7e22ee505967e2b07221f156466b8ba5",
+      "parameter_state_sha256": "926abe3c227638ccc2c1209cf0e0cbbd5bc03b2efe07d5642cca740d32e9e689",
+      "epochs_sha256": "cf061232981ed83807de19ece4769f50995e21c45e3e7cff492982431ea7a6bc",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6120331285137512,
+          "recall": 0.6957206757617987,
+          "rna_macro_exact_f1": 0.6398313879832978
+        },
+        "0.2": {
+          "precision": 0.6509016432931979,
+          "recall": 0.6699196759822905,
+          "rna_macro_exact_f1": 0.6488321125365472
+        },
+        "0.3": {
+          "precision": 0.6799662398441099,
+          "recall": 0.6434422820072574,
+          "rna_macro_exact_f1": 0.6476314266033667
+        },
+        "0.4": {
+          "precision": 0.7038089098654393,
+          "recall": 0.615462031396563,
+          "rna_macro_exact_f1": 0.6404462257613123
+        },
+        "0.5": {
+          "precision": 0.7218230880892843,
+          "recall": 0.5825633828038304,
+          "rna_macro_exact_f1": 0.6248108724442888
+        },
+        "0.6": {
+          "precision": 0.7413503101251963,
+          "recall": 0.5455832313713794,
+          "rna_macro_exact_f1": 0.6029785094364382
+        },
+        "0.7": {
+          "precision": 0.752015968102742,
+          "recall": 0.4973601609957527,
+          "rna_macro_exact_f1": 0.5667701171223942
+        },
+        "0.8": {
+          "precision": 0.7447812594895789,
+          "recall": 0.4338274606855369,
+          "rna_macro_exact_f1": 0.5101088963996969
+        },
+        "0.9": {
+          "precision": 0.6835698915931265,
+          "recall": 0.339152736854986,
+          "rna_macro_exact_f1": 0.4130749163953826
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed17/budget20": {
+      "mode": "E1_bpp",
+      "seed": 17,
+      "budget": 20,
+      "epoch": 9,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed17/epoch9.pt",
+      "checkpoint_sha256": "33e2069f2fccb2d26543f009438f167e7e22ee505967e2b07221f156466b8ba5",
+      "parameter_state_sha256": "926abe3c227638ccc2c1209cf0e0cbbd5bc03b2efe07d5642cca740d32e9e689",
+      "epochs_sha256": "cf061232981ed83807de19ece4769f50995e21c45e3e7cff492982431ea7a6bc",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6120331285137512,
+          "recall": 0.6957206757617987,
+          "rna_macro_exact_f1": 0.6398313879832978
+        },
+        "0.2": {
+          "precision": 0.6509016432931979,
+          "recall": 0.6699196759822905,
+          "rna_macro_exact_f1": 0.6488321125365472
+        },
+        "0.3": {
+          "precision": 0.6799662398441099,
+          "recall": 0.6434422820072574,
+          "rna_macro_exact_f1": 0.6476314266033667
+        },
+        "0.4": {
+          "precision": 0.7038089098654393,
+          "recall": 0.615462031396563,
+          "rna_macro_exact_f1": 0.6404462257613123
+        },
+        "0.5": {
+          "precision": 0.7218230880892843,
+          "recall": 0.5825633828038304,
+          "rna_macro_exact_f1": 0.6248108724442888
+        },
+        "0.6": {
+          "precision": 0.7413503101251963,
+          "recall": 0.5455832313713794,
+          "rna_macro_exact_f1": 0.6029785094364382
+        },
+        "0.7": {
+          "precision": 0.752015968102742,
+          "recall": 0.4973601609957527,
+          "rna_macro_exact_f1": 0.5667701171223942
+        },
+        "0.8": {
+          "precision": 0.7447812594895789,
+          "recall": 0.4338274606855369,
+          "rna_macro_exact_f1": 0.5101088963996969
+        },
+        "0.9": {
+          "precision": 0.6835698915931265,
+          "recall": 0.339152736854986,
+          "rna_macro_exact_f1": 0.4130749163953826
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed17/budget30": {
+      "mode": "E1_bpp",
+      "seed": 17,
+      "budget": 30,
+      "epoch": 9,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed17/epoch9.pt",
+      "checkpoint_sha256": "33e2069f2fccb2d26543f009438f167e7e22ee505967e2b07221f156466b8ba5",
+      "parameter_state_sha256": "926abe3c227638ccc2c1209cf0e0cbbd5bc03b2efe07d5642cca740d32e9e689",
+      "epochs_sha256": "cf061232981ed83807de19ece4769f50995e21c45e3e7cff492982431ea7a6bc",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6120331285137512,
+          "recall": 0.6957206757617987,
+          "rna_macro_exact_f1": 0.6398313879832978
+        },
+        "0.2": {
+          "precision": 0.6509016432931979,
+          "recall": 0.6699196759822905,
+          "rna_macro_exact_f1": 0.6488321125365472
+        },
+        "0.3": {
+          "precision": 0.6799662398441099,
+          "recall": 0.6434422820072574,
+          "rna_macro_exact_f1": 0.6476314266033667
+        },
+        "0.4": {
+          "precision": 0.7038089098654393,
+          "recall": 0.615462031396563,
+          "rna_macro_exact_f1": 0.6404462257613123
+        },
+        "0.5": {
+          "precision": 0.7218230880892843,
+          "recall": 0.5825633828038304,
+          "rna_macro_exact_f1": 0.6248108724442888
+        },
+        "0.6": {
+          "precision": 0.7413503101251963,
+          "recall": 0.5455832313713794,
+          "rna_macro_exact_f1": 0.6029785094364382
+        },
+        "0.7": {
+          "precision": 0.752015968102742,
+          "recall": 0.4973601609957527,
+          "rna_macro_exact_f1": 0.5667701171223942
+        },
+        "0.8": {
+          "precision": 0.7447812594895789,
+          "recall": 0.4338274606855369,
+          "rna_macro_exact_f1": 0.5101088963996969
+        },
+        "0.9": {
+          "precision": 0.6835698915931265,
+          "recall": 0.339152736854986,
+          "rna_macro_exact_f1": 0.4130749163953826
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed17/budget40": {
+      "mode": "E1_bpp",
+      "seed": 17,
+      "budget": 40,
+      "epoch": 9,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed17/epoch9.pt",
+      "checkpoint_sha256": "33e2069f2fccb2d26543f009438f167e7e22ee505967e2b07221f156466b8ba5",
+      "parameter_state_sha256": "926abe3c227638ccc2c1209cf0e0cbbd5bc03b2efe07d5642cca740d32e9e689",
+      "epochs_sha256": "cf061232981ed83807de19ece4769f50995e21c45e3e7cff492982431ea7a6bc",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6120331285137512,
+          "recall": 0.6957206757617987,
+          "rna_macro_exact_f1": 0.6398313879832978
+        },
+        "0.2": {
+          "precision": 0.6509016432931979,
+          "recall": 0.6699196759822905,
+          "rna_macro_exact_f1": 0.6488321125365472
+        },
+        "0.3": {
+          "precision": 0.6799662398441099,
+          "recall": 0.6434422820072574,
+          "rna_macro_exact_f1": 0.6476314266033667
+        },
+        "0.4": {
+          "precision": 0.7038089098654393,
+          "recall": 0.615462031396563,
+          "rna_macro_exact_f1": 0.6404462257613123
+        },
+        "0.5": {
+          "precision": 0.7218230880892843,
+          "recall": 0.5825633828038304,
+          "rna_macro_exact_f1": 0.6248108724442888
+        },
+        "0.6": {
+          "precision": 0.7413503101251963,
+          "recall": 0.5455832313713794,
+          "rna_macro_exact_f1": 0.6029785094364382
+        },
+        "0.7": {
+          "precision": 0.752015968102742,
+          "recall": 0.4973601609957527,
+          "rna_macro_exact_f1": 0.5667701171223942
+        },
+        "0.8": {
+          "precision": 0.7447812594895789,
+          "recall": 0.4338274606855369,
+          "rna_macro_exact_f1": 0.5101088963996969
+        },
+        "0.9": {
+          "precision": 0.6835698915931265,
+          "recall": 0.339152736854986,
+          "rna_macro_exact_f1": 0.4130749163953826
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed17/budget50": {
+      "mode": "E1_bpp",
+      "seed": 17,
+      "budget": 50,
+      "epoch": 9,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed17/epoch9.pt",
+      "checkpoint_sha256": "33e2069f2fccb2d26543f009438f167e7e22ee505967e2b07221f156466b8ba5",
+      "parameter_state_sha256": "926abe3c227638ccc2c1209cf0e0cbbd5bc03b2efe07d5642cca740d32e9e689",
+      "epochs_sha256": "cf061232981ed83807de19ece4769f50995e21c45e3e7cff492982431ea7a6bc",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6120331285137512,
+          "recall": 0.6957206757617987,
+          "rna_macro_exact_f1": 0.6398313879832978
+        },
+        "0.2": {
+          "precision": 0.6509016432931979,
+          "recall": 0.6699196759822905,
+          "rna_macro_exact_f1": 0.6488321125365472
+        },
+        "0.3": {
+          "precision": 0.6799662398441099,
+          "recall": 0.6434422820072574,
+          "rna_macro_exact_f1": 0.6476314266033667
+        },
+        "0.4": {
+          "precision": 0.7038089098654393,
+          "recall": 0.615462031396563,
+          "rna_macro_exact_f1": 0.6404462257613123
+        },
+        "0.5": {
+          "precision": 0.7218230880892843,
+          "recall": 0.5825633828038304,
+          "rna_macro_exact_f1": 0.6248108724442888
+        },
+        "0.6": {
+          "precision": 0.7413503101251963,
+          "recall": 0.5455832313713794,
+          "rna_macro_exact_f1": 0.6029785094364382
+        },
+        "0.7": {
+          "precision": 0.752015968102742,
+          "recall": 0.4973601609957527,
+          "rna_macro_exact_f1": 0.5667701171223942
+        },
+        "0.8": {
+          "precision": 0.7447812594895789,
+          "recall": 0.4338274606855369,
+          "rna_macro_exact_f1": 0.5101088963996969
+        },
+        "0.9": {
+          "precision": 0.6835698915931265,
+          "recall": 0.339152736854986,
+          "rna_macro_exact_f1": 0.4130749163953826
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed23/budget10": {
+      "mode": "E1_bpp",
+      "seed": 23,
+      "budget": 10,
+      "epoch": 10,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed23/epoch10.pt",
+      "checkpoint_sha256": "f9b1ad47cdb9aae6f91721631f01d597f26805920de3e8082e0e30b4d8f6424e",
+      "parameter_state_sha256": "999e8b0ab1b0d14c24482e7388e468e717d9fa697257a335c4ca2ca2f5259cfb",
+      "epochs_sha256": "1e9467f6c678dc0086a17f8994bcc81d27386c91295dc2f36411ff79238d125f",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6028838247698166,
+          "recall": 0.6934084043299812,
+          "rna_macro_exact_f1": 0.6339324441442848
+        },
+        "0.2": {
+          "precision": 0.6402101362154271,
+          "recall": 0.6710638930006732,
+          "rna_macro_exact_f1": 0.6440814583122415
+        },
+        "0.3": {
+          "precision": 0.6697508192418995,
+          "recall": 0.6462474084310019,
+          "rna_macro_exact_f1": 0.6451549261362138
+        },
+        "0.4": {
+          "precision": 0.6949101921903339,
+          "recall": 0.6187460145573616,
+          "rna_macro_exact_f1": 0.6394219745888355
+        },
+        "0.5": {
+          "precision": 0.7148617485009178,
+          "recall": 0.5836921085652113,
+          "rna_macro_exact_f1": 0.6244829868408699
+        },
+        "0.6": {
+          "precision": 0.7315726641808746,
+          "recall": 0.5435939892681422,
+          "rna_macro_exact_f1": 0.6003303143727416
+        },
+        "0.7": {
+          "precision": 0.7446830113718872,
+          "recall": 0.4956502208528944,
+          "rna_macro_exact_f1": 0.5649195291949427
+        },
+        "0.8": {
+          "precision": 0.7419056111749771,
+          "recall": 0.4324035794622375,
+          "rna_macro_exact_f1": 0.5097368949895741
+        },
+        "0.9": {
+          "precision": 0.6821896011012781,
+          "recall": 0.3385598009607054,
+          "rna_macro_exact_f1": 0.412362041302987
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed23/budget20": {
+      "mode": "E1_bpp",
+      "seed": 23,
+      "budget": 20,
+      "epoch": 15,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed23/epoch15.pt",
+      "checkpoint_sha256": "f7955327345754365975bfeaa37e75c662b1036e63e488f551b5cc1663ddda85",
+      "parameter_state_sha256": "d87a32bb8a440ef9dc0405b42a800475642fa8ca196b9b0671f86779e7890e24",
+      "epochs_sha256": "1e9467f6c678dc0086a17f8994bcc81d27386c91295dc2f36411ff79238d125f",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6253827416452885,
+          "recall": 0.6817830508019339,
+          "rna_macro_exact_f1": 0.6420674699408284
+        },
+        "0.2": {
+          "precision": 0.6610545177728991,
+          "recall": 0.6569916532773509,
+          "rna_macro_exact_f1": 0.6478913565346329
+        },
+        "0.3": {
+          "precision": 0.6865094597872284,
+          "recall": 0.6324529467455707,
+          "rna_macro_exact_f1": 0.6455167189698161
+        },
+        "0.4": {
+          "precision": 0.7046488918055166,
+          "recall": 0.6056985251784183,
+          "rna_macro_exact_f1": 0.636304667257114
+        },
+        "0.5": {
+          "precision": 0.7202861452706043,
+          "recall": 0.5774744182096387,
+          "rna_macro_exact_f1": 0.6224484402331995
+        },
+        "0.6": {
+          "precision": 0.7312864406683339,
+          "recall": 0.5467908144793344,
+          "rna_macro_exact_f1": 0.603689176280497
+        },
+        "0.7": {
+          "precision": 0.7445878996575244,
+          "recall": 0.5098341193100978,
+          "rna_macro_exact_f1": 0.5775072787974722
+        },
+        "0.8": {
+          "precision": 0.7557773323025156,
+          "recall": 0.46174042247806824,
+          "rna_macro_exact_f1": 0.538419507597693
+        },
+        "0.9": {
+          "precision": 0.7335218153505041,
+          "recall": 0.3867335077626475,
+          "rna_macro_exact_f1": 0.4676605014395351
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed23/budget30": {
+      "mode": "E1_bpp",
+      "seed": 23,
+      "budget": 30,
+      "epoch": 15,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed23/epoch15.pt",
+      "checkpoint_sha256": "f7955327345754365975bfeaa37e75c662b1036e63e488f551b5cc1663ddda85",
+      "parameter_state_sha256": "d87a32bb8a440ef9dc0405b42a800475642fa8ca196b9b0671f86779e7890e24",
+      "epochs_sha256": "1e9467f6c678dc0086a17f8994bcc81d27386c91295dc2f36411ff79238d125f",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6253827416452885,
+          "recall": 0.6817830508019339,
+          "rna_macro_exact_f1": 0.6420674699408284
+        },
+        "0.2": {
+          "precision": 0.6610545177728991,
+          "recall": 0.6569916532773509,
+          "rna_macro_exact_f1": 0.6478913565346329
+        },
+        "0.3": {
+          "precision": 0.6865094597872284,
+          "recall": 0.6324529467455707,
+          "rna_macro_exact_f1": 0.6455167189698161
+        },
+        "0.4": {
+          "precision": 0.7046488918055166,
+          "recall": 0.6056985251784183,
+          "rna_macro_exact_f1": 0.636304667257114
+        },
+        "0.5": {
+          "precision": 0.7202861452706043,
+          "recall": 0.5774744182096387,
+          "rna_macro_exact_f1": 0.6224484402331995
+        },
+        "0.6": {
+          "precision": 0.7312864406683339,
+          "recall": 0.5467908144793344,
+          "rna_macro_exact_f1": 0.603689176280497
+        },
+        "0.7": {
+          "precision": 0.7445878996575244,
+          "recall": 0.5098341193100978,
+          "rna_macro_exact_f1": 0.5775072787974722
+        },
+        "0.8": {
+          "precision": 0.7557773323025156,
+          "recall": 0.46174042247806824,
+          "rna_macro_exact_f1": 0.538419507597693
+        },
+        "0.9": {
+          "precision": 0.7335218153505041,
+          "recall": 0.3867335077626475,
+          "rna_macro_exact_f1": 0.4676605014395351
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed23/budget40": {
+      "mode": "E1_bpp",
+      "seed": 23,
+      "budget": 40,
+      "epoch": 15,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed23/epoch15.pt",
+      "checkpoint_sha256": "f7955327345754365975bfeaa37e75c662b1036e63e488f551b5cc1663ddda85",
+      "parameter_state_sha256": "d87a32bb8a440ef9dc0405b42a800475642fa8ca196b9b0671f86779e7890e24",
+      "epochs_sha256": "1e9467f6c678dc0086a17f8994bcc81d27386c91295dc2f36411ff79238d125f",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6253827416452885,
+          "recall": 0.6817830508019339,
+          "rna_macro_exact_f1": 0.6420674699408284
+        },
+        "0.2": {
+          "precision": 0.6610545177728991,
+          "recall": 0.6569916532773509,
+          "rna_macro_exact_f1": 0.6478913565346329
+        },
+        "0.3": {
+          "precision": 0.6865094597872284,
+          "recall": 0.6324529467455707,
+          "rna_macro_exact_f1": 0.6455167189698161
+        },
+        "0.4": {
+          "precision": 0.7046488918055166,
+          "recall": 0.6056985251784183,
+          "rna_macro_exact_f1": 0.636304667257114
+        },
+        "0.5": {
+          "precision": 0.7202861452706043,
+          "recall": 0.5774744182096387,
+          "rna_macro_exact_f1": 0.6224484402331995
+        },
+        "0.6": {
+          "precision": 0.7312864406683339,
+          "recall": 0.5467908144793344,
+          "rna_macro_exact_f1": 0.603689176280497
+        },
+        "0.7": {
+          "precision": 0.7445878996575244,
+          "recall": 0.5098341193100978,
+          "rna_macro_exact_f1": 0.5775072787974722
+        },
+        "0.8": {
+          "precision": 0.7557773323025156,
+          "recall": 0.46174042247806824,
+          "rna_macro_exact_f1": 0.538419507597693
+        },
+        "0.9": {
+          "precision": 0.7335218153505041,
+          "recall": 0.3867335077626475,
+          "rna_macro_exact_f1": 0.4676605014395351
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed23/budget50": {
+      "mode": "E1_bpp",
+      "seed": 23,
+      "budget": 50,
+      "epoch": 15,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed23/epoch15.pt",
+      "checkpoint_sha256": "f7955327345754365975bfeaa37e75c662b1036e63e488f551b5cc1663ddda85",
+      "parameter_state_sha256": "d87a32bb8a440ef9dc0405b42a800475642fa8ca196b9b0671f86779e7890e24",
+      "epochs_sha256": "1e9467f6c678dc0086a17f8994bcc81d27386c91295dc2f36411ff79238d125f",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6253827416452885,
+          "recall": 0.6817830508019339,
+          "rna_macro_exact_f1": 0.6420674699408284
+        },
+        "0.2": {
+          "precision": 0.6610545177728991,
+          "recall": 0.6569916532773509,
+          "rna_macro_exact_f1": 0.6478913565346329
+        },
+        "0.3": {
+          "precision": 0.6865094597872284,
+          "recall": 0.6324529467455707,
+          "rna_macro_exact_f1": 0.6455167189698161
+        },
+        "0.4": {
+          "precision": 0.7046488918055166,
+          "recall": 0.6056985251784183,
+          "rna_macro_exact_f1": 0.636304667257114
+        },
+        "0.5": {
+          "precision": 0.7202861452706043,
+          "recall": 0.5774744182096387,
+          "rna_macro_exact_f1": 0.6224484402331995
+        },
+        "0.6": {
+          "precision": 0.7312864406683339,
+          "recall": 0.5467908144793344,
+          "rna_macro_exact_f1": 0.603689176280497
+        },
+        "0.7": {
+          "precision": 0.7445878996575244,
+          "recall": 0.5098341193100978,
+          "rna_macro_exact_f1": 0.5775072787974722
+        },
+        "0.8": {
+          "precision": 0.7557773323025156,
+          "recall": 0.46174042247806824,
+          "rna_macro_exact_f1": 0.538419507597693
+        },
+        "0.9": {
+          "precision": 0.7335218153505041,
+          "recall": 0.3867335077626475,
+          "rna_macro_exact_f1": 0.4676605014395351
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed41/budget10": {
+      "mode": "E1_bpp",
+      "seed": 41,
+      "budget": 10,
+      "epoch": 10,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed41/epoch10.pt",
+      "checkpoint_sha256": "89a0df6f843e15b429a28d3d91431367ca49cf7ffe1a0f15a7da53035a8f67cc",
+      "parameter_state_sha256": "e7635bfae065fbca8f34ca34d668d80cdc5edad4b71fc27bac9e25500bddea8a",
+      "epochs_sha256": "226cb396b96feb58c2ac6f70f19c8f79e5ce95834ddf3795f2529310a782ad66",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6183767847211767,
+          "recall": 0.690926794226302,
+          "rna_macro_exact_f1": 0.641542221043289
+        },
+        "0.2": {
+          "precision": 0.6583374204307204,
+          "recall": 0.6628481192779776,
+          "rna_macro_exact_f1": 0.6486045624375076
+        },
+        "0.3": {
+          "precision": 0.6841198174404294,
+          "recall": 0.6349497400286085,
+          "rna_macro_exact_f1": 0.6441976611452552
+        },
+        "0.4": {
+          "precision": 0.703888627653405,
+          "recall": 0.6047088534241637,
+          "rna_macro_exact_f1": 0.632936562703138
+        },
+        "0.5": {
+          "precision": 0.7221015983227294,
+          "recall": 0.5687201790266712,
+          "rna_macro_exact_f1": 0.6139052485626421
+        },
+        "0.6": {
+          "precision": 0.7374022797735683,
+          "recall": 0.528459131543613,
+          "rna_macro_exact_f1": 0.587306031224067
+        },
+        "0.7": {
+          "precision": 0.7443188940664718,
+          "recall": 0.4797149293795306,
+          "rna_macro_exact_f1": 0.5493516209060468
+        },
+        "0.8": {
+          "precision": 0.7342456498292217,
+          "recall": 0.4192883249864703,
+          "rna_macro_exact_f1": 0.4939496100086807
+        },
+        "0.9": {
+          "precision": 0.674238265070769,
+          "recall": 0.33929811663154813,
+          "rna_macro_exact_f1": 0.4100627577950822
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed41/budget20": {
+      "mode": "E1_bpp",
+      "seed": 41,
+      "budget": 20,
+      "epoch": 10,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed41/epoch10.pt",
+      "checkpoint_sha256": "89a0df6f843e15b429a28d3d91431367ca49cf7ffe1a0f15a7da53035a8f67cc",
+      "parameter_state_sha256": "e7635bfae065fbca8f34ca34d668d80cdc5edad4b71fc27bac9e25500bddea8a",
+      "epochs_sha256": "226cb396b96feb58c2ac6f70f19c8f79e5ce95834ddf3795f2529310a782ad66",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6183767847211767,
+          "recall": 0.690926794226302,
+          "rna_macro_exact_f1": 0.641542221043289
+        },
+        "0.2": {
+          "precision": 0.6583374204307204,
+          "recall": 0.6628481192779776,
+          "rna_macro_exact_f1": 0.6486045624375076
+        },
+        "0.3": {
+          "precision": 0.6841198174404294,
+          "recall": 0.6349497400286085,
+          "rna_macro_exact_f1": 0.6441976611452552
+        },
+        "0.4": {
+          "precision": 0.703888627653405,
+          "recall": 0.6047088534241637,
+          "rna_macro_exact_f1": 0.632936562703138
+        },
+        "0.5": {
+          "precision": 0.7221015983227294,
+          "recall": 0.5687201790266712,
+          "rna_macro_exact_f1": 0.6139052485626421
+        },
+        "0.6": {
+          "precision": 0.7374022797735683,
+          "recall": 0.528459131543613,
+          "rna_macro_exact_f1": 0.587306031224067
+        },
+        "0.7": {
+          "precision": 0.7443188940664718,
+          "recall": 0.4797149293795306,
+          "rna_macro_exact_f1": 0.5493516209060468
+        },
+        "0.8": {
+          "precision": 0.7342456498292217,
+          "recall": 0.4192883249864703,
+          "rna_macro_exact_f1": 0.4939496100086807
+        },
+        "0.9": {
+          "precision": 0.674238265070769,
+          "recall": 0.33929811663154813,
+          "rna_macro_exact_f1": 0.4100627577950822
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed41/budget30": {
+      "mode": "E1_bpp",
+      "seed": 41,
+      "budget": 30,
+      "epoch": 10,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed41/epoch10.pt",
+      "checkpoint_sha256": "89a0df6f843e15b429a28d3d91431367ca49cf7ffe1a0f15a7da53035a8f67cc",
+      "parameter_state_sha256": "e7635bfae065fbca8f34ca34d668d80cdc5edad4b71fc27bac9e25500bddea8a",
+      "epochs_sha256": "226cb396b96feb58c2ac6f70f19c8f79e5ce95834ddf3795f2529310a782ad66",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6183767847211767,
+          "recall": 0.690926794226302,
+          "rna_macro_exact_f1": 0.641542221043289
+        },
+        "0.2": {
+          "precision": 0.6583374204307204,
+          "recall": 0.6628481192779776,
+          "rna_macro_exact_f1": 0.6486045624375076
+        },
+        "0.3": {
+          "precision": 0.6841198174404294,
+          "recall": 0.6349497400286085,
+          "rna_macro_exact_f1": 0.6441976611452552
+        },
+        "0.4": {
+          "precision": 0.703888627653405,
+          "recall": 0.6047088534241637,
+          "rna_macro_exact_f1": 0.632936562703138
+        },
+        "0.5": {
+          "precision": 0.7221015983227294,
+          "recall": 0.5687201790266712,
+          "rna_macro_exact_f1": 0.6139052485626421
+        },
+        "0.6": {
+          "precision": 0.7374022797735683,
+          "recall": 0.528459131543613,
+          "rna_macro_exact_f1": 0.587306031224067
+        },
+        "0.7": {
+          "precision": 0.7443188940664718,
+          "recall": 0.4797149293795306,
+          "rna_macro_exact_f1": 0.5493516209060468
+        },
+        "0.8": {
+          "precision": 0.7342456498292217,
+          "recall": 0.4192883249864703,
+          "rna_macro_exact_f1": 0.4939496100086807
+        },
+        "0.9": {
+          "precision": 0.674238265070769,
+          "recall": 0.33929811663154813,
+          "rna_macro_exact_f1": 0.4100627577950822
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed41/budget40": {
+      "mode": "E1_bpp",
+      "seed": 41,
+      "budget": 40,
+      "epoch": 10,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed41/epoch10.pt",
+      "checkpoint_sha256": "89a0df6f843e15b429a28d3d91431367ca49cf7ffe1a0f15a7da53035a8f67cc",
+      "parameter_state_sha256": "e7635bfae065fbca8f34ca34d668d80cdc5edad4b71fc27bac9e25500bddea8a",
+      "epochs_sha256": "226cb396b96feb58c2ac6f70f19c8f79e5ce95834ddf3795f2529310a782ad66",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6183767847211767,
+          "recall": 0.690926794226302,
+          "rna_macro_exact_f1": 0.641542221043289
+        },
+        "0.2": {
+          "precision": 0.6583374204307204,
+          "recall": 0.6628481192779776,
+          "rna_macro_exact_f1": 0.6486045624375076
+        },
+        "0.3": {
+          "precision": 0.6841198174404294,
+          "recall": 0.6349497400286085,
+          "rna_macro_exact_f1": 0.6441976611452552
+        },
+        "0.4": {
+          "precision": 0.703888627653405,
+          "recall": 0.6047088534241637,
+          "rna_macro_exact_f1": 0.632936562703138
+        },
+        "0.5": {
+          "precision": 0.7221015983227294,
+          "recall": 0.5687201790266712,
+          "rna_macro_exact_f1": 0.6139052485626421
+        },
+        "0.6": {
+          "precision": 0.7374022797735683,
+          "recall": 0.528459131543613,
+          "rna_macro_exact_f1": 0.587306031224067
+        },
+        "0.7": {
+          "precision": 0.7443188940664718,
+          "recall": 0.4797149293795306,
+          "rna_macro_exact_f1": 0.5493516209060468
+        },
+        "0.8": {
+          "precision": 0.7342456498292217,
+          "recall": 0.4192883249864703,
+          "rna_macro_exact_f1": 0.4939496100086807
+        },
+        "0.9": {
+          "precision": 0.674238265070769,
+          "recall": 0.33929811663154813,
+          "rna_macro_exact_f1": 0.4100627577950822
+        }
+      },
+      "threshold": 0.2
+    },
+    "E1_bpp/seed41/budget50": {
+      "mode": "E1_bpp",
+      "seed": 41,
+      "budget": 50,
+      "epoch": 10,
+      "checkpoint_path": "outputs/long_epochs/E1_bpp/seed41/epoch10.pt",
+      "checkpoint_sha256": "89a0df6f843e15b429a28d3d91431367ca49cf7ffe1a0f15a7da53035a8f67cc",
+      "parameter_state_sha256": "e7635bfae065fbca8f34ca34d668d80cdc5edad4b71fc27bac9e25500bddea8a",
+      "epochs_sha256": "226cb396b96feb58c2ac6f70f19c8f79e5ce95834ddf3795f2529310a782ad66",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6183767847211767,
+          "recall": 0.690926794226302,
+          "rna_macro_exact_f1": 0.641542221043289
+        },
+        "0.2": {
+          "precision": 0.6583374204307204,
+          "recall": 0.6628481192779776,
+          "rna_macro_exact_f1": 0.6486045624375076
+        },
+        "0.3": {
+          "precision": 0.6841198174404294,
+          "recall": 0.6349497400286085,
+          "rna_macro_exact_f1": 0.6441976611452552
+        },
+        "0.4": {
+          "precision": 0.703888627653405,
+          "recall": 0.6047088534241637,
+          "rna_macro_exact_f1": 0.632936562703138
+        },
+        "0.5": {
+          "precision": 0.7221015983227294,
+          "recall": 0.5687201790266712,
+          "rna_macro_exact_f1": 0.6139052485626421
+        },
+        "0.6": {
+          "precision": 0.7374022797735683,
+          "recall": 0.528459131543613,
+          "rna_macro_exact_f1": 0.587306031224067
+        },
+        "0.7": {
+          "precision": 0.7443188940664718,
+          "recall": 0.4797149293795306,
+          "rna_macro_exact_f1": 0.5493516209060468
+        },
+        "0.8": {
+          "precision": 0.7342456498292217,
+          "recall": 0.4192883249864703,
+          "rna_macro_exact_f1": 0.4939496100086807
+        },
+        "0.9": {
+          "precision": 0.674238265070769,
+          "recall": 0.33929811663154813,
+          "rna_macro_exact_f1": 0.4100627577950822
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed17/budget10": {
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "budget": 10,
+      "epoch": 9,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed17/epoch9.pt",
+      "checkpoint_sha256": "fd0fbd8ddd898a3062fa2c87f0c6090028516cf0bb990ceeab2468cbf6dc598c",
+      "parameter_state_sha256": "fa2565c73d32fc8ceb549ec5448c4233a7022a3a8d3522219316cfc3a3eb96a2",
+      "epochs_sha256": "cd71d2244bfcc623cfb21418948cc5fa87bd89da01e5c33da9189b1d0fc1cdac",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.601698464964958,
+          "recall": 0.6973192483119568,
+          "rna_macro_exact_f1": 0.6344414594003406
+        },
+        "0.2": {
+          "precision": 0.6416528879260839,
+          "recall": 0.6729376731454049,
+          "rna_macro_exact_f1": 0.6453719406467524
+        },
+        "0.3": {
+          "precision": 0.670811649644304,
+          "recall": 0.6493265411736674,
+          "rna_macro_exact_f1": 0.6460852710352477
+        },
+        "0.4": {
+          "precision": 0.6951295699468494,
+          "recall": 0.6212301655666878,
+          "rna_macro_exact_f1": 0.6395887538347255
+        },
+        "0.5": {
+          "precision": 0.7141547340096563,
+          "recall": 0.5899667650533431,
+          "rna_macro_exact_f1": 0.6255479004983879
+        },
+        "0.6": {
+          "precision": 0.7277676261113267,
+          "recall": 0.5514864298262433,
+          "rna_macro_exact_f1": 0.6022847560058472
+        },
+        "0.7": {
+          "precision": 0.743843957687236,
+          "recall": 0.5047279233993853,
+          "rna_macro_exact_f1": 0.5687376267487823
+        },
+        "0.8": {
+          "precision": 0.7304682514815356,
+          "recall": 0.4433357563915856,
+          "rna_macro_exact_f1": 0.5156643686465251
+        },
+        "0.9": {
+          "precision": 0.6842549745481789,
+          "recall": 0.35101075446383123,
+          "rna_macro_exact_f1": 0.42531998767334317
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed17/budget20": {
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "budget": 20,
+      "epoch": 16,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed17/epoch16.pt",
+      "checkpoint_sha256": "9f250ea4dcbb788087f7aa3654bfde24d68a569a9e2097b1023d21c024c8cfdc",
+      "parameter_state_sha256": "a64503f3c4cd014f1f1343cf4fcc7943568e17988101487735df0c078e875c79",
+      "epochs_sha256": "cd71d2244bfcc623cfb21418948cc5fa87bd89da01e5c33da9189b1d0fc1cdac",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6357145671087561,
+          "recall": 0.6742668306654058,
+          "rna_macro_exact_f1": 0.643517740836715
+        },
+        "0.2": {
+          "precision": 0.6705307791415691,
+          "recall": 0.6464992194235355,
+          "rna_macro_exact_f1": 0.6466034046145146
+        },
+        "0.3": {
+          "precision": 0.6944094954318322,
+          "recall": 0.6206752367114755,
+          "rna_macro_exact_f1": 0.6410730626646696
+        },
+        "0.4": {
+          "precision": 0.7101039422771978,
+          "recall": 0.5927333754246011,
+          "rna_macro_exact_f1": 0.6290835029806737
+        },
+        "0.5": {
+          "precision": 0.7282632920441289,
+          "recall": 0.5636016097857466,
+          "rna_macro_exact_f1": 0.6142535632643792
+        },
+        "0.6": {
+          "precision": 0.7409644807442718,
+          "recall": 0.5302477440341772,
+          "rna_macro_exact_f1": 0.5934181066109175
+        },
+        "0.7": {
+          "precision": 0.7485949808150069,
+          "recall": 0.4886582988682645,
+          "rna_macro_exact_f1": 0.5614463753815173
+        },
+        "0.8": {
+          "precision": 0.737532252167359,
+          "recall": 0.43224823007223323,
+          "rna_macro_exact_f1": 0.5110575644547546
+        },
+        "0.9": {
+          "precision": 0.709644215854343,
+          "recall": 0.3568758762962366,
+          "rna_macro_exact_f1": 0.43758418083522704
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed17/budget30": {
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "budget": 30,
+      "epoch": 16,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed17/epoch16.pt",
+      "checkpoint_sha256": "9f250ea4dcbb788087f7aa3654bfde24d68a569a9e2097b1023d21c024c8cfdc",
+      "parameter_state_sha256": "a64503f3c4cd014f1f1343cf4fcc7943568e17988101487735df0c078e875c79",
+      "epochs_sha256": "cd71d2244bfcc623cfb21418948cc5fa87bd89da01e5c33da9189b1d0fc1cdac",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6357145671087561,
+          "recall": 0.6742668306654058,
+          "rna_macro_exact_f1": 0.643517740836715
+        },
+        "0.2": {
+          "precision": 0.6705307791415691,
+          "recall": 0.6464992194235355,
+          "rna_macro_exact_f1": 0.6466034046145146
+        },
+        "0.3": {
+          "precision": 0.6944094954318322,
+          "recall": 0.6206752367114755,
+          "rna_macro_exact_f1": 0.6410730626646696
+        },
+        "0.4": {
+          "precision": 0.7101039422771978,
+          "recall": 0.5927333754246011,
+          "rna_macro_exact_f1": 0.6290835029806737
+        },
+        "0.5": {
+          "precision": 0.7282632920441289,
+          "recall": 0.5636016097857466,
+          "rna_macro_exact_f1": 0.6142535632643792
+        },
+        "0.6": {
+          "precision": 0.7409644807442718,
+          "recall": 0.5302477440341772,
+          "rna_macro_exact_f1": 0.5934181066109175
+        },
+        "0.7": {
+          "precision": 0.7485949808150069,
+          "recall": 0.4886582988682645,
+          "rna_macro_exact_f1": 0.5614463753815173
+        },
+        "0.8": {
+          "precision": 0.737532252167359,
+          "recall": 0.43224823007223323,
+          "rna_macro_exact_f1": 0.5110575644547546
+        },
+        "0.9": {
+          "precision": 0.709644215854343,
+          "recall": 0.3568758762962366,
+          "rna_macro_exact_f1": 0.43758418083522704
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed17/budget40": {
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "budget": 40,
+      "epoch": 16,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed17/epoch16.pt",
+      "checkpoint_sha256": "9f250ea4dcbb788087f7aa3654bfde24d68a569a9e2097b1023d21c024c8cfdc",
+      "parameter_state_sha256": "a64503f3c4cd014f1f1343cf4fcc7943568e17988101487735df0c078e875c79",
+      "epochs_sha256": "cd71d2244bfcc623cfb21418948cc5fa87bd89da01e5c33da9189b1d0fc1cdac",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6357145671087561,
+          "recall": 0.6742668306654058,
+          "rna_macro_exact_f1": 0.643517740836715
+        },
+        "0.2": {
+          "precision": 0.6705307791415691,
+          "recall": 0.6464992194235355,
+          "rna_macro_exact_f1": 0.6466034046145146
+        },
+        "0.3": {
+          "precision": 0.6944094954318322,
+          "recall": 0.6206752367114755,
+          "rna_macro_exact_f1": 0.6410730626646696
+        },
+        "0.4": {
+          "precision": 0.7101039422771978,
+          "recall": 0.5927333754246011,
+          "rna_macro_exact_f1": 0.6290835029806737
+        },
+        "0.5": {
+          "precision": 0.7282632920441289,
+          "recall": 0.5636016097857466,
+          "rna_macro_exact_f1": 0.6142535632643792
+        },
+        "0.6": {
+          "precision": 0.7409644807442718,
+          "recall": 0.5302477440341772,
+          "rna_macro_exact_f1": 0.5934181066109175
+        },
+        "0.7": {
+          "precision": 0.7485949808150069,
+          "recall": 0.4886582988682645,
+          "rna_macro_exact_f1": 0.5614463753815173
+        },
+        "0.8": {
+          "precision": 0.737532252167359,
+          "recall": 0.43224823007223323,
+          "rna_macro_exact_f1": 0.5110575644547546
+        },
+        "0.9": {
+          "precision": 0.709644215854343,
+          "recall": 0.3568758762962366,
+          "rna_macro_exact_f1": 0.43758418083522704
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed17/budget50": {
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "budget": 50,
+      "epoch": 16,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed17/epoch16.pt",
+      "checkpoint_sha256": "9f250ea4dcbb788087f7aa3654bfde24d68a569a9e2097b1023d21c024c8cfdc",
+      "parameter_state_sha256": "a64503f3c4cd014f1f1343cf4fcc7943568e17988101487735df0c078e875c79",
+      "epochs_sha256": "cd71d2244bfcc623cfb21418948cc5fa87bd89da01e5c33da9189b1d0fc1cdac",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6357145671087561,
+          "recall": 0.6742668306654058,
+          "rna_macro_exact_f1": 0.643517740836715
+        },
+        "0.2": {
+          "precision": 0.6705307791415691,
+          "recall": 0.6464992194235355,
+          "rna_macro_exact_f1": 0.6466034046145146
+        },
+        "0.3": {
+          "precision": 0.6944094954318322,
+          "recall": 0.6206752367114755,
+          "rna_macro_exact_f1": 0.6410730626646696
+        },
+        "0.4": {
+          "precision": 0.7101039422771978,
+          "recall": 0.5927333754246011,
+          "rna_macro_exact_f1": 0.6290835029806737
+        },
+        "0.5": {
+          "precision": 0.7282632920441289,
+          "recall": 0.5636016097857466,
+          "rna_macro_exact_f1": 0.6142535632643792
+        },
+        "0.6": {
+          "precision": 0.7409644807442718,
+          "recall": 0.5302477440341772,
+          "rna_macro_exact_f1": 0.5934181066109175
+        },
+        "0.7": {
+          "precision": 0.7485949808150069,
+          "recall": 0.4886582988682645,
+          "rna_macro_exact_f1": 0.5614463753815173
+        },
+        "0.8": {
+          "precision": 0.737532252167359,
+          "recall": 0.43224823007223323,
+          "rna_macro_exact_f1": 0.5110575644547546
+        },
+        "0.9": {
+          "precision": 0.709644215854343,
+          "recall": 0.3568758762962366,
+          "rna_macro_exact_f1": 0.43758418083522704
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed23/budget10": {
+      "mode": "E2_bpp_stack",
+      "seed": 23,
+      "budget": 10,
+      "epoch": 6,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed23/epoch6.pt",
+      "checkpoint_sha256": "b821307651bc958daea7c72a13c5c4b74ed3cd8b0fb9aaf84e02b621f654d474",
+      "parameter_state_sha256": "331798e93b0e5c3945de1a4d53857546d8b351ef4c3c4f312aa0c76f45d9929a",
+      "epochs_sha256": "f6e1d8b56f2c485ca6f53acd0d26a11fa3a2ed0c2d81f911df1e50fb37ea529b",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.5984720957319777,
+          "recall": 0.6948441523026738,
+          "rna_macro_exact_f1": 0.6318293019399636
+        },
+        "0.2": {
+          "precision": 0.6455594155677061,
+          "recall": 0.6677376045096055,
+          "rna_macro_exact_f1": 0.6452469735459561
+        },
+        "0.3": {
+          "precision": 0.6786608534390108,
+          "recall": 0.6376965861211812,
+          "rna_macro_exact_f1": 0.6441365223852606
+        },
+        "0.4": {
+          "precision": 0.7048309099979104,
+          "recall": 0.6042489318620027,
+          "rna_macro_exact_f1": 0.6333114647057742
+        },
+        "0.5": {
+          "precision": 0.7246426713964154,
+          "recall": 0.5618841722280411,
+          "rna_macro_exact_f1": 0.6108942301512623
+        },
+        "0.6": {
+          "precision": 0.7415239481848082,
+          "recall": 0.5131148786361126,
+          "rna_macro_exact_f1": 0.5790936466633094
+        },
+        "0.7": {
+          "precision": 0.7478913262796112,
+          "recall": 0.45373560218359493,
+          "rna_macro_exact_f1": 0.5317492647965445
+        },
+        "0.8": {
+          "precision": 0.7212183016393718,
+          "recall": 0.3721890103296097,
+          "rna_macro_exact_f1": 0.45303640204819307
+        },
+        "0.9": {
+          "precision": 0.612631342683155,
+          "recall": 0.26113693650517367,
+          "rna_macro_exact_f1": 0.3275022482768139
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed23/budget20": {
+      "mode": "E2_bpp_stack",
+      "seed": 23,
+      "budget": 20,
+      "epoch": 11,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed23/epoch11.pt",
+      "checkpoint_sha256": "fd583c41546b359561b16021293999675c9e44acce76411e81ba472cf521428a",
+      "parameter_state_sha256": "69c967d1eee3a8fe260dd03a31cb901a532384f59bdc2ae3fb4b4a5e2c18c98f",
+      "epochs_sha256": "f6e1d8b56f2c485ca6f53acd0d26a11fa3a2ed0c2d81f911df1e50fb37ea529b",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6012665895674187,
+          "recall": 0.6959349303680022,
+          "rna_macro_exact_f1": 0.6337885387091651
+        },
+        "0.2": {
+          "precision": 0.6401932460567197,
+          "recall": 0.673615197611001,
+          "rna_macro_exact_f1": 0.6446617751341391
+        },
+        "0.3": {
+          "precision": 0.6663812654769247,
+          "recall": 0.651107379349582,
+          "rna_macro_exact_f1": 0.6459470253330574
+        },
+        "0.4": {
+          "precision": 0.6908115141430444,
+          "recall": 0.6282661477427097,
+          "rna_macro_exact_f1": 0.6429557559532532
+        },
+        "0.5": {
+          "precision": 0.7114263711139839,
+          "recall": 0.6013566478154758,
+          "rna_macro_exact_f1": 0.6333186024176104
+        },
+        "0.6": {
+          "precision": 0.7281774228605463,
+          "recall": 0.5677728900240402,
+          "rna_macro_exact_f1": 0.6156383270500473
+        },
+        "0.7": {
+          "precision": 0.743353306420677,
+          "recall": 0.5233677924978786,
+          "rna_macro_exact_f1": 0.585313190529409
+        },
+        "0.8": {
+          "precision": 0.7530438682574434,
+          "recall": 0.46790197497509833,
+          "rna_macro_exact_f1": 0.5410635896958812
+        },
+        "0.9": {
+          "precision": 0.7195799331479514,
+          "recall": 0.3805915445834506,
+          "rna_macro_exact_f1": 0.4575089396544026
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed23/budget30": {
+      "mode": "E2_bpp_stack",
+      "seed": 23,
+      "budget": 30,
+      "epoch": 11,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed23/epoch11.pt",
+      "checkpoint_sha256": "fd583c41546b359561b16021293999675c9e44acce76411e81ba472cf521428a",
+      "parameter_state_sha256": "69c967d1eee3a8fe260dd03a31cb901a532384f59bdc2ae3fb4b4a5e2c18c98f",
+      "epochs_sha256": "f6e1d8b56f2c485ca6f53acd0d26a11fa3a2ed0c2d81f911df1e50fb37ea529b",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6012665895674187,
+          "recall": 0.6959349303680022,
+          "rna_macro_exact_f1": 0.6337885387091651
+        },
+        "0.2": {
+          "precision": 0.6401932460567197,
+          "recall": 0.673615197611001,
+          "rna_macro_exact_f1": 0.6446617751341391
+        },
+        "0.3": {
+          "precision": 0.6663812654769247,
+          "recall": 0.651107379349582,
+          "rna_macro_exact_f1": 0.6459470253330574
+        },
+        "0.4": {
+          "precision": 0.6908115141430444,
+          "recall": 0.6282661477427097,
+          "rna_macro_exact_f1": 0.6429557559532532
+        },
+        "0.5": {
+          "precision": 0.7114263711139839,
+          "recall": 0.6013566478154758,
+          "rna_macro_exact_f1": 0.6333186024176104
+        },
+        "0.6": {
+          "precision": 0.7281774228605463,
+          "recall": 0.5677728900240402,
+          "rna_macro_exact_f1": 0.6156383270500473
+        },
+        "0.7": {
+          "precision": 0.743353306420677,
+          "recall": 0.5233677924978786,
+          "rna_macro_exact_f1": 0.585313190529409
+        },
+        "0.8": {
+          "precision": 0.7530438682574434,
+          "recall": 0.46790197497509833,
+          "rna_macro_exact_f1": 0.5410635896958812
+        },
+        "0.9": {
+          "precision": 0.7195799331479514,
+          "recall": 0.3805915445834506,
+          "rna_macro_exact_f1": 0.4575089396544026
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed23/budget40": {
+      "mode": "E2_bpp_stack",
+      "seed": 23,
+      "budget": 40,
+      "epoch": 11,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed23/epoch11.pt",
+      "checkpoint_sha256": "fd583c41546b359561b16021293999675c9e44acce76411e81ba472cf521428a",
+      "parameter_state_sha256": "69c967d1eee3a8fe260dd03a31cb901a532384f59bdc2ae3fb4b4a5e2c18c98f",
+      "epochs_sha256": "f6e1d8b56f2c485ca6f53acd0d26a11fa3a2ed0c2d81f911df1e50fb37ea529b",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6012665895674187,
+          "recall": 0.6959349303680022,
+          "rna_macro_exact_f1": 0.6337885387091651
+        },
+        "0.2": {
+          "precision": 0.6401932460567197,
+          "recall": 0.673615197611001,
+          "rna_macro_exact_f1": 0.6446617751341391
+        },
+        "0.3": {
+          "precision": 0.6663812654769247,
+          "recall": 0.651107379349582,
+          "rna_macro_exact_f1": 0.6459470253330574
+        },
+        "0.4": {
+          "precision": 0.6908115141430444,
+          "recall": 0.6282661477427097,
+          "rna_macro_exact_f1": 0.6429557559532532
+        },
+        "0.5": {
+          "precision": 0.7114263711139839,
+          "recall": 0.6013566478154758,
+          "rna_macro_exact_f1": 0.6333186024176104
+        },
+        "0.6": {
+          "precision": 0.7281774228605463,
+          "recall": 0.5677728900240402,
+          "rna_macro_exact_f1": 0.6156383270500473
+        },
+        "0.7": {
+          "precision": 0.743353306420677,
+          "recall": 0.5233677924978786,
+          "rna_macro_exact_f1": 0.585313190529409
+        },
+        "0.8": {
+          "precision": 0.7530438682574434,
+          "recall": 0.46790197497509833,
+          "rna_macro_exact_f1": 0.5410635896958812
+        },
+        "0.9": {
+          "precision": 0.7195799331479514,
+          "recall": 0.3805915445834506,
+          "rna_macro_exact_f1": 0.4575089396544026
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed23/budget50": {
+      "mode": "E2_bpp_stack",
+      "seed": 23,
+      "budget": 50,
+      "epoch": 11,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed23/epoch11.pt",
+      "checkpoint_sha256": "fd583c41546b359561b16021293999675c9e44acce76411e81ba472cf521428a",
+      "parameter_state_sha256": "69c967d1eee3a8fe260dd03a31cb901a532384f59bdc2ae3fb4b4a5e2c18c98f",
+      "epochs_sha256": "f6e1d8b56f2c485ca6f53acd0d26a11fa3a2ed0c2d81f911df1e50fb37ea529b",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6012665895674187,
+          "recall": 0.6959349303680022,
+          "rna_macro_exact_f1": 0.6337885387091651
+        },
+        "0.2": {
+          "precision": 0.6401932460567197,
+          "recall": 0.673615197611001,
+          "rna_macro_exact_f1": 0.6446617751341391
+        },
+        "0.3": {
+          "precision": 0.6663812654769247,
+          "recall": 0.651107379349582,
+          "rna_macro_exact_f1": 0.6459470253330574
+        },
+        "0.4": {
+          "precision": 0.6908115141430444,
+          "recall": 0.6282661477427097,
+          "rna_macro_exact_f1": 0.6429557559532532
+        },
+        "0.5": {
+          "precision": 0.7114263711139839,
+          "recall": 0.6013566478154758,
+          "rna_macro_exact_f1": 0.6333186024176104
+        },
+        "0.6": {
+          "precision": 0.7281774228605463,
+          "recall": 0.5677728900240402,
+          "rna_macro_exact_f1": 0.6156383270500473
+        },
+        "0.7": {
+          "precision": 0.743353306420677,
+          "recall": 0.5233677924978786,
+          "rna_macro_exact_f1": 0.585313190529409
+        },
+        "0.8": {
+          "precision": 0.7530438682574434,
+          "recall": 0.46790197497509833,
+          "rna_macro_exact_f1": 0.5410635896958812
+        },
+        "0.9": {
+          "precision": 0.7195799331479514,
+          "recall": 0.3805915445834506,
+          "rna_macro_exact_f1": 0.4575089396544026
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed41/budget10": {
+      "mode": "E2_bpp_stack",
+      "seed": 41,
+      "budget": 10,
+      "epoch": 8,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed41/epoch8.pt",
+      "checkpoint_sha256": "fc8dd14ecde539fc85fe90f8fac7625cab23cb25bf641dfd463f21e28eab6903",
+      "parameter_state_sha256": "d399d23a50d4c6e7dbdc45a5415f1b45240f69b5f26e7d00e1bbed7f22f21aa6",
+      "epochs_sha256": "090bacce6a27d47611755c4b9a0a2e3f9f519915cc03f8ebffe94c7282b85f44",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6071153990274651,
+          "recall": 0.6937807800948479,
+          "rna_macro_exact_f1": 0.6365920485305675
+        },
+        "0.2": {
+          "precision": 0.6523181604383766,
+          "recall": 0.6639208591708571,
+          "rna_macro_exact_f1": 0.6467462849278245
+        },
+        "0.3": {
+          "precision": 0.685535507062696,
+          "recall": 0.6324767650904668,
+          "rna_macro_exact_f1": 0.6443299220890122
+        },
+        "0.4": {
+          "precision": 0.7090020652921231,
+          "recall": 0.5959976547706033,
+          "rna_macro_exact_f1": 0.6304616079583858
+        },
+        "0.5": {
+          "precision": 0.7275295148440024,
+          "recall": 0.5562494926243164,
+          "rna_macro_exact_f1": 0.6079826122450405
+        },
+        "0.6": {
+          "precision": 0.7430672922842961,
+          "recall": 0.5139914487810624,
+          "rna_macro_exact_f1": 0.5784215299125337
+        },
+        "0.7": {
+          "precision": 0.7479874073855117,
+          "recall": 0.46229492349854523,
+          "rna_macro_exact_f1": 0.5361618643805233
+        },
+        "0.8": {
+          "precision": 0.726970088266145,
+          "recall": 0.39949086767531006,
+          "rna_macro_exact_f1": 0.47594716100482803
+        },
+        "0.9": {
+          "precision": 0.6553565329717936,
+          "recall": 0.30680873784336266,
+          "rna_macro_exact_f1": 0.3792251982966432
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed41/budget20": {
+      "mode": "E2_bpp_stack",
+      "seed": 41,
+      "budget": 20,
+      "epoch": 8,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed41/epoch8.pt",
+      "checkpoint_sha256": "fc8dd14ecde539fc85fe90f8fac7625cab23cb25bf641dfd463f21e28eab6903",
+      "parameter_state_sha256": "d399d23a50d4c6e7dbdc45a5415f1b45240f69b5f26e7d00e1bbed7f22f21aa6",
+      "epochs_sha256": "090bacce6a27d47611755c4b9a0a2e3f9f519915cc03f8ebffe94c7282b85f44",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6071153990274651,
+          "recall": 0.6937807800948479,
+          "rna_macro_exact_f1": 0.6365920485305675
+        },
+        "0.2": {
+          "precision": 0.6523181604383766,
+          "recall": 0.6639208591708571,
+          "rna_macro_exact_f1": 0.6467462849278245
+        },
+        "0.3": {
+          "precision": 0.685535507062696,
+          "recall": 0.6324767650904668,
+          "rna_macro_exact_f1": 0.6443299220890122
+        },
+        "0.4": {
+          "precision": 0.7090020652921231,
+          "recall": 0.5959976547706033,
+          "rna_macro_exact_f1": 0.6304616079583858
+        },
+        "0.5": {
+          "precision": 0.7275295148440024,
+          "recall": 0.5562494926243164,
+          "rna_macro_exact_f1": 0.6079826122450405
+        },
+        "0.6": {
+          "precision": 0.7430672922842961,
+          "recall": 0.5139914487810624,
+          "rna_macro_exact_f1": 0.5784215299125337
+        },
+        "0.7": {
+          "precision": 0.7479874073855117,
+          "recall": 0.46229492349854523,
+          "rna_macro_exact_f1": 0.5361618643805233
+        },
+        "0.8": {
+          "precision": 0.726970088266145,
+          "recall": 0.39949086767531006,
+          "rna_macro_exact_f1": 0.47594716100482803
+        },
+        "0.9": {
+          "precision": 0.6553565329717936,
+          "recall": 0.30680873784336266,
+          "rna_macro_exact_f1": 0.3792251982966432
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed41/budget30": {
+      "mode": "E2_bpp_stack",
+      "seed": 41,
+      "budget": 30,
+      "epoch": 8,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed41/epoch8.pt",
+      "checkpoint_sha256": "fc8dd14ecde539fc85fe90f8fac7625cab23cb25bf641dfd463f21e28eab6903",
+      "parameter_state_sha256": "d399d23a50d4c6e7dbdc45a5415f1b45240f69b5f26e7d00e1bbed7f22f21aa6",
+      "epochs_sha256": "090bacce6a27d47611755c4b9a0a2e3f9f519915cc03f8ebffe94c7282b85f44",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6071153990274651,
+          "recall": 0.6937807800948479,
+          "rna_macro_exact_f1": 0.6365920485305675
+        },
+        "0.2": {
+          "precision": 0.6523181604383766,
+          "recall": 0.6639208591708571,
+          "rna_macro_exact_f1": 0.6467462849278245
+        },
+        "0.3": {
+          "precision": 0.685535507062696,
+          "recall": 0.6324767650904668,
+          "rna_macro_exact_f1": 0.6443299220890122
+        },
+        "0.4": {
+          "precision": 0.7090020652921231,
+          "recall": 0.5959976547706033,
+          "rna_macro_exact_f1": 0.6304616079583858
+        },
+        "0.5": {
+          "precision": 0.7275295148440024,
+          "recall": 0.5562494926243164,
+          "rna_macro_exact_f1": 0.6079826122450405
+        },
+        "0.6": {
+          "precision": 0.7430672922842961,
+          "recall": 0.5139914487810624,
+          "rna_macro_exact_f1": 0.5784215299125337
+        },
+        "0.7": {
+          "precision": 0.7479874073855117,
+          "recall": 0.46229492349854523,
+          "rna_macro_exact_f1": 0.5361618643805233
+        },
+        "0.8": {
+          "precision": 0.726970088266145,
+          "recall": 0.39949086767531006,
+          "rna_macro_exact_f1": 0.47594716100482803
+        },
+        "0.9": {
+          "precision": 0.6553565329717936,
+          "recall": 0.30680873784336266,
+          "rna_macro_exact_f1": 0.3792251982966432
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed41/budget40": {
+      "mode": "E2_bpp_stack",
+      "seed": 41,
+      "budget": 40,
+      "epoch": 8,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed41/epoch8.pt",
+      "checkpoint_sha256": "fc8dd14ecde539fc85fe90f8fac7625cab23cb25bf641dfd463f21e28eab6903",
+      "parameter_state_sha256": "d399d23a50d4c6e7dbdc45a5415f1b45240f69b5f26e7d00e1bbed7f22f21aa6",
+      "epochs_sha256": "090bacce6a27d47611755c4b9a0a2e3f9f519915cc03f8ebffe94c7282b85f44",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6071153990274651,
+          "recall": 0.6937807800948479,
+          "rna_macro_exact_f1": 0.6365920485305675
+        },
+        "0.2": {
+          "precision": 0.6523181604383766,
+          "recall": 0.6639208591708571,
+          "rna_macro_exact_f1": 0.6467462849278245
+        },
+        "0.3": {
+          "precision": 0.685535507062696,
+          "recall": 0.6324767650904668,
+          "rna_macro_exact_f1": 0.6443299220890122
+        },
+        "0.4": {
+          "precision": 0.7090020652921231,
+          "recall": 0.5959976547706033,
+          "rna_macro_exact_f1": 0.6304616079583858
+        },
+        "0.5": {
+          "precision": 0.7275295148440024,
+          "recall": 0.5562494926243164,
+          "rna_macro_exact_f1": 0.6079826122450405
+        },
+        "0.6": {
+          "precision": 0.7430672922842961,
+          "recall": 0.5139914487810624,
+          "rna_macro_exact_f1": 0.5784215299125337
+        },
+        "0.7": {
+          "precision": 0.7479874073855117,
+          "recall": 0.46229492349854523,
+          "rna_macro_exact_f1": 0.5361618643805233
+        },
+        "0.8": {
+          "precision": 0.726970088266145,
+          "recall": 0.39949086767531006,
+          "rna_macro_exact_f1": 0.47594716100482803
+        },
+        "0.9": {
+          "precision": 0.6553565329717936,
+          "recall": 0.30680873784336266,
+          "rna_macro_exact_f1": 0.3792251982966432
+        }
+      },
+      "threshold": 0.2
+    },
+    "E2_bpp_stack/seed41/budget50": {
+      "mode": "E2_bpp_stack",
+      "seed": 41,
+      "budget": 50,
+      "epoch": 8,
+      "checkpoint_path": "outputs/long_epochs/E2_bpp_stack/seed41/epoch8.pt",
+      "checkpoint_sha256": "fc8dd14ecde539fc85fe90f8fac7625cab23cb25bf641dfd463f21e28eab6903",
+      "parameter_state_sha256": "d399d23a50d4c6e7dbdc45a5415f1b45240f69b5f26e7d00e1bbed7f22f21aa6",
+      "epochs_sha256": "090bacce6a27d47611755c4b9a0a2e3f9f519915cc03f8ebffe94c7282b85f44",
+      "validation_curve": {
+        "0.1": {
+          "precision": 0.6071153990274651,
+          "recall": 0.6937807800948479,
+          "rna_macro_exact_f1": 0.6365920485305675
+        },
+        "0.2": {
+          "precision": 0.6523181604383766,
+          "recall": 0.6639208591708571,
+          "rna_macro_exact_f1": 0.6467462849278245
+        },
+        "0.3": {
+          "precision": 0.685535507062696,
+          "recall": 0.6324767650904668,
+          "rna_macro_exact_f1": 0.6443299220890122
+        },
+        "0.4": {
+          "precision": 0.7090020652921231,
+          "recall": 0.5959976547706033,
+          "rna_macro_exact_f1": 0.6304616079583858
+        },
+        "0.5": {
+          "precision": 0.7275295148440024,
+          "recall": 0.5562494926243164,
+          "rna_macro_exact_f1": 0.6079826122450405
+        },
+        "0.6": {
+          "precision": 0.7430672922842961,
+          "recall": 0.5139914487810624,
+          "rna_macro_exact_f1": 0.5784215299125337
+        },
+        "0.7": {
+          "precision": 0.7479874073855117,
+          "recall": 0.46229492349854523,
+          "rna_macro_exact_f1": 0.5361618643805233
+        },
+        "0.8": {
+          "precision": 0.726970088266145,
+          "recall": 0.39949086767531006,
+          "rna_macro_exact_f1": 0.47594716100482803
+        },
+        "0.9": {
+          "precision": 0.6553565329717936,
+          "recall": 0.30680873784336266,
+          "rna_macro_exact_f1": 0.3792251982966432
+        }
+      },
+      "threshold": 0.2
+    }
+  },
+  "input_provenance_hash": "f0d1515a9a53d504134c67ad690b01a9590965f32f510c3d631e4a1073cbdb36",
+  "config_hash": "aa5edd7869f2bbd08025c9afb65c462071d16b89ab557b33e91f14c3f637c16e",
+  "evaluation_identity": {
+    "runtime": {
+      "sha256": "8d04fe832025806812b7983aa1dba5df4bfc3a18d64857dd98af38db29db2e86",
+      "files": {
+        "scripts/_common.py": "e2d8b415538a09eaa10abe931c957a823c2db42ca52406883801a2518a53645a",
+        "scripts/cache_thermo.py": "b333dca8b9bc5680edcaa3bc2df6a75a95f4130411945f5c9dbeae321db85c31",
+        "scripts/full_protocol.py": "a47bdaac891c077225d1d09afd4f4f65116b5d48bb6d7858f7b31745b63cc9c0",
+        "scripts/run_thermo_fast.py": "0f71acc15887e79fcf46be4678cf8be9e67f6bf3dddb32e7a86efca851cb12de",
+        "scripts/long_protocol.py": "4574b6cb153fc6a6f1b242663634fc5640b9586e45679156feba67e64dd3c23d",
+        "scripts/long_models.py": "23b11b734c8d9ae4c79fb574a763edec3eefe581ec9155709ea360e157629837",
+        "scripts/long_metrics.py": "494f126f49cec812416150bf41486d5a4c2e54f54f4cc166b45f06421bd7321d",
+        "scripts/run_long_epochs.py": "f427939f5821631e85aedaabc232b7bd2651bafd9a483dba46369040409197d9",
+        "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/decoder.py": "003a068bd35535fe34c860c4e74f23de46a435e6f055ed6beceb8f68e0475533",
+        "src/losses.py": "522c69575875efe2ff6c9a4544410ff61cdaf591d44d4a5840904c59267d9c76",
+        "src/metrics.py": "b86863fab8aa5662be274439e52b92cda31e13472b5163967e7efcac3ac0a14d",
+        "src/pair_head.py": "fb9e45fa42e6b871cf4ac7417b47a811af4d8366d7f2458f15d6447fbc7e8dca",
+        "src/stem_candidates.py": "c0b371627e8d91b2488686c40fec3731570c903a3c901ba8f778ffd847b782e8",
+        "src/utils.py": "5a67b62355ec5affa6e3f125348784ce66905c64f7df2a7ca72f6c2230fb23f0"
+      }
+    },
+    "evaluation": {
+      "scripts/eval_long_epochs.py": "e33e7747b6203259ffab97de1578fe4f7ac2b483b4000e385555da6e90ffb2c7",
+      "scripts/eval_full_tr0.py": "3f5af80691384b476b18cbfe8cf94d961df27453d727b84f9e0bcdee24014131"
+    }
+  }
+}
