@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "counts": {
+    "fit-train": 3299,
+    "family-dev": 1068,
+    "VL0": 1286
+  },
+  "known_family_counts": {
+    "fit-train": 990,
+    "family-dev": 292,
+    "VL0": 0
+  },
+  "fit_family_overlap": {
+    "sample_ids": [],
+    "family_ids": [],
+    "sequence_hashes": []
+  },
+  "unique_sequences": {
+    "fit-train": 3299,
+    "family-dev": 1068,
+    "VL0": 1286
+  },
+  "embedding_dimension": 1280,
+  "embedding_special_tokens": "No CLS/EOS: every array length equals nucleotide sequence length",
+  "embedding_sha256": {
+    "fit-train": "fa7df7bb7bc416ff1a9a701759c9603527989330250024330765f8dbab945746",
+    "family-dev": "eac536b963d6074ace123973ddb8e7d6e0daee365c21a59f6ea3967a250c483e",
+    "VL0": "c70e64691d578c782f0ff2ae7671dee1c5a093c0616f0ac356bcecc5e1bfe7b0"
+  },
+  "manifest_sha256": "0f22b4f1b188018299ef06508d15e3316d9228f31b5c23e6d7a2497340b19424",
+  "split_ids_sha256": "90b700fc39eb6c586f659cfbece1dc5a8b741f37881ab642af0f4dea23f8317b",
+  "label_totals": {
+    "original_pairs": 231088,
+    "eligible_pairs": 208081,
+    "decoder_unreachable_original_pairs": 23007
+  },
+  "decoder_unreachable_original_truth_fraction": 0.09955947517828706,
+  "errors": []
+}

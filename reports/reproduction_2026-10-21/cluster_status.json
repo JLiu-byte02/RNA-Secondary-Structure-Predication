@@ -1,0 +1,75 @@
+{
+  "jobs": {
+    "prepare": {
+      "id": "9121",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "E0_no_thermo_seed17": {
+      "id": "9123",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "E1_bpp_seed17": {
+      "id": "9124",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "E2_bpp_stack_seed17": {
+      "id": "9125",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "E0_no_thermo_seed23": {
+      "id": "9126",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "E1_bpp_seed23": {
+      "id": "9127",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "E2_bpp_stack_seed23": {
+      "id": "9128",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "E0_no_thermo_seed41": {
+      "id": "9129",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "E1_bpp_seed41": {
+      "id": "9130",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "E2_bpp_stack_seed41": {
+      "id": "9131",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    }
+  },
+  "status": "completed",
+  "pid": 183046,
+  "started_unix": 1792563643.8574095,
+  "stage": "validated",
+  "updated_unix": 1792567617.1065886,
+  "previous_jobs": [
+    {
+      "name": "prepare",
+      "id": "9120",
+      "status": "FAILED",
+      "exit_code": "1:0"
+    }
+  ],
+  "seeds": [
+    17,
+    23,
+    41
+  ],
+  "E2_executed": true,
+  "elapsed_seconds": 4136.411314725876,
+  "test_data_evaluated": false
+}

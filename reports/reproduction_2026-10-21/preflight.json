@@ -1,0 +1,133 @@
+{
+  "passed": true,
+  "errors": [],
+  "counts": {
+    "fit_train": 3299,
+    "family_dev": 1068,
+    "VL0": 1286,
+    "TS0": 1288,
+    "bprna_new": 5388,
+    "TR0": 10682
+  },
+  "old_modules": [
+    {
+      "path": "scripts/_common.py",
+      "sha256": "e2d8b415538a09eaa10abe931c957a823c2db42ca52406883801a2518a53645a",
+      "original_sha256": "e2d8b415538a09eaa10abe931c957a823c2db42ca52406883801a2518a53645a",
+      "unchanged": true
+    },
+    {
+      "path": "src/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchanged": true
+    },
+    {
+      "path": "src/decoder.py",
+      "sha256": "003a068bd35535fe34c860c4e74f23de46a435e6f055ed6beceb8f68e0475533",
+      "original_sha256": "003a068bd35535fe34c860c4e74f23de46a435e6f055ed6beceb8f68e0475533",
+      "unchanged": true
+    },
+    {
+      "path": "src/losses.py",
+      "sha256": "522c69575875efe2ff6c9a4544410ff61cdaf591d44d4a5840904c59267d9c76",
+      "original_sha256": "522c69575875efe2ff6c9a4544410ff61cdaf591d44d4a5840904c59267d9c76",
+      "unchanged": true
+    },
+    {
+      "path": "src/metrics.py",
+      "sha256": "b86863fab8aa5662be274439e52b92cda31e13472b5163967e7efcac3ac0a14d",
+      "original_sha256": "b86863fab8aa5662be274439e52b92cda31e13472b5163967e7efcac3ac0a14d",
+      "unchanged": true
+    },
+    {
+      "path": "src/pair_head.py",
+      "sha256": "fb9e45fa42e6b871cf4ac7417b47a811af4d8366d7f2458f15d6447fbc7e8dca",
+      "original_sha256": "fb9e45fa42e6b871cf4ac7417b47a811af4d8366d7f2458f15d6447fbc7e8dca",
+      "unchanged": true
+    },
+    {
+      "path": "src/stem_candidates.py",
+      "sha256": "c0b371627e8d91b2488686c40fec3731570c903a3c901ba8f778ffd847b782e8",
+      "original_sha256": "c0b371627e8d91b2488686c40fec3731570c903a3c901ba8f778ffd847b782e8",
+      "unchanged": true
+    },
+    {
+      "path": "src/utils.py",
+      "sha256": "5a67b62355ec5affa6e3f125348784ce66905c64f7df2a7ca72f6c2230fb23f0",
+      "original_sha256": "5a67b62355ec5affa6e3f125348784ce66905c64f7df2a7ca72f6c2230fb23f0",
+      "unchanged": true
+    }
+  ],
+  "embedding_indices": {
+    "fit_train": {
+      "n": 3299,
+      "index_sha256": "70754e2cff14982d2de20d8f7479eddf1ec3eef53b2fd819653707ae2eb4bf6c"
+    },
+    "family_dev": {
+      "n": 1068,
+      "index_sha256": "295265795b097a40f2e3d43fe287bd66d3296e8fd6693882be37026b06661163"
+    },
+    "VL0": {
+      "n": 1286,
+      "index_sha256": "48e2ded4299b5c6e2e5e49990102a7e5c15ce352508d5fb1de0a4780501e1e94"
+    }
+  },
+  "pretrained_weight": {
+    "path": "/home/junxuanliu/projects/RNA_ThermoFusion/weights/rinalmo_giga_pretrained.pt",
+    "sha256": "cd93c3f21eb3e767373c9491192686b5846247bd1110693e453c1dd0f321c0db",
+    "architecture": "generic RiNALMo-Giga pretrained; never loads any supervised checkpoint"
+  },
+  "sequence_overlaps": {
+    "fit_train__family_dev": 0,
+    "fit_train__VL0": 0,
+    "family_dev__VL0": 0
+  },
+  "label_details": {
+    "fit_train": {
+      "original": 143833,
+      "unreachable": 13628,
+      "noncanonical": 13413,
+      "short_loop": 272,
+      "crossing_pairs": 12059,
+      "crossing_RNAs": 454,
+      "unknown_RNAs": 0,
+      "eligible_extra_exclusions": 0
+    },
+    "family_dev": {
+      "original": 48980,
+      "unreachable": 5247,
+      "noncanonical": 5182,
+      "short_loop": 76,
+      "crossing_pairs": 9078,
+      "crossing_RNAs": 178,
+      "unknown_RNAs": 0,
+      "eligible_extra_exclusions": 0
+    },
+    "VL0": {
+      "original": 38275,
+      "unreachable": 4132,
+      "noncanonical": 4079,
+      "short_loop": 72,
+      "crossing_pairs": 2277,
+      "crossing_RNAs": 96,
+      "unknown_RNAs": 1286,
+      "eligible_extra_exclusions": 0
+    }
+  },
+  "pseudoknot_policy": "B0 decoder allows crossings; Vienna ensemble excludes them; original truth retained for all metrics",
+  "unknown_policy": "unknown retained, excluded only from known-family macro and included in RNA macro",
+  "primary_truth": "full_original_pairs",
+  "source_snapshot": "provenance/source_snapshot.json",
+  "new_root": "/home/junxuanliu/projects/RNA_ThermoFusion",
+  "argv": [
+    "scripts/preflight.py"
+  ],
+  "cwd": "/home/junxuanliu/projects/RNA_ThermoFusion",
+  "environment": {
+    "TMPDIR": "/home/junxuanliu/projects/RNA_ThermoFusion/.tmp",
+    "PIP_CACHE_DIR": "/home/junxuanliu/projects/RNA_ThermoFusion/.cache/pip",
+    "HF_HOME": "/home/junxuanliu/projects/RNA_ThermoFusion/.cache/huggingface",
+    "TORCH_HOME": "/home/junxuanliu/projects/RNA_ThermoFusion/.cache/torch"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "passed": true,
+      "epochs": 6,
+      "best_epoch": 3,
+      "threshold": 0.1,
+      "checkpoint_sha256": "a6610261251d7e59db11c0b191feed1d9be5e15bc3409783db01953a06b12718",
+      "prediction_sha256": "4f5dcc93e7a36a14ae11e18cf59bf7e5844cb08a8dd8547b33aba8581390dc46",
+      "initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "config_hash": "1ddfdc3cef06cf55f36ae1ab0216ee2da8e8b8ef87535a074ea813c57a7910ff",
+      "eligible_RNA_macro": 0.5272679444251043
+    },
+    {
+      "mode": "E0_no_thermo",
+      "seed": 23,
+      "passed": true,
+      "epochs": 8,
+      "best_epoch": 5,
+      "threshold": 0.2,
+      "checkpoint_sha256": "590ada2614883a38c61285316c9ee5db5c66daf9c13cbfab14af87736ac16f99",
+      "prediction_sha256": "e8cb19fb1002ac0e4dceff20123b87ddf28d78953b0596ba2b6249394560648a",
+      "initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "config_hash": "1ddfdc3cef06cf55f36ae1ab0216ee2da8e8b8ef87535a074ea813c57a7910ff",
+      "eligible_RNA_macro": 0.5350977687714324
+    },
+    {
+      "mode": "E0_no_thermo",
+      "seed": 41,
+      "passed": true,
+      "epochs": 10,
+      "best_epoch": 7,
+      "threshold": 0.1,
+      "checkpoint_sha256": "4d482de4d6d587e2bceab56b14575b48b5bbfde6f0826934c1f13cce10f3751f",
+      "prediction_sha256": "eca5e7d4d4f0cbcfd2a0d7f0c5cc5fc964e8ca2c288a20184026ecea6890349f",
+      "initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "config_hash": "1ddfdc3cef06cf55f36ae1ab0216ee2da8e8b8ef87535a074ea813c57a7910ff",
+      "eligible_RNA_macro": 0.523847718147409
+    },
+    {
+      "mode": "E1_bpp",
+      "seed": 17,
+      "passed": true,
+      "epochs": 8,
+      "best_epoch": 5,
+      "threshold": 0.2,
+      "checkpoint_sha256": "4ca22b2c21286980928b17afcb3c2295832606824c097db04035476eca6612c9",
+      "prediction_sha256": "0ccfded394016f5276f66a0b1885418ea83cabff1a6c05337296cd05b528e11a",
+      "initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "config_hash": "1ddfdc3cef06cf55f36ae1ab0216ee2da8e8b8ef87535a074ea813c57a7910ff",
+      "eligible_RNA_macro": 0.6291203350421687
+    },
+    {
+      "mode": "E1_bpp",
+      "seed": 23,
+      "passed": true,
+      "epochs": 8,
+      "best_epoch": 5,
+      "threshold": 0.2,
+      "checkpoint_sha256": "4259f38f7db9ba83609daa6b97b98c8bd9410419d5c8626518656cea5ba74354",
+      "prediction_sha256": "8c276ca708d1bce0c640e5198e85591af17812fd2864483b28dbbd8ee12808ea",
+      "initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "config_hash": "1ddfdc3cef06cf55f36ae1ab0216ee2da8e8b8ef87535a074ea813c57a7910ff",
+      "eligible_RNA_macro": 0.6251964054155416
+    },
+    {
+      "mode": "E1_bpp",
+      "seed": 41,
+      "passed": true,
+      "epochs": 8,
+      "best_epoch": 5,
+      "threshold": 0.1,
+      "checkpoint_sha256": "322d1b1ebca89dcd4e6fc5c4ed4c2b554ffd18b5128b09fd632bcfdf34e69855",
+      "prediction_sha256": "9d80c23b8f5f1fab52d2bcafdc7971ed1fe91c3d8f1d603f80ad148a4bf9a90e",
+      "initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "config_hash": "1ddfdc3cef06cf55f36ae1ab0216ee2da8e8b8ef87535a074ea813c57a7910ff",
+      "eligible_RNA_macro": 0.6219460836600385
+    },
+    {
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "passed": true,
+      "epochs": 8,
+      "best_epoch": 5,
+      "threshold": 0.2,
+      "checkpoint_sha256": "ec469900fbf2b29b6ce3d4ec36c8e23548b7cd003b20edc7ab49fa50b4a92899",
+      "prediction_sha256": "d0f912a8e8d7cd12368938bf54a91aa74085147cf3639c0f00c7efcf900bd279",
+      "initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "config_hash": "1ddfdc3cef06cf55f36ae1ab0216ee2da8e8b8ef87535a074ea813c57a7910ff",
+      "eligible_RNA_macro": 0.6297213460203575
+    },
+    {
+      "mode": "E2_bpp_stack",
+      "seed": 23,
+      "passed": true,
+      "epochs": 8,
+      "best_epoch": 5,
+      "threshold": 0.2,
+      "checkpoint_sha256": "572075468c163de4dab80299d6ab14bd6f7267b70c7bba6b4858544087a1663a",
+      "prediction_sha256": "2abae065e83cc2f6970cb162e0d8d8302fccd565a4be159b72aba432dd1f88d2",
+      "initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "config_hash": "1ddfdc3cef06cf55f36ae1ab0216ee2da8e8b8ef87535a074ea813c57a7910ff",
+      "eligible_RNA_macro": 0.6273032223968137
+    },
+    {
+      "mode": "E2_bpp_stack",
+      "seed": 41,
+      "passed": true,
+      "epochs": 8,
+      "best_epoch": 5,
+      "threshold": 0.1,
+      "checkpoint_sha256": "638172784b65bd1c4960c96487e48f697c43ea58f64fb143e1dba305831c5c95",
+      "prediction_sha256": "1f36ab934583ccf6a9d346e2a01300cb132ff9d33d01605d00e742854e4649e3",
+      "initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "config_hash": "1ddfdc3cef06cf55f36ae1ab0216ee2da8e8b8ef87535a074ea813c57a7910ff",
+      "eligible_RNA_macro": 0.6203471031574498
+    }
+  ],
+  "required": [
+    [
+      "E0_no_thermo",
+      17
+    ],
+    [
+      "E0_no_thermo",
+      23
+    ],
+    [
+      "E0_no_thermo",
+      41
+    ],
+    [
+      "E1_bpp",
+      17
+    ],
+    [
+      "E1_bpp",
+      23
+    ],
+    [
+      "E1_bpp",
+      41
+    ],
+    [
+      "E2_bpp_stack",
+      17
+    ],
+    [
+      "E2_bpp_stack",
+      23
+    ],
+    [
+      "E2_bpp_stack",
+      41
+    ]
+  ],
+  "metrics_recomputed_from_all_predictions": true,
+  "checkpoint_equals_selected_epoch": true,
+  "test_data_evaluated": false
+}

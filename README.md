@@ -1,1 +1,67 @@
-# RNA-Secondary-Structure-Predication
+# RNA ThermoFusion FAST-v1
+
+冻结 RiNALMo-Giga 表征，在原 B0 配对预测头上联合训练一个热力学残差纠错 CNN，使用固定家族留出划分比较 E0（无物理信息）、E1（BPP）和 E2（BPP + 真实 stack 联合概率）。历史报告见 [RNA_ThermoFusion_Result.md](RNA_ThermoFusion_Result.md)。2026-10-21 已在新服务器独立完成三种子共 9 组正式实验，并通过全部产物验收；详见 [本次复现报告](reports/reproduction_2026-10-21/README_results.md) 和 [执行说明](reports/reproduction_2026-10-21/REPRODUCTION_NOTES.md)。
+
+| 方法 | family-dev 家族宏 exact F1，均值 ± 样本 SD |
+|---|---:|
+| E0，无热力学信息 | 0.517469 ± 0.001853 |
+| E1，BPP | **0.624240 ± 0.000322** |
+| E2，BPP + stack | 0.623861 ± 0.002456 |
+
+BPP 平均增加 0.106771（10.68 个百分点），三个共同种子均改善。Q 的额外收益为两正一负，按预定规则保留 E1。这里报告新运行的实测数值；family-dev 同时参与模型选择，属于开发结果。
+
+模型为 `RiNALMo H[L,1280] → B0 PairHead → S0`，纠错器读取 `[S0,P,Q,|i-j|/L,valid_mask]`，使用 `Conv(5,32,3) → GELU → Conv(32,32,3) → GELU → Conv(32,1,1)` 生成残差，再对称化、掩码和贪心解码。三组均为 186,306 个可训练参数，只有物理通道不同。RiNALMo 不参与监督训练。
+
+固定数据：fit-train 3,299 条，family-dev 1,068 条 / 292 家族，VL0 1,286 条。真值使用完整原始配对。family-dev 用于模型和阈值选择；VL0 仅辅助监测；FAST-v1 不执行 TS0、bpRNA-new 最终测试、全量 TR0 重训或九张扰动 BPP。
+
+## 环境
+
+已适配 CentOS 7 / glibc 2.17 集群：Python 3.11.9、PyTorch 2.1.2+cu118、NumPy 1.26.4、FlashAttention 2.3.2、ViennaRNA 2.6.4。具体版本、安装记录及校验工具见 `setup/`。RiNALMo 官方源码固定在 `setup/rinalmo_commit.txt` 中的 revision。
+
+```bash
+cd /home/junxuanliu/projects/RNA_ThermoFusion
+source ./activate.sh
+python -m pip check
+python setup/check_environment.py
+```
+
+新机器需要先创建项目内 `.venv`、按 `setup/requirements.txt` 安装科学依赖，再安装对应 CUDA 的 Torch 和 FlashAttention，以及官方 RiNALMo 固定版本。`setup/install_runtime.sh` 和 `setup/finish_install.sh` 保留了本集群的实际安装命令；其中路径和 Anaconda 入口须按目标机器调整。
+
+## 完整复现
+
+```bash
+# 登录节点运行；凭据不进入脚本、配置或日志。
+source ./activate.sh
+mkdir -p logs
+nohup python -u scripts/reproduce_cluster.py > logs/cluster_reproduction.log 2>&1 < /dev/null &
+```
+
+入口自动执行：官方权重下载及 SHA256 核验 → GPU 生成冻结表征 → 划分及来源审计 → 契约测试 → 一次 partition function 生成 P/Q → 三组 smoke test → 完整 seed 17 E0/E1 → 依据预定门槛扩展 E2 和共同种子 23、41 → 指标、配对修复和 stem 分析 → checkpoint 与全部预测复核。训练作业通过 Slurm 分配 GPU，保持同一随机种子的初始化和训练协议相同。
+
+权重来自 [RiNALMo 官方下载记录](https://zenodo.org/records/15043668)或官方源码中的 Google Drive 入口，仅使用通用预训练权重；SHA256 必须为 `cd93c3f21eb3e767373c9491192686b5846247bd1110693e453c1dd0f321c0db`。设置 `RNA_WEIGHT_SOURCE=google-drive` 可选择后者，下载记录保存实际来源。下载分片和 embedding 分块支持恢复；训练从最近完整 epoch 的 `last.pt` 恢复。失败后查看日志并修复原因，再重新运行入口；失败的 Slurm 作业应在 `outputs/thermo_fast/cluster_status.json` 中核对并单独重新提交，保留既有结果。
+
+```bash
+cat outputs/thermo_fast/cluster_status.json
+squeue -u "$USER"
+tail -n 30 logs/cluster_reproduction.log
+# 单组恢复 / 独立运行
+sbatch slurm/train.sbatch E1_bpp 17
+# 已有输入后使用原始串行入口
+python -u scripts/run_thermo_fast.py --pipeline
+```
+
+`slurm/prepare.sbatch`、`slurm/train.sbatch` 请求 `g-3090-2` 分区；其他集群需修改分区与资源参数。单独检查核心契约：
+
+```bash
+mkdir -p tmp
+python tests/test_contract.py
+python tests/test_portability.py
+```
+
+## 输出与证据
+
+`outputs/thermo_fast/` 保存 split_audit、热力学缓存清单、每组每种子的 checkpoint、逐 epoch 日志、逐 RNA 预测、development_summary.csv、family_delta.csv、pair_stem_corrections.csv、README_results.md 和 artifact_validation.json。完成状态须以 `cluster_status.json` 的 `completed` 和 `artifact_validation.json` 的 `passed: true` 为准。
+
+大体积依赖、权重、表征、热力学缓存、checkpoint 和运行日志留在服务器，不进入 Git。固定 manifest 的压缩副本、split 和来源哈希随代码保留；入口调用 `scripts/unpack_data.py` 校验并恢复 manifest。原始来源记录中的旧路径只用于追溯，不参与新服务器的运行。
+
+family-dev 是开发集，重复种子的标准差不能视作置信区间；监督训练的家族隔离不等于 RiNALMo 预训练从未见过相关序列或家族。P 来自 ViennaRNA BPP，Q 来自同一 ensemble 的真实 `vrna_stack_prob`，不是边缘概率乘积。RiNALMo 官方源码与权重的授权说明见 [官方仓库](https://github.com/lbcb-sci/RiNALMo)。

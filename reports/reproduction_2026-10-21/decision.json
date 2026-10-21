@@ -1,0 +1,59 @@
+{
+  "decision": "positive",
+  "run_E2": true,
+  "seeds_to_run": [],
+  "stage": "confirmation_complete",
+  "supporting_metrics": {
+    "17": {
+      "family_gain": 0.10874886684783747,
+      "rna_gain": 0.09821319577768617,
+      "known_families": 292,
+      "families_improved": 213,
+      "top5_positive_delta_fraction": 0.06948194390107816
+    },
+    "23": {
+      "family_gain": 0.10676195073767591,
+      "rna_gain": 0.0873078065942402,
+      "known_families": 292,
+      "families_improved": 216,
+      "top5_positive_delta_fraction": 0.08873489834652942
+    },
+    "41": {
+      "family_gain": 0.10480246577555896,
+      "rna_gain": 0.0951719117132298,
+      "known_families": 292,
+      "families_improved": 211,
+      "top5_positive_delta_fraction": 0.0813935184380049
+    }
+  },
+  "gate_rule": {
+    "family_gain_at_least": 0.015,
+    "rna_gain_strictly_positive": true,
+    "top5_positive_delta_fraction_at_most": 0.5,
+    "excluded_family_ids": [
+      null,
+      "unknown",
+      "NA",
+      ""
+    ]
+  },
+  "scientific_significance_claim": false,
+  "reason": "Seed17 passes the predeclared development gate; confirm with matched seeds23/41 and conditional E2.",
+  "E1_cross_seed_consistent": true,
+  "Q_supporting_metrics": {
+    "17": {
+      "family_gain_over_E1": 0.001419895136552718,
+      "rna_gain_over_E1": 0.0007501184705110964
+    },
+    "23": {
+      "family_gain_over_E1": 0.0005449946460589494,
+      "rna_gain_over_E1": 0.0024759142310951665
+    },
+    "41": {
+      "family_gain_over_E1": -0.0031018478251229054,
+      "rna_gain_over_E1": -0.0010559606312358083
+    }
+  },
+  "Q_retention": "prefer_E1",
+  "missing_E2_seeds": []
+}

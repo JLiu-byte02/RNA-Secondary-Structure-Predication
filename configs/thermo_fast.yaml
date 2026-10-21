@@ -1,0 +1,42 @@
+protocol: FAST-v1
+seed: 17
+encoder: existing_frozen_rinalmo_cache
+head: existing_B0_head
+adapter: 2d_cnn_32_channels
+adapter_input: [b0_logit, bpp, stack_joint, normalized_distance, valid_mask]
+train_split: fit_train
+select_split: family_dev
+initialization: identical_random_head_and_adapter_per_seed
+initial_lr: 0.0001
+optimizer: AdamW
+weight_decay: 0.0001
+batch_size: 1
+gradient_accumulation: 4
+max_epochs: 10
+patience: 3
+clip_grad_norm: 1.0
+precision: bfloat16_if_cuda_supported
+loss: existing_unweighted_pair_bce_per_RNA
+selection_metric: family_macro_exact_f1
+thresholds: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+threshold_split: family_dev
+threshold_tie: lowest_threshold
+epoch_tie: earliest_epoch
+allow_rinalmo_grad: false
+use_TS0_for_selection: false
+use_bpRNA_new_for_selection: false
+VL0_monitor: best_checkpoint_only_at_family_dev_threshold
+historical_hyperparameters: lr_weight_decay_accumulation_reused_from_current_protocol
+label_policy: full_original_truth_primary_old_B0_eligible_candidate_BCE_training
+unknown_family_policy: exclude_from_family_macro_include_in_RNA_macro
+thermo_version: 2.6.4
+thermo_temperature: 37.0
+thermo_dangles: 2
+thermo_noLP: false
+thermo_uniq_ML: true
+stack_cutoff: 0.00000001
+positive_signal_min_family_delta: 0.015
+positive_signal_top5_gain_fraction_max: 0.5
+
+project_root: .
+primary_truth: full_original_pairs

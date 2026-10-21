@@ -1,0 +1,4 @@
+# Preserve source bytes used by the provenance audit (including original CRLF).
+* -text
+*.sh text eol=lf
+*.sbatch text eol=lf

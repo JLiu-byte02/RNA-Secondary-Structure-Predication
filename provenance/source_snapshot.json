@@ -1,0 +1,23 @@
+{
+  "src/decoder.py": "003a068bd35535fe34c860c4e74f23de46a435e6f055ed6beceb8f68e0475533",
+  "src/losses.py": "522c69575875efe2ff6c9a4544410ff61cdaf591d44d4a5840904c59267d9c76",
+  "src/metrics.py": "b86863fab8aa5662be274439e52b92cda31e13472b5163967e7efcac3ac0a14d",
+  "src/pair_head.py": "fb9e45fa42e6b871cf4ac7417b47a811af4d8366d7f2458f15d6447fbc7e8dca",
+  "src/stem_candidates.py": "c0b371627e8d91b2488686c40fec3731570c903a3c901ba8f778ffd847b782e8",
+  "src/utils.py": "5a67b62355ec5affa6e3f125348784ce66905c64f7df2a7ca72f6c2230fb23f0",
+  "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "scripts/cache_thermo.py": "b333dca8b9bc5680edcaa3bc2df6a75a95f4130411945f5c9dbeae321db85c31",
+  "scripts/eval_thermo_fast.py": "0ca12996ad6a5e5624d27788f1a36397efbdb74e9dad9f2b0afa1818d7cc29f6",
+  "scripts/finalize_results.py": "bb4cbf5b449ec7a60fec2e52cc40ee64a3957cfcd3a51338bf8af51f7bad3a8d",
+  "scripts/preflight.py": "977b4088a0d2516564f30cede471b2dd21372c61b942309489bf4789d103d1eb",
+  "scripts/run_thermo_fast.py": "e7b1498287fc5b679e733e962b96e8089c2eb86f6fc756796bbbdb723817e921",
+  "scripts/_common.py": "e2d8b415538a09eaa10abe931c957a823c2db42ca52406883801a2518a53645a",
+  "tests/test_contract.py": "0a91627a74e55588e3b872f6f7caf7ba190e61ce401803f856250c294118fd4e",
+  "tests/test_regressions.py": "b9a9349dd95998f40bc5b471643cab65b2820d1a46e223049ff718d5860d4de8",
+  "configs/thermo_fast.yaml": "154fd67edb0b18b8b101e7b6fa002e956f1c3222deb5c6c9b4252485c5d4e35f",
+  "data/processed/manifest.tsv": "0f22b4f1b188018299ef06508d15e3316d9228f31b5c23e6d7a2497340b19424",
+  "data/processed/split_ids.json": "90b700fc39eb6c586f659cfbece1dc5a8b741f37881ab642af0f4dea23f8317b",
+  "embeddings/family_dev_index.tsv": "5955f242869a503538ef6f33b1d8ad553b721252e6e4bd0ff98bc3aab5b3c07c",
+  "embeddings/fit_train_index.tsv": "680fcc6967a09e081d43576f7b8cc79acef240fe8e2fbcfe346ce8a87329c4e8",
+  "embeddings/VL0_index.tsv": "8e872c6854e9e67656f56395f419086141ed91fd189fcce5c747ff908b78f9eb"
+}

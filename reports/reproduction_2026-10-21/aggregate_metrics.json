@@ -1,0 +1,56 @@
+{
+  "E0_no_thermo": {
+    "n_seeds": 3,
+    "seeds": [
+      17,
+      23,
+      41
+    ],
+    "family_macro_mean": 0.5174686223685844,
+    "family_macro_sample_sd": 0.0018528683526744234,
+    "rna_macro_mean": 0.5065966751394211,
+    "epochs": [
+      6,
+      8,
+      10
+    ],
+    "training_seconds": 1333.4308032989502,
+    "evaluation_seconds": 357.36827850341797
+  },
+  "E1_bpp": {
+    "n_seeds": 3,
+    "seeds": [
+      17,
+      23,
+      41
+    ],
+    "family_macro_mean": 0.6242397168222751,
+    "family_macro_sample_sd": 0.00032211046879550563,
+    "rna_macro_mean": 0.6001609798344731,
+    "epochs": [
+      8,
+      8,
+      8
+    ],
+    "training_seconds": 1345.5611255168915,
+    "evaluation_seconds": 351.8081753253937
+  },
+  "E2_bpp_stack": {
+    "n_seeds": 3,
+    "seeds": [
+      17,
+      23,
+      41
+    ],
+    "family_macro_mean": 0.6238607308081047,
+    "family_macro_sample_sd": 0.0024564143794188124,
+    "rna_macro_mean": 0.6008843371912632,
+    "epochs": [
+      8,
+      8,
+      8
+    ],
+    "training_seconds": 1326.1132292747498,
+    "evaluation_seconds": 350.15463972091675
+  }
+}

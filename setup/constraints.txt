@@ -1,0 +1,4 @@
+torch==2.1.2+cu118
+numpy==1.26.4
+ViennaRNA==2.6.4
+einops==0.7.0
