@@ -1,5 +1,5 @@
 {
-  "host": "gpu0002",
+  "host": "gpu0003",
   "python": "3.11.9 (main, Apr 19 2024, 16:48:06) [GCC 11.2.0]",
   "executable": "/home/junxuanliu/projects/RNA_ThermoFusion/.venv/bin/python",
   "libc": [
@@ -44,5 +44,6 @@
     6
   ],
   "flash_attention_cuda": "passed",
-  "slurm_job_id": "9115"
+  "triton_rotary_cuda": "passed",
+  "slurm_job_id": "9122"
 }
