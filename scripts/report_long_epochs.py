@@ -103,12 +103,29 @@ def main():
     final_table='\n'.join(f"| {r['mode']} | {fmt(r,'VL0_rna_macro_exact_f1')} | {fmt(r,'TS0_rna_macro_exact_f1')} | {fmt(r,'bprna_new_rna_macro_exact_f1')} |" for r in final)
     budget_table='\n'.join(f"| {r['mode']} | {r['budget']} | {r['selected_epochs']} | {fmt(r,'VL0_rna_macro_exact_f1')} | {fmt(r,'TS0_rna_macro_exact_f1')} | {fmt(r,'bprna_new_rna_macro_exact_f1')} |" for r in aggregate)
     cost_table='\n'.join(f"| {r['mode']} | {r['budget']} | {fmt(r,'train_bce_online')} | {fmt(r,'validation_bce')} | {fmt(r,'candidate_balanced_accuracy')} | {r['cumulative_training_minutes_mean']:.1f} ± {r['cumulative_training_minutes_sd']:.1f} |" for r in aggregate)
+    convergence_table='\n'.join(
+        f"| {mode} | {', '.join(str(r['best_epoch']) for r in convergence if r['mode']==mode)} | "
+        f"{statistics.mean(r['epoch_to_95_percent_peak'] for r in convergence if r['mode']==mode):.1f} | "
+        f"{statistics.mean(r['epoch_within_001_peak'] for r in convergence if r['mode']==mode):.1f} | "
+        f"{statistics.mean(r['training_minutes_50'] for r in convergence if r['mode']==mode):.1f} ± "
+        f"{statistics.stdev(r['training_minutes_50'] for r in convergence if r['mode']==mode):.1f} | "
+        f"{statistics.mean(r['new_training_minutes'] for r in convergence if r['mode']==mode):.1f} |"
+        for mode in MODES)
+    comparisons=[]
+    for mode,field in (('E0_no_thermo','E0_minus_B0'),('E1_bpp','E1_minus_B0'),('E2_bpp_stack',None)):
+        for split in ('TS0','bprna_new'):
+            differences=[r[field] if field else r['E1_minus_B0']+r['E2_minus_E1']
+                for r in paired if r['budget']==50 and r['split']==split]
+            comparisons.append(f"| {mode} − B0 | {split} | {statistics.mean(differences):+.6f} ± {statistics.stdev(differences):.6f} | "
+                f"{sum(d>0 for d in differences)}/3 |")
+    comparison_table='\n'.join(comparisons)
     interpretation=[]
     for mode in MODES:
         groups={r['budget']:r for r in aggregate if r['mode']==mode}
         c=[r for r in convergence if r['mode']==mode]
         interpretation.append(f"- {mode}：10→30轮，VL0 最后轮 F1 变化 {groups[30]['validation_f1_mean']-groups[10]['validation_f1_mean']:+.4f}；30→50轮变化 {groups[50]['validation_f1_mean']-groups[30]['validation_f1_mean']:+.4f}。累计训练时间从 {groups[10]['cumulative_training_minutes_mean']:.1f} 分钟增加到 {groups[30]['cumulative_training_minutes_mean']:.1f} / {groups[50]['cumulative_training_minutes_mean']:.1f} 分钟。50轮平均峰值回落 {statistics.mean(r['peak_to_last_f1_drop'] for r in c):.4f}；最佳 epoch 分别为 {', '.join(str(r['best_epoch']) for r in c)}。")
         interpretation.append(f"  在预算内选择的模型上，30→50轮的 TS0 / bpRNA-new 平均 F1 变化分别为 {groups[50]['TS0_rna_macro_exact_f1_mean']-groups[30]['TS0_rna_macro_exact_f1_mean']:+.4f} / {groups[50]['bprna_new_rna_macro_exact_f1_mean']-groups[30]['bprna_new_rna_macro_exact_f1_mean']:+.4f}，额外训练 {groups[50]['cumulative_training_minutes_mean']-groups[30]['cumulative_training_minutes_mean']:.1f} 分钟（每种子均值）。这些是预定预算的描述性比较，不据测试分数挑选预算。")
+        interpretation.append(f"  在线训练 BCE（10/30/50轮）为 {groups[10]['train_bce_online_mean']:.5f} / {groups[30]['train_bce_online_mean']:.5f} / {groups[50]['train_bce_online_mean']:.5f}；同期 VL0 BCE 为 {groups[10]['validation_bce_mean']:.5f} / {groups[30]['validation_bce_mean']:.5f} / {groups[50]['validation_bce_mean']:.5f}。结合逐种子曲线判断后期变化，不能仅凭训练损失给出泛化结论。")
     text=f'''# B0 / E 系列 50 轮训练研究
 
 12条轨迹全部完成50轮。训练为完整 TR0 10,682条，VL0 1,286条用于验证和选择，TS0 1,288条及 bpRNA-new 5,388条用于固定预算测试；种子17、23、41。每个预算内先选各自 VL0 最佳 epoch，再选择方法共享阈值，全部60个选择统一锁定后才提交测试。测试结果不用于决定预算。
@@ -131,11 +148,23 @@ def main():
 
 收敛速度见 convergence_by_seed.csv：预先规定达到最大 VL0 F1 的95%，以及距最大值不超过0.001的首次 epoch 与累计训练时间。所有逐轮数据保留在 epoch_curves.csv，包含 accuracy / balanced accuracy 与时长；候选 accuracy 易被大量负配对抬高，不能代替结构 F1。
 
+| 方法 | 最佳epoch（17/23/41） | 首次达到峰值95%的平均epoch | 首次距峰值≤0.001的平均epoch | 50轮训练分钟/种子 | 本阶段新增训练分钟/种子 |
+|---|---|---:|---:|---:|---:|
+{convergence_table}
+
+12条完整轨迹累计训练段成本 {sum(r['training_minutes_50'] for r in convergence)/60:.2f} GPU小时；其中本阶段新增训练段 {sum(r['new_training_minutes'] for r in convergence)/60:.2f} GPU小时。上述训练段均独占一张GPU，验证、前缀诊断、最终测试及排队另计；并行作业的累计GPU小时不能当成用户等待的墙钟时间。
+
 ## B0 的过程与公平性
 
 B0 是原始175,553参数 PairHead，不含纠错 CNN，不读取 P/Q/距离作为模型证据；E系列为186,306参数。同一随机种子的四个 PairHead 初始化逐张量相同，B0和E使用相同训练集合、候选损失、优化器、BF16、梯度累积、解码、完整真值、验证与测试规则。B0从头训练50轮，E从已验证的最后 epoch 与 AdamW 状态继续至50轮；继承前缀的每轮VL0曲线重新推理并精确重现，旧输出保持原样。E2/seed23的旧轨迹在9轮早停，本次从第10轮继续。
 
 全部方法关闭提前停止，以完整观测50轮轨迹；学习率固定1e-4，没有新增调度器。历史10轮上限+patience3的表格单独保存在 historical_10_epoch_with_early_stopping.csv，不能与本研究的固定10轮前缀视为完全相同停止策略，也不混入此前家族留出 B0 的开发分数。
+
+以下按相同种子计算50轮预算所选模型的 F1 差值，正数表示 E 优于 B0。配对差值的 SD 是三个种子差值的样本 SD，不从两组边际 SD 推算；三个种子不构成统计显著性的证据。
+
+| 比较 | 集合 | 配对F1差值均值 ± SD | 正差值种子数 |
+|---|---|---:|---:|
+{comparison_table}
 
 时间为实际测得的训练段时间，包含继承轨迹的已发生训练成本；本阶段新增成本、诊断成本和实际作业时间另列 trajectory_summaries.json。各作业独占一张 Slurm GPU，集群排队、节点负载和前缀复用会影响墙钟时间，不把排队时间或不同节点负载解释为方法速度差异。种子SD不等于置信区间。
 

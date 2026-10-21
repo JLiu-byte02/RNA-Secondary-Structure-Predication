@@ -1,5 +1,18 @@
 # RNA ThermoFusion
 
+## B0 / E 系列长轮数研究（进行中）
+
+固定50轮，比较10、20、30、40、50轮预算，纳入原始纯PairHead基线B0与E0/E1/E2，均使用种子17、23、41和相同TR0/VL0/TS0/bpRNA-new。逐轮记录结构F1、在线训练BCE、VL0 BCE、候选accuracy/balanced accuracy及耗时；统一锁定全部VL0选择后再测试。方案和公平性约束见 [长轮数协议](docs/LONG_EPOCHS_PROTOCOL.md)。本流程接续已完成的全量TR0阶段，E保留原轨迹和优化器状态，B0从头训练。
+
+```bash
+source ./activate.sh
+mkdir -p logs
+nohup python -u scripts/reproduce_long_epochs.py > logs/long_cluster.log 2>&1 < /dev/null &
+cat outputs/long_epochs/cluster_status.json
+```
+
+最终表格及报告由入口生成于 `reports/long_epochs_2026-10-21/`，原始模型和逐RNA预测保存在 `outputs/long_epochs/`。完成状态需同时满足 supervisor 的 `completed` 与 `artifact_validation.json` 的 `passed: true`。
+
 ## 全量 TR0 多种子实验
 
 2026-10-21 已完成独立的 `FULL-TR0-v1` 流程：TR0 10,682 条训练，VL0 1,286 条验证，TS0 1,288 条及 bpRNA-new 5,388 条最终测试。E0/E1/E2 均使用种子 17、23、41，19 个 Slurm 作业全部成功，71,658 条逐 RNA 预测通过独立复算。完整结果、checkpoint 和源代码验收证据见 [全量结果报告](reports/full_tr0_2026-10-21/README_results.md)。协议、数据角色及恢复方法见 [全量实验说明](docs/FULL_TR0_PROTOCOL.md)。既有 FAST-v1 的源代码、输出和报告保留。
