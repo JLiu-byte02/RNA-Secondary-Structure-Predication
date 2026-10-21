@@ -81,8 +81,9 @@ def lock_selection():
 
 def test_run(mode,seed):
     import torch
-    from scripts._common import load_manifest, load_split
-    from scripts.run_thermo_fast import ThermoFusion, build_records, evaluate
+    from scripts._common import load_manifest, load_split, set_seed
+    from scripts.run_thermo_fast import ThermoFusion, build_records, evaluate, input_hash
+    set_seed(seed)
     lock=json.loads((OUT/'selection_lock.json').read_text())
     directory=OUT/mode/f'seed{seed}'
     selection=lock['runs'][f'{mode}/seed{seed}']; threshold=selection['threshold']
@@ -99,12 +100,19 @@ def test_run(mode,seed):
     if checkpoint['epoch']!=selection['best_epoch']:raise ValueError('Epoch changed')
     model.load_state_dict(checkpoint['model'])
     manifest,split=load_manifest(ROOT),load_split(ROOT)
-    features=json.loads((OUT/'thermo_cache_manifest.json').read_text())['samples']
+    audit=json.loads((OUT/'split_audit.json').read_text())
+    cache=json.loads((OUT/'thermo_cache_manifest.json').read_text())
+    if input_hash(ROOT,audit,cache)!=lock['input_provenance_hash']:
+        raise ValueError('Evaluation inputs differ from the locked training inputs')
+    features=cache['samples']
     metrics={}
     for name in ('VL0','TS0','bprna_new'):
         ids=split[name]
         records=build_records(ROOT,ids,manifest,features)
-        embeddings=torch.load(ROOT/'embeddings/full'/f'{name}.pt',map_location='cpu',weights_only=False)
+        embedding_path=ROOT/'embeddings/full'/f'{name}.pt'
+        if file_hash(embedding_path)!=audit['embedding_sha256'][name]:
+            raise ValueError('Evaluation embedding checksum changed: '+name)
+        embeddings=torch.load(embedding_path,map_location='cpu',weights_only=False)
         path=directory/f'locked_{name}_predictions.jsonl'
         evaluate(model,ids,embeddings,records,[threshold],torch.device('cuda'),path)
         metrics[name]=metrics_file(path,ids,manifest,threshold)
