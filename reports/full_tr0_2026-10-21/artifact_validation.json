@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "runs": 9,
+  "cohort_evaluations": 27,
+  "independently_recomputed_predictions": 71658,
+  "selection_lock_sha256": "ea969c96825221c078688f34f2a77b14b3af6f828164ebd6c9b6e223c43ba07e",
+  "complete_TR0": true,
+  "selection_split": "VL0",
+  "test_scores_used_for_selection": false
+}

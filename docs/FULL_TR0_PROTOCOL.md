@@ -15,7 +15,7 @@
 
 配置为 `configs/full_tr0.yaml`。保留 FAST-v1 的 AdamW、学习率 1e-4、weight decay 1e-4、batch size 1、累积 4、梯度裁剪 1、最多 10 epoch、patience 3 及 CUDA BF16。每个种子的三组模型具有相同参数量、初始参数哈希、训练顺序及训练预算。沿用预定的 0.1 至 0.9 阈值网格、严格 `>` 解码比较、阈值并列取较小值、epoch 并列取较早者。
 
-每个 epoch 根据 VL0 RNA-macro exact F1 的最佳阈值评分选择 checkpoint 和 early stopping。全部九组训练结束后，在各组已选 checkpoint 上重新计算 VL0 完整阈值曲线。每种方法使用三个共同种子平均 VL0 F1 最大的**同一个最终阈值**。`selection_lock.json` 固定每组 checkpoint SHA256、最佳 epoch 和最终阈值；之后才提交测试作业。训练不读取测试 embedding、P/Q 矩阵或测试标签；固定 manifest 和全部缓存清单的哈希作为输入版本标识。
+每个 epoch 根据 VL0 RNA-macro exact F1 的最佳阈值评分选择 checkpoint 和 early stopping。全部九组训练结束后，在各组已选 checkpoint 上重新计算 VL0 完整阈值曲线。每种方法使用三个共同种子平均 VL0 F1 最大的**同一个最终阈值**。`selection_lock.json` 固定每组 checkpoint SHA256、最佳 epoch 和最终阈值；之后才提交测试作业。加载器读取统一 manifest，但训练循环仅使用 TR0 标签及 VL0 评分，不构建测试集记录，也不加载测试 embedding 或 P/Q 矩阵；固定 manifest 和全部缓存清单的哈希作为输入版本标识。
 
 这一安排沿用原项目多种子统一阈值的约定。完整 TR0 阶段以 VL0 选择，FAST-v1 以家族留出选择，因此两阶段的开发分数不直接作为同一实验比较。
 
@@ -23,9 +23,12 @@
 
 仅使用已验证公开权重，SHA256 为 `cd93c3f21eb3e767373c9491192686b5846247bd1110693e453c1dd0f321c0db`。TR0 内已有的新服务器公开权重表征在校验来源及文件哈希后复用，其余表征新生成；全阶段表征单独保存到 `embeddings/full/`。P/Q 继续调用原 ViennaRNA 2.6.4 的同一 PF 实现，已有按序列哈希存储的缓存经参数、矩阵及校验和检查后复用，新缓存保存在 `outputs/full_tr0/thermo_cache/`。要求固定集合 100% 成功，不能静默丢弃失败样本。
 
+本入口接续 FAST-v1 的环境和数据准备。新 checkout 需先按主 README 安装依赖，执行 `python scripts/unpack_data.py`、`python scripts/download_weights.py`，再提交 `sbatch slurm/prepare.sbatch` 并确认该准备作业成功，以生成可复用的公开权重表征及来源记录。已经完成 FAST-v1 复现的服务器可直接执行：
+
 ```bash
 cd /home/junxuanliu/projects/RNA_ThermoFusion
 source ./activate.sh
+mkdir -p logs
 python tests/test_full_protocol.py
 nohup python -u scripts/reproduce_full_tr0.py > logs/full_cluster.log 2>&1 < /dev/null &
 ```

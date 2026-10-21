@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "run": "E0_no_thermo/seed17",
+      "checkpoint_matches_selected_epoch": true,
+      "source_files_unchanged": true,
+      "input_provenance_matches": true
+    },
+    {
+      "run": "E0_no_thermo/seed23",
+      "checkpoint_matches_selected_epoch": true,
+      "source_files_unchanged": true,
+      "input_provenance_matches": true
+    },
+    {
+      "run": "E0_no_thermo/seed41",
+      "checkpoint_matches_selected_epoch": true,
+      "source_files_unchanged": true,
+      "input_provenance_matches": true
+    },
+    {
+      "run": "E1_bpp/seed17",
+      "checkpoint_matches_selected_epoch": true,
+      "source_files_unchanged": true,
+      "input_provenance_matches": true
+    },
+    {
+      "run": "E1_bpp/seed23",
+      "checkpoint_matches_selected_epoch": true,
+      "source_files_unchanged": true,
+      "input_provenance_matches": true
+    },
+    {
+      "run": "E1_bpp/seed41",
+      "checkpoint_matches_selected_epoch": true,
+      "source_files_unchanged": true,
+      "input_provenance_matches": true
+    },
+    {
+      "run": "E2_bpp_stack/seed17",
+      "checkpoint_matches_selected_epoch": true,
+      "source_files_unchanged": true,
+      "input_provenance_matches": true
+    },
+    {
+      "run": "E2_bpp_stack/seed23",
+      "checkpoint_matches_selected_epoch": true,
+      "source_files_unchanged": true,
+      "input_provenance_matches": true
+    },
+    {
+      "run": "E2_bpp_stack/seed41",
+      "checkpoint_matches_selected_epoch": true,
+      "source_files_unchanged": true,
+      "input_provenance_matches": true
+    }
+  ]
+}

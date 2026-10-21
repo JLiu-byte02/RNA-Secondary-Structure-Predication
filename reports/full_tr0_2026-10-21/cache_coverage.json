@@ -1,0 +1,25 @@
+{
+  "counts": {
+    "TR0": 10682,
+    "VL0": 1286,
+    "TS0": 1288,
+    "bprna_new": 5388
+  },
+  "successful_unique_sequences": 18644,
+  "failed_unique_sequences": 0,
+  "reused_unique_sequences": 5653,
+  "sample_count": 18644,
+  "cache_manifest_sha256": "d6601862b2e43ccdfd0955ff68a9b3b853ce80017d682a10305e1b4664becf99",
+  "viennarna_version": "2.6.4",
+  "params": {
+    "temperature": 37.0,
+    "dangles": 2,
+    "noLP": false,
+    "uniq_ML": true,
+    "compute_bpp": true,
+    "energy_parameters": "RNA_Turner2004",
+    "min_loop_size": 3,
+    "mfe_for_pf_scaling": true
+  },
+  "stack_cutoff": 1e-08
+}

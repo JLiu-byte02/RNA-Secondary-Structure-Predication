@@ -1,0 +1,105 @@
+{
+  "jobs": {
+    "prepare": {
+      "id": "9132",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "train_E0_no_thermo_seed17": {
+      "id": "9133",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "train_E1_bpp_seed17": {
+      "id": "9134",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "train_E2_bpp_stack_seed17": {
+      "id": "9135",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "train_E0_no_thermo_seed23": {
+      "id": "9136",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "train_E1_bpp_seed23": {
+      "id": "9137",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "train_E2_bpp_stack_seed23": {
+      "id": "9138",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "train_E0_no_thermo_seed41": {
+      "id": "9139",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "train_E1_bpp_seed41": {
+      "id": "9140",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "train_E2_bpp_stack_seed41": {
+      "id": "9141",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "test_E0_no_thermo_seed17": {
+      "id": "9142",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "test_E1_bpp_seed17": {
+      "id": "9143",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "test_E2_bpp_stack_seed17": {
+      "id": "9144",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "test_E0_no_thermo_seed23": {
+      "id": "9145",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "test_E1_bpp_seed23": {
+      "id": "9146",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "test_E2_bpp_stack_seed23": {
+      "id": "9147",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "test_E0_no_thermo_seed41": {
+      "id": "9148",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "test_E1_bpp_seed41": {
+      "id": "9149",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    },
+    "test_E2_bpp_stack_seed41": {
+      "id": "9150",
+      "status": "COMPLETED",
+      "exit_code": "0:0"
+    }
+  },
+  "started_unix": 1792573477.3870037,
+  "status": "completed",
+  "pid": 52435,
+  "stage": "validated",
+  "updated_unix": 1792579582.7316952,
+  "elapsed_seconds": 6201.3622126579285
+}

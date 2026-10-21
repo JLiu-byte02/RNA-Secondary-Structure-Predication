@@ -1,0 +1,82 @@
+{
+  "full_results.csv": {
+    "bytes": 6379,
+    "sha256": "6b5b34c7b2d71db92fda35596f283cd3863decf36c7837528daa327a522aefb1"
+  },
+  "cluster_status.json": {
+    "bytes": 2341,
+    "sha256": "bd7c5e64a9b79e749cc48cb6453ac7a4638126e7257090bcdbb78a2d29c19519"
+  },
+  "experiment_identity.json": {
+    "bytes": 5104,
+    "sha256": "de89998d06d198e3f084bd2b37f9dec8c6101b2231661ca0a036d83fefebeabb"
+  },
+  "selection_lock.json": {
+    "bytes": 2731,
+    "sha256": "ea969c96825221c078688f34f2a77b14b3af6f828164ebd6c9b6e223c43ba07e"
+  },
+  "predictions_manifest.json": {
+    "bytes": 6941,
+    "sha256": "fd33f4f282eaeae61f0fc799c1f6017875aa567568a8f28074925cc481b420d1"
+  },
+  "split_audit.json": {
+    "bytes": 783,
+    "sha256": "ca60c6057be31c4233af8fcb0546e6fe1ec725a045ea638680f180642bc6c121"
+  },
+  "checkpoint_source_validation.json": {
+    "bytes": 1593,
+    "sha256": "af40c9caf34ced11596fd7b1db687c808a91da8f1596f8fcd644f3abcaae11e7"
+  },
+  "README_results.md": {
+    "bytes": 3346,
+    "sha256": "47750c1bd383388d6847e1cb5a38a5eee48118c50429a26f60fa70564e913c61"
+  },
+  "embedding_completion_TR0_VL0_TS0_bprna_new.json": {
+    "bytes": 1172,
+    "sha256": "438bef8806bf5d31363e15927636d91863ec648a81cffc64fa2b3bbce75dd1fd"
+  },
+  "aggregate_results.csv": {
+    "bytes": 970,
+    "sha256": "27b833db9864be1437d07cd1ea10312f1660efc05548ff1981018920dd6bc8da"
+  },
+  "aggregate_results.json": {
+    "bytes": 2063,
+    "sha256": "d4204c400fceb266984d7340073f2ea7e06846fe1d58e23498cc376189f6c56d"
+  },
+  "artifact_validation.json": {
+    "bytes": 301,
+    "sha256": "43af698f2be6ee657d0f07eb37c3b70c2c8ab890d3404d36ab47b33c1429c59a"
+  },
+  "evaluation_contract.json": {
+    "bytes": 186,
+    "sha256": "55f3d4063c334ecb81a68bd76c66ec367f7a672a07e041d97eecac47fc738a1e"
+  },
+  "slurm_accounting.txt": {
+    "bytes": 886,
+    "sha256": "cd853d5b41d31db1264eb40dd47cd313777c1ac80064b210f20ffc6e6a684051"
+  },
+  "paired_deltas.csv": {
+    "bytes": 699,
+    "sha256": "820c02280982b78a612d0d6236af87158fcab964e8a98a5455940f16f5643309"
+  },
+  "training_runs.csv": {
+    "bytes": 3523,
+    "sha256": "685b04245ce7e19b95bc2a3608449f024c6ba0746f05d14da08d93d01297248d"
+  },
+  "PREPARATION_NOTES.md": {
+    "bytes": 1254,
+    "sha256": "32b7c5c9ae2cf5bfb3b71257e4a820e432f8602e906700e1866a62bfba7e7075"
+  },
+  "cache_coverage.json": {
+    "bytes": 604,
+    "sha256": "53ec433baf401d8d9b276753fb1731ed694659ad257732e30f3651379d2639a2"
+  },
+  "full_tr0.yaml": {
+    "bytes": 1172,
+    "sha256": "367d6dfd86d2cf7131b864357862d1188591e8a259e89bfc888cf33d926111bb"
+  },
+  "preparation_complete.json": {
+    "bytes": 4308,
+    "sha256": "8774d060f2ea94fc49fb408b8947a3b5c39bda00416be7f7b7ade867bb7aad01"
+  }
+}

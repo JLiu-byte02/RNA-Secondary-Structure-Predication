@@ -2,10 +2,19 @@
 
 ## 全量 TR0 多种子实验
 
-新增独立的 `FULL-TR0-v1` 流程：TR0 10,682 条训练，VL0 1,286 条验证，TS0 1,288 条及 bpRNA-new 5,388 条最终测试。E0/E1/E2 均使用种子 17、23、41。协议、数据角色及恢复方法见 [全量实验说明](docs/FULL_TR0_PROTOCOL.md)。既有 FAST-v1 的源代码、输出和报告保留。
+2026-10-21 已完成独立的 `FULL-TR0-v1` 流程：TR0 10,682 条训练，VL0 1,286 条验证，TS0 1,288 条及 bpRNA-new 5,388 条最终测试。E0/E1/E2 均使用种子 17、23、41，19 个 Slurm 作业全部成功，71,658 条逐 RNA 预测通过独立复算。完整结果、checkpoint 和源代码验收证据见 [全量结果报告](reports/full_tr0_2026-10-21/README_results.md)。协议、数据角色及恢复方法见 [全量实验说明](docs/FULL_TR0_PROTOCOL.md)。既有 FAST-v1 的源代码、输出和报告保留。
+
+| 方法 | TS0 exact F1，均值 ± 样本 SD | bpRNA-new exact F1，均值 ± 样本 SD |
+|---|---:|---:|
+| E0，无热力学信息 | 0.606643 ± 0.001392 | 0.504694 ± 0.008873 |
+| E1，BPP | 0.646526 ± 0.002507 | 0.618096 ± 0.009508 |
+| E2，BPP + stack | 0.647474 ± 0.001016 | 0.626139 ± 0.005850 |
+
+主指标对完整 original 配对计算 RNA-macro exact F1。最终阈值仅由三种子平均 VL0 F1 选择：E0 为 0.1，E1/E2 为 0.2，在提交测试作业前锁定。BPP 相对 E0 在两套测试集平均提高约 3.99 和 11.34 个百分点；E2 相对 E1 的均值增加约 0.095 和 0.804 个百分点，TS0 的逐种子增益为两正一负，bpRNA-new 为三个种子均正。三个种子的样本 SD 不能视作置信区间。
 
 ```bash
 source ./activate.sh
+mkdir -p logs
 nohup python -u scripts/reproduce_full_tr0.py > logs/full_cluster.log 2>&1 < /dev/null &
 cat outputs/full_tr0/cluster_status.json
 ```

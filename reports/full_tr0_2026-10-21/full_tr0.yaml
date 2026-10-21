@@ -1,0 +1,38 @@
+protocol: FULL-TR0-v1
+seed: 17
+seeds: [17, 23, 41]
+encoder: public_generic_frozen_RiNALMo_Giga
+head: existing_B0_head
+adapter: 2d_cnn_32_channels
+train_split: TR0
+select_split: VL0
+threshold_split: VL0
+test_splits: [TS0, bprna_new]
+initialization: identical_random_head_and_adapter_per_seed
+initial_lr: 0.0001
+optimizer: AdamW
+weight_decay: 0.0001
+batch_size: 1
+gradient_accumulation: 4
+max_epochs: 10
+patience: 3
+clip_grad_norm: 1.0
+precision: bfloat16_if_cuda_supported
+loss: existing_unweighted_pair_bce_per_RNA
+selection_metric: VL0_RNA_macro_exact_F1
+thresholds: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+threshold_tie: lowest_threshold
+epoch_tie: earliest_epoch
+final_threshold: one_per_method_maximum_three_seed_mean_VL0_F1_at_selected_checkpoints
+allow_rinalmo_grad: false
+use_TS0_for_selection: false
+use_bpRNA_new_for_selection: false
+label_policy: full_original_truth_primary_old_B0_eligible_candidate_BCE_training
+primary_truth: full_original_pairs
+unknown_family_policy: exclude_from_family_macro_include_in_RNA_macro
+thermo_version: 2.6.4
+thermo_temperature: 37.0
+thermo_dangles: 2
+thermo_noLP: false
+thermo_uniq_ML: true
+thermo_stack_cutoff: 0.00000001
