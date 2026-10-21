@@ -1,5 +1,6 @@
 """Collect all observed epochs and locked budget results without plotting dependencies."""
 import csv
+import hashlib
 import json
 import math
 import shutil
@@ -37,6 +38,40 @@ def main():
     accounting=subprocess.check_output(['sacct','-X','-n','-P','-j',','.join(j['id'] for j in cluster['jobs'].values()),
         '-o','JobID,JobName,State,ExitCode,Elapsed,NodeList'],text=True)
     (REPORT/'slurm_accounting.txt').write_text(accounting)
+    previous_jobs=cluster.get('previous_jobs',[])
+    write_json(REPORT/'previous_slurm_jobs.json',previous_jobs)
+    all_ids=sorted({j['id'] for j in list(cluster['jobs'].values())+previous_jobs},key=int)
+    all_accounting=subprocess.check_output(['sacct','-X','-n','-P','-j',','.join(all_ids),
+        '-o','JobID,JobName,State,ExitCode,ElapsedRaw,Start,End,NodeList'],text=True)
+    (REPORT/'slurm_all_attempts.txt').write_text(all_accounting)
+    allocation_seconds=sum(int(line.split('|')[4]) for line in all_accounting.splitlines() if line.strip())
+    migration_note='本次没有训练资源迁移。'
+    migration_path=OUT/'resource_migration.json'
+    if migration_path.exists():
+        raw=json.loads(migration_path.read_text());proof=raw.get('resume_verification',{})
+        if not proof.get('passed') or raw['numerical_runtime_changed']:raise RuntimeError('Migration continuation has not been verified')
+        checkpoint=raw['checkpoint']
+        rows=read_rows(OUT/raw['mode']/f"seed{raw['seed']}")
+        prefix=rows[:checkpoint['epoch']]
+        prefix_sha=hashlib.sha256(json.dumps(prefix,sort_keys=True).encode()).hexdigest()
+        if prefix_sha!=checkpoint['retained_prefix_sha256'] or checkpoint['code_hash']!=identity['training_source']['sha256']:
+            raise RuntimeError('Migration changed the retained trajectory or runtime')
+        write_json(REPORT/'migration_retained_prefix.json',prefix)
+        # Raw operator evidence remains on the server; published audit avoids private working paths.
+        keys=('status','mode','seed','original_job_id','replacement_job_id','node','original_gpu_index','replacement_gpu_index',
+            'reason','unrelated_process_memory_observed_MiB','unrelated_process_signalled','submitted_unix','switch_started_unix',
+            'original_cancel_requested_unix','checkpoint','original_job_accounting_after_cancel','numerical_runtime_changed',
+            'cost_note','resume_verification')
+        migration={k:raw[k] for k in keys if k in raw}
+        write_json(REPORT/'resource_migration.json',migration)
+        migration_note=(f"E2/seed41 原作业 {raw['original_job_id']} 的分配 GPU 上出现另一个不属于该作业的计算进程，"
+            f"占用约 {raw['unrelated_process_memory_observed_MiB']/1024:.1f} GiB 显存。通过 Slurm 先申请空闲 GPU 后，"
+            f"主动取消原分配，以作业 {raw['replacement_job_id']} 从第 {checkpoint['epoch']+1} 轮继续；"
+            f"保留前 {checkpoint['epoch']} 轮的逐项记录、参数、AdamW 和随机数状态。"
+            f"AdamW 步数从 {checkpoint['optimizer_step_counts'][0]:,} 连续增加到 {proof['first_resumed_optimizer_step_counts'][0]:,}。"
+            f"数值代码、输入和超参数均未改变，原有前缀的完整内容哈希一致。迁移前 {proof['pre_migration_complete_new_epochs']} 个完整新轮"
+            f"平均 {proof['pre_migration_mean_epoch_seconds']:.1f} 秒，迁移后最初 {len(proof['post_migration_probe_epochs'])} 个完整轮"
+            f"平均 {proof['post_migration_mean_epoch_seconds']:.1f} 秒；这是消除资源竞争的观察，不代表算法本身加速。")
     tests=list(csv.DictReader((OUT/'budget_results.csv').open()))
     epochs=[];convergence=[];summaries=[]
     for mode in MODES:
@@ -161,7 +196,7 @@ def main():
 |---|---|---:|---:|---:|---:|
 {convergence_table}
 
-12条完整轨迹累计训练段成本 {sum(r['training_minutes_50'] for r in convergence)/60:.2f} GPU小时；其中本阶段新增训练段 {sum(r['new_training_minutes'] for r in convergence)/60:.2f} GPU小时。上述训练段均独占一张GPU，验证、前缀诊断、最终测试及排队另计；并行作业的累计GPU小时不能当成用户等待的墙钟时间。
+12条完整轨迹累计训练段成本 {sum(r['training_minutes_50'] for r in convergence)/60:.2f} GPU小时；其中本阶段新增训练段 {sum(r['new_training_minutes'] for r in convergence)/60:.2f} GPU小时。各训练作业申请一张GPU，上述数值为完整训练轮段的分配时间，验证、前缀诊断、最终测试及排队另计；并行作业的累计GPU小时不能当成用户等待的墙钟时间。
 
 ## B0 的过程与公平性
 
@@ -175,7 +210,15 @@ B0 是原始175,553参数 PairHead，不含纠错 CNN，不读取 P/Q/距离作�
 |---|---|---:|---:|
 {comparison_table}
 
-时间为实际测得的训练段时间，包含继承轨迹的已发生训练成本；本阶段新增成本、诊断成本和实际作业时间另列 trajectory_summaries.json。各作业独占一张 Slurm GPU，集群排队、节点负载和前缀复用会影响墙钟时间，不把排队时间或不同节点负载解释为方法速度差异。种子SD不等于置信区间。
+时间为实际测得的完整轮训练段时间，包含继承轨迹的已发生训练成本；本阶段新增成本和诊断成本另列 trajectory_summaries.json。若从检查点重启，summary 的 new_stage_wall_seconds 只描述最后一次进程运行。各作业采用单GPU的 Slurm 分配；集群排队、节点负载、实际GPU竞争和前缀复用会影响墙钟时间，不把这些差异解释为方法计算效率的差异。种子SD不等于置信区间。
+
+## 资源竞争与检查点续训记录
+
+{migration_note}
+
+25个最终准备/训练/测试作业均为 COMPLETED、ExitCode 0:0；含被替代尝试共提交 {len(all_ids)} 个不同作业ID。previous_slurm_jobs.json 与 slurm_all_attempts.txt 保留主动取消及所有最终作业的状态、开始/结束时间和分配秒数。由于所有这些作业均申请一张GPU，本阶段所有尝试累计 GPU 分配时长为 {allocation_seconds/3600:.2f} 小时（含准备、验证、测试、重新加载及取消前的部分轮；不含排队，也不含此前10轮阶段）。
+
+逐轮时间图仅统计完成且保留的 epoch 训练段，未完成轮的部分工作、迁移时短暂重叠的资源预留和重新加载没有混入这些曲线，均包含在全部尝试的 Slurm 分配时长中。RiNALMo 表征预处理是此前完成的共同步骤，不包含在本阶段的训练轮数成本比较中。
 
 ## 固定预算性能比较
 

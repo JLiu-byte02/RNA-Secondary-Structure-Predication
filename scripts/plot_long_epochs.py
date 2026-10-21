@@ -231,6 +231,7 @@ def main():
         export=dict(width_mm=183,height_mm=118,minimum_font_pt=7,formats=['svg','pdf','png'],editable_text=True),
         uncertainty='n=3 fixed paired seeds; sample SD, not confidence intervals; no significance claims',
         data_integrity='All 600 epoch rows and all 20 budget aggregates retained; no outliers excluded or smoothed.',
+        timing_definition='Completed-epoch training segments include verified historical prefixes. Queue, validation, loading, aborted partial epochs and overlapping reservations are separate; see all-attempt Slurm accounting.',
         interpretation='Raw epoch F1 and selection envelope are distinct. Online train BCE and end-of-epoch validation BCE use different parameter states.'))
     epoch_figure(figures,epochs,'validation_f1','validation_f1_by_epoch','Validation performance of the epoch-end model',
         'VL0 RNA-macro exact F1','Raw validation trajectories reveal late improvement or deterioration.',
