@@ -1,0 +1,36 @@
+{
+  "weight_sha256": "cd93c3f21eb3e767373c9491192686b5846247bd1110693e453c1dd0f321c0db",
+  "weight_source": "https://drive.google.com/uc?export=download&id=1-E2Ziu2VFDAgwCmQvVeAviGtsQQ94L3L",
+  "frozen": true,
+  "supervised_weights_loaded": false,
+  "precision": "BF16 inference, FP16 storage",
+  "implementation_sha256": "73d5559927e55a9d79e0f48156fec624d21c65996aa389ab440cc6747465988f",
+  "splits": {
+    "TR0": {
+      "n": 10682,
+      "sha256": "a41b161a26aad0c3968dd1899d7b91739ab8f8ae0b3d59a31e8abb83631dc2b7",
+      "bytes": 3627155906
+    },
+    "VL0": {
+      "n": 1286,
+      "sha256": "c70e64691d578c782f0ff2ae7671dee1c5a093c0616f0ac356bcecc5e1bfe7b0",
+      "bytes": 427036316
+    },
+    "TS0": {
+      "n": 1288,
+      "sha256": "c9ecda334f2c4bedda0bf4df1460860e342d6193e00817026ab8f2314fd3fa12",
+      "bytes": 445207634
+    },
+    "bprna_new": {
+      "n": 5388,
+      "sha256": "4b1ed8060c72030398add8c5ca6fa4f5fe8ccd6cd475971c2414ad683d96cc96",
+      "bytes": 1517890014
+    }
+  },
+  "seconds": 948.9973101615906,
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "peak_cuda_bytes": 2651112960,
+  "torch": "2.1.2+cu118",
+  "cuda": "11.8",
+  "slurm_job_id": "9132"
+}

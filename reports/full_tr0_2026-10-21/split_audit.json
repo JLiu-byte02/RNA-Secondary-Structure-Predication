@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "counts": {
+    "TR0": 10682,
+    "VL0": 1286,
+    "TS0": 1288,
+    "bprna_new": 5388
+  },
+  "cross_split_sequence_overlap": 0,
+  "train_split": "TR0",
+  "selection_split": "VL0",
+  "test_splits": [
+    "TS0",
+    "bprna_new"
+  ],
+  "manifest_sha256": "0f22b4f1b188018299ef06508d15e3316d9228f31b5c23e6d7a2497340b19424",
+  "split_ids_sha256": "90b700fc39eb6c586f659cfbece1dc5a8b741f37881ab642af0f4dea23f8317b",
+  "embedding_sha256": {
+    "TR0": "a41b161a26aad0c3968dd1899d7b91739ab8f8ae0b3d59a31e8abb83631dc2b7",
+    "VL0": "c70e64691d578c782f0ff2ae7671dee1c5a093c0616f0ac356bcecc5e1bfe7b0",
+    "TS0": "c9ecda334f2c4bedda0bf4df1460860e342d6193e00817026ab8f2314fd3fa12",
+    "bprna_new": "4b1ed8060c72030398add8c5ca6fa4f5fe8ccd6cd475971c2414ad683d96cc96"
+  }
+}

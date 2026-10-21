@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "full_original_truth_unreachable_pair_retained": true,
+  "rejected_altered_reference": true,
+  "rejected_altered_threshold": true,
+  "rejected_invalid_pair": true
+}
