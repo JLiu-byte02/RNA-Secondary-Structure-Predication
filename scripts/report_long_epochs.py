@@ -126,6 +126,15 @@ def main():
         interpretation.append(f"- {mode}：10→30轮，VL0 最后轮 F1 变化 {groups[30]['validation_f1_mean']-groups[10]['validation_f1_mean']:+.4f}；30→50轮变化 {groups[50]['validation_f1_mean']-groups[30]['validation_f1_mean']:+.4f}。累计训练时间从 {groups[10]['cumulative_training_minutes_mean']:.1f} 分钟增加到 {groups[30]['cumulative_training_minutes_mean']:.1f} / {groups[50]['cumulative_training_minutes_mean']:.1f} 分钟。50轮平均峰值回落 {statistics.mean(r['peak_to_last_f1_drop'] for r in c):.4f}；最佳 epoch 分别为 {', '.join(str(r['best_epoch']) for r in c)}。")
         interpretation.append(f"  在预算内选择的模型上，30→50轮的 TS0 / bpRNA-new 平均 F1 变化分别为 {groups[50]['TS0_rna_macro_exact_f1_mean']-groups[30]['TS0_rna_macro_exact_f1_mean']:+.4f} / {groups[50]['bprna_new_rna_macro_exact_f1_mean']-groups[30]['bprna_new_rna_macro_exact_f1_mean']:+.4f}，额外训练 {groups[50]['cumulative_training_minutes_mean']-groups[30]['cumulative_training_minutes_mean']:.1f} 分钟（每种子均值）。这些是预定预算的描述性比较，不据测试分数挑选预算。")
         interpretation.append(f"  在线训练 BCE（10/30/50轮）为 {groups[10]['train_bce_online_mean']:.5f} / {groups[30]['train_bce_online_mean']:.5f} / {groups[50]['train_bce_online_mean']:.5f}；同期 VL0 BCE 为 {groups[10]['validation_bce_mean']:.5f} / {groups[30]['validation_bce_mean']:.5f} / {groups[50]['validation_bce_mean']:.5f}。结合逐种子曲线判断后期变化，不能仅凭训练损失给出泛化结论。")
+        joint=0
+        for seed in SEEDS:
+            track=sorted([r for r in epochs if r['mode']==mode and r['seed']==seed],key=lambda r:r['epoch'])
+            joint+=int(track[-1]['train_bce_online']<track[9]['train_bce_online']
+                and track[-1]['validation_bce']>track[9]['validation_bce']
+                and max(r['validation_f1'] for r in track)-track[-1]['validation_f1']>.001)
+        interpretation.append(f"  {joint}/3 个种子同时出现：50轮训练 BCE 低于10轮、验证 BCE 高于10轮、轮末 F1 比本轨迹峰值低超过0.001。"+
+            ("这为后期过拟合提供联合观察证据，仍是描述性判断。" if joint else "未观察到上述三个信号同时出现，不能仅由训练轮数推断过拟合。")+
+            f" 10→50轮累计训练段时间增加到 {groups[50]['cumulative_training_minutes_mean']/groups[10]['cumulative_training_minutes_mean']:.2f} 倍，预算内所选 VL0 平均 F1 变化 {groups[50]['VL0_rna_macro_exact_f1_mean']-groups[10]['VL0_rna_macro_exact_f1_mean']:+.4f}。")
     text=f'''# B0 / E 系列 50 轮训练研究
 
 12条轨迹全部完成50轮。训练为完整 TR0 10,682条，VL0 1,286条用于验证和选择，TS0 1,288条及 bpRNA-new 5,388条用于固定预算测试；种子17、23、41。每个预算内先选各自 VL0 最佳 epoch，再选择方法共享阈值，全部60个选择统一锁定后才提交测试。测试结果不用于决定预算。
@@ -146,7 +155,7 @@ def main():
 
 训练损失下降但 VL0 BCE 上升、VL0 F1 从峰值回落是后期过拟合的观察指标。峰值回落不等于显著性结论；应结合全部三个种子曲线和 validation_bce 判断。最佳值曲线的单调性来自选择规则，不能据此声称轮末模型持续改善。在线训练 BCE 使用每步更新中的参数，VL0 BCE 使用轮末参数，二者不能直接相减为精确泛化间隙。
 
-收敛速度见 convergence_by_seed.csv：预先规定达到最大 VL0 F1 的95%，以及距最大值不超过0.001的首次 epoch 与累计训练时间。所有逐轮数据保留在 epoch_curves.csv，包含 accuracy / balanced accuracy 与时长；候选 accuracy 易被大量负配对抬高，不能代替结构 F1。
+收敛速度见 convergence_by_seed.csv：预先规定达到最大 VL0 F1 的95%，以及距最大值不超过0.001的首次 epoch 与累计训练时间。这些指标需要完整轨迹的峰值，是事后收敛描述，不是可直接在线执行的停止规则。所有逐轮数据保留在 epoch_curves.csv，包含候选 micro accuracy / balanced accuracy 与时长；候选 accuracy 易被大量负配对抬高，不能代替结构 F1。
 
 | 方法 | 最佳epoch（17/23/41） | 首次达到峰值95%的平均epoch | 首次距峰值≤0.001的平均epoch | 50轮训练分钟/种子 | 本阶段新增训练分钟/种子 |
 |---|---|---:|---:|---:|---:|

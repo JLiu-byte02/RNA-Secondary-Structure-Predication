@@ -7,10 +7,12 @@ All drawing and exports use Matplotlib; the numerical training runtime is untouc
 import argparse
 import csv
 import hashlib
+import importlib.metadata
 import json
 import math
 import os
 from pathlib import Path
+import platform
 import statistics
 import subprocess
 import sys
@@ -88,7 +90,7 @@ class Figures:
         plt.rcParams.update({'font.family':'sans-serif','font.sans-serif':['DejaVu Sans'],'font.size':9,
             'axes.labelsize':9,'axes.titlesize':11,'xtick.labelsize':8,'ytick.labelsize':8,
             'legend.fontsize':8.5,'axes.linewidth':.7,'lines.linewidth':1.6,
-            'svg.fonttype':'none','pdf.fonttype':42,'ps.fonttype':42,
+            'svg.fonttype':'none','svg.hashsalt':'LONG-50-v1','pdf.fonttype':42,'ps.fonttype':42,
             'figure.facecolor':'white','axes.facecolor':'white','savefig.facecolor':'white'})
 
     def start(self,title,xlabel,ylabel,footer):
@@ -116,8 +118,8 @@ class Figures:
             sys.path.insert(0,str(self.qa_dir))
             from audit_panel_alignment import require_matplotlib_panel_alignment
             alignment=require_matplotlib_panel_alignment(fig,json_out=self.qa/f'{name}.alignment.json',strict=True)
-        fig.savefig(self.destination/f'{name}.svg')
-        fig.savefig(self.destination/f'{name}.pdf')
+        fig.savefig(self.destination/f'{name}.svg',metadata={'Date':None})
+        fig.savefig(self.destination/f'{name}.pdf',metadata={'CreationDate':None,'ModDate':None})
         fig.savefig(self.destination/f'{name}.png',dpi=300)
         plt.close(fig)
         checks={}
@@ -149,7 +151,7 @@ def epoch_figure(figures,epochs,field,name,title,ylabel,claim,footer):
         deviations=[statistics.stdev(v) for v in zip(*tracks)]
         ax.fill_between(range(1,51),[m-s for m,s in zip(means,deviations)],[m+s for m,s in zip(means,deviations)],color=color,alpha=.09,linewidth=0,zorder=2)
         ax.plot(range(1,51),means,color=color,marker=marker,markevery=[9,19,29,39,49],markersize=4,zorder=3)
-    ax.set_xlim(1,50);ax.set_xticks((1,10,20,30,40,50))
+    ax.set_xlim(.5,50.5);ax.set_xticks((1,10,20,30,40,50))
     figures.legend(fig)
     figures.export(fig,name,claim,'epoch_curves.csv',f'All 600 rows; field={field}; faint individual seeds, bold mean, band sample SD. No smoothing.')
 
@@ -197,7 +199,7 @@ def paired_figure(figures,results,cohort,title,name):
             marker=MARKERS[index+1],markersize=5,capsize=5,linewidth=1.2,zorder=5)
     ax.set_xlim(-.5,2.5);ax.set_xticks(range(3),('E0 - B0','E1 - B0','E2 - B0'))
     fig.text(.14,.84,'Same seed, data, optimization and selection rules; B0 has the original PairHead.',fontsize=8,ha='left')
-    figures.export(fig,name,f'Paired {cohort} improvement over B0 at the fixed final budget.',
+    figures.export(fig,name,f'Paired {cohort} performance difference from B0 at the fixed final budget.',
         'budget_results.csv',f'All 12 seed-method scores at predeclared budget 50 on {cohort}; three matched contrasts. Other budgets retained in source CSV.')
 
 
@@ -245,11 +247,16 @@ def main():
     budget_figure(figures,aggregate,'TS0','TS0_f1_vs_budget','TS0 performance across fixed training budgets')
     budget_figure(figures,aggregate,'bprna_new','bprna_new_f1_vs_budget','bpRNA-new performance across fixed training budgets')
     cost_figure(figures,aggregate)
-    paired_figure(figures,results,'TS0','Paired gains over B0 on TS0','TS0_paired_vs_B0')
-    paired_figure(figures,results,'bprna_new','Paired gains over B0 on bpRNA-new','bprna_new_paired_vs_B0')
+    paired_figure(figures,results,'TS0','Paired differences from B0 on TS0','TS0_paired_vs_B0')
+    paired_figure(figures,results,'bprna_new','Paired differences from B0 on bpRNA-new','bprna_new_paired_vs_B0')
+    versions={}
+    for package in ('numpy','matplotlib','PyMuPDF','pillow','fonttools','contourpy','kiwisolver','cycler','packaging','pyparsing','python-dateutil','six'):
+        try:versions[package]=importlib.metadata.version(package)
+        except importlib.metadata.PackageNotFoundError:versions[package]=None
     write_json(figures.destination/'figure_manifest.json',dict(figures=figures.records,
         source_sha256={n:digest(report/n) for n in ('epoch_curves.csv','budget_aggregate.csv','budget_results.csv')},
         plotting_source_sha256=digest(Path(__file__)),qa_enabled=figures.qa_dir is not None,
+        runtime=dict(python=platform.python_version(),system=platform.system(),machine=platform.machine(),packages=versions),
         manual_review='Pending inspection of the final PNG previews; automatic audits do not replace visual review.'))
     print(json.dumps(dict(figures=len(figures.records),directory=str(figures.destination))))
 
