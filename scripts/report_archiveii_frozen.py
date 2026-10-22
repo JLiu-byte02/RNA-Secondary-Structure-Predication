@@ -179,6 +179,8 @@ def main():
 
 ![逐家族官方口径F1](figures/family_flexible_f1.png)
 
+![P/Q相对E0的同种子配对差值](figures/paired_flexible_vs_E0.png)
+
 ![逐家族exact F1](figures/family_exact_f1.png)
 
 图表由真实family_results.csv/run_results.csv生成，E显示三种子的均值、样本SD和各种子点，官方检查点单独标记。SVG/PDF/PNG及实际QA记录位于figures/；自动检查不替代最终人工审阅。模型和逐RNA预测位于服务器outputs/archiveii_frozen/。

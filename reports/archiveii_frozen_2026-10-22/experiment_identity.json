@@ -1,0 +1,62 @@
+{
+  "protocol": "ARCHIVEII-FROZEN-E-LOFO-v2",
+  "training_source": {
+    "sha256": "30335ca3a29df8256d2ae3584d6ebfb8133792c38ced660264358dd1e86f0d41",
+    "files": {
+      "scripts/archiveii_frozen_protocol.py": "ea40749ed60876019b3e6b63460b1c437948c4f942171b7d3dde81ffdce1b82a",
+      "scripts/archiveii_frozen_data.py": "8643a84ba44a26a924656134d4b427efe17cf29b51e570e70e4f773a724601b7",
+      "scripts/archiveii_frozen_metrics.py": "84e31e5e8f83e4da3a7a42823953aa1e6c743e7b763a02549ed127b210cc6a7f",
+      "scripts/prepare_archiveii_frozen.py": "c446d257cdb380c570ca8b0214cf7161eb82822c13c9becaebce2152887d51f5",
+      "scripts/run_archiveii_frozen.py": "9ed15b301df6ea34fbb0e3a89e72a79a661443502c6e1749110febc29ba57b8c",
+      "scripts/_common.py": "e2d8b415538a09eaa10abe931c957a823c2db42ca52406883801a2518a53645a",
+      "scripts/run_thermo_fast.py": "0f71acc15887e79fcf46be4678cf8be9e67f6bf3dddb32e7a86efca851cb12de",
+      "scripts/cache_thermo.py": "b333dca8b9bc5680edcaa3bc2df6a75a95f4130411945f5c9dbeae321db85c31",
+      "scripts/run_long_epochs.py": "f427939f5821631e85aedaabc232b7bd2651bafd9a483dba46369040409197d9",
+      "scripts/long_models.py": "23b11b734c8d9ae4c79fb574a763edec3eefe581ec9155709ea360e157629837",
+      "scripts/long_metrics.py": "494f126f49cec812416150bf41486d5a4c2e54f54f4cc166b45f06421bd7321d",
+      "scripts/long_protocol.py": "4574b6cb153fc6a6f1b242663634fc5640b9586e45679156feba67e64dd3c23d",
+      "scripts/full_protocol.py": "a47bdaac891c077225d1d09afd4f4f65116b5d48bb6d7858f7b31745b63cc9c0",
+      "configs/archiveii_frozen.yaml": "f45c14359fe7b855b789fdf66e3424658ab456b5d13b0f512aab47953184897c",
+      "third_party/rinalmo_frozen_reference/sec_struct.py": "75c971655e9a12cbbe18d3f75b8377303d0acc1795fab0f0253721ec14b750d0",
+      "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/decoder.py": "003a068bd35535fe34c860c4e74f23de46a435e6f055ed6beceb8f68e0475533",
+      "src/losses.py": "522c69575875efe2ff6c9a4544410ff61cdaf591d44d4a5840904c59267d9c76",
+      "src/metrics.py": "b86863fab8aa5662be274439e52b92cda31e13472b5163967e7efcac3ac0a14d",
+      "src/pair_head.py": "fb9e45fa42e6b871cf4ac7417b47a811af4d8366d7f2458f15d6447fbc7e8dca",
+      "src/stem_candidates.py": "c0b371627e8d91b2488686c40fec3731570c903a3c901ba8f778ffd847b782e8",
+      "src/utils.py": "5a67b62355ec5affa6e3f125348784ce66905c64f7df2a7ca72f6c2230fb23f0"
+    }
+  },
+  "inputs": {
+    "files": {
+      "data_manifest.json.gz": "234bc111263ae7a435996b6cae847e02caa9985699a324221c9f4dba6febaca8",
+      "physical_manifest.json": "483a3bcbbef8af13ad657f8dffccc0ff5555931e1924f3ff6901ff75b89de160",
+      "embedding_provenance.json": "324b32fe496d647e2eca7908369a3c5b390f5f57214020d2debca1b028a1b326",
+      "embeddings": "dbe3085ae22b36783b719032a582ca40bdc126fd55a5bf611399cd36bad467e5"
+    },
+    "sha256": "2538b9f11fa22f82f8be2fdaaa86563e8a2c690d5772f74762c58cebc4dac517"
+  },
+  "config_sha256": "f45c14359fe7b855b789fdf66e3424658ab456b5d13b0f512aab47953184897c",
+  "preparation_sha256": "36951ffc5d839772dbc71b1f308016549ae183cac353bf2168fce8dddd5779b3",
+  "official_source_verification_sha256": "0783bfb0b59562111d791426a893f6a522992047e2e4372003a8606798537303",
+  "git_commit": "40bd9aff9e144758ba3d34b8bef454ae0065ead9",
+  "data_policy": "Exact official ArchiveII family-fold CT membership; no new filtering or deduplication",
+  "encoder_frozen": true,
+  "seeds": [
+    17,
+    23,
+    41
+  ],
+  "families": [
+    "5s",
+    "16s",
+    "23s",
+    "tRNA",
+    "srp",
+    "tmRNA",
+    "RNaseP",
+    "grp1",
+    "telomerase"
+  ],
+  "test_policy": "All 81 choices sealed before any E test"
+}

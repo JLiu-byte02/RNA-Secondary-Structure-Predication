@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "official_commit": "2c2c5c14a5ae609d8c560a5d9ca32e51e0288955",
+  "files": {
+    "rinalmo/config.py": {
+      "git_blob_sha1": "b66984cf432e14384111860f6689f362554a678a",
+      "sha256": "ec6cad89e85161f15d2e1d2b7a1582a7fd7bef650c26656fd5a7278134952b55"
+    },
+    "rinalmo/data/alphabet.py": {
+      "git_blob_sha1": "32d6f5cfba38756e01af8689badad1a85d0ec37d",
+      "sha256": "78f4b7f231ac3fc0e0f603ae362e012649883ffafce7925afd173a67ec55b97b"
+    },
+    "rinalmo/data/constants.py": {
+      "git_blob_sha1": "4a6a92bfa16271aeaec17f23b817846e58731fa2",
+      "sha256": "9fca2307b626465a3dcb65ec771b1f0413f404652b2f996a65e39f487c9ff1bc"
+    },
+    "rinalmo/model/attention.py": {
+      "git_blob_sha1": "138397b7c8042f4124a167d909e50b92d8cba8f6",
+      "sha256": "1b41e6afc98b9d65052b26ba5fecafc9ba9e9723fc4d67e2542ed774cf53b062"
+    },
+    "rinalmo/model/downstream.py": {
+      "git_blob_sha1": "852f00ae217c0f2ea4645e3523038321b195d1a3",
+      "sha256": "deac7b6d20d160e7156238124882407226c4fc9870c8efee96f11cc56f6dee9e"
+    },
+    "rinalmo/model/model.py": {
+      "git_blob_sha1": "22acd9530799127170ef87aa4ab964e2f452b0f2",
+      "sha256": "968fdea206848adb0ce641f0a677c57b4f0162d87aaa78a44265ad73e4b04625"
+    },
+    "rinalmo/model/modules.py": {
+      "git_blob_sha1": "a270f5c4143981cb36d8717871a2e23e464aaf0b",
+      "sha256": "897a1d01d32ec19b856705e60f2ab8121cdf7c6cc4ecf2b9247e9e9d8712a1a6"
+    },
+    "rinalmo/model/rope.py": {
+      "git_blob_sha1": "4c1ff0e6062dc8a015a01aa91320eae08b698843",
+      "sha256": "07701affc2b3eda20e61742c749f2c08a1c3006cb2d40e9ae02a58b7d45be698"
+    },
+    "rinalmo/utils/sec_struct.py": {
+      "git_blob_sha1": "0f1fe2da2ce321b7394548f8705282b0ec833ce9",
+      "sha256": "75c971655e9a12cbbe18d3f75b8377303d0acc1795fab0f0253721ec14b750d0"
+    }
+  },
+  "embedding_provenance_sha256": "324b32fe496d647e2eca7908369a3c5b390f5f57214020d2debca1b028a1b326"
+}

@@ -1,0 +1,311 @@
+{
+  "passed": true,
+  "training_source": {
+    "sha256": "30335ca3a29df8256d2ae3584d6ebfb8133792c38ced660264358dd1e86f0d41",
+    "files": {
+      "scripts/archiveii_frozen_protocol.py": "ea40749ed60876019b3e6b63460b1c437948c4f942171b7d3dde81ffdce1b82a",
+      "scripts/archiveii_frozen_data.py": "8643a84ba44a26a924656134d4b427efe17cf29b51e570e70e4f773a724601b7",
+      "scripts/archiveii_frozen_metrics.py": "84e31e5e8f83e4da3a7a42823953aa1e6c743e7b763a02549ed127b210cc6a7f",
+      "scripts/prepare_archiveii_frozen.py": "c446d257cdb380c570ca8b0214cf7161eb82822c13c9becaebce2152887d51f5",
+      "scripts/run_archiveii_frozen.py": "9ed15b301df6ea34fbb0e3a89e72a79a661443502c6e1749110febc29ba57b8c",
+      "scripts/_common.py": "e2d8b415538a09eaa10abe931c957a823c2db42ca52406883801a2518a53645a",
+      "scripts/run_thermo_fast.py": "0f71acc15887e79fcf46be4678cf8be9e67f6bf3dddb32e7a86efca851cb12de",
+      "scripts/cache_thermo.py": "b333dca8b9bc5680edcaa3bc2df6a75a95f4130411945f5c9dbeae321db85c31",
+      "scripts/run_long_epochs.py": "f427939f5821631e85aedaabc232b7bd2651bafd9a483dba46369040409197d9",
+      "scripts/long_models.py": "23b11b734c8d9ae4c79fb574a763edec3eefe581ec9155709ea360e157629837",
+      "scripts/long_metrics.py": "494f126f49cec812416150bf41486d5a4c2e54f54f4cc166b45f06421bd7321d",
+      "scripts/long_protocol.py": "4574b6cb153fc6a6f1b242663634fc5640b9586e45679156feba67e64dd3c23d",
+      "scripts/full_protocol.py": "a47bdaac891c077225d1d09afd4f4f65116b5d48bb6d7858f7b31745b63cc9c0",
+      "configs/archiveii_frozen.yaml": "f45c14359fe7b855b789fdf66e3424658ab456b5d13b0f512aab47953184897c",
+      "third_party/rinalmo_frozen_reference/sec_struct.py": "75c971655e9a12cbbe18d3f75b8377303d0acc1795fab0f0253721ec14b750d0",
+      "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/decoder.py": "003a068bd35535fe34c860c4e74f23de46a435e6f055ed6beceb8f68e0475533",
+      "src/losses.py": "522c69575875efe2ff6c9a4544410ff61cdaf591d44d4a5840904c59267d9c76",
+      "src/metrics.py": "b86863fab8aa5662be274439e52b92cda31e13472b5163967e7efcac3ac0a14d",
+      "src/pair_head.py": "fb9e45fa42e6b871cf4ac7417b47a811af4d8366d7f2458f15d6447fbc7e8dca",
+      "src/stem_candidates.py": "c0b371627e8d91b2488686c40fec3731570c903a3c901ba8f778ffd847b782e8",
+      "src/utils.py": "5a67b62355ec5affa6e3f125348784ce66905c64f7df2a7ca72f6c2230fb23f0"
+    }
+  },
+  "inputs": {
+    "files": {
+      "data_manifest.json.gz": "234bc111263ae7a435996b6cae847e02caa9985699a324221c9f4dba6febaca8",
+      "physical_manifest.json": "483a3bcbbef8af13ad657f8dffccc0ff5555931e1924f3ff6901ff75b89de160",
+      "embedding_provenance.json": "324b32fe496d647e2eca7908369a3c5b390f5f57214020d2debca1b028a1b326",
+      "embeddings": "dbe3085ae22b36783b719032a582ca40bdc126fd55a5bf611399cd36bad467e5"
+    },
+    "sha256": "2538b9f11fa22f82f8be2fdaaa86563e8a2c690d5772f74762c58cebc4dac517"
+  },
+  "smoke_runs": [
+    {
+      "completed": true,
+      "family": "5s",
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "code_hash": "30335ca3a29df8256d2ae3584d6ebfb8133792c38ced660264358dd1e86f0d41",
+      "input_hash": "2538b9f11fa22f82f8be2fdaaa86563e8a2c690d5772f74762c58cebc4dac517",
+      "config_hash": "e2178bbefb044b6d7d349c3d131ed0b6d0c7a366a9e23d5eea54dbd2158b4686",
+      "initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "train_ids_hash": "a9e4dc57c7b125237b1e85c5654a9586d3fc0d258de2f0ba589c28ee99440eb4",
+      "validation_ids_hash": "9535f1522bbd48242e090c0b4657f756af006744ecf5aeb1ba0e8dcbdda337d5",
+      "encoder_frozen": true,
+      "epochs_completed": 2,
+      "parameter_count": 186306,
+      "train_count": 32,
+      "validation_count": 32,
+      "best_epoch": 1,
+      "best_score": 0.007186897702600392,
+      "best_validation": {
+        "n": 32,
+        "mean_pair_bce": 0.6232428988441825,
+        "candidate_accuracy": 0.6864768020008537,
+        "candidate_balanced_accuracy": 0.5120764711061341,
+        "candidate_confusion": {
+          "tp": 1028,
+          "fp": 206561,
+          "tn": 455696,
+          "fn": 2031
+        },
+        "threshold_metrics": {
+          "0.1": {
+            "precision": 0.005971290771768151,
+            "recall": 0.009107757281592056,
+            "rna_macro_exact_f1": 0.007170068694609246
+          },
+          "0.2": {
+            "precision": 0.005971290771768151,
+            "recall": 0.009107757281592056,
+            "rna_macro_exact_f1": 0.007170068694609246
+          },
+          "0.3": {
+            "precision": 0.00599269421004222,
+            "recall": 0.009107757281592056,
+            "rna_macro_exact_f1": 0.007186897702600392
+          },
+          "0.4": {
+            "precision": 0.0055219878679225,
+            "recall": 0.008211009693668,
+            "rna_macro_exact_f1": 0.006562127926884361
+          },
+          "0.5": {
+            "precision": 0.0053124513583492575,
+            "recall": 0.006534544478854769,
+            "rna_macro_exact_f1": 0.0057850708226183266
+          },
+          "0.6": {
+            "precision": 0.0032608753170443954,
+            "recall": 0.0029023986155037257,
+            "rna_macro_exact_f1": 0.0029929962081944326
+          },
+          "0.7": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "rna_macro_exact_f1": 0.0
+          },
+          "0.8": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "rna_macro_exact_f1": 0.0
+          },
+          "0.9": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "rna_macro_exact_f1": 0.0
+          }
+        },
+        "seconds": 1.9736447762697935
+      },
+      "best_checkpoint_sha256": "95efcfe4ed164bd91566e1a31a17ed9f78d9ad0252b02d92ada55538713df3b6",
+      "epochs_sha256": "75e1c81a0713052cf7ada56f5cae2a1f11547bf03f824d769676812f6644434f",
+      "training_seconds": 2.700217275414616,
+      "validation_seconds": 3.135196903254837,
+      "gradients_verified": true,
+      "last_process_wall_seconds": 6.026943206787109,
+      "slurm_job_id": "9221"
+    },
+    {
+      "completed": true,
+      "family": "5s",
+      "mode": "E1_bpp",
+      "seed": 17,
+      "code_hash": "30335ca3a29df8256d2ae3584d6ebfb8133792c38ced660264358dd1e86f0d41",
+      "input_hash": "2538b9f11fa22f82f8be2fdaaa86563e8a2c690d5772f74762c58cebc4dac517",
+      "config_hash": "e2178bbefb044b6d7d349c3d131ed0b6d0c7a366a9e23d5eea54dbd2158b4686",
+      "initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "train_ids_hash": "a9e4dc57c7b125237b1e85c5654a9586d3fc0d258de2f0ba589c28ee99440eb4",
+      "validation_ids_hash": "9535f1522bbd48242e090c0b4657f756af006744ecf5aeb1ba0e8dcbdda337d5",
+      "encoder_frozen": true,
+      "epochs_completed": 2,
+      "parameter_count": 186306,
+      "train_count": 32,
+      "validation_count": 32,
+      "best_epoch": 1,
+      "best_score": 0.007393793458205329,
+      "best_validation": {
+        "n": 32,
+        "mean_pair_bce": 0.6232058610767126,
+        "candidate_accuracy": 0.6864241954199207,
+        "candidate_balanced_accuracy": 0.5109111665170072,
+        "candidate_confusion": {
+          "tp": 1021,
+          "fp": 206589,
+          "tn": 455668,
+          "fn": 2038
+        },
+        "threshold_metrics": {
+          "0.1": {
+            "precision": 0.0061538395201702085,
+            "recall": 0.009350667656089186,
+            "rna_macro_exact_f1": 0.007378308516965913
+          },
+          "0.2": {
+            "precision": 0.0061538395201702085,
+            "recall": 0.009350667656089186,
+            "rna_macro_exact_f1": 0.007378308516965913
+          },
+          "0.3": {
+            "precision": 0.00617359480964501,
+            "recall": 0.009350667656089186,
+            "rna_macro_exact_f1": 0.007393793458205329
+          },
+          "0.4": {
+            "precision": 0.005719887427509717,
+            "recall": 0.00845392006816513,
+            "rna_macro_exact_f1": 0.006781331675959984
+          },
+          "0.5": {
+            "precision": 0.005360262184151698,
+            "recall": 0.006546563709624001,
+            "rna_macro_exact_f1": 0.005816516511422156
+          },
+          "0.6": {
+            "precision": 0.003263791255799486,
+            "recall": 0.0029023986155037257,
+            "rna_macro_exact_f1": 0.0029970017725153655
+          },
+          "0.7": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "rna_macro_exact_f1": 0.0
+          },
+          "0.8": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "rna_macro_exact_f1": 0.0
+          },
+          "0.9": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "rna_macro_exact_f1": 0.0
+          }
+        },
+        "seconds": 1.9516841410659254
+      },
+      "best_checkpoint_sha256": "ec19972ec53f14b291d81b02f85cceb4ed88a685d2794e52c65b0dbd9772f41b",
+      "epochs_sha256": "9fcc631b331b66d4c39f641b45946abab22b730a8797c8b92928e97698ae5147",
+      "training_seconds": 2.655266613699496,
+      "validation_seconds": 3.0199959161691368,
+      "gradients_verified": true,
+      "last_process_wall_seconds": 5.8721373081207275,
+      "slurm_job_id": "9221"
+    },
+    {
+      "completed": true,
+      "family": "5s",
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "code_hash": "30335ca3a29df8256d2ae3584d6ebfb8133792c38ced660264358dd1e86f0d41",
+      "input_hash": "2538b9f11fa22f82f8be2fdaaa86563e8a2c690d5772f74762c58cebc4dac517",
+      "config_hash": "e2178bbefb044b6d7d349c3d131ed0b6d0c7a366a9e23d5eea54dbd2158b4686",
+      "initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "train_ids_hash": "a9e4dc57c7b125237b1e85c5654a9586d3fc0d258de2f0ba589c28ee99440eb4",
+      "validation_ids_hash": "9535f1522bbd48242e090c0b4657f756af006744ecf5aeb1ba0e8dcbdda337d5",
+      "encoder_frozen": true,
+      "epochs_completed": 2,
+      "parameter_count": 186306,
+      "train_count": 32,
+      "validation_count": 32,
+      "best_epoch": 1,
+      "best_score": 0.007480889622621655,
+      "best_validation": {
+        "n": 32,
+        "mean_pair_bce": 0.6232638480141759,
+        "candidate_accuracy": 0.6863415279355976,
+        "candidate_balanced_accuracy": 0.5105442476228612,
+        "candidate_confusion": {
+          "tp": 1019,
+          "fp": 206642,
+          "tn": 455615,
+          "fn": 2040
+        },
+        "threshold_metrics": {
+          "0.1": {
+            "precision": 0.006217585388145767,
+            "recall": 0.009480841571744602,
+            "rna_macro_exact_f1": 0.00746540468138224
+          },
+          "0.2": {
+            "precision": 0.006217585388145767,
+            "recall": 0.009480841571744602,
+            "rna_macro_exact_f1": 0.00746540468138224
+          },
+          "0.3": {
+            "precision": 0.006237340677620568,
+            "recall": 0.009480841571744602,
+            "rna_macro_exact_f1": 0.007480889622621655
+          },
+          "0.4": {
+            "precision": 0.005772030674700556,
+            "recall": 0.008584093983820543,
+            "rna_macro_exact_f1": 0.006860242843889109
+          },
+          "0.5": {
+            "precision": 0.005633151764561757,
+            "recall": 0.006974356672898461,
+            "rna_macro_exact_f1": 0.006153546729744678
+          },
+          "0.6": {
+            "precision": 0.003770140751769743,
+            "recall": 0.003261594017802576,
+            "rna_macro_exact_f1": 0.0034168728275766383
+          },
+          "0.7": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "rna_macro_exact_f1": 0.0
+          },
+          "0.8": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "rna_macro_exact_f1": 0.0
+          },
+          "0.9": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "rna_macro_exact_f1": 0.0
+          }
+        },
+        "seconds": 1.8712957189418375
+      },
+      "best_checkpoint_sha256": "652cbd2b8a275a96d9cbc521994c64169cf9c087e48d18353a28530658b0166c",
+      "epochs_sha256": "225a1ea824d12d6ff7718c1573f3076c4ba85bf0847dc480d95228b0ced340cd",
+      "training_seconds": 2.587259056046605,
+      "validation_seconds": 3.223299073986709,
+      "gradients_verified": true,
+      "last_process_wall_seconds": 6.003775358200073,
+      "slurm_job_id": "9221"
+    }
+  ],
+  "longest_training_rna": {
+    "id": "16s_A.fulgidus_domain1",
+    "length": 512,
+    "loss": 0.6380655169487,
+    "peak_cuda_bytes": 606092288
+  },
+  "encoder_frozen": true,
+  "torch": "2.1.2+cu118",
+  "gpu": "NVIDIA GeForce RTX 3090"
+}

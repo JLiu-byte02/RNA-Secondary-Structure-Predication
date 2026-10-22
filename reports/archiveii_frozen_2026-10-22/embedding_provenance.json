@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "n": 3865,
+  "unique_sequences": 3354,
+  "frozen": true,
+  "supervised_weights_loaded": false,
+  "weight_sha256": "cd93c3f21eb3e767373c9491192686b5846247bd1110693e453c1dd0f321c0db",
+  "implementation_sha256": "c446d257cdb380c570ca8b0214cf7161eb82822c13c9becaebce2152887d51f5",
+  "data_manifest_sha256": "234bc111263ae7a435996b6cae847e02caa9985699a324221c9f4dba6febaca8",
+  "embeddings_sha256": "dbe3085ae22b36783b719032a582ca40bdc126fd55a5bf611399cd36bad467e5",
+  "precision": "BF16 inference / FP16 CPU storage",
+  "special_tokens_removed": "CLS_EOS",
+  "rinalmo_source_files": {
+    "config.py": "ec6cad89e85161f15d2e1d2b7a1582a7fd7bef650c26656fd5a7278134952b55",
+    "data/alphabet.py": "78f4b7f231ac3fc0e0f603ae362e012649883ffafce7925afd173a67ec55b97b",
+    "data/constants.py": "9fca2307b626465a3dcb65ec771b1f0413f404652b2f996a65e39f487c9ff1bc",
+    "model/attention.py": "1b41e6afc98b9d65052b26ba5fecafc9ba9e9723fc4d67e2542ed774cf53b062",
+    "model/downstream.py": "deac7b6d20d160e7156238124882407226c4fc9870c8efee96f11cc56f6dee9e",
+    "model/model.py": "968fdea206848adb0ce641f0a677c57b4f0162d87aaa78a44265ad73e4b04625",
+    "model/modules.py": "897a1d01d32ec19b856705e60f2ab8121cdf7c6cc4ecf2b9247e9e9d8712a1a6",
+    "model/rope.py": "07701affc2b3eda20e61742c749f2c08a1c3006cb2d40e9ae02a58b7d45be698",
+    "pretrained.py": "6ee7e33c7f0392073ecd5cf43765492d2be44683238e8e4d3ecdef8fe1dc2836"
+  },
+  "python": "3.11.9",
+  "torch": "2.1.2+cu118",
+  "cuda": "11.8",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "slurm_job_id": "9220",
+  "seconds": 249.53025817871094
+}

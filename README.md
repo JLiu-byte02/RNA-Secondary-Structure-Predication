@@ -6,6 +6,8 @@
 
 数据与方法边界、九折样本数、评估和复现步骤见 [ArchiveII冻结E协议](docs/ARCHIVEII_FROZEN_PROTOCOL.md)。官方RiNALMo基线使用公开的九个家族微调检查点，在同一测试CT上重评；其编码器已微调，与冻结E的训练方式不同。报告将同时列出官方允许1nt偏移的F1及exact F1，区分九家族等权均值和按RNA数量加权的均值。当前不填入尚未完成的训练或测试分数。
 
+真实数据、表征、源码及GPU smoke验收证明见 [准备阶段记录](reports/archiveii_frozen_2026-10-22/PROTOCOL_PREFLIGHT.md)。正式数值源代码已封存在提交`40bd9af`，后续报告和绘图更新不改变训练轨迹。
+
 ```bash
 source activate.sh
 nohup python -u scripts/reproduce_archiveii_frozen.py > logs/archiveii_frozen_cluster.log 2>&1 < /dev/null &

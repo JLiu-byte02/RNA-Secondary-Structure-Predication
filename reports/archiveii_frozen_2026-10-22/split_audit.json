@@ -1,0 +1,133 @@
+{
+  "passed": true,
+  "archive_sha256": "0ff7209016ba1775288572794e850d5857937c391d67c9ccacfe9ae77c0188e5",
+  "manifest_sha256": "234bc111263ae7a435996b6cae847e02caa9985699a324221c9f4dba6febaca8",
+  "total_test_RNAs": 3865,
+  "unique_sequences": 3354,
+  "test_counts": {
+    "5s": 1283,
+    "16s": 67,
+    "23s": 15,
+    "tRNA": 557,
+    "srp": 918,
+    "tmRNA": 462,
+    "RNaseP": 454,
+    "grp1": 74,
+    "telomerase": 35
+  },
+  "fold_counts": {
+    "5s": {
+      "train": 2324,
+      "valid": 258,
+      "test": 1283
+    },
+    "16s": {
+      "train": 3419,
+      "valid": 379,
+      "test": 67
+    },
+    "23s": {
+      "train": 3465,
+      "valid": 385,
+      "test": 15
+    },
+    "tRNA": {
+      "train": 2978,
+      "valid": 330,
+      "test": 557
+    },
+    "srp": {
+      "train": 2653,
+      "valid": 294,
+      "test": 918
+    },
+    "tmRNA": {
+      "train": 3063,
+      "valid": 340,
+      "test": 462
+    },
+    "RNaseP": {
+      "train": 3070,
+      "valid": 341,
+      "test": 454
+    },
+    "grp1": {
+      "train": 3412,
+      "valid": 379,
+      "test": 74
+    },
+    "telomerase": {
+      "train": 3447,
+      "valid": 383,
+      "test": 35
+    }
+  },
+  "identical_sequence_groups": 311,
+  "cross_role_identical_sequence_groups": {
+    "5s": 46,
+    "16s": 64,
+    "23s": 75,
+    "tRNA": 57,
+    "srp": 45,
+    "tmRNA": 59,
+    "RNaseP": 64,
+    "grp1": 73,
+    "telomerase": 63
+  },
+  "identical_sequence_groups_involving_test": {
+    "5s": 0,
+    "16s": 0,
+    "23s": 0,
+    "tRNA": 0,
+    "srp": 0,
+    "tmRNA": 0,
+    "RNaseP": 0,
+    "grp1": 0,
+    "telomerase": 0
+  },
+  "sequence_alphabet": [
+    "A",
+    "C",
+    "G",
+    "U"
+  ],
+  "lengths_by_family": {
+    "5s": {
+      "min": 102,
+      "max": 135
+    },
+    "16s": {
+      "min": 73,
+      "max": 512
+    },
+    "23s": {
+      "min": 242,
+      "max": 380
+    },
+    "tRNA": {
+      "min": 54,
+      "max": 93
+    },
+    "srp": {
+      "min": 28,
+      "max": 509
+    },
+    "tmRNA": {
+      "min": 102,
+      "max": 437
+    },
+    "RNaseP": {
+      "min": 120,
+      "max": 486
+    },
+    "grp1": {
+      "min": 210,
+      "max": 510
+    },
+    "telomerase": {
+      "min": 382,
+      "max": 508
+    }
+  },
+  "note": "Membership and CT bytes unchanged; duplicate sequence groups disclosed without changing the official benchmark."
+}

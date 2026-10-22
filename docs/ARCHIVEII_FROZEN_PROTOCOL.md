@@ -50,3 +50,14 @@ sbatch slurm/embed_archiveii_frozen.sbatch
 sbatch slurm/smoke_archiveii_frozen.sbatch
 nohup python -u scripts/reproduce_archiveii_frozen.py > logs/archiveii_frozen_cluster.log 2>&1 < /dev/null &
 ```
+
+## 图表契约
+
+使用现有Python/Matplotlib报告环境，183×155mm，可编辑SVG/PDF与300dpi PNG预览，最小字号7pt。三张图分别回答：各家族模型性能比较、E1/E2相对E0的同种子配对增益、exact指标的附加敏感性。主图与exact附图共享完整F1轴范围；配对图保留全部18个家族对比和2个九家族汇总对比，以及全部60个种子差值。
+
+绘图入口拒绝未完成或独立预测复核不通过的数据。全部90条模型/家族/种子结果保留，E显示原始种子点、均值和样本SD；官方每家族单个发布模型不虚构误差线。无平滑或剔除。最终PDF执行字体、碰撞及绘制后的布局检查，再逐图人工审阅。报告不面向特定期刊投稿，不生成TIFF；300dpi预览配可编辑矢量图符合此导出约定。
+
+```bash
+python -m pip install -r requirements-plot.txt
+python scripts/plot_archiveii_frozen.py --report reports/archiveii_frozen_2026-10-22
+```
