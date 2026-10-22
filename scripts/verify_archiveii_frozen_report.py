@@ -154,13 +154,14 @@ def verify(report,strict_manifest=False):
     last_train=max(parse(accounting[row['id']][5]) for name,row in jobs.items() if name.startswith('train_'))
     first_test=min(parse(accounting[row['id']][4]) for name,row in jobs.items() if name.startswith('test_'))
     assert last_train<=first_test,'An E test started before all E training finished'
-    previous=j('previous_preparation_jobs.json');assert any(row['id']=='9218' and row['status']=='FAILED' for row in previous)
-    assert any(row['id']=='9219' and row['status']=='CANCELLED' for row in previous)
+    previous=j('previous_preparation_jobs.json')
+    assert all(row['id'] in accounting and accounting[row['id']][1].startswith(row['status']) for row in previous)
     return dict(passed=True,manifest_files_verified=len(manifest),fold_membership_rows_verified=34785,
         complete_training_epochs=4050,complete_RNA_coverage_each_epoch=True,model_family_seed_results=90,
         family_aggregates_recomputed=36,overall_aggregates_recomputed=8,paired_contrasts_recomputed=20,
         validation_only_choices_verified=81,logical_predictions=38650,successful_final_slurm_jobs=102,
         E_tests_started_after_all_training=True,numerical_source_unchanged=True,
+        historical_preparation_attempts_verified=len(previous),
         strict_manifest=strict_manifest,limitation='Raw checkpoints and prediction streams remain on the server; their official-function recomputation is recorded in artifact_validation.json.')
 
 if __name__=='__main__':

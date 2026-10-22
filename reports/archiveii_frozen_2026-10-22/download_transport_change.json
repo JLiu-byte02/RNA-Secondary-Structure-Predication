@@ -1,0 +1,25 @@
+{
+  "previous_download_pid": 126851,
+  "probe": [
+    {
+      "endpoint": "api",
+      "status": 206,
+      "content_range": "bytes 0-1048575/2604815294",
+      "bytes": 1048576,
+      "sha256": "cf90fd4f362bfecfcf2d578dc4adbdad51faf53bedbd36dd52a162d3fa9ccc79",
+      "seconds": 28.662
+    },
+    {
+      "endpoint": "record",
+      "status": 206,
+      "content_range": "bytes 0-1048575/2604815294",
+      "bytes": 1048576,
+      "sha256": "cf90fd4f362bfecfcf2d578dc4adbdad51faf53bedbd36dd52a162d3fa9ccc79",
+      "seconds": 6.244
+    }
+  ],
+  "changed_unix": 1792667859.758925,
+  "reason": "Same official Zenodo object, faster record-file endpoint in a one-MiB transport probe; chunk ranges and public whole-object checksum unchanged.",
+  "numerical_training_changed": false,
+  "existing_range_chunks_retained": true
+}

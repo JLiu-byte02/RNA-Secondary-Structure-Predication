@@ -93,11 +93,14 @@ def main():
     csv_file('overall_results.csv',overall);csv_file('paired_E_vs_E0.csv',paired);csv_file('epoch_curves.csv',epochs)
     write_json(REPORT/'trajectory_summaries.json',summaries)
     for name in ('artifact_validation.json','selection_lock.json','experiment_identity.json','split_audit.json',
-        'embedding_provenance.json','official_source_verification.json','preparation_complete.json','previous_preparation_jobs.json'):
+        'embedding_provenance.json','official_source_verification.json','preparation_complete.json'):
         shutil.copy2(OUT/name,REPORT/name)
+    previous_preparation=json.loads((OUT/'previous_preparation_jobs.json').read_text()) if (OUT/'previous_preparation_jobs.json').exists() else []
+    write_json(REPORT/'previous_preparation_jobs.json',previous_preparation)
+    if (OUT/'download_transport_change.json').exists():shutil.copy2(OUT/'download_transport_change.json',REPORT/'download_transport_change.json')
     shutil.copy2(ROOT/'configs/archiveii_frozen.yaml',REPORT/'archiveii_frozen.yaml')
     write_json(REPORT/'slurm_jobs.json',state['jobs']);write_json(REPORT/'previous_slurm_jobs.json',state.get('previous_jobs',[]))
-    preparation=json.loads((OUT/'previous_preparation_jobs.json').read_text())
+    preparation=previous_preparation
     ids=sorted({row['id'] for row in state['jobs'].values()}|{row['id'] for row in state.get('previous_jobs',[])}|{row['id'] for row in preparation},key=int)
     accounting=subprocess.check_output(['sacct','-X','-n','-P','-j',','.join(ids),'-o','JobIDRaw,State,ExitCode,ElapsedRaw,Start,End,NodeList'],text=True)
     (REPORT/'slurm_all_attempts.txt').write_text(accounting)
@@ -139,6 +142,10 @@ def main():
         overall_table.append(f"| {mode} | {value(equal,'f1')} | {value(weighted,'f1')} | {value(equal,'exact_f1')} |")
     paired_table=['| 家族 | 对比 | 配对F1差值均值 ± SD | 正差值种子数 |','|---|---|---:|---:|']
     for row in paired:paired_table.append(f"| {row['family']} | {row['contrast']} | {row['f1_mean']:+.6f} ± {row['f1_sample_sd']:.6f} | {row['f1_positive_seeds']}/3 |")
+    preparation_note=('首次表征准备已算完表示，但记录安装来源时遇到namespace package没有__file__的问题。改用包搜索路径后回归测试通过，重新运行并验收准备；失败9218、未启动即取消的依赖作业9219及后续成功作业均在slurm_all_attempts.txt记录，旧产物单独保留。'
+        if any(row['id']=='9218' for row in preparation) else '本次准备作业及任何重试均在Slurm记录中核对，失败尝试与正式成功作业分开保留。')
+    transport_note=('同一官方权重的1MiB读取探测中，记录页入口6.2秒、API入口28.7秒，字节哈希一致。因此恢复下载时改用官方记录页文件入口，保留既有分块、相同Range及最终MD5校验；该探测不用于推断整批权重或训练的加速比例。详情见download_transport_change.json。'
+        if (OUT/'download_transport_change.json').exists() else '')
     text=f'''# ArchiveII Family-OOD：冻结E模型九折结果
 
 全部81条E训练轨迹均已完成50轮，使用种子17、23、41及相同官方ArchiveII家族划分。全部81个仅按验证集得到的epoch和阈值选择统一锁定后执行E测试。九个官方微调检查点在相同测试CT上重评。独立复核90份预测文件、38650条逐RNA预测，原始真值完整保留。
@@ -177,7 +184,7 @@ def main():
 
 81条轨迹保留的完整训练段累计 {sum(row['training_seconds'] for row in summaries)/3600:.2f} GPU小时，验证段累计 {sum(row['validation_seconds'] for row in summaries)/3600:.2f} 小时。全部列入审计的准备/训练/测试/验证尝试累计单GPU分配时间为 {allocated/3600:.2f} 小时；含失败与取消尝试，不含登录节点CPU预处理、网络下载与排队。这些是累计资源时间，不能当成用户等待的墙钟时间，也不据不同节点负载比较算法效率。
 
-首次表征准备已算完表示，但记录安装来源时遇到namespace package没有__file__的问题。改用包搜索路径后回归测试通过，重新运行并验收准备；失败9218、未启动即取消的依赖作业9219及后续成功作业均在slurm_all_attempts.txt记录，旧产物单独保留。官方权重采用分块恢复下载，公开MD5与本地SHA256校验通过后才进入基线评估。
+{preparation_note}官方权重采用分块恢复下载，公开MD5与本地SHA256校验通过后才进入基线评估。{transport_note}
 
 ## 图表和产物
 

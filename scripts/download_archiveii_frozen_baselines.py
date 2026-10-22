@@ -13,6 +13,7 @@ DEST=ROOT/'weights/archiveii_frozen';DEST.mkdir(parents=True,exist_ok=True)
 
 def download(entry):
     path=DEST/entry['key'];expected=entry['checksum'].removeprefix('md5:')
+    download_url='https://zenodo.org/records/15043668/files/'+entry['key']+'?download=1'
     def valid(p):
         if not p.is_file() or p.stat().st_size!=int(entry['size']):return False
         h=hashlib.md5()
@@ -41,7 +42,7 @@ def download(entry):
                     offset=temporary.stat().st_size if temporary.exists() else 0
                     if offset<length:
                         left=start+offset
-                        request=urllib.request.Request(entry['links']['self'],headers={'User-Agent':'RNA-ThermoFusion-repro/1.0','Range':f'bytes={left}-{end}'})
+                        request=urllib.request.Request(download_url,headers={'User-Agent':'RNA-ThermoFusion-repro/1.0','Range':f'bytes={left}-{end}'})
                         with urllib.request.urlopen(request,timeout=90) as response:
                             assert response.status==206 and response.headers.get('Content-Range')==f'bytes {left}-{end}/{size}','Unverified range response'
                             with temporary.open('ab') as f:
@@ -62,7 +63,9 @@ def download(entry):
                     for content in iter(lambda:source.read(1024*1024),b''):destination.write(content)
         if not valid(part):raise RuntimeError('Assembled checkpoint MD5 mismatch: '+path.name)
         part.replace(path)
-    row=dict(path=path.relative_to(ROOT).as_posix(),bytes=path.stat().st_size,md5=expected,sha256=sha(path),url=entry['links']['self'])
+    row=dict(path=path.relative_to(ROOT).as_posix(),bytes=path.stat().st_size,md5=expected,sha256=sha(path),
+        url=download_url,metadata_content_url=entry['links']['self'],
+        resumed_range_policy='Retain existing complete/partial chunks of this same official object; final full-file public MD5 and local SHA256 checked.')
     write_json(DEST/(path.name+'.provenance.json'),row)
     print('VERIFIED_OFFICIAL_CHECKPOINT',path.name,flush=True);return row
 
