@@ -1,5 +1,4 @@
 .venv/
-.venv_archiveii/
 .cache/
 .tmp/
 tmp/
@@ -18,7 +17,3 @@ setup/source*.tar.gz
 *.zip
 *.tar.gz
 data/processed/manifest.tsv
-data/archiveii/
-data/archiveII/
-data/archiveii_source/
-setup/archiveii-wheels/
