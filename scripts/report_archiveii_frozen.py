@@ -44,6 +44,7 @@ def main():
                 for row in rows:
                     total+=row['training_seconds'];v=row['validation']
                     epochs.append(dict(family=family,mode=mode,seed=seed,epoch=row['epoch'],
+                        n_training_RNAs=row['n_steps'],n_expected_training_RNAs=summary['train_count'],n_validated_RNAs=v['n'],
                         train_bce_online=row['mean_pair_loss'],validation_bce=v['mean_pair_bce'],
                         validation_exact_f1=row['score'],threshold_at_epoch=row['threshold'],
                         candidate_accuracy=v['candidate_accuracy'],candidate_balanced_accuracy=v['candidate_balanced_accuracy'],
@@ -117,6 +118,9 @@ def main():
         data_manifest_sha256=sha(OUT/'data_manifest.json.gz'),physical_manifest_sha256=sha(OUT/'physical_manifest.json'),
         physical_unique_sequences=len(json.loads((OUT/'physical_manifest.json').read_text())['samples']),
         empty_truth_RNAs=[sid for sid,row in manifest['records'].items() if not row['pairs']],
+        empty_candidate_RNAs=[sid for sid,row in manifest['records'].items() if not any(
+            row['sequence'][a]+row['sequence'][b] in {'AU','UA','CG','GC','GU','UG'}
+            for a in range(row['length']) for b in range(a+4,row['length']))],
         new_length_filter=False,new_deduplication=False,fold_membership_rows=len(membership)))
     lookup={(row['family'],row['mode']):row for row in family_rows}
     def value(row,metric):

@@ -37,6 +37,7 @@ def validate(report):
     expected={(f,m,str(s)) for f in FAMILIES for m in MODES for s in SEEDS}|{(f,'RiNALMo_official','') for f in FAMILIES}
     assert len(runs)==90 and {(r['family'],r['mode'],r['seed']) for r in runs}==expected
     assert len(family)==36 and len(paired)==20
+    assert {(r['family'],r['mode']) for r in family}=={(f,m) for f in FAMILIES for m in ALL_MODES}
     for row in runs:
         for metric in ('f1','exact_f1'):
             assert math.isfinite(float(row[metric])) and 0<=float(row[metric])<=1
