@@ -15,7 +15,7 @@ mkdir -p logs
 nohup .venv_archiveii/bin/python -u scripts/reproduce_archiveii.py > logs/archiveii-cluster.log 2>&1 < /dev/null &
 ```
 
-前提是通用RiNALMo权重已按下文完成下载与核验。入口先执行官方源码/环境、指标和GPU梯度预检，再按5s、16s、23s、tRNA、srp、tmRNA、RNaseP、grp1、telomerase顺序轮换，折内方法和种子由Slurm并行分配。`outputs/archiveii_ood/cluster_status.json`记录阶段与作业；只有状态completed且独立artifact_validation通过才表示完整结束。最终报告计划生成于`reports/archiveii_ood_2026-10-22/`，完成前不将中间结果当作九折最终平均。
+前提是通用RiNALMo权重已按下文完成下载与核验。入口先执行官方源码/环境、指标和GPU梯度预检，再按5s、16s、23s、tRNA、srp、tmRNA、RNaseP、grp1、telomerase顺序入队。Slurm滚动调度，最多9个E训练/基线任务处于提交或运行状态；独立折之间可以重叠，每个模型仍独立初始化并仅使用自己一折的数据。`outputs/archiveii_ood/cluster_status.json`记录阶段与作业；只有状态completed且独立artifact_validation通过才表示完整结束。最终报告计划生成于`reports/archiveii_ood_2026-10-22/`，完成前不将中间结果当作九折最终平均。
 
 ## B0 / E 系列长轮数研究（已完成）
 

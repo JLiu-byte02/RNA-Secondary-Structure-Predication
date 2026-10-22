@@ -33,7 +33,7 @@ def main(args):
             job=subprocess.check_output(['sbatch','--parsable',script,*map(str,values)],text=True).strip().split(';')[0]
             assert job.isdigit();state['jobs'][name]=dict(id=job,status='submitted');save();print('SUBMITTED',name,job,flush=True)
     def poll():
-        active={r['id']:name for name,r in state['jobs'].items() if r.get('status')!='COMPLETED'}
+        active={r['id']:name for name,r in state['jobs'].items() if r.get('status') not in ({'COMPLETED'}|FAILED)}
         if not active:return
         lines=subprocess.check_output(['sacct','-X','-n','-P','-j',','.join(active),'-o','JobIDRaw,State,ExitCode'],text=True).splitlines()
         for line in lines:
@@ -49,7 +49,12 @@ def main(args):
     def baseline_ready():
         for family in FAMILIES:
             provenance=ROOT/'weights/archiveii'/f'rinalmo_giga_ss_archiveII-{family}_ft.pt.provenance.json'
-            if provenance.exists():submit('baseline_'+family,'slurm/test_archiveii_baseline.sbatch',family)
+            name='baseline_'+family
+            if name in state['jobs'] and state['jobs'][name].get('status') not in FAILED:continue
+            if inflight()>=9:return
+            if provenance.exists():submit(name,'slurm/test_archiveii_baseline.sbatch',family)
+    def inflight():
+        return sum(r.get('status') not in ({'COMPLETED'}|FAILED) for r in state['jobs'].values())
     def wait(names,with_baselines=False):
         state['stage']='waiting:'+','.join(names);save()
         while True:
@@ -81,21 +86,24 @@ def main(args):
                 git_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),seeds=list(SEEDS),families=list(FAMILIES)))
         else:assert json.loads(frozen.read_text())['training_source']==code_identity()
         ensure_download()
-        # Rotate families in the requested order; matched modes/seeds run in parallel within a fold.
-        for family in FAMILIES:
-            names=[]
-            for seed in SEEDS:
-                for mode in MODES:
-                    name=f'train_{family}_{mode}_seed{seed}'
-                    submit(name,'slurm/train_archiveii.sbatch',family,mode,seed);names.append(name)
-            wait(names,with_baselines=True)
-            state.setdefault('completed_families',[])
-            if family not in state['completed_families']:state['completed_families'].append(family)
-            save();command('scripts/report_archiveii.py','--partial')
-            print('FAMILY_COMPLETED',family,flush=True);ensure_download()
-        while not all('baseline_'+f in state['jobs'] for f in FAMILIES):
-            ensure_download();baseline_ready();poll();time.sleep(30)
-        wait(['baseline_'+f for f in FAMILIES])
+        # Ordered rolling queue: independent folds may overlap, with at most nine
+        # E/baseline jobs submitted or running. Never mix model state across folds.
+        tasks=[(f,m,s,f'train_{f}_{m}_seed{s}') for f in FAMILIES for s in SEEDS for m in MODES]
+        state['queue_policy']=dict(family_submission_order=list(FAMILIES),max_inflight_jobs=9,independent_folds_may_overlap=True)
+        while True:
+            ensure_download();baseline_ready()
+            for family,mode,seed,name in tasks:
+                if name in state['jobs'] and state['jobs'][name].get('status') not in FAILED:continue
+                if inflight()>=9:break
+                submit(name,'slurm/train_archiveii.sbatch',family,mode,seed)
+            poll();state.setdefault('completed_families',[])
+            for family in FAMILIES:
+                names=[name for f,_,_,name in tasks if f==family]
+                if family not in state['completed_families'] and all(state['jobs'].get(n,{}).get('status')=='COMPLETED' for n in names):
+                    state['completed_families'].append(family);save();command('scripts/report_archiveii.py','--partial');print('FAMILY_COMPLETED',family,flush=True)
+            baseline_names=['baseline_'+f for f in FAMILIES]
+            if all(state['jobs'].get(name,{}).get('status')=='COMPLETED' for *_,name in tasks) and all(state['jobs'].get(name,{}).get('status')=='COMPLETED' for name in baseline_names):break
+            state['stage']='rolling_family_queue';save();time.sleep(30)
         submit('validate','slurm/validate_archiveii.sbatch');wait(['validate'])
         command('scripts/report_archiveii.py','--report')
         state.update(status='completed',stage='validated',elapsed_seconds=time.time()-state['started_unix']);save()
