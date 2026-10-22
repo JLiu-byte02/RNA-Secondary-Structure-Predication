@@ -55,6 +55,9 @@ def validate():
     runs=[];curves=[];checksums=[];initializations={seed:set() for seed in SEEDS};count=0;official_spotchecks=0
     for family,mode,seed,directory in directories():
         summary=json.loads((directory/'summary.json').read_text());assert summary['completed']
+        assert summary['family']==family and summary['mode']==mode
+        assert int(summary['n'])==EXPECTED[family]
+        if seed is not None:assert summary['seed']==seed
         pred_path=directory/'predictions.jsonl';assert sha(pred_path)==summary['predictions_sha256']
         predictions=[json.loads(line) for line in pred_path.read_text().splitlines()]
         assert len(predictions)==EXPECTED[family]
@@ -89,11 +92,15 @@ def validate():
             initializations[seed].add(summary['head_initialization_hash'])
             lock=json.loads((directory/'selection_lock.json').read_text())
             assert sha(directory/'selection_lock.json')==summary['selection_lock_sha256']
+            assert (lock['family'],lock['mode'],lock['seed'])==(family,mode,seed)
+            assert lock['code_hash']==identity['training_source']['sha256']
+            assert lock['checkpoint_sha256']==summary['checkpoint_sha256']
             assert lock['epoch']==15 and not lock['test_scores_used'] and lock['threshold']==summary['threshold']
             assert lock['data_manifest_sha256']==identity['data_manifest_sha256']
             epochs=[json.loads(line) for line in (directory/'epochs.jsonl').read_text().splitlines()]
             assert [r['epoch'] for r in epochs]==list(range(1,16))
             for epoch in epochs:
+                assert epoch['global_step']==manifest['folds'][family]['counts']['train']*epoch['epoch'],'Incomplete full-fold training coverage'
                 phase=(epoch['epoch']-1)//3
                 names=epoch['trainable_lm_parameter_names']
                 blocks=sorted({int(n.split('.')[2]) for n in names if n.startswith('transformer.blocks.')})

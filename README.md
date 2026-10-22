@@ -9,7 +9,11 @@ source ./activate.sh
 # Existing Torch/FlashAttention environment is reused without modification.
 python -m venv --system-site-packages .venv_archiveii
 .venv_archiveii/bin/python -m pip install -c setup/archiveii-constraints.txt -r setup/requirements-archiveii.txt
-# Download the exact official ct-splits.tar.gz to data/archiveii_source/ first.
+mkdir -p data/archiveii_source
+curl --fail --location --retry 3 \
+  https://github.com/marcellszi/dl-rna/releases/download/Data/ct-splits.tar.gz \
+  --output data/archiveii_source/ct-splits.tar.gz
+# The preparation step verifies the pinned archive SHA256 before extracting.
 .venv_archiveii/bin/python scripts/archiveii_data.py --prepare
 mkdir -p logs
 nohup .venv_archiveii/bin/python -u scripts/reproduce_archiveii.py > logs/archiveii-cluster.log 2>&1 < /dev/null &
