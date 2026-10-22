@@ -1,0 +1,633 @@
+{
+  "passed": true,
+  "completed_trajectories_verified": 41,
+  "runs": [
+    {
+      "family": "16s",
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        42750
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "2de32d47693ec1448c82925130bff50c50f3c53a411e6789fbd77e6e2d2f7478"
+    },
+    {
+      "family": "16s",
+      "mode": "E0_no_thermo",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        42750
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "43e7af77c12b682fde182f3d35793d4e7dd593c5fc5c8c760efabbb592abbd52"
+    },
+    {
+      "family": "16s",
+      "mode": "E0_no_thermo",
+      "seed": 41,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        42750
+      ],
+      "head_initialization_hash": "82534d7696e4ad1bebbfed6195480a5944b0e0f0cfb21a868d30b61718ade92f",
+      "original_initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "summary_sha256": "5d49899df4ce3f1dc00398281fe12124366dbeeea868b730fbfbb4118460bd45"
+    },
+    {
+      "family": "16s",
+      "mode": "E1_bpp",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        42750
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "dc24dc21972a63abfdd468b9c8794627b0b3e2c9db1459c7f9abb0e34f335d03"
+    },
+    {
+      "family": "16s",
+      "mode": "E1_bpp",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        42750
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "883a0d5d510fd192af9042d0809587fb940588e997cb80ed7debfa61c2071415"
+    },
+    {
+      "family": "16s",
+      "mode": "E1_bpp",
+      "seed": 41,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        42750
+      ],
+      "head_initialization_hash": "82534d7696e4ad1bebbfed6195480a5944b0e0f0cfb21a868d30b61718ade92f",
+      "original_initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "summary_sha256": "2649ff34b11d707b8cc773a6e8cd1638c5a1292c1f2a1addbec6fd4605cd90ab"
+    },
+    {
+      "family": "16s",
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        42750
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "dbe5891cc2274111a78b5c1bf54411a2e25f1535113ae161e04e8a78b6e8bb99"
+    },
+    {
+      "family": "16s",
+      "mode": "E2_bpp_stack",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        42750
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "4da8887b364dba3abaa2534110b2b89d260887fcf3b384e7f56946a1a7798e45"
+    },
+    {
+      "family": "16s",
+      "mode": "E2_bpp_stack",
+      "seed": 41,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        42750
+      ],
+      "head_initialization_hash": "82534d7696e4ad1bebbfed6195480a5944b0e0f0cfb21a868d30b61718ade92f",
+      "original_initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "summary_sha256": "2dec7153e3df0ef14b8065bb4c5a2c1d48d9ed51f1dbf32bfd489c2428efed92"
+    },
+    {
+      "family": "23s",
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        43350
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "ce070ecc2131f2668342c4317a225c204e2ee63ac720f20a0eb427d2f8826074"
+    },
+    {
+      "family": "23s",
+      "mode": "E0_no_thermo",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        43350
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "921a8361ecfa2ced4c4b5616dc90a724aa5a84d64312853f0fae393f0ade8742"
+    },
+    {
+      "family": "23s",
+      "mode": "E0_no_thermo",
+      "seed": 41,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        43350
+      ],
+      "head_initialization_hash": "82534d7696e4ad1bebbfed6195480a5944b0e0f0cfb21a868d30b61718ade92f",
+      "original_initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "summary_sha256": "2af1bf9b4920530172024df00df7c441a3c19e9ec8d1c7e579bb509f7f02d2b7"
+    },
+    {
+      "family": "23s",
+      "mode": "E1_bpp",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        43350
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "aefedba549e8d0c7687bc3a123ad4260fedd38e9fa4ca4d8d2be4556b0cb01fc"
+    },
+    {
+      "family": "23s",
+      "mode": "E1_bpp",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        43350
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "33e6640b17c186ee694e4cf65025401a9d4e4897eee86e7e15297c76d0b3459c"
+    },
+    {
+      "family": "23s",
+      "mode": "E1_bpp",
+      "seed": 41,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        43350
+      ],
+      "head_initialization_hash": "82534d7696e4ad1bebbfed6195480a5944b0e0f0cfb21a868d30b61718ade92f",
+      "original_initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "summary_sha256": "b2d57ef3717e98abcaaccfb76751fc09946e050a9adb6c90d930d043f363aa09"
+    },
+    {
+      "family": "23s",
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        43350
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "dd6dd9bbd4e612e33b78f70f334bfae4056f994113f6dad38340453f01b59c78"
+    },
+    {
+      "family": "23s",
+      "mode": "E2_bpp_stack",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        43350
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "11c6aed8dfb81c42d778d4fe18800acd384a818375027af6f07b6123648c48fa"
+    },
+    {
+      "family": "23s",
+      "mode": "E2_bpp_stack",
+      "seed": 41,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        43350
+      ],
+      "head_initialization_hash": "82534d7696e4ad1bebbfed6195480a5944b0e0f0cfb21a868d30b61718ade92f",
+      "original_initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "summary_sha256": "917c9813b474fcebef3792e1b12d329979f163119633b5cd296bb032dd927b0c"
+    },
+    {
+      "family": "5s",
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        29050
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "31d0d73c1b21cd193e89ec77b76b7439cdd56ac311f9d8282a3a48ce4dce5b88"
+    },
+    {
+      "family": "5s",
+      "mode": "E0_no_thermo",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        29050
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "4bec5d5a26b594a4f335135f49f398fbdf51438cb87a63f3b85c3252410e3380"
+    },
+    {
+      "family": "5s",
+      "mode": "E0_no_thermo",
+      "seed": 41,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        29050
+      ],
+      "head_initialization_hash": "82534d7696e4ad1bebbfed6195480a5944b0e0f0cfb21a868d30b61718ade92f",
+      "original_initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "summary_sha256": "f8e63b65453895f705a348c58efe19a48bf8a7cbaf3c753bbf80423cf9adab12"
+    },
+    {
+      "family": "5s",
+      "mode": "E1_bpp",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        29050
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "fe99ad4a1ae7486333554b01a2dc042ca0f448b67699b9d3da37a2962f90fb12"
+    },
+    {
+      "family": "5s",
+      "mode": "E1_bpp",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        29050
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "d2aa83f5621068ae037740af20a862912ad76fbead9d39a16d0a4970bd99527f"
+    },
+    {
+      "family": "5s",
+      "mode": "E1_bpp",
+      "seed": 41,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        29050
+      ],
+      "head_initialization_hash": "82534d7696e4ad1bebbfed6195480a5944b0e0f0cfb21a868d30b61718ade92f",
+      "original_initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "summary_sha256": "b3196752861b50d75e4142cf47bc94ab894421dd6beecdcdd9f250a5b9d4bbce"
+    },
+    {
+      "family": "5s",
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        29050
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "b0ebba992053607550f902d80e1b874dcca78b2b7fedcf0737c071d8c458d6d5"
+    },
+    {
+      "family": "5s",
+      "mode": "E2_bpp_stack",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        29050
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "3a45179476352e991ac9bc86078bd60a91cb6ea683cc640601280247f8d076c8"
+    },
+    {
+      "family": "5s",
+      "mode": "E2_bpp_stack",
+      "seed": 41,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        29050
+      ],
+      "head_initialization_hash": "82534d7696e4ad1bebbfed6195480a5944b0e0f0cfb21a868d30b61718ade92f",
+      "original_initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "summary_sha256": "b1bc90a78f7aa447ddabef8fbb9b54a54f5078d2d7fd30ad06557949542a895d"
+    },
+    {
+      "family": "srp",
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        33200
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "684abb272fe9fb58d28220febe02f2347eda4b326a1e3ba925c452d3aa632f7f"
+    },
+    {
+      "family": "srp",
+      "mode": "E0_no_thermo",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        33200
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "9b987c3dac6901fd28d9fe9c6d6702b8c519b7bde908470eac1be94983d8aaf0"
+    },
+    {
+      "family": "srp",
+      "mode": "E1_bpp",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        33200
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "63946d30d17ca655d8d5fa1b64450e64ddac8569cf8992a93d4ab563f0c1e2c7"
+    },
+    {
+      "family": "srp",
+      "mode": "E1_bpp",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        33200
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "4addd38c44bd693d13d821eeb6fc2aad27f1da9a5d3022fd20b89910719079ab"
+    },
+    {
+      "family": "srp",
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        33200
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "4e950f60996b65a220c6ea7ed357390a03c12ce6a876ac3efc3fcf5b3d4c8dbf"
+    },
+    {
+      "family": "tRNA",
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        37250
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "dbd5693b1cbb9dfe3d303d43c34ef0746765fdab0c23c33b50619a4956764cba"
+    },
+    {
+      "family": "tRNA",
+      "mode": "E0_no_thermo",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        37250
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "13dbcfbce0f81b028dd93a80c959518a2bae85cea92929a44f4800d71d82317d"
+    },
+    {
+      "family": "tRNA",
+      "mode": "E0_no_thermo",
+      "seed": 41,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        37250
+      ],
+      "head_initialization_hash": "82534d7696e4ad1bebbfed6195480a5944b0e0f0cfb21a868d30b61718ade92f",
+      "original_initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "summary_sha256": "b5c4beb5214d7d285c105a16c2cb7251638c5adf9525a4af4fd57b1b64ccb4a7"
+    },
+    {
+      "family": "tRNA",
+      "mode": "E1_bpp",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        37250
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "abe9f9b71b7e9fc57c9d9e5a2c9a5103b0a820821a0788c465782b1f6b0656db"
+    },
+    {
+      "family": "tRNA",
+      "mode": "E1_bpp",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        37250
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "ed4c6bfb2b467d26792ec5455484eb0eee6a74b6c1b82c74296feca79af88d28"
+    },
+    {
+      "family": "tRNA",
+      "mode": "E1_bpp",
+      "seed": 41,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        37250
+      ],
+      "head_initialization_hash": "82534d7696e4ad1bebbfed6195480a5944b0e0f0cfb21a868d30b61718ade92f",
+      "original_initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "summary_sha256": "22841046ef2cebd24ac1efecb73cebbf8a43cbf80779bbfd473347dc63bfb8f0"
+    },
+    {
+      "family": "tRNA",
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        37250
+      ],
+      "head_initialization_hash": "aefa0937fe076f5f81664677d345d37c2789a5520c7ff5473950f0cea782df22",
+      "original_initialization_hash": "370678886035370622bd67e20d279fd0b965927b41453eb561d32beea717a6cd",
+      "summary_sha256": "4c6f693abca88d0b209687cd026e8e9f27f926097dd5cf28d0fe784b91f73d9c"
+    },
+    {
+      "family": "tRNA",
+      "mode": "E2_bpp_stack",
+      "seed": 23,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        37250
+      ],
+      "head_initialization_hash": "99922f3d5ec334a22ceda76ee07c8b3276d28ac04b827a43319f622ee8db8eae",
+      "original_initialization_hash": "30759f85c5225c16e9734c526fa7e001d01eba9ed1d8935e16da51d02de359e3",
+      "summary_sha256": "e34d3ff3e5fde0cb9f5553e8226fb1f00893a586cee07e7776b59b3bffaedb4b"
+    },
+    {
+      "family": "tRNA",
+      "mode": "E2_bpp_stack",
+      "seed": 41,
+      "epochs": 50,
+      "full_RNA_coverage_each_epoch": true,
+      "parameter_count": 186306,
+      "encoder_parameters_in_checkpoint": false,
+      "AdamW_step_counts": [
+        37250
+      ],
+      "head_initialization_hash": "82534d7696e4ad1bebbfed6195480a5944b0e0f0cfb21a868d30b61718ade92f",
+      "original_initialization_hash": "65a39c57c8e7a01135710ab6e3066fa1a4e4dbfa883df80bf1bb4c939c03366c",
+      "summary_sha256": "c9b07c3c59eee03564fb122e8622e7fa524a2625f4997478f093282be05dcfde"
+    }
+  ],
+  "code_hash": "30335ca3a29df8256d2ae3584d6ebfb8133792c38ced660264358dd1e86f0d41",
+  "input_hash": "2538b9f11fa22f82f8be2fdaaa86563e8a2c690d5772f74762c58cebc4dac517",
+  "captured_at": "2026-10-23T01:54:11+08:00",
+  "description": "Historical progress snapshot, not the final study validation. All completed trajectories present at capture were inspected.",
+  "training_jobs_planned": 81,
+  "completed_baseline_families": [
+    "16s",
+    "23s",
+    "5s"
+  ],
+  "E_test_families_completed": 0,
+  "source_commit_at_capture": "bb5d1a9cdb03ee03f04898c2676a559e1c35343c"
+}
