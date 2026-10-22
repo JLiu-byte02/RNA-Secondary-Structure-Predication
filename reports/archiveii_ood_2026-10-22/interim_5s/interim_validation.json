@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "final_study": false,
+  "completed_family": "5s",
+  "completed_E_runs": 9,
+  "independently_recomputed_predictions": 11547,
+  "epoch_rows": 135,
+  "all_full_fold_steps_checked": true,
+  "all_final_epoch_and_threshold_locks_checked": true,
+  "all_candidate_pairs_and_CT_truth_checked": true,
+  "all_nine_slurm_jobs_completed_exit_0_0": true,
+  "head_initialization_identical_within_seed": true,
+  "training_source_sha256": "b810f331dc19a287b0d6338b3913f3cd624c5bfbd11bea16d812449c9f78433b",
+  "data_manifest_sha256": "5067bf5128c329acbd4db29601532c510030b1d17cfaad689dea15f9e5600c72",
+  "archived_evidence_sha256": "a398cbd993243a3415247a436a84e9fc6fac473e2c09365af6fb7728d0d184ae",
+  "checkpoint_hashes_recomputed_in_this_interim_check": false,
+  "note": "This interim check recomputes all prediction metrics and validates recorded checkpoint hashes/locks; the final all-fold validator will rehash every model file.",
+  "official_baseline": "Public 5s,16s,23s checkpoints verified and queued; no completed baseline score in this snapshot.",
+  "remaining": "Eight families and all official baseline scores remain; no nine-fold mean or method ranking is asserted."
+}

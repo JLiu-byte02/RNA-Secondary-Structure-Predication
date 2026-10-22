@@ -2,6 +2,8 @@
 
 ## ArchiveII Family-OOD（进行中）
 
+5S rRNA 留出折的 E0/E1/E2 三种子实验已完成并复算，见 [5S 阶段报告](reports/archiveii_ood_2026-10-22/interim_5s/README.md)。其余家族与官方基线评估继续运行；该阶段表不代表九折最终平均。
+
 独立执行官方ArchiveII九家族leave-one-family-out实验，直接沿用RiNALMo发布的`ct/fam-fold`训练/验证/测试文件。E0/E1/E2各使用种子17、23、41，共81条完整15轮轨迹；每折均从通用预训练RiNALMo重新开始，采用官方逐步解冻、Adam与学习率日程、全上三角BCE及验证阈值搜索。主指标采用官方允许1nt配对偏移的RNA-macro F1，另报告exact F1；九个官方微调检查点在同一测试文件上重评估。具体规则、官方CLI与论文参数差异及单轨迹中断处理见 [ArchiveII协议](docs/ARCHIVEII_OOD_PROTOCOL.md)。
 
 ```bash
