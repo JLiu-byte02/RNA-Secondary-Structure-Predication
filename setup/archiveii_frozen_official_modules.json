@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/lbcb-sci/RiNALMo",
+  "commit": "2c2c5c14a5ae609d8c560a5d9ca32e51e0288955",
+  "modules": {
+    "rinalmo/config.py": "b66984cf432e14384111860f6689f362554a678a",
+    "rinalmo/data/alphabet.py": "32d6f5cfba38756e01af8689badad1a85d0ec37d",
+    "rinalmo/data/constants.py": "4a6a92bfa16271aeaec17f23b817846e58731fa2",
+    "rinalmo/model/attention.py": "138397b7c8042f4124a167d909e50b92d8cba8f6",
+    "rinalmo/model/downstream.py": "852f00ae217c0f2ea4645e3523038321b195d1a3",
+    "rinalmo/model/model.py": "22acd9530799127170ef87aa4ab964e2f452b0f2",
+    "rinalmo/model/modules.py": "a270f5c4143981cb36d8717871a2e23e464aaf0b",
+    "rinalmo/model/rope.py": "4c1ff0e6062dc8a015a01aa91320eae08b698843",
+    "rinalmo/utils/sec_struct.py": "0f1fe2da2ce321b7394548f8705282b0ec833ce9"
+  }
+}

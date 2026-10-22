@@ -17,3 +17,4 @@ setup/source*.tar.gz
 *.zip
 *.tar.gz
 data/processed/manifest.tsv
+data/archiveii_frozen/

@@ -1,5 +1,17 @@
 # RNA ThermoFusion
 
+## ArchiveII 九家族留出：冻结 E 模型（进行中）
+
+按2026-10-22确认的设置，E0/E1/E2保留原冻结编码器、50轮、种子17/23/41和相同优化/选模规则，采用RiNALMo官方ArchiveII九折train/valid/test成员；共81条新轨迹。每折完整留出一个RNA家族，共3865条测试RNA，未新增长度过滤或去重。原TR0和长轮数研究保留。
+
+数据与方法边界、九折样本数、评估和复现步骤见 [ArchiveII冻结E协议](docs/ARCHIVEII_FROZEN_PROTOCOL.md)。官方RiNALMo基线使用公开的九个家族微调检查点，在同一测试CT上重评；其编码器已微调，与冻结E的训练方式不同。报告将同时列出官方允许1nt偏移的F1及exact F1，区分九家族等权均值和按RNA数量加权的均值。当前不填入尚未完成的训练或测试分数。
+
+```bash
+source activate.sh
+nohup python -u scripts/reproduce_archiveii_frozen.py > logs/archiveii_frozen_cluster.log 2>&1 < /dev/null &
+cat outputs/archiveii_frozen/cluster_status.json
+```
+
 ## B0 / E 系列长轮数研究（已完成）
 
 固定50轮，比较10、20、30、40、50轮预算，纳入原始纯PairHead基线B0与E0/E1/E2，均使用种子17、23、41和相同TR0/VL0/TS0/bpRNA-new。逐轮记录结构F1、在线训练BCE、VL0 BCE、候选accuracy/balanced accuracy及耗时；统一锁定全部VL0选择后再测试。方案和公平性约束见 [长轮数协议](docs/LONG_EPOCHS_PROTOCOL.md)。本流程接续已完成的全量TR0阶段，E保留原轨迹和优化器状态，B0从头训练。
