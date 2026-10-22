@@ -1,0 +1,266 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "mode": "E0_no_thermo",
+      "seed": 17,
+      "maximum_sequence_length": 512,
+      "rna_id": "16s_A.fulgidus_domain1",
+      "head_initialization_hash": "82880d885ea521e5a9e7940f504680ca7e468372df32faa3f2f832bee521af4a",
+      "phases": [
+        {
+          "epoch": 0,
+          "trainable_blocks": [],
+          "optimizer_groups": 1
+        },
+        {
+          "epoch": 3,
+          "trainable_blocks": [
+            30,
+            31,
+            32
+          ],
+          "optimizer_groups": 2
+        },
+        {
+          "epoch": 6,
+          "trainable_blocks": [
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "optimizer_groups": 3
+        },
+        {
+          "epoch": 9,
+          "trainable_blocks": [
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "optimizer_groups": 4
+        },
+        {
+          "epoch": 12,
+          "trainable_blocks": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "optimizer_groups": 5
+        }
+      ],
+      "finite_nonzero_encoder_gradients": true,
+      "head_updated": true,
+      "official_threshold_parity_checks": 29,
+      "fp16_loss": 0.496166400483993,
+      "peak_allocated_GiB": 5.311297416687012,
+      "seconds": 30.551289796829224
+    },
+    {
+      "mode": "E1_bpp",
+      "seed": 17,
+      "maximum_sequence_length": 512,
+      "rna_id": "16s_A.fulgidus_domain1",
+      "head_initialization_hash": "82880d885ea521e5a9e7940f504680ca7e468372df32faa3f2f832bee521af4a",
+      "phases": [
+        {
+          "epoch": 0,
+          "trainable_blocks": [],
+          "optimizer_groups": 1
+        },
+        {
+          "epoch": 3,
+          "trainable_blocks": [
+            30,
+            31,
+            32
+          ],
+          "optimizer_groups": 2
+        },
+        {
+          "epoch": 6,
+          "trainable_blocks": [
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "optimizer_groups": 3
+        },
+        {
+          "epoch": 9,
+          "trainable_blocks": [
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "optimizer_groups": 4
+        },
+        {
+          "epoch": 12,
+          "trainable_blocks": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "optimizer_groups": 5
+        }
+      ],
+      "finite_nonzero_encoder_gradients": true,
+      "head_updated": true,
+      "official_threshold_parity_checks": 29,
+      "fp16_loss": 0.496166400483993,
+      "peak_allocated_GiB": 5.312368869781494,
+      "seconds": 26.06276535987854
+    },
+    {
+      "mode": "E2_bpp_stack",
+      "seed": 17,
+      "maximum_sequence_length": 512,
+      "rna_id": "16s_A.fulgidus_domain1",
+      "head_initialization_hash": "82880d885ea521e5a9e7940f504680ca7e468372df32faa3f2f832bee521af4a",
+      "phases": [
+        {
+          "epoch": 0,
+          "trainable_blocks": [],
+          "optimizer_groups": 1
+        },
+        {
+          "epoch": 3,
+          "trainable_blocks": [
+            30,
+            31,
+            32
+          ],
+          "optimizer_groups": 2
+        },
+        {
+          "epoch": 6,
+          "trainable_blocks": [
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "optimizer_groups": 3
+        },
+        {
+          "epoch": 9,
+          "trainable_blocks": [
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "optimizer_groups": 4
+        },
+        {
+          "epoch": 12,
+          "trainable_blocks": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "optimizer_groups": 5
+        }
+      ],
+      "finite_nonzero_encoder_gradients": true,
+      "head_updated": true,
+      "official_threshold_parity_checks": 29,
+      "fp16_loss": 0.496166400483993,
+      "peak_allocated_GiB": 5.312368869781494,
+      "seconds": 25.313639163970947
+    }
+  ],
+  "head_initialization_identical": true,
+  "training_source": {
+    "files": {
+      "scripts/archiveii_data.py": "f081385e3d65ad510ab0339ca9ca5146f288664f4c0abe8717dec194f1fedd00",
+      "scripts/archiveii_metrics.py": "84e31e5e8f83e4da3a7a42823953aa1e6c743e7b763a02549ed127b210cc6a7f",
+      "scripts/archiveii_models.py": "8be8996443078367da91e6a29bfc26dbf251ffb257546fb8427b73c014718a90",
+      "scripts/run_archiveii.py": "978740b5ae0b1af59c2100dffb063cc0c5944caa0387b2c29a03c7fda1be228e",
+      "src/pair_head.py": "fb9e45fa42e6b871cf4ac7417b47a811af4d8366d7f2458f15d6447fbc7e8dca",
+      "scripts/run_thermo_fast.py": "0f71acc15887e79fcf46be4678cf8be9e67f6bf3dddb32e7a86efca851cb12de",
+      "scripts/cache_thermo.py": "b333dca8b9bc5680edcaa3bc2df6a75a95f4130411945f5c9dbeae321db85c31",
+      "configs/archiveii_ood.yaml": "e3f9b30c50da243e899f6cf5d2a3f707ece2dad3c8048cc7ddb7e588cc0ffe6b",
+      "third_party/rinalmo_reference/train_sec_struct_prediction.py": "0731f2cbf45873edd6564dcb0c98ea1a8726b2cbc88f945f6dfa0d6cd6672e97",
+      "third_party/rinalmo_reference/giga_sec_struct_ft.yaml": "4524fd2aee4300ed0449ef8d027350bb8e0146f9c862bff3227c37d8e7cc4bdb",
+      "setup/check_archiveii_environment.py": "43bd51fb9397796f4aba3faca2a2894f9ce2e459c368a5a96fa5feee2d19e706",
+      "setup/archiveii_official_source_manifest.json": "e91b5c7ddb88a9a9cbf2f91ce4b367fb0c1e2bcac505020e149aea1cd53b50e4"
+    },
+    "sha256": "b810f331dc19a287b0d6338b3913f3cd624c5bfbd11bea16d812449c9f78433b"
+  },
+  "note": "Smoke updates are discarded. Formal runs reinitialize and use the official Lightning FP16 scaler.",
+  "capacity_smoke_training_source": {
+    "files": {
+      "scripts/archiveii_data.py": "f081385e3d65ad510ab0339ca9ca5146f288664f4c0abe8717dec194f1fedd00",
+      "scripts/archiveii_metrics.py": "84e31e5e8f83e4da3a7a42823953aa1e6c743e7b763a02549ed127b210cc6a7f",
+      "scripts/archiveii_models.py": "8be8996443078367da91e6a29bfc26dbf251ffb257546fb8427b73c014718a90",
+      "scripts/run_archiveii.py": "f69e116c52189d90840eaf14a2538ec9f8955039dbe4e0c69c529b85a0911024",
+      "src/pair_head.py": "fb9e45fa42e6b871cf4ac7417b47a811af4d8366d7f2458f15d6447fbc7e8dca",
+      "scripts/run_thermo_fast.py": "0f71acc15887e79fcf46be4678cf8be9e67f6bf3dddb32e7a86efca851cb12de",
+      "scripts/cache_thermo.py": "b333dca8b9bc5680edcaa3bc2df6a75a95f4130411945f5c9dbeae321db85c31",
+      "configs/archiveii_ood.yaml": "e3f9b30c50da243e899f6cf5d2a3f707ece2dad3c8048cc7ddb7e588cc0ffe6b",
+      "third_party/rinalmo_reference/train_sec_struct_prediction.py": "0731f2cbf45873edd6564dcb0c98ea1a8726b2cbc88f945f6dfa0d6cd6672e97",
+      "third_party/rinalmo_reference/giga_sec_struct_ft.yaml": "4524fd2aee4300ed0449ef8d027350bb8e0146f9c862bff3227c37d8e7cc4bdb",
+      "setup/check_archiveii_environment.py": "43bd51fb9397796f4aba3faca2a2894f9ce2e459c368a5a96fa5feee2d19e706",
+      "setup/archiveii_official_source_manifest.json": "e91b5c7ddb88a9a9cbf2f91ce4b367fb0c1e2bcac505020e149aea1cd53b50e4"
+    },
+    "sha256": "5ff6ae60c902170a1b880481e24013632ad1e9a04843304a454a6225b1391fec"
+  },
+  "lightning_fixture_job_id": "9193",
+  "lightning_15_phase_fixture_passed": true,
+  "fixture_test_uses_nonheldout_validation_RNAs": true
+}

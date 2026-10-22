@@ -1,5 +1,22 @@
 # RNA ThermoFusion
 
+## ArchiveII Family-OOD（进行中）
+
+独立执行官方ArchiveII九家族leave-one-family-out实验，直接沿用RiNALMo发布的`ct/fam-fold`训练/验证/测试文件。E0/E1/E2各使用种子17、23、41，共81条完整15轮轨迹；每折均从通用预训练RiNALMo重新开始，采用官方逐步解冻、Adam与学习率日程、全上三角BCE及验证阈值搜索。主指标采用官方允许1nt配对偏移的RNA-macro F1，另报告exact F1；九个官方微调检查点在同一测试文件上重评估。具体规则、官方CLI与论文参数差异及单轨迹中断处理见 [ArchiveII协议](docs/ARCHIVEII_OOD_PROTOCOL.md)。
+
+```bash
+source ./activate.sh
+# Existing Torch/FlashAttention environment is reused without modification.
+python -m venv --system-site-packages .venv_archiveii
+.venv_archiveii/bin/python -m pip install -c setup/archiveii-constraints.txt -r setup/requirements-archiveii.txt
+# Download the exact official ct-splits.tar.gz to data/archiveii_source/ first.
+.venv_archiveii/bin/python scripts/archiveii_data.py --prepare
+mkdir -p logs
+nohup .venv_archiveii/bin/python -u scripts/reproduce_archiveii.py > logs/archiveii-cluster.log 2>&1 < /dev/null &
+```
+
+前提是通用RiNALMo权重已按下文完成下载与核验。入口先执行官方源码/环境、指标和GPU梯度预检，再按5s、16s、23s、tRNA、srp、tmRNA、RNaseP、grp1、telomerase顺序轮换，折内方法和种子由Slurm并行分配。`outputs/archiveii_ood/cluster_status.json`记录阶段与作业；只有状态completed且独立artifact_validation通过才表示完整结束。最终报告计划生成于`reports/archiveii_ood_2026-10-22/`，完成前不将中间结果当作九折最终平均。
+
 ## B0 / E 系列长轮数研究（已完成）
 
 固定50轮，比较10、20、30、40、50轮预算，纳入原始纯PairHead基线B0与E0/E1/E2，均使用种子17、23、41和相同TR0/VL0/TS0/bpRNA-new。逐轮记录结构F1、在线训练BCE、VL0 BCE、候选accuracy/balanced accuracy及耗时；统一锁定全部VL0选择后再测试。方案和公平性约束见 [长轮数协议](docs/LONG_EPOCHS_PROTOCOL.md)。本流程接续已完成的全量TR0阶段，E保留原轨迹和优化器状态，B0从头训练。
