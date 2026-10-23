@@ -156,12 +156,28 @@ def verify(report,strict_manifest=False):
     assert last_train<=first_test,'An E test started before all E training finished'
     previous=j('previous_preparation_jobs.json')
     assert all(row['id'] in accounting and accounting[row['id']][1].startswith(row['status']) for row in previous)
+    trends_verified=0
+    if (report/'training_budget_trends.csv').exists():
+        trends=c('training_budget_trends.csv');assert len(trends)==15
+        assert {(r['mode'],int(r['epoch_budget'])) for r in trends}=={(m,b) for m in MODES for b in (10,20,30,40,50)}
+        for row in trends:
+            budget=int(row['epoch_budget']);assert int(row['n_trajectories'])==27
+            group=[r for r in epochs if r['mode']==row['mode'] and int(r['epoch'])==budget];assert len(group)==27
+            for field in ('train_bce_online','validation_bce','validation_exact_f1','candidate_accuracy','candidate_balanced_accuracy'):
+                close(statistics.mean(float(r[field]) for r in group),row[field+'_mean'])
+            tracks=[[r for r in epochs if r['mode']==row['mode'] and r['family']==f and r['seed']==str(s) and int(r['epoch'])<=budget]
+                    for f in FAMILIES for s in SEEDS]
+            assert all(len(t)==budget for t in tracks)
+            close(statistics.mean(max(float(r['validation_exact_f1']) for r in t) for t in tracks),row['best_validation_exact_f1_within_budget_mean'])
+            close(statistics.mean(sum(float(r['training_seconds'])+float(r['validation_seconds']) for r in t)/60 for t in tracks),row['cumulative_train_and_validation_minutes_mean'])
+        trends_verified=len(trends)
     return dict(passed=True,manifest_files_verified=len(manifest),fold_membership_rows_verified=34785,
         complete_training_epochs=4050,complete_RNA_coverage_each_epoch=True,model_family_seed_results=90,
         family_aggregates_recomputed=36,overall_aggregates_recomputed=8,paired_contrasts_recomputed=20,
         validation_only_choices_verified=81,logical_predictions=38650,successful_final_slurm_jobs=102,
         E_tests_started_after_all_training=True,numerical_source_unchanged=True,
         historical_preparation_attempts_verified=len(previous),
+        training_budget_trends_recomputed=trends_verified,
         strict_manifest=strict_manifest,limitation='Raw checkpoints and prediction streams remain on the server; their official-function recomputation is recorded in artifact_validation.json.')
 
 if __name__=='__main__':

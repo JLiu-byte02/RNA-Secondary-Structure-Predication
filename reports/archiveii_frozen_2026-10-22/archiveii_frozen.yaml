@@ -1,0 +1,26 @@
+protocol: ARCHIVEII-FROZEN-E-LOFO-v2
+official_commit: 2c2c5c14a5ae609d8c560a5d9ca32e51e0288955
+families: [5s, 16s, 23s, tRNA, srp, tmRNA, RNaseP, grp1, telomerase]
+seeds: [17, 23, 41]
+modes: [E0_no_thermo, E1_bpp, E2_bpp_stack]
+max_epochs: 50
+early_stopping: false
+encoder: public_generic_frozen_RiNALMo_Giga
+initial_lr: 0.0001
+optimizer: AdamW
+weight_decay: 0.0001
+batch_size: 1
+gradient_accumulation: 4
+clip_grad_norm: 1.0
+precision: CUDA_BF16_parameters_optimizer_FP32
+thresholds: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+selection_metric: RNA_macro_exact_F1
+epoch_selection: highest_validation_exact_F1_within_50_earliest_tie
+threshold_selection: one_per_family_method_maximum_three_seed_mean_validation_exact_F1_lowest_tie
+primary_report_metric: official_RNA_macro_F1_allow_flexible_pairings_true
+secondary_report_metric: RNA_macro_exact_F1
+loss: unchanged_eligible_candidate_BCE_full_original_truth_for_metrics
+data_split: official_ct_fam_fold_membership_no_new_length_filter_no_new_deduplication
+data_archive_sha256: 0ff7209016ba1775288572794e850d5857937c391d67c9ccacfe9ae77c0188e5
+test_policy: seal_all_nine_fold_E_choices_before_any_E_test
+baseline: re_evaluate_nine_public_official_fine_tuned_checkpoints_same_test_CT

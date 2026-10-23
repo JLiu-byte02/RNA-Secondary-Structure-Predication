@@ -1,0 +1,81 @@
+{
+  "question": "How do frozen E models generalize to each held-out family, and what is the paired contribution of P/Q?",
+  "observed_flexible_F1": {
+    "5s": {
+      "RiNALMo_official": 0.8841970336163848,
+      "E0_no_thermo": 0.8373053440564922,
+      "E1_bpp": 0.8498347332606505,
+      "E2_bpp_stack": 0.8555170378356791
+    },
+    "16s": {
+      "RiNALMo_official": 0.7371447799860027,
+      "E0_no_thermo": 0.6419611725511772,
+      "E1_bpp": 0.6911527389206024,
+      "E2_bpp_stack": 0.7104561552602543
+    },
+    "23s": {
+      "RiNALMo_official": 0.8464291338781388,
+      "E0_no_thermo": 0.7502056046945851,
+      "E1_bpp": 0.802597195830009,
+      "E2_bpp_stack": 0.8080294861680974
+    },
+    "tRNA": {
+      "RiNALMo_official": 0.931275369913971,
+      "E0_no_thermo": 0.8929057196256337,
+      "E1_bpp": 0.914782796907839,
+      "E2_bpp_stack": 0.9174701726347391
+    },
+    "srp": {
+      "RiNALMo_official": 0.699636739923746,
+      "E0_no_thermo": 0.671097254933095,
+      "E1_bpp": 0.7196164001960094,
+      "E2_bpp_stack": 0.7205471717589355
+    },
+    "tmRNA": {
+      "RiNALMo_official": 0.8004470858249946,
+      "E0_no_thermo": 0.7502639944230608,
+      "E1_bpp": 0.7524115217025654,
+      "E2_bpp_stack": 0.7448360311059097
+    },
+    "RNaseP": {
+      "RiNALMo_official": 0.7984981106055521,
+      "E0_no_thermo": 0.7384818090334779,
+      "E1_bpp": 0.773074661638707,
+      "E2_bpp_stack": 0.7729870435638787
+    },
+    "grp1": {
+      "RiNALMo_official": 0.6565782451960319,
+      "E0_no_thermo": 0.6464312589198677,
+      "E1_bpp": 0.6962628628380482,
+      "E2_bpp_stack": 0.6970301935483114
+    },
+    "telomerase": {
+      "RiNALMo_official": 0.1201462043085307,
+      "E0_no_thermo": 0.06335384690412006,
+      "E1_bpp": 0.25017862917072714,
+      "E2_bpp_stack": 0.2708819761200505
+    }
+  },
+  "archetype": "quantitative comparison and paired effects",
+  "backend": "Python/Matplotlib",
+  "roles": {
+    "family_flexible_f1": "Primary model comparison",
+    "paired_flexible_vs_E0": "Controlled physical-feature contribution",
+    "family_exact_f1": "Supporting metric sensitivity"
+  },
+  "export": {
+    "width_mm": 183,
+    "height_mm": 155,
+    "minimum_font_pt": 7,
+    "formats": [
+      "svg",
+      "pdf",
+      "png"
+    ],
+    "png_dpi": 300,
+    "editable_text": true
+  },
+  "data_integrity": "All 90 model-family-seed results retained; all 20 paired contrasts; no data removal or smoothing.",
+  "uncertainty": "E: sample SD of paired seeds17/23/41; fixed published baseline has no seed-SD estimate; no significance/CI claims.",
+  "scope": "Common official test CT membership; E uses frozen generic embeddings and original training, published baseline has a fine-tuned encoder."
+}

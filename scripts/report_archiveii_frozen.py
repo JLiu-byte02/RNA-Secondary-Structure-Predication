@@ -97,6 +97,7 @@ def main():
         shutil.copy2(OUT/name,REPORT/name)
     previous_preparation=json.loads((OUT/'previous_preparation_jobs.json').read_text()) if (OUT/'previous_preparation_jobs.json').exists() else []
     write_json(REPORT/'previous_preparation_jobs.json',previous_preparation)
+    if (OUT/'historical_preparation_correction.json').exists():shutil.copy2(OUT/'historical_preparation_correction.json',REPORT/'historical_preparation_correction.json')
     if (OUT/'download_transport_change.json').exists():shutil.copy2(OUT/'download_transport_change.json',REPORT/'download_transport_change.json')
     shutil.copy2(ROOT/'configs/archiveii_frozen.yaml',REPORT/'archiveii_frozen.yaml')
     write_json(REPORT/'slurm_jobs.json',state['jobs']);write_json(REPORT/'previous_slurm_jobs.json',state.get('previous_jobs',[]))
@@ -142,7 +143,7 @@ def main():
         overall_table.append(f"| {mode} | {value(equal,'f1')} | {value(weighted,'f1')} | {value(equal,'exact_f1')} |")
     paired_table=['| 家族 | 对比 | 配对F1差值均值 ± SD | 正差值种子数 |','|---|---|---:|---:|']
     for row in paired:paired_table.append(f"| {row['family']} | {row['contrast']} | {row['f1_mean']:+.6f} ± {row['f1_sample_sd']:.6f} | {row['f1_positive_seeds']}/3 |")
-    preparation_note=('首次表征准备已算完表示，但记录安装来源时遇到namespace package没有__file__的问题。改用包搜索路径后回归测试通过，重新运行并验收准备；失败9218、未启动即取消的依赖作业9219及后续成功作业均在slurm_all_attempts.txt记录，旧产物单独保留。'
+    preparation_note=('首次表征准备已算完表示，但记录安装来源时遇到namespace package没有__file__的问题。改用包搜索路径后回归测试通过，重新运行并验收准备。作业9218失败；依赖烟雾检查9219实际启动后因缺少embedding_provenance.json失败，原先“已取消”的中间记录已依据Slurm最终状态和错误日志更正，见historical_preparation_correction.json。后续准备9220及烟雾检查9221成功，旧产物单独保留。'
         if any(row['id']=='9218' for row in preparation) else '本次准备作业及任何重试均在Slurm记录中核对，失败尝试与正式成功作业分开保留。')
     transport_note=('同一官方权重的1MiB读取探测中，记录页入口6.2秒、API入口28.7秒，字节哈希一致。因此恢复下载时改用官方记录页文件入口，保留既有分块、相同Range及最终MD5校验；该探测不用于推断整批权重或训练的加速比例。详情见download_transport_change.json。'
         if (OUT/'download_transport_change.json').exists() else '')
@@ -182,7 +183,7 @@ def main():
 
 ## 计算成本与运行问题
 
-81条轨迹保留的完整训练段累计 {sum(row['training_seconds'] for row in summaries)/3600:.2f} GPU小时，验证段累计 {sum(row['validation_seconds'] for row in summaries)/3600:.2f} 小时。全部列入审计的准备/训练/测试/验证尝试累计单GPU分配时间为 {allocated/3600:.2f} 小时；含失败与取消尝试，不含登录节点CPU预处理、网络下载与排队。这些是累计资源时间，不能当成用户等待的墙钟时间，也不据不同节点负载比较算法效率。
+81条轨迹保留的完整训练段累计 {sum(row['training_seconds'] for row in summaries)/3600:.2f} GPU小时，验证段累计 {sum(row['validation_seconds'] for row in summaries)/3600:.2f} 小时。全部列入审计的准备/训练/测试/验证尝试累计单GPU分配时间为 {allocated/3600:.2f} 小时；包含历史失败尝试，不含登录节点CPU预处理、网络下载与排队。这些是累计资源时间，不能当成用户等待的墙钟时间，也不据不同节点负载比较算法效率。
 
 {preparation_note}官方权重采用分块恢复下载，公开MD5与本地SHA256校验通过后才进入基线评估。{transport_note}
 
@@ -197,6 +198,8 @@ def main():
 图表由真实family_results.csv/run_results.csv生成，E显示三种子的均值、样本SD和各种子点，官方检查点单独标记。SVG/PDF/PNG及实际QA记录位于figures/；自动检查不替代最终人工审阅。模型和逐RNA预测位于服务器outputs/archiveii_frozen/。
 '''
     (REPORT/'README_results.md').write_text(text,encoding='utf8')
+    from scripts.summarize_archiveii_frozen import append_analysis
+    append_analysis(REPORT)
     write_json(REPORT/'delivered_files.json',{p.relative_to(REPORT).as_posix():dict(bytes=p.stat().st_size,sha256=sha(p))
         for p in sorted(REPORT.rglob('*')) if p.is_file() and p.name!='delivered_files.json'})
     archive=ROOT/'.tmp/archiveii_frozen_reports_2026-10-22.tar.gz'

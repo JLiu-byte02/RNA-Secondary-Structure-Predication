@@ -1,0 +1,18 @@
+{
+  "url": "https://github.com/marcellszi/dl-rna/releases/download/Data/ct-splits.tar.gz",
+  "archive_sha256": "0ff7209016ba1775288572794e850d5857937c391d67c9ccacfe9ae77c0188e5",
+  "data_manifest_sha256": "234bc111263ae7a435996b6cae847e02caa9985699a324221c9f4dba6febaca8",
+  "physical_manifest_sha256": "483a3bcbbef8af13ad657f8dffccc0ff5555931e1924f3ff6901ff75b89de160",
+  "physical_unique_sequences": 3354,
+  "empty_truth_RNAs": [
+    "16s_M.polymorpha_domain4",
+    "srp_Crit.fasc._AY781797",
+    "srp_Crit.luci._AY781798",
+    "srp_Leis.aeth._AY722730",
+    "srp_Schi.pomb._AU010514"
+  ],
+  "empty_candidate_RNAs": [],
+  "new_length_filter": false,
+  "new_deduplication": false,
+  "fold_membership_rows": 34785
+}

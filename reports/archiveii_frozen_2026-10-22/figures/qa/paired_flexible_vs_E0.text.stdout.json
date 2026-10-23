@@ -1,0 +1,10 @@
+{
+  "pdf": "paired_flexible_vs_E0.pdf",
+  "auditable": true,
+  "minimum_required_pt": 7.0,
+  "minimum_found_pt": 7.5,
+  "text_run_count": 6,
+  "below_minimum_count": 0,
+  "below_minimum": [],
+  "warnings": []
+}

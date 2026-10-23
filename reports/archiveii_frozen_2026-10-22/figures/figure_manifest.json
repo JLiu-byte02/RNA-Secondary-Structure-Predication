@@ -1,0 +1,212 @@
+{
+  "figures": [
+    {
+      "name": "family_flexible_f1",
+      "claim": "Compare all four models on every held-out family using f1.",
+      "source": "family_results.csv; run_results.csv",
+      "display_rule": "All 36 family-method summaries; 81 E seed scores plus 9 fixed-reference scores. Shared F1 limits across metric views.",
+      "alignment": {
+        "schema_version": 1,
+        "applicable": false,
+        "auditable": false,
+        "verdict": "NOT APPLICABLE",
+        "backend": "python-matplotlib",
+        "summary": {
+          "fail": 0,
+          "warn": 0,
+          "comparisons": 0,
+          "exemptions": 0
+        },
+        "tolerances": {
+          "alignment_pt": 1.5,
+          "gutter_pt": 1.5
+        },
+        "errors": [],
+        "findings": [],
+        "layout": {
+          "schema_version": 1,
+          "backend": "python-matplotlib",
+          "figure": {
+            "width_pt": 518.740157480315,
+            "height_pt": 439.3700787401575
+          },
+          "panels": [
+            {
+              "id": "a",
+              "bbox_pt": [
+                140.05984251968508,
+                70.2992125984252,
+                497.9905511811024,
+                355.8897637795276
+              ]
+            }
+          ],
+          "row_groups": [],
+          "column_groups": [],
+          "boundary_groups": [],
+          "exemptions": []
+        }
+      },
+      "automatic_checks": {
+        "text": {
+          "exit_code": 0
+        },
+        "collision": {
+          "exit_code": 0
+        }
+      },
+      "files": {
+        "family_flexible_f1.svg": "425cce34b671489d1a5a24cd4251527dc8528a75a62e30ac08ec5929d3240dd5",
+        "family_flexible_f1.pdf": "6e934c1097be7472f6fee27c892b0594427bf48f2a215cf050dd016307cf5505",
+        "family_flexible_f1.png": "027f689f1ec15501b37065346be5efede9363c2485e4f4fa5e9e490479f3d6b4"
+      }
+    },
+    {
+      "name": "paired_flexible_vs_E0",
+      "claim": "Isolate the additional physical-feature contribution under paired E training.",
+      "source": "paired_E_vs_E0.csv; run_results.csv",
+      "display_rule": "All 18 family contrasts plus 2 nine-family aggregate contrasts; all 60 seed differences retained.",
+      "alignment": {
+        "schema_version": 1,
+        "applicable": false,
+        "auditable": false,
+        "verdict": "NOT APPLICABLE",
+        "backend": "python-matplotlib",
+        "summary": {
+          "fail": 0,
+          "warn": 0,
+          "comparisons": 0,
+          "exemptions": 0
+        },
+        "tolerances": {
+          "alignment_pt": 1.5,
+          "gutter_pt": 1.5
+        },
+        "errors": [],
+        "findings": [],
+        "layout": {
+          "schema_version": 1,
+          "backend": "python-matplotlib",
+          "figure": {
+            "width_pt": 518.740157480315,
+            "height_pt": 439.3700787401575
+          },
+          "panels": [
+            {
+              "id": "a",
+              "bbox_pt": [
+                140.05984251968508,
+                70.2992125984252,
+                497.9905511811024,
+                355.8897637795276
+              ]
+            }
+          ],
+          "row_groups": [],
+          "column_groups": [],
+          "boundary_groups": [],
+          "exemptions": []
+        }
+      },
+      "automatic_checks": {
+        "text": {
+          "exit_code": 0
+        },
+        "collision": {
+          "exit_code": 0
+        }
+      },
+      "files": {
+        "paired_flexible_vs_E0.svg": "d3177f6b8bfb3af99a45db5c18e64b1fa15c03832edefac7dd36e047b19ae567",
+        "paired_flexible_vs_E0.pdf": "4abe4cbb391390347a6bf82dceb6667323aefe0bae61e7144cc39b7f71415381",
+        "paired_flexible_vs_E0.png": "9473e4642deacda459a5647764a8503473f4eb45f24478e44b3fd5b2dd7b70dd"
+      }
+    },
+    {
+      "name": "family_exact_f1",
+      "claim": "Compare all four models on every held-out family using exact_f1.",
+      "source": "family_results.csv; run_results.csv",
+      "display_rule": "All 36 family-method summaries; 81 E seed scores plus 9 fixed-reference scores. Shared F1 limits across metric views.",
+      "alignment": {
+        "schema_version": 1,
+        "applicable": false,
+        "auditable": false,
+        "verdict": "NOT APPLICABLE",
+        "backend": "python-matplotlib",
+        "summary": {
+          "fail": 0,
+          "warn": 0,
+          "comparisons": 0,
+          "exemptions": 0
+        },
+        "tolerances": {
+          "alignment_pt": 1.5,
+          "gutter_pt": 1.5
+        },
+        "errors": [],
+        "findings": [],
+        "layout": {
+          "schema_version": 1,
+          "backend": "python-matplotlib",
+          "figure": {
+            "width_pt": 518.740157480315,
+            "height_pt": 439.3700787401575
+          },
+          "panels": [
+            {
+              "id": "a",
+              "bbox_pt": [
+                140.05984251968508,
+                70.2992125984252,
+                497.9905511811024,
+                355.8897637795276
+              ]
+            }
+          ],
+          "row_groups": [],
+          "column_groups": [],
+          "boundary_groups": [],
+          "exemptions": []
+        }
+      },
+      "automatic_checks": {
+        "text": {
+          "exit_code": 0
+        },
+        "collision": {
+          "exit_code": 0
+        }
+      },
+      "files": {
+        "family_exact_f1.svg": "951f23110ac8605e9dc90b5cc23cdfc30fa998bbf01edc6c020ffce189b8822a",
+        "family_exact_f1.pdf": "12220acdd0d89ac719997471dd840cbe535e64cf40687c1e76fa14ecc16480dd",
+        "family_exact_f1.png": "bdf39ee6fc71d9d19ba6f79513b184bcfff43519c5d8a3be3ab17f1466a9f1f8"
+      }
+    }
+  ],
+  "sources": {
+    "family_results.csv": "fa43b712cf719d436dc90e2a5294ac9f150ad2d6432f116dea6b333050d779b2",
+    "run_results.csv": "7be13808ae31b78f02f0abceae3bac794696acb851f1e4755d9f4a7711e6609c",
+    "paired_E_vs_E0.csv": "f7691223163cfb5b49f7579eb9fb2e9833e5af63280298d60da691e4a5a7bbc0"
+  },
+  "plotting_source_sha256": "192633458e92ece762a9b0330ae6dd37932a03542d2d4e97a1d8055b9662fd44",
+  "qa_enabled": true,
+  "runtime": {
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "1.26.4",
+      "matplotlib": "3.9.4",
+      "PyMuPDF": "1.24.14",
+      "pillow": "13.0.0",
+      "fonttools": "4.67.0",
+      "contourpy": "1.3.3",
+      "kiwisolver": "1.5.1",
+      "cycler": "0.12.1",
+      "packaging": "26.3",
+      "pyparsing": "3.3.3",
+      "python-dateutil": "2.9.0.post0",
+      "six": "1.17.0"
+    }
+  },
+  "manual_review": "Passed: all three actual final PNGs viewed panel-by-panel and as complete figures. Family labels, counts, common flexible/exact limits, all seed points, means and SDs, paired zero reference, legends and footnotes checked. PDF text/collision checks passed; single plot areas require no comparative panel alignment."
+}

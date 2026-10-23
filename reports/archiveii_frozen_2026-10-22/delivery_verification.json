@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "manifest_files_verified": 26,
+  "fold_membership_rows_verified": 34785,
+  "complete_training_epochs": 4050,
+  "complete_RNA_coverage_each_epoch": true,
+  "model_family_seed_results": 90,
+  "family_aggregates_recomputed": 36,
+  "overall_aggregates_recomputed": 8,
+  "paired_contrasts_recomputed": 20,
+  "validation_only_choices_verified": 81,
+  "logical_predictions": 38650,
+  "successful_final_slurm_jobs": 102,
+  "E_tests_started_after_all_training": true,
+  "numerical_source_unchanged": true,
+  "historical_preparation_attempts_verified": 2,
+  "strict_manifest": false,
+  "limitation": "Raw checkpoints and prediction streams remain on the server; their official-function recomputation is recorded in artifact_validation.json.",
+  "downloaded_archive_sha256": "2ce6a33207c649897f477acd0735e0d8cd27374c377b9d01dedaecacb23ab0e7",
+  "source": "Actual completed-study archive downloaded from the server; no generated/synthetic metrics."
+}

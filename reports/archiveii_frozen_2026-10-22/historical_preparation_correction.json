@@ -1,0 +1,21 @@
+{
+  "job_id": "9219",
+  "original_record": {
+    "id": "9219",
+    "status": "CANCELLED",
+    "reason": "Unstarted dependent smoke allocation replaced after failed embedding preparation."
+  },
+  "corrected_record": {
+    "id": "9219",
+    "status": "FAILED",
+    "reason": "Actually started and failed due to missing embedding_provenance.json after failed preparation; prior cancellation-intention metadata corrected from final Slurm accounting and original stderr.",
+    "exit_code": "1:0",
+    "previously_recorded_status": "CANCELLED"
+  },
+  "slurm_accounting": "9219|FAILED|1:0|14|2026-10-22T18:24:08|2026-10-22T18:24:22",
+  "stderr_sha256": "638b90a180348d9fe33a732eb68cd0cc72089d9e2fc55cbd4751e1c37bf7582f",
+  "previous_metadata_sha256": "8171c5f49235e899caa6b3243e556e95311b4ccf94c8c0536006e1fa9fd9e91f",
+  "corrected_metadata_sha256": "6fb486b8763689d8c607d159de3a7aaefddb7dacaa84f8255944153a8a0b5291",
+  "evidence": "Original smoke stderr: FileNotFoundError for embedding_provenance.json; final sacct FAILED 1:0.",
+  "scope": "Historical preparation metadata only. No change to training/evaluation code, inputs, checkpoints, selections or predictions."
+}

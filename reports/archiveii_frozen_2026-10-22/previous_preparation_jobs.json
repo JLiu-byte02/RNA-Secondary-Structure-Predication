@@ -1,0 +1,15 @@
+[
+  {
+    "id": "9218",
+    "status": "FAILED",
+    "exit_code": "1:0",
+    "reason": "Namespace-package provenance path; all calculations retained separately before fresh successful preparation."
+  },
+  {
+    "id": "9219",
+    "status": "FAILED",
+    "reason": "Actually started and failed due to missing embedding_provenance.json after failed preparation; prior cancellation-intention metadata corrected from final Slurm accounting and original stderr.",
+    "exit_code": "1:0",
+    "previously_recorded_status": "CANCELLED"
+  }
+]
