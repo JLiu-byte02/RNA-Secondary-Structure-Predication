@@ -1,6 +1,10 @@
 import importlib
 import importlib.util
 import unittest
+import json
+import tempfile
+from pathlib import Path
+from scripts.direction_a_protocol import config,file_sha,write_json,ROOT,source_identity
 
 class BudgetTests(unittest.TestCase):
     def module(self):
@@ -31,5 +35,27 @@ class BudgetTests(unittest.TestCase):
         result=m.resource_status(ledger,{'3':dict(state='SUBMITTED',elapsed=0)})
         self.assertEqual(result['phases']['smoke']['reserved_remaining_seconds'],600)
         self.assertEqual(result['phases']['smoke']['active'],1)
+    def test_core_admission_rejects_stale_prediction_artifact(self):
+        m=self.module();gate=getattr(m,'validate_promotion',None)
+        self.assertTrue(callable(gate),'Core admission does not validate promotion artifacts')
+        cfg=config()
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);write_json(root/'pilot_roles.json',dict(sha256='roles'))
+            summaries={};sources={}
+            for case in cfg['pilot_development_families']:
+                directory=root/'pilot'/case/'correction_seed17';directory.mkdir(parents=True)
+                identity=dict(code=source_identity('correction'),roles_sha256='roles')
+                write_json(directory/'choices_sealed.json',dict(identity=identity))
+                write_json(directory/'development_predictions.json',{})
+                methods={name:dict(selected=dict(equal_family=dict(exact_f1=value,harmful_rate=.1)),official_verification=dict(passed=True)) for name,value in dict(fixed_mix=.6,residual=.5,local_gate=.62,safe_local_gate=.61).items()}
+                summary=dict(completed=True,smoke=False,case=case,identity=identity,methods=methods,
+                    choices_sha256=file_sha(directory/'choices_sealed.json'),predictions_sha256=file_sha(directory/'development_predictions.json'))
+                write_json(directory/'development_summary.json',summary);summaries[case]=summary;sources[case]=file_sha(directory/'development_summary.json')
+            path=root/'pilot/promotion.json'
+            write_json(path,dict(source_summaries=sources,config_sha256=file_sha(ROOT/'configs/direction_a.json'),
+                role_manifest_sha256=file_sha(root/'pilot_roles.json'),**m.promotion(summaries,cfg)))
+            self.assertTrue(gate(path,cfg))
+            (root/'pilot/srp/correction_seed17/development_predictions.json').write_text('{"replaced":true}')
+            with self.assertRaises(AssertionError):gate(path,cfg)
 
 if __name__=='__main__':unittest.main()

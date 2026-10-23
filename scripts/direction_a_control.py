@@ -5,7 +5,7 @@ from pathlib import Path
 import subprocess
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from scripts.direction_a_protocol import OUT,config,write_json,file_sha
+from scripts.direction_a_protocol import ROOT,OUT,config,write_json,file_sha,source_identity
 
 TERMINAL={'COMPLETED','FAILED','CANCELLED','TIMEOUT','OUT_OF_MEMORY','NODE_FAIL','PREEMPTED','BOOT_FAIL','DEADLINE','REVOKED'}
 
@@ -54,7 +54,7 @@ def submit(args):
         decision=budget_decision(ledger[args.phase],status['accounting'],args.minutes*60,cfg[args.phase+'_gpu_hour_cap'],cfg['max_inflight'],other)
         assert decision['allowed'],json.dumps(decision)
         if args.phase=='core':
-            promoted=json.loads((OUT/'pilot/promotion.json').read_text());assert promoted['promote'],'No measured promotion'
+            validate_promotion(OUT/'pilot/promotion.json',cfg)
         command=['sbatch','--parsable',f'--time=00:{args.minutes:02d}:00',args.script,*args.arguments]
         if args.minutes>=60:command[2]=f'--time={args.minutes//60:02d}:{args.minutes%60:02d}:00'
         receipt=subprocess.check_output(command,text=True).strip();jid=receipt.split(';')[0];assert jid.isdigit()
@@ -79,6 +79,30 @@ def promotion(summaries,cfg):
     winner=max(eligible,key=lambda m:candidates[m]['mean_exact_gain']) if eligible else None
     return dict(promote=bool(eligible),winner=winner,candidates=candidates,interpretation='Compute-admission decision, not a significance test')
 
+def validate_promotion(path,cfg):
+    """A prior positive boolean cannot authorize a changed experiment."""
+    path=Path(path);decision=json.loads(path.read_text());assert decision['promote'],'No measured promotion'
+    assert decision['config_sha256']==file_sha(ROOT/'configs/direction_a.json'),'Promotion config changed'
+    assert cfg==config(),'Unexpected configuration'
+    roles_path=path.parent.parent/'pilot_roles.json';roles=json.loads(roles_path.read_text())
+    assert decision['role_manifest_sha256']==file_sha(roles_path),'Promotion roles changed'
+    assert set(decision['source_summaries'])==set(cfg['pilot_development_families'])
+    summaries={}
+    for case in cfg['pilot_development_families']:
+        directory=path.parent/case/'correction_seed17';summary_path=directory/'development_summary.json'
+        assert decision['source_summaries'][case]==file_sha(summary_path),'Promotion summary changed'
+        row=json.loads(summary_path.read_text());assert row['completed'] and not row['smoke'] and row['case']==case
+        assert row['identity']['code']==source_identity('correction'),'Promotion scientific code changed'
+        assert row['identity']['roles_sha256']==roles['sha256']
+        for name,key in [('choices_sealed.json','choices_sha256'),('development_predictions.json','predictions_sha256')]:
+            assert file_sha(directory/name)==row[key],'Promotion artifact changed: '+name
+        assert json.loads((directory/'choices_sealed.json').read_text())['identity']==row['identity']
+        assert all(v['official_verification']['passed'] for v in row['methods'].values())
+        summaries[case]=row
+    recomputed=promotion(summaries,cfg)
+    for key,value in recomputed.items():assert decision[key]==value,'Promotion rule/result changed'
+    return True
+
 def decide():
     cfg=config();summaries={};sources={}
     for case in cfg['pilot_development_families']:
@@ -86,7 +110,9 @@ def decide():
         assert row['completed'] and not row['smoke'] and row['case']==case
         assert all(v['official_verification']['passed'] for v in row['methods'].values())
         summaries[case]=row;sources[case]=file_sha(path)
-    result=dict(source_summaries=sources,**promotion(summaries,cfg));write_json(OUT/'pilot/promotion.json',result);print(json.dumps(result))
+    result=dict(source_summaries=sources,config_sha256=file_sha(ROOT/'configs/direction_a.json'),
+                role_manifest_sha256=file_sha(OUT/'pilot_roles.json'),**promotion(summaries,cfg))
+    write_json(OUT/'pilot/promotion.json',result);print(json.dumps(result))
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();sub=parser.add_subparsers(dest='action',required=True)
