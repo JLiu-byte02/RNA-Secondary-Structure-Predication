@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "official_predictions_verified": 14916,
+  "source": {
+    "v1": {
+      "stage": "correction",
+      "files": {
+        "configs/direction_a.json": "4ddff9f2c6dc5e37db04777423dd2ec50ab217489ea116f28e721163d9e85c24",
+        "scripts/_common.py": "e2d8b415538a09eaa10abe931c957a823c2db42ca52406883801a2518a53645a",
+        "scripts/archiveii_frozen_data.py": "8643a84ba44a26a924656134d4b427efe17cf29b51e570e70e4f773a724601b7",
+        "scripts/archiveii_frozen_metrics.py": "84e31e5e8f83e4da3a7a42823953aa1e6c743e7b763a02549ed127b210cc6a7f",
+        "scripts/cache_thermo.py": "b333dca8b9bc5680edcaa3bc2df6a75a95f4130411945f5c9dbeae321db85c31",
+        "scripts/direction_a_data.py": "b5aea02951ffb5e7b8168d221a496d92066496f24a096731ff3b53479efa4f15",
+        "scripts/direction_a_evaluate.py": "01ed8495313066058cfadb4e51e69fee431e095933e5cee3c34ca90aac15cf01",
+        "scripts/direction_a_models.py": "3cefe2d435e7f373ed6b6af6580cbbed786a8c4d7ae1a8897d4dceb072fcb12d",
+        "scripts/direction_a_protocol.py": "ed09f87c15af4649f7f05461d1608095a96751df3594a68458116cc3cb6122d9",
+        "scripts/full_protocol.py": "a47bdaac891c077225d1d09afd4f4f65116b5d48bb6d7858f7b31745b63cc9c0",
+        "scripts/long_metrics.py": "494f126f49cec812416150bf41486d5a4c2e54f54f4cc166b45f06421bd7321d",
+        "scripts/long_models.py": "23b11b734c8d9ae4c79fb574a763edec3eefe581ec9155709ea360e157629837",
+        "scripts/long_protocol.py": "4574b6cb153fc6a6f1b242663634fc5640b9586e45679156feba67e64dd3c23d",
+        "scripts/run_archiveii_frozen.py": "9ed15b301df6ea34fbb0e3a89e72a79a661443502c6e1749110febc29ba57b8c",
+        "scripts/run_direction_a_correction.py": "284767bcdbf93dc3f2d8d73f8f2f792feb1b108547788d3b07f72216d97dc778",
+        "scripts/run_long_epochs.py": "f427939f5821631e85aedaabc232b7bd2651bafd9a483dba46369040409197d9",
+        "scripts/run_thermo_fast.py": "0f71acc15887e79fcf46be4678cf8be9e67f6bf3dddb32e7a86efca851cb12de",
+        "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/decoder.py": "003a068bd35535fe34c860c4e74f23de46a435e6f055ed6beceb8f68e0475533",
+        "src/losses.py": "522c69575875efe2ff6c9a4544410ff61cdaf591d44d4a5840904c59267d9c76",
+        "src/metrics.py": "b86863fab8aa5662be274439e52b92cda31e13472b5163967e7efcac3ac0a14d",
+        "src/pair_head.py": "fb9e45fa42e6b871cf4ac7417b47a811af4d8366d7f2458f15d6447fbc7e8dca",
+        "src/stem_candidates.py": "c0b371627e8d91b2488686c40fec3731570c903a3c901ba8f778ffd847b782e8",
+        "src/utils.py": "5a67b62355ec5affa6e3f125348784ce66905c64f7df2a7ca72f6c2230fb23f0"
+      },
+      "sha256": "9beb66e0d170999b4b99b1ccf021010432359b5baf79b05bcfbc1b81e0141086"
+    },
+    "files": {
+      "scripts/run_direction_a_matched.py": "b2251db1f442936aa8f50de4b18484da6934f2d87cb282698947ef3b219e89f2",
+      "scripts/direction_a_stage2.py": "c7e27248ce04ea02ef7344c228535902bc813e0b890e29d3850bbc239f301fba"
+    },
+    "official": "75c971655e9a12cbbe18d3f75b8377303d0acc1795fab0f0253721ec14b750d0"
+  },
+  "artifacts": {
+    "srp": {
+      "summary_sha256": "a1f961f15a6fef0f252ad1b7c0747deeb0887e640c7c3724bb3db2d28f6d7ffb",
+      "prediction_sha256": "87b115223f94dbcd1a18b30d176fbe147a9cff3be16a45038691ebca384c4c4e",
+      "choices_sha256": "2613df319bb722c388a36b25c3873e12eaa548408516070d11ed9e00c9ea6f07"
+    },
+    "tmRNA": {
+      "summary_sha256": "2f216ac4f456bfd9b3d8213600596a17a8aa08d85147780e451e96889b2a78c6",
+      "prediction_sha256": "6a577194f00bc17af458217dc905749d5b83891dbc074f0f6a74c83f76d65bf6",
+      "choices_sha256": "5e0c52f4ad67158abb9b19a26ff20d118b60dde15547b5db5a22de90093fcb32"
+    }
+  },
+  "scope": "Post-hoc uniformly retuned frozen checkpoints, same base reference. Original negative promotion not overwritten.",
+  "audit_binding": {
+    "configuration_sha256": "64602c0305c3ef42058f8b88a2d849b5d64087f5b4d9e7c609e4c20150bf7cb3",
+    "source_snapshot": "46ffd4cc2f9c77c5126c0b16e3195e27516232b0",
+    "files": {
+      "scripts/run_direction_a_matched.py": "b2251db1f442936aa8f50de4b18484da6934f2d87cb282698947ef3b219e89f2",
+      "scripts/direction_a_stage2.py": "c7e27248ce04ea02ef7344c228535902bc813e0b890e29d3850bbc239f301fba",
+      "scripts/run_direction_a_risk.py": "569790164bacc5761aab6893e6f139569439ae09ca6572644e6ca6aa99549340",
+      "scripts/report_direction_a.py": "6ed1e0a86e3468b8c3796b33f124878f191c95d8ddb8348ad2bada43b61cb5a3"
+    },
+    "audit_entry_sha256": "03e435b4d6c9e08d5279f6b70d0a95b040e5e8e0ac169d1abc6e57a95e10346d",
+    "normalization_adapter_sha256": "7ce78ccc156e9a568992a2b1c438fd9aa914bd7beb2141b4099e7e3c4f64a156",
+    "scope": "Supplemental executable dependency binding verified against the immutable pre-execution Git snapshot. JSON pair normalization changes audit input types only; cache and selection sources remain byte-identical."
+  }
+}

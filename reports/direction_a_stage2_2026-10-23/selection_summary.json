@@ -1,0 +1,238 @@
+[
+  {
+    "case": "srp",
+    "seal_sha256": "551a52f8e420d21de614e72f8c29d64bfe56fbccb34cbb3fd1e0cde8a3f45595",
+    "runtime": {
+      "device": "cpu",
+      "threads": 2,
+      "precision": "FP32",
+      "base_logits": "recompute_fp32_all_roles"
+    },
+    "base_threshold": 0.1,
+    "proposal_threshold": 0.2,
+    "choices": {
+      "identity": {
+        "choice": {},
+        "f1": 0.4495884737324832,
+        "harm": 0.0
+      },
+      "all_edits": {
+        "choice": {},
+        "f1": 0.6546180323138595,
+        "harm": 0.31303328332375435
+      },
+      "margin_rule": {
+        "choice": {
+          "cut": -0.5
+        },
+        "f1": 0.6435071657517925,
+        "harm": 0.3126861509291866
+      },
+      "physics_rule": {
+        "choice": {
+          "cut": -0.1
+        },
+        "f1": 0.6554037593137627,
+        "harm": 0.3069613504048406
+      },
+      "pair_mlp": {
+        "choice": {
+          "lambda": 0.5,
+          "cost": 0.0
+        },
+        "f1": 0.6782315815698043,
+        "harm": 0.18923156931341817
+      },
+      "atomic_mlp": {
+        "choice": {
+          "lambda": 0.5,
+          "cost": 0.0
+        },
+        "f1": 0.6749467199359441,
+        "harm": 0.23201229683790825
+      },
+      "stem_mlp": {
+        "choice": {
+          "lambda": 0.5,
+          "cost": 0.0
+        },
+        "f1": 0.6776346047318776,
+        "harm": 0.20604364908258993
+      },
+      "stem_no_physics": {
+        "choice": {
+          "lambda": 0.5,
+          "cost": 0.0
+        },
+        "f1": 0.6718121958284036,
+        "harm": 0.18817291289667665
+      },
+      "stem_no_topology": {
+        "choice": {
+          "lambda": 0.5,
+          "cost": 0.0
+        },
+        "f1": 0.6722057590301783,
+        "harm": 0.24914986776789821
+      },
+      "stem_linear": {
+        "choice": {
+          "lambda": 0.5,
+          "cost": 0.0
+        },
+        "f1": 0.6565479561266658,
+        "harm": 0.2390747655924655
+      },
+      "calibrated_base": {
+        "choice": {
+          "alpha": 0.0,
+          "threshold": 0.01
+        },
+        "f1": 0.46074221219359063,
+        "harm": 0.6869105331305744
+      },
+      "fixed_mix": {
+        "choice": {
+          "alpha": 0.75,
+          "threshold": 0.1
+        },
+        "f1": 0.6700127563945644,
+        "harm": 0.37657545350415306
+      }
+    },
+    "training_rows": {
+      "pair_mlp": 5330,
+      "atomic_mlp": 3758,
+      "stem_mlp": 2050,
+      "stem_no_physics": 2050,
+      "stem_no_topology": 2050,
+      "stem_linear": 2050
+    },
+    "parameters": {
+      "pair_mlp": 641,
+      "atomic_mlp": 641,
+      "stem_mlp": 641,
+      "stem_no_physics": 641,
+      "stem_no_topology": 641,
+      "stem_linear": 19
+    }
+  },
+  {
+    "case": "tmRNA",
+    "seal_sha256": "02828ff76404f696209ac0afcede694ed3fd352131906c67e9924429bd1fab4e",
+    "runtime": {
+      "device": "cpu",
+      "threads": 2,
+      "precision": "FP32",
+      "base_logits": "recompute_fp32_all_roles"
+    },
+    "base_threshold": 0.005,
+    "proposal_threshold": 0.1,
+    "choices": {
+      "identity": {
+        "choice": {},
+        "f1": 0.6121594627847684,
+        "harm": 0.0
+      },
+      "all_edits": {
+        "choice": {},
+        "f1": 0.7647953686628234,
+        "harm": 0.34919305181212446
+      },
+      "margin_rule": {
+        "choice": {
+          "cut": -0.25
+        },
+        "f1": 0.7659000602237169,
+        "harm": 0.3480959394845795
+      },
+      "physics_rule": {
+        "choice": {
+          "cut": -0.25
+        },
+        "f1": 0.7661600124892697,
+        "harm": 0.3473463918899961
+      },
+      "pair_mlp": {
+        "choice": {
+          "lambda": 0.5,
+          "cost": 0.0
+        },
+        "f1": 0.8012921518831247,
+        "harm": 0.24127324958845675
+      },
+      "atomic_mlp": {
+        "choice": {
+          "lambda": 0.5,
+          "cost": 0.0
+        },
+        "f1": 0.8024727203486073,
+        "harm": 0.254694891526445
+      },
+      "stem_mlp": {
+        "choice": {
+          "lambda": 0.5,
+          "cost": 0.0
+        },
+        "f1": 0.8000662216912795,
+        "harm": 0.23338318137803832
+      },
+      "stem_no_physics": {
+        "choice": {
+          "lambda": 0.5,
+          "cost": 0.0
+        },
+        "f1": 0.7933187272131463,
+        "harm": 0.2624390935370617
+      },
+      "stem_no_topology": {
+        "choice": {
+          "lambda": 0.5,
+          "cost": 0.0
+        },
+        "f1": 0.8038481030853302,
+        "harm": 0.26365408617365477
+      },
+      "stem_linear": {
+        "choice": {
+          "lambda": 0.25,
+          "cost": 0.0
+        },
+        "f1": 0.7867535337757067,
+        "harm": 0.27315757014758324
+      },
+      "calibrated_base": {
+        "choice": {
+          "alpha": 0.0,
+          "threshold": 0.005
+        },
+        "f1": 0.6121594627847684,
+        "harm": 0.0
+      },
+      "fixed_mix": {
+        "choice": {
+          "alpha": 0.5,
+          "threshold": 0.01
+        },
+        "f1": 0.8117858604406862,
+        "harm": 0.21192574013256646
+      }
+    },
+    "training_rows": {
+      "pair_mlp": 9846,
+      "atomic_mlp": 6154,
+      "stem_mlp": 2793,
+      "stem_no_physics": 2793,
+      "stem_no_topology": 2793,
+      "stem_linear": 2793
+    },
+    "parameters": {
+      "pair_mlp": 641,
+      "atomic_mlp": 641,
+      "stem_mlp": 641,
+      "stem_no_physics": 641,
+      "stem_no_topology": 641,
+      "stem_linear": 19
+    }
+  }
+]

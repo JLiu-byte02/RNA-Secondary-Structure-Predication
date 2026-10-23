@@ -1,0 +1,245 @@
+[
+  {
+    "job_id": "9364",
+    "tag": "matched_cache_srp",
+    "phase": "matched",
+    "gpus": 1,
+    "wall": 600,
+    "submitted_unix": 1792743748.9617205,
+    "script": "slurm/direction_a_matched.sbatch",
+    "arguments": [
+      "--case",
+      "srp"
+    ]
+  },
+  {
+    "job_id": "9368",
+    "tag": "matched_cache_tmRNA",
+    "phase": "matched",
+    "gpus": 1,
+    "wall": 600,
+    "submitted_unix": 1792743771.2781818,
+    "script": "slurm/direction_a_matched.sbatch",
+    "arguments": [
+      "--case",
+      "tmRNA"
+    ]
+  },
+  {
+    "job_id": "9370",
+    "tag": "matched_cal_srp",
+    "phase": "matched",
+    "gpus": 0,
+    "wall": 3600,
+    "submitted_unix": 1792743988.0291035,
+    "script": "slurm/direction_a_stage2_cpu.sbatch",
+    "arguments": [
+      "calibrate",
+      "--case",
+      "srp"
+    ]
+  },
+  {
+    "job_id": "9374",
+    "tag": "matched_cal_tmRNA",
+    "phase": "matched",
+    "gpus": 0,
+    "wall": 3600,
+    "submitted_unix": 1792744257.8390615,
+    "script": "slurm/direction_a_stage2_cpu.sbatch",
+    "arguments": [
+      "calibrate",
+      "--case",
+      "tmRNA"
+    ]
+  },
+  {
+    "job_id": "9375",
+    "tag": "utility_smoke_srp",
+    "phase": "mechanism",
+    "gpus": 1,
+    "wall": 300,
+    "submitted_unix": 1792744333.3289447,
+    "script": "slurm/direction_a_utility.sbatch",
+    "arguments": [
+      "smoke",
+      "--case",
+      "srp"
+    ]
+  },
+  {
+    "job_id": "9376",
+    "tag": "matched_eval_srp",
+    "phase": "matched",
+    "gpus": 0,
+    "wall": 1800,
+    "submitted_unix": 1792744380.0280101,
+    "script": "slurm/direction_a_stage2_cpu.sbatch",
+    "arguments": [
+      "evaluate",
+      "--case",
+      "srp"
+    ]
+  },
+  {
+    "job_id": "9377",
+    "tag": "matched_eval_tmRNA",
+    "phase": "matched",
+    "gpus": 0,
+    "wall": 1800,
+    "submitted_unix": 1792744382.6367896,
+    "script": "slurm/direction_a_stage2_cpu.sbatch",
+    "arguments": [
+      "evaluate",
+      "--case",
+      "tmRNA"
+    ]
+  },
+  {
+    "job_id": "9379",
+    "tag": "utility_smoke_srp_v2",
+    "phase": "mechanism",
+    "gpus": 1,
+    "wall": 300,
+    "submitted_unix": 1792744449.7789853,
+    "script": "slurm/direction_a_utility.sbatch",
+    "arguments": [
+      "smoke",
+      "--case",
+      "srp"
+    ]
+  },
+  {
+    "job_id": "9380",
+    "tag": "matched_report",
+    "phase": "matched",
+    "gpus": 0,
+    "wall": 3600,
+    "submitted_unix": 1792744450.3146539,
+    "script": "slurm/direction_a_stage2_cpu.sbatch",
+    "arguments": [
+      "report"
+    ]
+  },
+  {
+    "job_id": "9393",
+    "tag": "matched_audit_json_fix",
+    "phase": "matched",
+    "gpus": 0,
+    "wall": 3600,
+    "submitted_unix": 1792745314.1111045,
+    "script": "slurm/direction_a_matched_audit.sbatch",
+    "arguments": []
+  },
+  {
+    "job_id": "9394",
+    "tag": "utility_fit_srp",
+    "phase": "mechanism",
+    "gpus": 1,
+    "wall": 1200,
+    "submitted_unix": 1792745316.7698839,
+    "script": "slurm/direction_a_utility.sbatch",
+    "arguments": [
+      "fit",
+      "--case",
+      "srp"
+    ]
+  },
+  {
+    "job_id": "9395",
+    "tag": "utility_fit_tmRNA",
+    "phase": "mechanism",
+    "gpus": 1,
+    "wall": 1200,
+    "submitted_unix": 1792745319.406551,
+    "script": "slurm/direction_a_utility.sbatch",
+    "arguments": [
+      "fit",
+      "--case",
+      "tmRNA"
+    ]
+  },
+  {
+    "job_id": "9398",
+    "tag": "cpu_profile",
+    "phase": "mechanism",
+    "gpus": 0,
+    "wall": 300,
+    "submitted_unix": 1792745698.6731594,
+    "script": ".tmp/profile_utility_cpu.sbatch",
+    "arguments": []
+  },
+  {
+    "job_id": "9401",
+    "tag": "utility_cpu_fit_srp",
+    "phase": "mechanism",
+    "gpus": 0,
+    "cpus": 4,
+    "wall": 3600,
+    "submitted_unix": 1792745981.0291152,
+    "script": "slurm/direction_a_utility_cpu.sbatch",
+    "arguments": [
+      "fit",
+      "--case",
+      "srp"
+    ]
+  },
+  {
+    "job_id": "9403",
+    "tag": "utility_cpu_fit_tmRNA",
+    "phase": "mechanism",
+    "gpus": 0,
+    "cpus": 4,
+    "wall": 3600,
+    "submitted_unix": 1792745983.6837168,
+    "script": "slurm/direction_a_utility_cpu.sbatch",
+    "arguments": [
+      "fit",
+      "--case",
+      "tmRNA"
+    ]
+  },
+  {
+    "job_id": "9413",
+    "tag": "utility_cpu_eval_srp",
+    "phase": "mechanism",
+    "gpus": 0,
+    "cpus": 4,
+    "wall": 900,
+    "submitted_unix": 1792746892.9839828,
+    "script": "slurm/direction_a_utility_cpu.sbatch",
+    "arguments": [
+      "evaluate",
+      "--case",
+      "srp"
+    ]
+  },
+  {
+    "job_id": "9414",
+    "tag": "utility_cpu_eval_tmRNA",
+    "phase": "mechanism",
+    "gpus": 0,
+    "cpus": 4,
+    "wall": 900,
+    "submitted_unix": 1792746913.6534443,
+    "script": "slurm/direction_a_utility_cpu.sbatch",
+    "arguments": [
+      "evaluate",
+      "--case",
+      "tmRNA"
+    ]
+  },
+  {
+    "job_id": "9417",
+    "tag": "utility_cpu_report",
+    "phase": "mechanism",
+    "gpus": 0,
+    "cpus": 4,
+    "wall": 1800,
+    "submitted_unix": 1792747115.2810607,
+    "script": "slurm/direction_a_utility_cpu.sbatch",
+    "arguments": [
+      "report"
+    ]
+  }
+]

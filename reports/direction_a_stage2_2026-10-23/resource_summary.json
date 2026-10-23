@@ -1,0 +1,11 @@
+{
+  "matched": {
+    "gpu_hours": 0.07388888888888889,
+    "cpu_core_hours": 1.5988888888888888
+  },
+  "mechanism": {
+    "gpu_hours": 0.004166666666666667,
+    "cpu_core_hours": 3.218888888888889
+  },
+  "scope": "Allocated job wall time; includes failures and CPU allocation on GPU jobs. Queue time and lightweight controller/local reporting are excluded."
+}

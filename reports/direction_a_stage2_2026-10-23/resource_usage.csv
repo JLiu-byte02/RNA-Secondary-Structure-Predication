@@ -1,0 +1,19 @@
+job_id,tag,phase,state,exit_code,elapsed_s,allocated_cpus,allocated_gpu_s,allocated_cpu_core_s
+9364,matched_cache_srp,matched,COMPLETED,0:0,130,4,130,520
+9368,matched_cache_tmRNA,matched,COMPLETED,0:0,136,4,136,544
+9370,matched_cal_srp,matched,COMPLETED,0:0,44,4,0,176
+9374,matched_cal_tmRNA,matched,COMPLETED,0:0,38,4,0,152
+9375,utility_smoke_srp,mechanism,FAILED,1:0,7,4,7,28
+9376,matched_eval_srp,matched,COMPLETED,0:0,40,4,0,160
+9377,matched_eval_tmRNA,matched,COMPLETED,0:0,47,4,0,188
+9379,utility_smoke_srp_v2,mechanism,COMPLETED,0:0,8,4,8,32
+9380,matched_report,matched,FAILED,1:0,46,4,0,184
+9393,matched_audit_json_fix,matched,COMPLETED,0:0,958,4,0,3832
+9394,utility_fit_srp,mechanism,CANCELLED by 10048,0:0,0,4,0,0
+9395,utility_fit_tmRNA,mechanism,CANCELLED by 10048,0:0,0,4,0,0
+9398,cpu_profile,mechanism,COMPLETED,0:0,62,4,0,248
+9401,utility_cpu_fit_srp,mechanism,COMPLETED,0:0,900,4,0,3600
+9403,utility_cpu_fit_tmRNA,mechanism,COMPLETED,0:0,689,4,0,2756
+9413,utility_cpu_eval_srp,mechanism,COMPLETED,0:0,127,4,0,508
+9414,utility_cpu_eval_tmRNA,mechanism,COMPLETED,0:0,184,4,0,736
+9417,utility_cpu_report,mechanism,COMPLETED,0:0,920,4,0,3680

@@ -8,6 +8,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from scripts.direction_a_protocol import ROOT,OUT,config,digest,file_sha,write_json,source_identity
 from scripts.direction_a_data import prepare_roles,load_records
 from scripts.direction_a_stage2 import utility_roles,thresholds
+from scripts.direction_a_runtime import execution_spec
 from scripts.archiveii_frozen_data import load_manifest
 from scripts.direction_a_models import LocalCorrection,physical_entropy
 from scripts.run_direction_a_correction import train_one_epoch,infer
@@ -21,13 +22,14 @@ from scripts._common import set_seed
 from scripts.report_direction_a import verify_records,verify_reference,write_csv
 
 STAGE=ROOT/'outputs/direction_a_stage2/utility'
+RUNTIME=execution_spec(os.environ.get('RNA_DIRECTION_A_DEVICE','cuda'))
 KINDS=('pair_mlp','atomic_mlp','stem_mlp','stem_no_physics','stem_no_topology','stem_linear')
 LAMBDAS=(0.,.25,.5,1.,2.,4.)
 COSTS=(0.,.1,.25)
 RULE_CUTS=(-.5,-.25,-.1,0.,.1,.25,.5,1.,1e6)
 
 def source():
-    names=['scripts/run_direction_a_utility.py','scripts/direction_a_utility.py','scripts/direction_a_edit_packets.py','scripts/direction_a_stage2.py','scripts/report_direction_a.py']
+    names=['scripts/run_direction_a_utility.py','scripts/direction_a_utility.py','scripts/direction_a_edit_packets.py','scripts/direction_a_stage2.py','scripts/report_direction_a.py','scripts/direction_a_runtime.py']
     return dict(v1=source_identity('correction'),base_source=source_identity('base'),files={n:file_sha(ROOT/n) for n in names},official=verify_reference(ROOT/'third_party/rinalmo_frozen_reference/sec_struct.py'))
 
 def identity(case):
@@ -36,12 +38,23 @@ def identity(case):
     assert summary['completed'] and summary['epochs']==50 and summary['train_ids']==role['base_train']
     assert summary['identity']['code']==source_identity('base') and summary['identity']['inputs']==manifest['historical_inputs']
     assert file_sha(directory/'final.pt')==summary['checkpoint_sha256']
-    return dict(source=source(),case=case,seed=17,role=role,roles_sha256=manifest['sha256'],historical_inputs=manifest['historical_inputs'],
+    return dict(source=source(),runtime=RUNTIME,case=case,seed=17,role=role,roles_sha256=manifest['sha256'],historical_inputs=manifest['historical_inputs'],
                 base_summary_sha256=file_sha(directory/'summary.json'),base_checkpoint_sha256=summary['checkpoint_sha256'],
                 proposal_epochs=15,utility_epochs=150,utility_hidden=32,utility_lr=.003)
 
 def frozen_base(case,ids,records,device):
     directory=OUT/'pilot'/case/'base_b_seed17';row=json.loads((directory/'summary.json').read_text());values={}
+    if RUNTIME['device']=='cpu':
+        assert file_sha(directory/'final.pt')==row['checkpoint_sha256']
+        fresh,embeddings=load_records(ids,True);model=B0();model.load_state_dict(torch.load(directory/'final.pt',map_location='cpu',weights_only=False)['model']);model.eval()
+        cache=STAGE/'formal'/case/'base_cpu_fit';cache.mkdir(parents=True,exist_ok=True);artifacts={}
+        with torch.no_grad():
+            for i,sid in enumerate(ids):
+                value=model(*model_inputs(fresh[sid],embeddings[sid],torch.device('cpu'))).float();assert torch.isfinite(value).all()
+                values[sid]=value;path=cache/(digest(sid)+'.npz');np.savez_compressed(path,base=value.numpy());artifacts[sid]=file_sha(path)
+                if (i+1)%100==0:print('UTILITY_BASE_CPU',case,i+1,len(ids),flush=True)
+        write_json(cache/'manifest.json',dict(checkpoint_sha256=row['checkpoint_sha256'],runtime=RUNTIME,files=artifacts))
+        return values
     for sid in ids:
         item=row['artifacts'][sid];path=ROOT/item['path'];assert file_sha(path)==item['sha256']
         with np.load(path,allow_pickle=False) as data:values[sid]=torch.from_numpy(data['base'].copy())
@@ -137,12 +150,14 @@ def profile(ids,records,ex,predictions):
 def choose_profiles(profiles):return max(profiles,key=lambda r:(r['f1'],-r['harm'],r.get('cost',0),r.get('cut',0),-r.get('lambda',0)))
 
 def fit(case,smoke=False):
-    torch.set_num_threads(2);set_seed(17);ident=identity(case);role=ident['role'];directory=STAGE/('smoke' if smoke else 'formal')/case;directory.mkdir(parents=True,exist_ok=True)
+    torch.set_num_threads(RUNTIME['threads']);set_seed(17);ident=identity(case);role=ident['role'];directory=STAGE/('smoke' if smoke else 'formal')/case;directory.mkdir(parents=True,exist_ok=True)
     if (directory/'choices_sealed.json').exists():raise FileExistsError('Existing experiment; do not retrain')
     ids=sorted(set(role['proposal_fit']+role['utility_fit']+role['utility_cal']))
     if smoke:
         role={k:v[:4] for k,v in role.items()};ids=sorted(set(role['proposal_fit']+role['utility_fit']+role['utility_cal']))
-    records=load_records(ids);base=frozen_base(case,ids,records,torch.device('cpu'));device=torch.device('cuda');assert torch.cuda.is_available()
+    records=load_records(ids);base=frozen_base(case,ids,records,torch.device('cpu'));device=torch.device(RUNTIME['device'])
+    if device.type=='cuda':assert torch.cuda.is_available()
+    set_seed(17)
     model=LocalCorrection('local_gate').to(device);opt=torch.optim.AdamW(model.parameters(),lr=.0001,weight_decay=.0001);initial=state_hash(model.state_dict());curve=[]
     for epoch in range(1,(2 if smoke else 15)+1):
         curve.append(dict(epoch=epoch,**train_one_epoch(model,opt,role['proposal_fit'],records,base,17,epoch,config(),device,.05)))
@@ -187,8 +202,8 @@ def seal(case):
 
 def evaluate(case):
     for other in ('srp','tmRNA'):seal(other)
-    torch.set_num_threads(2);set_seed(17);sealed=seal(case);ids=sealed['identity']['role']['development'];records,embeddings=load_records(ids,True)
-    directory=STAGE/'formal'/case;device=torch.device('cuda');b=B0().to(device)
+    torch.set_num_threads(RUNTIME['threads']);set_seed(17);sealed=seal(case);ids=sealed['identity']['role']['development'];records,embeddings=load_records(ids,True)
+    directory=STAGE/'formal'/case;device=torch.device(RUNTIME['device']);b=B0().to(device)
     path=OUT/'pilot'/case/'base_b_seed17/final.pt';assert file_sha(path)==sealed['identity']['base_checkpoint_sha256']
     b.load_state_dict(torch.load(path,map_location=device,weights_only=False)['model']);b.eval();base={}
     with torch.no_grad():

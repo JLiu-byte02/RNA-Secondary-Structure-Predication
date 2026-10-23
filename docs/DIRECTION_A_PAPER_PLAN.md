@@ -4,6 +4,10 @@ This is a research plan, not a claim of a publishable result. The completed v1 a
 
 ## Claim to test
 
+Stage2 update2026-10-23: the gate hypothesis below failed its first two prospective development decisions. The next candidate is matching-safe structural-edit utility, with a fixed3-family base,2-family proposal training and2-family utility supervision; its specification is [DIRECTION_A_STAGE2.md](DIRECTION_A_STAGE2.md). A/B/C upstream label separation and same-checkpoint/same-precision evaluation are necessary controls, not themselves proof of innovation. The graph fact that symmetric differences of matchings decompose into paths/cycles is standard; it supplies legality, not a claimed new matching theorem. Predicting normalizedDeltaTP with DeltaFP=added_count-removed_count-DeltaTP is a transparent utility parameterization, not an established biological energy law. Success needs more than a better score on the two design-exposed pilot families.
+
+The contemporary comparison set should also consider [E2Efold](https://openreview.net/pdf?id=S1eALyrYDH), which already couples learned scores with constrained postprocessing, and [DSRNAFold](https://academic.oup.com/nar/article/53/11/gkaf533/8166794), which models structural context and pairing constraints. These add to MXfold2/MoEFold2D/BPfold/DEPfold in the prior-art matrix. Structural refinement or legality alone is not a sufficient novelty claim. Full primary-paper comparison remains a later submission gate, not a claim of exhaustive novelty clearance.
+
 A local sequence-conditioned gate can retain useful language-model structure predictions while selectively admitting thermodynamic evidence on an unseen RNA family, beyond calibrated fixed mixing and a global gate. Family-out-of-fold base predictions expose the corrector to base errors on families its base has not fitted. Harm regularization is only a surrogate; actual structural edits determine whether correction is safer.
 
 ## Evidence priority

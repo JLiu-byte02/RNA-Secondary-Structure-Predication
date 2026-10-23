@@ -1,0 +1,15 @@
+{
+  "conclusion": "No stable improvement over the calibrated fixed mixture in this development pilot.",
+  "question": "Do learned methods improve both held-out development families?",
+  "archetype": "quantitative grid, single axis",
+  "backend": "Python/matplotlib",
+  "source_csv": "utility_metrics.csv",
+  "source_sha256": "682908c087ce9be87d032b9f586c05773b60f03b40748164e92cc438b6b3d265",
+  "source_rows": 24,
+  "plotted_rows": 24,
+  "excluded_rows": 0,
+  "width_mm": 183,
+  "height_mm": 130,
+  "font_floor_pt": 7,
+  "statistics": "Seed17 only. RNA-macro within each family. No error bars or significance claim. Two phases use different upstream training roles; compare methods within a phase only."
+}
