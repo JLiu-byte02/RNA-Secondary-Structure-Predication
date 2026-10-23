@@ -1,0 +1,308 @@
+{
+  "smoke": [
+    {
+      "job_id": "9335",
+      "wall_seconds": 900,
+      "gpus": 1
+    },
+    {
+      "job_id": "9342",
+      "wall_seconds": 900,
+      "gpus": 1,
+      "tag": "correction-fit-smoke"
+    },
+    {
+      "job_id": "9343",
+      "phase": "smoke",
+      "tag": "correction-eval-smoke",
+      "wall_seconds": 600,
+      "gpus": 1,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--time=00:10:00",
+        "slurm/direction_a_correction.sbatch",
+        "evaluate",
+        "--case",
+        "srp",
+        "--seed",
+        "17",
+        "--smoke"
+      ]
+    }
+  ],
+  "pilot": [
+    {
+      "job_id": "9336",
+      "phase": "pilot",
+      "case": "srp",
+      "part": "a",
+      "wall_seconds": 3600,
+      "gpus": 1
+    },
+    {
+      "job_id": "9337",
+      "phase": "pilot",
+      "case": "srp",
+      "part": "b",
+      "wall_seconds": 3600,
+      "gpus": 1
+    },
+    {
+      "job_id": "9338",
+      "phase": "pilot",
+      "case": "srp",
+      "part": "full",
+      "wall_seconds": 3600,
+      "gpus": 1
+    },
+    {
+      "job_id": "9339",
+      "phase": "pilot",
+      "case": "tmRNA",
+      "part": "a",
+      "wall_seconds": 3600,
+      "gpus": 1
+    },
+    {
+      "job_id": "9340",
+      "phase": "pilot",
+      "case": "tmRNA",
+      "part": "b",
+      "wall_seconds": 3600,
+      "gpus": 1
+    },
+    {
+      "job_id": "9341",
+      "phase": "pilot",
+      "case": "tmRNA",
+      "part": "full",
+      "wall_seconds": 3600,
+      "gpus": 1
+    },
+    {
+      "job_id": "9344",
+      "phase": "pilot",
+      "tag": "srp-correction-fit",
+      "wall_seconds": 5400,
+      "gpus": 1,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--time=01:30:00",
+        "slurm/direction_a_correction.sbatch",
+        "fit",
+        "--case",
+        "srp",
+        "--seed",
+        "17"
+      ]
+    },
+    {
+      "job_id": "9345",
+      "phase": "pilot",
+      "tag": "tmRNA-correction-fit",
+      "wall_seconds": 5400,
+      "gpus": 1,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--time=01:30:00",
+        "slurm/direction_a_correction.sbatch",
+        "fit",
+        "--case",
+        "tmRNA",
+        "--seed",
+        "17"
+      ]
+    },
+    {
+      "job_id": "9346",
+      "phase": "pilot",
+      "tag": "tmRNA-correction-fit-retry1",
+      "wall_seconds": 5400,
+      "gpus": 1,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--time=01:30:00",
+        "slurm/direction_a_correction.sbatch",
+        "fit",
+        "--case",
+        "tmRNA",
+        "--seed",
+        "17"
+      ]
+    },
+    {
+      "job_id": "9347",
+      "phase": "pilot",
+      "tag": "srp-development-evaluation",
+      "wall_seconds": 1800,
+      "gpus": 1,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--time=00:30:00",
+        "slurm/direction_a_correction.sbatch",
+        "evaluate",
+        "--case",
+        "srp",
+        "--seed",
+        "17"
+      ]
+    },
+    {
+      "job_id": "9348",
+      "phase": "pilot",
+      "tag": "tmRNA-development-evaluation",
+      "wall_seconds": 1800,
+      "gpus": 1,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--time=00:30:00",
+        "slurm/direction_a_correction.sbatch",
+        "evaluate",
+        "--case",
+        "tmRNA",
+        "--seed",
+        "17"
+      ]
+    },
+    {
+      "job_id": "9349",
+      "phase": "pilot",
+      "tag": "independent-cpu-report",
+      "wall_seconds": 3600,
+      "gpus": 0,
+      "cpus": 4,
+      "dependency": "afterok:9347:9348",
+      "note": "Replaced while PENDING with CPU-parallel audit and matching submitted batch environment; no computation lost"
+    },
+    {
+      "job_id": "9350",
+      "phase": "pilot",
+      "tag": "independent-cpu-report-parallel",
+      "wall_seconds": 3600,
+      "gpus": 0,
+      "cpus": 4,
+      "dependency": "afterok:9347:9348"
+    },
+    {
+      "job_id": "9351",
+      "phase": "pilot",
+      "tag": "cpu-report-no-git-retry",
+      "wall_seconds": 3600,
+      "gpus": 0,
+      "cpus": 4
+    },
+    {
+      "job_id": "9352",
+      "phase": "pilot",
+      "tag": "revision1-srp-calibration",
+      "wall_seconds": 1800,
+      "gpus": 1,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--time=00:30:00",
+        "slurm/direction_a_risk.sbatch",
+        "prepare",
+        "--case",
+        "srp"
+      ]
+    },
+    {
+      "job_id": "9353",
+      "phase": "pilot",
+      "tag": "revision1-tmRNA-calibration",
+      "wall_seconds": 1800,
+      "gpus": 1,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--time=00:30:00",
+        "slurm/direction_a_risk.sbatch",
+        "prepare",
+        "--case",
+        "tmRNA"
+      ]
+    },
+    {
+      "job_id": "9354",
+      "phase": "pilot",
+      "tag": "revision1-srp-evaluation",
+      "wall_seconds": 900,
+      "gpus": 1,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--time=00:15:00",
+        "slurm/direction_a_risk.sbatch",
+        "evaluate",
+        "--case",
+        "srp"
+      ]
+    },
+    {
+      "job_id": "9355",
+      "phase": "pilot",
+      "tag": "revision1-tmRNA-evaluation",
+      "wall_seconds": 900,
+      "gpus": 1,
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--time=00:15:00",
+        "slurm/direction_a_risk.sbatch",
+        "evaluate",
+        "--case",
+        "tmRNA"
+      ]
+    },
+    {
+      "job_id": "9356",
+      "phase": "pilot",
+      "tag": "revision1-independent-cpu-audit",
+      "wall_seconds": 3600,
+      "gpus": 0,
+      "cpus": 4,
+      "dependency": "afterok:9351:9354:9355"
+    },
+    {
+      "job_id": "9357",
+      "phase": "pilot",
+      "tag": "final-error-strata-and-plots",
+      "wall_seconds": 300,
+      "gpus": 0,
+      "cpus": 1,
+      "dependency": "afterok:9351:9356"
+    },
+    {
+      "job_id": "9359",
+      "phase": "pilot",
+      "tag": "oracle-diagnostic-and-final-render",
+      "wall_seconds": 300,
+      "gpus": 0,
+      "cpus": 1
+    },
+    {
+      "job_id": "9361",
+      "phase": "pilot",
+      "tag": "baseline-threshold-boundary-sensitivity",
+      "wall_seconds": 1200,
+      "gpus": 0,
+      "cpus": 4
+    },
+    {
+      "job_id": "9362",
+      "phase": "pilot",
+      "tag": "oracle-whole-rna-and-duplicate-sensitivity",
+      "wall_seconds": 300,
+      "gpus": 0,
+      "cpus": 1
+    }
+  ],
+  "core": []
+}

@@ -1,0 +1,12 @@
+{
+  "revision": "DIRECTION-A-structured-risk-v1",
+  "betas": [0.0, 0.25, 0.5, 0.75, 1.0],
+  "policies": ["risk_fixed_mix", "risk_global_gate", "risk_local_gate"],
+  "risk_reference": "min(calibrated_v1_fixed_mix, calibrated_v1_residual)",
+  "risk_statistic": "equal_family_mean_per_rna_harmful_edit_fraction",
+  "tie_break": ["higher_exact_f1", "lower_harmful_fraction", "smaller_beta", "lower_threshold"],
+  "training": "no_retraining_reuse_selected_v1_weights",
+  "promotion_mean_exact_gain": 0.005,
+  "promotion_max_family_loss": 0.01,
+  "require_nonnegative_mean_gain_over_original_mix": true
+}

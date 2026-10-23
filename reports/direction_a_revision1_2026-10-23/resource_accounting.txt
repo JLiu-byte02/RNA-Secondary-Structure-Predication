@@ -1,0 +1,26 @@
+9335|COMPLETED|21|4|billing=4,cpu=4,gres/gpu=1,node=1
+9336|COMPLETED|523|4|billing=4,cpu=4,gres/gpu=1,node=1
+9337|COMPLETED|334|4|billing=4,cpu=4,gres/gpu=1,node=1
+9338|COMPLETED|806|4|billing=4,cpu=4,gres/gpu=1,node=1
+9339|COMPLETED|623|4|billing=4,cpu=4,gres/gpu=1,node=1
+9340|COMPLETED|340|4|billing=4,cpu=4,gres/gpu=1,node=1
+9341|COMPLETED|981|4|billing=4,cpu=4,gres/gpu=1,node=1
+9342|COMPLETED|10|4|billing=4,cpu=4,gres/gpu=1,node=1
+9343|COMPLETED|11|4|billing=4,cpu=4,gres/gpu=1,node=1
+9344|COMPLETED|586|4|billing=4,cpu=4,gres/gpu=1,node=1
+9345|FAILED|46|4|billing=4,cpu=4,gres/gpu=1,node=1
+9346|COMPLETED|814|4|billing=4,cpu=4,gres/gpu=1,node=1
+9347|COMPLETED|788|4|billing=4,cpu=4,gres/gpu=1,node=1
+9348|COMPLETED|1180|4|billing=4,cpu=4,gres/gpu=1,node=1
+9349|CANCELLED by 10048|0|4|
+9350|FAILED|3|4|billing=4,cpu=4,node=1
+9351|COMPLETED|1245|4|billing=4,cpu=4,node=1
+9352|COMPLETED|35|4|billing=4,cpu=4,gres/gpu=1,node=1
+9353|COMPLETED|34|4|billing=4,cpu=4,gres/gpu=1,node=1
+9354|COMPLETED|30|4|billing=4,cpu=4,gres/gpu=1,node=1
+9355|COMPLETED|32|4|billing=4,cpu=4,gres/gpu=1,node=1
+9356|COMPLETED|433|4|billing=4,cpu=4,node=1
+9357|COMPLETED|8|2|billing=2,cpu=2,node=1
+9359|COMPLETED|11|2|billing=2,cpu=2,node=1
+9361|COMPLETED|216|4|billing=4,cpu=4,node=1
+9362|COMPLETED|16|2|billing=2,cpu=2,node=1

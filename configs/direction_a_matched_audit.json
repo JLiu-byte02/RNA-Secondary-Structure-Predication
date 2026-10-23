@@ -1,0 +1,9 @@
+{
+  "source_snapshot": "46ffd4cc2f9c77c5126c0b16e3195e27516232b0",
+  "files": {
+    "scripts/run_direction_a_matched.py": "b2251db1f442936aa8f50de4b18484da6934f2d87cb282698947ef3b219e89f2",
+    "scripts/direction_a_stage2.py": "c7e27248ce04ea02ef7344c228535902bc813e0b890e29d3850bbc239f301fba",
+    "scripts/run_direction_a_risk.py": "569790164bacc5761aab6893e6f139569439ae09ca6572644e6ca6aa99549340",
+    "scripts/report_direction_a.py": "6ed1e0a86e3468b8c3796b33f124878f191c95d8ddb8348ad2bada43b61cb5a3"
+  }
+}

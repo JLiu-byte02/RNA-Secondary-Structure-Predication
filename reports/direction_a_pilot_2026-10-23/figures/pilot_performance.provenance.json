@@ -1,0 +1,15 @@
+{
+  "core_question": "How do all predeclared corrections compare with simple baselines on each development family?",
+  "archetype": "quantitative grid: single axis",
+  "backend": "Python/matplotlib",
+  "sources": {
+    "numeric_source.json": "aea9c22c3e63e09709c2a79da10036abd03a3c1855543a4d3b1eb9bc6594c5a6",
+    "family_metrics.csv": "91ca36aa216dde99a1574708111991e67e26fe78104cd8f105fe2f1d3d8f557d"
+  },
+  "width_mm": 183.0,
+  "height_mm": 100.0,
+  "statistics": "One seed17; predeclared SRP/tmRNA pseudo-OOD development cases. RNA macro within each family. No confidence interval or significance claim.",
+  "data_exclusions": 0,
+  "font_minimum_pt": 7,
+  "editable_text": true
+}

@@ -1,0 +1,16 @@
+{
+  "question": "Compare predictive quality and harmful edits across every original and revised policy",
+  "archetype": "quantitative grid: single axis",
+  "backend": "Python/matplotlib",
+  "source_sha256": {
+    "original": "aea9c22c3e63e09709c2a79da10036abd03a3c1855543a4d3b1eb9bc6594c5a6",
+    "revision": "1576813842a9412adbbef0e1be85b6b84540259a2dfe02a44f50666873a99ff3",
+    "combined_csv": "f9c3b422e0bd93d20a41bf9532e3f714350016ed96601085e6a6e6be7ceba5b3"
+  },
+  "rows": 24,
+  "excluded_rows": 0,
+  "width_mm": 183,
+  "height_mm": 130,
+  "statistics": "One seed17, two pseudo-OOD development cases; RNA macro within family; no confidence interval or significance claim",
+  "font_minimum_pt": 7
+}

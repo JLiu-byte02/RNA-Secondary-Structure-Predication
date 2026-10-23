@@ -1,6 +1,6 @@
 # Direction A: manuscript evidence plan
 
-This is a research plan, not a claim of a publishable result. No pilot outcome has yet been inserted. The previous E experiment is historical motivation, not a matched control for the new training protocol.
+This is a research plan, not a claim of a publishable result. The completed v1 and R1 pilots both failed their prospective promotion rules; the conditional nine-fold core study was not launched. See [audited stage findings](../reports/direction_a_revision1_2026-10-23/RESEARCH_FINDINGS.md) and [next model design](../reports/direction_a_revision1_2026-10-23/NEXT_MODEL_DESIGN.md). The previous E experiment is historical motivation, not a matched control for the new training protocol.
 
 ## Claim to test
 

@@ -1,0 +1,472 @@
+{
+  "sources": {
+    "srp": {
+      "summary_sha256": "7001a495fc60d62aa78350514fe4577e87b0f5d7eede170b62f7e06ab266bb85",
+      "predictions_sha256": "45d3f14a62f5bf14c9ccb24ec525debfe41a044a2c161d73a3157176cab03f15",
+      "choices_sha256": "27c1bdd9a936aa475db782da3b955720d246d5c17b8a0c654002a39724b2afb3"
+    },
+    "tmRNA": {
+      "summary_sha256": "510154e9a21af5505d7588e60b6718999ce8fdbb20d5fb1b332fe9f6391ab6be",
+      "predictions_sha256": "5f99c6bbabc4f1f73bbf22d236ed503a08a47d6dc2e6cd5c7a8dbeccfdc01dae",
+      "choices_sha256": "980795b613e8e8a51ab385776f369a1d82adb9f1433853a0351f546ff65fbd72"
+    }
+  },
+  "metrics": [
+    {
+      "case": "srp",
+      "method": "base",
+      "n": 826,
+      "exact_f1": 0.6119538272537369,
+      "flexible_f1": 0.6446582390474919,
+      "precision": 0.6882481026112595,
+      "recall": 0.5691368551809739,
+      "harmful_edit_rate": 0.0,
+      "helpful_edits_per_rna": 0.0,
+      "harmful_edits_per_rna": 0.0,
+      "threshold": 0.05,
+      "alpha": "",
+      "selected_epoch": "",
+      "calibration_exact_f1": 0.6010819421384814,
+      "common_threshold_exact_f1": 0.6119538272537369
+    },
+    {
+      "case": "srp",
+      "method": "p_only",
+      "n": 826,
+      "exact_f1": 0.5854132027079847,
+      "flexible_f1": 0.6232168955123044,
+      "precision": 0.6026696670187458,
+      "recall": 0.5832228464616515,
+      "harmful_edit_rate": 0.5815714151008394,
+      "helpful_edits_per_rna": 22.524213075060533,
+      "harmful_edits_per_rna": 23.506053268765132,
+      "threshold": 0.55,
+      "alpha": "",
+      "selected_epoch": "",
+      "calibration_exact_f1": 0.5984435259278496,
+      "common_threshold_exact_f1": 0.5789065582111782
+    },
+    {
+      "case": "srp",
+      "method": "mfe",
+      "n": 826,
+      "exact_f1": 0.5894508675538443,
+      "flexible_f1": 0.631473042658979,
+      "precision": 0.5691498012275696,
+      "recall": 0.619262413755518,
+      "harmful_edit_rate": 0.5824297147837268,
+      "helpful_edits_per_rna": 22.76634382566586,
+      "harmful_edits_per_rna": 29.052058111380145,
+      "threshold": "",
+      "alpha": "",
+      "selected_epoch": "",
+      "calibration_exact_f1": "",
+      "common_threshold_exact_f1": 0.5894508675538443
+    },
+    {
+      "case": "srp",
+      "method": "mea",
+      "n": 826,
+      "exact_f1": 0.5956993685983798,
+      "flexible_f1": 0.6365606067390538,
+      "precision": 0.5796634487036642,
+      "recall": 0.6208764813625307,
+      "harmful_edit_rate": 0.5854268840670679,
+      "helpful_edits_per_rna": 23.37046004842615,
+      "harmful_edits_per_rna": 27.033898305084747,
+      "threshold": "",
+      "alpha": "",
+      "selected_epoch": "",
+      "calibration_exact_f1": "",
+      "common_threshold_exact_f1": 0.5956993685983798
+    },
+    {
+      "case": "srp",
+      "method": "fixed_mix",
+      "n": 826,
+      "exact_f1": 0.6914235328013012,
+      "flexible_f1": 0.7247100398615962,
+      "precision": 0.7730349833799915,
+      "recall": 0.6601667547918437,
+      "harmful_edit_rate": 0.29648636802031003,
+      "helpful_edits_per_rna": 14.10048426150121,
+      "harmful_edits_per_rna": 3.9322033898305087,
+      "threshold": 0.05,
+      "alpha": 0.5,
+      "selected_epoch": "",
+      "calibration_exact_f1": 0.7255061843581502,
+      "common_threshold_exact_f1": 0.6914235328013012
+    },
+    {
+      "case": "srp",
+      "method": "residual",
+      "n": 826,
+      "exact_f1": 0.704567614205253,
+      "flexible_f1": 0.7450606692570014,
+      "precision": 0.7251189809676842,
+      "recall": 0.7032368899443678,
+      "harmful_edit_rate": 0.3992836628392542,
+      "helpful_edits_per_rna": 16.411622276029057,
+      "harmful_edits_per_rna": 7.552058111380146,
+      "threshold": 0.1,
+      "alpha": "",
+      "selected_epoch": 15,
+      "calibration_exact_f1": 0.7418235455548611,
+      "common_threshold_exact_f1": 0.7082247972349002
+    },
+    {
+      "case": "srp",
+      "method": "global_gate",
+      "n": 826,
+      "exact_f1": 0.707276223485461,
+      "flexible_f1": 0.7425912460449471,
+      "precision": 0.7564494637669418,
+      "recall": 0.686716002252022,
+      "harmful_edit_rate": 0.3584608654528914,
+      "helpful_edits_per_rna": 17.71912832929782,
+      "harmful_edits_per_rna": 6.739709443099273,
+      "threshold": 0.05,
+      "alpha": "",
+      "selected_epoch": 10,
+      "calibration_exact_f1": 0.7432147534332396,
+      "common_threshold_exact_f1": 0.707276223485461
+    },
+    {
+      "case": "srp",
+      "method": "local_gate",
+      "n": 826,
+      "exact_f1": 0.7106475936196028,
+      "flexible_f1": 0.7468562874444419,
+      "precision": 0.7276582696613033,
+      "recall": 0.711215441100088,
+      "harmful_edit_rate": 0.41837873573859086,
+      "helpful_edits_per_rna": 18.416464891041162,
+      "harmful_edits_per_rna": 8.562953995157384,
+      "threshold": 0.05,
+      "alpha": "",
+      "selected_epoch": 11,
+      "calibration_exact_f1": 0.7400680661648277,
+      "common_threshold_exact_f1": 0.7106475936196028
+    },
+    {
+      "case": "srp",
+      "method": "safe_local_gate",
+      "n": 826,
+      "exact_f1": 0.7043917256256172,
+      "flexible_f1": 0.7408360847856078,
+      "precision": 0.7142232115074207,
+      "recall": 0.7079537047346712,
+      "harmful_edit_rate": 0.43501463228573617,
+      "helpful_edits_per_rna": 15.556900726392252,
+      "harmful_edits_per_rna": 7.8607748184019375,
+      "threshold": 0.05,
+      "alpha": "",
+      "selected_epoch": 10,
+      "calibration_exact_f1": 0.7146121425873356,
+      "common_threshold_exact_f1": 0.7043917256256172
+    },
+    {
+      "case": "tmRNA",
+      "method": "base",
+      "n": 417,
+      "exact_f1": 0.6962853508680371,
+      "flexible_f1": 0.7272726181891317,
+      "precision": 0.7588390904029032,
+      "recall": 0.6534211268696474,
+      "harmful_edit_rate": 0.0,
+      "helpful_edits_per_rna": 0.0,
+      "harmful_edits_per_rna": 0.0,
+      "threshold": 0.05,
+      "alpha": "",
+      "selected_epoch": "",
+      "calibration_exact_f1": 0.5194303696472536,
+      "common_threshold_exact_f1": 0.6962853508680371
+    },
+    {
+      "case": "tmRNA",
+      "method": "p_only",
+      "n": 417,
+      "exact_f1": 0.4358119964540008,
+      "flexible_f1": 0.4564139214975541,
+      "precision": 0.46065776466987784,
+      "recall": 0.4240582086081598,
+      "harmful_edit_rate": 0.747245739555384,
+      "helpful_edits_per_rna": 24.47242206235012,
+      "harmful_edits_per_rna": 77.82014388489209,
+      "threshold": 0.5,
+      "alpha": "",
+      "selected_epoch": "",
+      "calibration_exact_f1": 0.6109829733503467,
+      "common_threshold_exact_f1": 0.40470480697743044
+    },
+    {
+      "case": "tmRNA",
+      "method": "mfe",
+      "n": 417,
+      "exact_f1": 0.4166535709492512,
+      "flexible_f1": 0.43822457628756595,
+      "precision": 0.39508568455097515,
+      "recall": 0.447776581274411,
+      "harmful_edit_rate": 0.7796754423551732,
+      "helpful_edits_per_rna": 25.163069544364507,
+      "harmful_edits_per_rna": 94.4652278177458,
+      "threshold": "",
+      "alpha": "",
+      "selected_epoch": "",
+      "calibration_exact_f1": "",
+      "common_threshold_exact_f1": 0.4166535709492512
+    },
+    {
+      "case": "tmRNA",
+      "method": "mea",
+      "n": 417,
+      "exact_f1": 0.42661369975768415,
+      "flexible_f1": 0.44840217294196505,
+      "precision": 0.4173684234507112,
+      "recall": 0.44361080975851536,
+      "harmful_edit_rate": 0.768635303491548,
+      "helpful_edits_per_rna": 24.752997601918466,
+      "harmful_edits_per_rna": 87.83453237410072,
+      "threshold": "",
+      "alpha": "",
+      "selected_epoch": "",
+      "calibration_exact_f1": "",
+      "common_threshold_exact_f1": 0.42661369975768415
+    },
+    {
+      "case": "tmRNA",
+      "method": "fixed_mix",
+      "n": 417,
+      "exact_f1": 0.7256596350209412,
+      "flexible_f1": 0.7551146079193988,
+      "precision": 0.7949185696480967,
+      "recall": 0.6819971530035848,
+      "harmful_edit_rate": 0.4295100637853789,
+      "helpful_edits_per_rna": 17.896882494004796,
+      "harmful_edits_per_rna": 12.947242206235012,
+      "threshold": 0.05,
+      "alpha": 0.5,
+      "selected_epoch": "",
+      "calibration_exact_f1": 0.7018597766277649,
+      "common_threshold_exact_f1": 0.7256596350209412
+    },
+    {
+      "case": "tmRNA",
+      "method": "residual",
+      "n": 417,
+      "exact_f1": 0.711630470552138,
+      "flexible_f1": 0.7430624125184979,
+      "precision": 0.7191367912632239,
+      "recall": 0.7161488604352412,
+      "harmful_edit_rate": 0.5284452586068022,
+      "helpful_edits_per_rna": 19.376498800959233,
+      "harmful_edits_per_rna": 21.270983213429258,
+      "threshold": 0.15,
+      "alpha": "",
+      "selected_epoch": 15,
+      "calibration_exact_f1": 0.7126676810763032,
+      "common_threshold_exact_f1": 0.7066902496495776
+    },
+    {
+      "case": "tmRNA",
+      "method": "global_gate",
+      "n": 417,
+      "exact_f1": 0.6490711231171112,
+      "flexible_f1": 0.6777478509950846,
+      "precision": 0.6690547039304403,
+      "recall": 0.6422983578309885,
+      "harmful_edit_rate": 0.6098951179917201,
+      "helpful_edits_per_rna": 23.103117505995204,
+      "harmful_edits_per_rna": 36.34292565947242,
+      "threshold": 0.05,
+      "alpha": "",
+      "selected_epoch": 14,
+      "calibration_exact_f1": 0.7126491055661022,
+      "common_threshold_exact_f1": 0.6490711231171112
+    },
+    {
+      "case": "tmRNA",
+      "method": "local_gate",
+      "n": 417,
+      "exact_f1": 0.6967192614961996,
+      "flexible_f1": 0.7270409164345576,
+      "precision": 0.6893626689956294,
+      "recall": 0.7146184907279147,
+      "harmful_edit_rate": 0.568966712652684,
+      "helpful_edits_per_rna": 20.949640287769785,
+      "harmful_edits_per_rna": 27.12230215827338,
+      "threshold": 0.05,
+      "alpha": "",
+      "selected_epoch": 14,
+      "calibration_exact_f1": 0.7155994212577366,
+      "common_threshold_exact_f1": 0.6967192614961996
+    },
+    {
+      "case": "tmRNA",
+      "method": "safe_local_gate",
+      "n": 417,
+      "exact_f1": 0.7163400867474345,
+      "flexible_f1": 0.7467075829564299,
+      "precision": 0.7431641152443049,
+      "recall": 0.7030715881536418,
+      "harmful_edit_rate": 0.49544114994747984,
+      "helpful_edits_per_rna": 17.17505995203837,
+      "harmful_edits_per_rna": 16.498800959232614,
+      "threshold": 0.05,
+      "alpha": "",
+      "selected_epoch": 2,
+      "calibration_exact_f1": 0.7137822748066978,
+      "common_threshold_exact_f1": 0.7163400867474345
+    }
+  ],
+  "promotion": {
+    "promote": false,
+    "winner": null,
+    "candidates": {
+      "local_gate": {
+        "mean_exact_gain": -0.004858156353220011,
+        "per_case_exact_gain": {
+          "srp": 0.019224060818301636,
+          "tmRNA": -0.028940373524741658
+        },
+        "mean_harmful_rate": 0.4936727241956374,
+        "residual_mean_harmful_rate": 0.4638644607230282,
+        "promote": false
+      },
+      "safe_local_gate": {
+        "mean_exact_gain": 0.0018243222754046884,
+        "per_case_exact_gain": {
+          "srp": 0.01296819282431605,
+          "tmRNA": -0.009319548273506673
+        },
+        "mean_harmful_rate": 0.465227891116608,
+        "residual_mean_harmful_rate": 0.4638644607230282,
+        "promote": false
+      }
+    },
+    "interpretation": "Compute-admission decision, not a significance test"
+  },
+  "resources": {
+    "phases": {
+      "smoke": {
+        "allowed": true,
+        "charged_seconds": 42,
+        "reserved_remaining_seconds": 0,
+        "active": 2,
+        "cap_seconds": 1800.0,
+        "new_wall_seconds": 0
+      },
+      "pilot": {
+        "allowed": true,
+        "charged_seconds": 7152,
+        "reserved_remaining_seconds": 0,
+        "active": 2,
+        "cap_seconds": 28800.0,
+        "new_wall_seconds": 0
+      },
+      "core": {
+        "allowed": true,
+        "charged_seconds": 0,
+        "reserved_remaining_seconds": 0,
+        "active": 2,
+        "cap_seconds": 216000.0,
+        "new_wall_seconds": 0
+      }
+    },
+    "accounting": {
+      "9335": {
+        "state": "COMPLETED",
+        "elapsed": 21
+      },
+      "9336": {
+        "state": "COMPLETED",
+        "elapsed": 523
+      },
+      "9337": {
+        "state": "COMPLETED",
+        "elapsed": 334
+      },
+      "9338": {
+        "state": "COMPLETED",
+        "elapsed": 806
+      },
+      "9339": {
+        "state": "COMPLETED",
+        "elapsed": 623
+      },
+      "9340": {
+        "state": "COMPLETED",
+        "elapsed": 340
+      },
+      "9341": {
+        "state": "COMPLETED",
+        "elapsed": 981
+      },
+      "9342": {
+        "state": "COMPLETED",
+        "elapsed": 10
+      },
+      "9343": {
+        "state": "COMPLETED",
+        "elapsed": 11
+      },
+      "9344": {
+        "state": "COMPLETED",
+        "elapsed": 586
+      },
+      "9345": {
+        "state": "FAILED",
+        "elapsed": 46
+      },
+      "9346": {
+        "state": "COMPLETED",
+        "elapsed": 814
+      },
+      "9347": {
+        "state": "COMPLETED",
+        "elapsed": 788
+      },
+      "9348": {
+        "state": "COMPLETED",
+        "elapsed": 1180
+      },
+      "9349": {
+        "state": "CANCELLED by 10048",
+        "elapsed": 0
+      },
+      "9350": {
+        "state": "FAILED",
+        "elapsed": 3
+      },
+      "9351": {
+        "state": "RUNNING",
+        "elapsed": 1239
+      },
+      "9352": {
+        "state": "COMPLETED",
+        "elapsed": 35
+      },
+      "9353": {
+        "state": "COMPLETED",
+        "elapsed": 34
+      },
+      "9354": {
+        "state": "COMPLETED",
+        "elapsed": 30
+      },
+      "9355": {
+        "state": "COMPLETED",
+        "elapsed": 32
+      },
+      "9356": {
+        "state": "PENDING",
+        "elapsed": 0
+      }
+    }
+  },
+  "official_reference_sha256": "75c971655e9a12cbbe18d3f75b8377303d0acc1795fab0f0253721ec14b750d0",
+  "independently_verified_prediction_rows": 19888,
+  "role_manifest_sha256": "9ed56e047811e8f80f3a5d91cf0f41c63c44ae1292d2db525794851f6881e6f5",
+  "config_sha256": "4ddff9f2c6dc5e37db04777423dd2ec50ab217489ea116f28e721163d9e85c24",
+  "statement": "Pilot development, one seed17, two predeclared pseudo-OOD families; not nine-fold confirmation"
+}

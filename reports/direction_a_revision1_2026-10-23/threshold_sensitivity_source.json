@@ -1,0 +1,84 @@
+{
+  "source": {
+    "code": "9899a422ba92af34b9ce98267cf6dbd5eaaab349b008cf3ba8be8b9ca0feb8ac",
+    "base_code": {
+      "stage": "base",
+      "files": {
+        "configs/direction_a.json": "4ddff9f2c6dc5e37db04777423dd2ec50ab217489ea116f28e721163d9e85c24",
+        "scripts/_common.py": "e2d8b415538a09eaa10abe931c957a823c2db42ca52406883801a2518a53645a",
+        "scripts/archiveii_frozen_data.py": "8643a84ba44a26a924656134d4b427efe17cf29b51e570e70e4f773a724601b7",
+        "scripts/cache_thermo.py": "b333dca8b9bc5680edcaa3bc2df6a75a95f4130411945f5c9dbeae321db85c31",
+        "scripts/direction_a_data.py": "b5aea02951ffb5e7b8168d221a496d92066496f24a096731ff3b53479efa4f15",
+        "scripts/direction_a_protocol.py": "ed09f87c15af4649f7f05461d1608095a96751df3594a68458116cc3cb6122d9",
+        "scripts/full_protocol.py": "a47bdaac891c077225d1d09afd4f4f65116b5d48bb6d7858f7b31745b63cc9c0",
+        "scripts/long_metrics.py": "494f126f49cec812416150bf41486d5a4c2e54f54f4cc166b45f06421bd7321d",
+        "scripts/long_models.py": "23b11b734c8d9ae4c79fb574a763edec3eefe581ec9155709ea360e157629837",
+        "scripts/long_protocol.py": "4574b6cb153fc6a6f1b242663634fc5640b9586e45679156feba67e64dd3c23d",
+        "scripts/run_archiveii_frozen.py": "9ed15b301df6ea34fbb0e3a89e72a79a661443502c6e1749110febc29ba57b8c",
+        "scripts/run_direction_a_base.py": "218c9f666dd76afd0ab74e9965f0323b241b0372216c5937160f0d020be64ba3",
+        "scripts/run_long_epochs.py": "f427939f5821631e85aedaabc232b7bd2651bafd9a483dba46369040409197d9",
+        "scripts/run_thermo_fast.py": "0f71acc15887e79fcf46be4678cf8be9e67f6bf3dddb32e7a86efca851cb12de",
+        "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "src/decoder.py": "003a068bd35535fe34c860c4e74f23de46a435e6f055ed6beceb8f68e0475533",
+        "src/losses.py": "522c69575875efe2ff6c9a4544410ff61cdaf591d44d4a5840904c59267d9c76",
+        "src/metrics.py": "b86863fab8aa5662be274439e52b92cda31e13472b5163967e7efcac3ac0a14d",
+        "src/pair_head.py": "fb9e45fa42e6b871cf4ac7417b47a811af4d8366d7f2458f15d6447fbc7e8dca",
+        "src/stem_candidates.py": "c0b371627e8d91b2488686c40fec3731570c903a3c901ba8f778ffd847b782e8",
+        "src/utils.py": "5a67b62355ec5affa6e3f125348784ce66905c64f7df2a7ca72f6c2230fb23f0"
+      },
+      "sha256": "6f68d84c1bc8de87896f7a2302a3ba88de3e3d6d16ac5811e13c4c4a5ad1dcdd"
+    },
+    "roles_sha256": "ed7868a882b784d04c1bf4b7caf561453a0533888ae58acad23afe6e8e6a215a",
+    "official_reference_sha256": "75c971655e9a12cbbe18d3f75b8377303d0acc1795fab0f0253721ec14b750d0"
+  },
+  "rows": [
+    {
+      "case": "srp",
+      "method": "base",
+      "original_threshold": 0.05,
+      "new_threshold": 0.01,
+      "alpha": "",
+      "original_exact_f1": 0.6119538272537369,
+      "new_exact_f1": 0.6201937877230054,
+      "new_flexible_f1": 0.6548912964903602,
+      "harmful_fraction": 0.5365559249609613
+    },
+    {
+      "case": "srp",
+      "method": "fixed_mix",
+      "original_threshold": 0.05,
+      "new_threshold": 0.01,
+      "alpha": 0.5,
+      "original_exact_f1": 0.6914235328013012,
+      "new_exact_f1": 0.7102409574237795,
+      "new_flexible_f1": 0.7498644944236595,
+      "harmful_fraction": 0.3765040586263365
+    },
+    {
+      "case": "tmRNA",
+      "method": "base",
+      "original_threshold": 0.05,
+      "new_threshold": 0.02,
+      "alpha": "",
+      "original_exact_f1": 0.6962853508680371,
+      "new_exact_f1": 0.6965686149307871,
+      "new_flexible_f1": 0.7295826835626199,
+      "harmful_fraction": 0.6279176314643242
+    },
+    {
+      "case": "tmRNA",
+      "method": "fixed_mix",
+      "original_threshold": 0.05,
+      "new_threshold": 0.02,
+      "alpha": 0.5,
+      "original_exact_f1": 0.7256596350209412,
+      "new_exact_f1": 0.740847442528761,
+      "new_flexible_f1": 0.7725765658939016,
+      "harmful_fraction": 0.4318664804182085
+    }
+  ],
+  "verified_prediction_rows": 2486,
+  "choices_sha256": "c1fc8338b67794a22b68757b4a894621f0d922d0c271e875d3adaef8975433f6",
+  "predictions_sha256": "82e20a7ec325539cd92590fe8a45a48a124a45ed5367335e735f512b1eabe7fb",
+  "interpretation": "Expanded-grid baseline sensitivity only. Does not replace original selections, promotion or matched neural comparisons."
+}

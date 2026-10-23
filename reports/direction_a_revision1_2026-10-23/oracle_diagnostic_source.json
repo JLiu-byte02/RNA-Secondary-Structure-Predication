@@ -1,0 +1,120 @@
+{
+  "rows": [
+    {
+      "case": "srp",
+      "proposal": "local_gate",
+      "stem_merged": false,
+      "n": 826,
+      "base_f1": 0.6119538272537369,
+      "proposal_f1": 0.7106475936196028,
+      "whole_rna_choice_oracle_f1": 0.7284807178274455,
+      "oracle_f1": 0.756258247958561,
+      "mean_packets": 19.495157384987895,
+      "mean_accepted_packets": 12.541162227602905,
+      "uses_ground_truth": true
+    },
+    {
+      "case": "srp",
+      "proposal": "local_gate",
+      "stem_merged": true,
+      "n": 826,
+      "base_f1": 0.6119538272537369,
+      "proposal_f1": 0.7106475936196028,
+      "whole_rna_choice_oracle_f1": 0.7284807178274455,
+      "oracle_f1": 0.7504217815786943,
+      "mean_packets": 7.9975786924939465,
+      "mean_accepted_packets": 5.113801452784504,
+      "uses_ground_truth": true
+    },
+    {
+      "case": "srp",
+      "proposal": "risk_local_gate",
+      "stem_merged": false,
+      "n": 826,
+      "base_f1": 0.6119538272537369,
+      "proposal_f1": 0.6846854509509445,
+      "whole_rna_choice_oracle_f1": 0.6918781418686414,
+      "oracle_f1": 0.7033417049443106,
+      "mean_packets": 11.544794188861985,
+      "mean_accepted_packets": 8.911622276029055,
+      "uses_ground_truth": true
+    },
+    {
+      "case": "srp",
+      "proposal": "risk_local_gate",
+      "stem_merged": true,
+      "n": 826,
+      "base_f1": 0.6119538272537369,
+      "proposal_f1": 0.6846854509509445,
+      "whole_rna_choice_oracle_f1": 0.6918781418686414,
+      "oracle_f1": 0.7015246395737045,
+      "mean_packets": 6.9709443099273605,
+      "mean_accepted_packets": 5.495157384987894,
+      "uses_ground_truth": true
+    },
+    {
+      "case": "tmRNA",
+      "proposal": "local_gate",
+      "stem_merged": false,
+      "n": 417,
+      "base_f1": 0.696285350868037,
+      "proposal_f1": 0.6967192614961996,
+      "whole_rna_choice_oracle_f1": 0.7277547109930464,
+      "oracle_f1": 0.7971863758831503,
+      "mean_packets": 37.510791366906474,
+      "mean_accepted_packets": 14.285371702637889,
+      "uses_ground_truth": true
+    },
+    {
+      "case": "tmRNA",
+      "proposal": "local_gate",
+      "stem_merged": true,
+      "n": 417,
+      "base_f1": 0.696285350868037,
+      "proposal_f1": 0.6967192614961996,
+      "whole_rna_choice_oracle_f1": 0.7277547109930464,
+      "oracle_f1": 0.7894342282054094,
+      "mean_packets": 18.48441247002398,
+      "mean_accepted_packets": 8.038369304556355,
+      "uses_ground_truth": true
+    },
+    {
+      "case": "tmRNA",
+      "proposal": "risk_local_gate",
+      "stem_merged": false,
+      "n": 417,
+      "base_f1": 0.696285350868037,
+      "proposal_f1": 0.7341689478011985,
+      "whole_rna_choice_oracle_f1": 0.7385022835866005,
+      "oracle_f1": 0.7753605258661528,
+      "mean_packets": 21.07913669064748,
+      "mean_accepted_packets": 12.436450839328538,
+      "uses_ground_truth": true
+    },
+    {
+      "case": "tmRNA",
+      "proposal": "risk_local_gate",
+      "stem_merged": true,
+      "n": 417,
+      "base_f1": 0.696285350868037,
+      "proposal_f1": 0.7341689478011985,
+      "whole_rna_choice_oracle_f1": 0.7385022835866005,
+      "oracle_f1": 0.7733112122890915,
+      "mean_packets": 14.549160671462829,
+      "mean_accepted_packets": 9.139088729016786,
+      "uses_ground_truth": true
+    }
+  ],
+  "sources": {
+    "srp": {
+      "original_predictions_sha256": "45d3f14a62f5bf14c9ccb24ec525debfe41a044a2c161d73a3157176cab03f15",
+      "revision_predictions_sha256": "317691b518d3f4be23f44eabdd102d1a5cecd2bc44ca727a8e0f75484facf1f2"
+    },
+    "tmRNA": {
+      "original_predictions_sha256": "5f99c6bbabc4f1f73bbf22d236ed503a08a47d6dc2e6cd5c7a8dbeccfdc01dae",
+      "revision_predictions_sha256": "98663b8104c416be5cda1744c067b86495b653c13b234c44b0d7b51c4f4e8b24"
+    }
+  },
+  "code_sha256": "80a98b3b13a26d84c9de02a9f50e2bffe8e55e3e5f0d1a8f4a85565fb7694453",
+  "interpretation": "Truth-using optimization bound over validity-preserving edits of a fixed proposal. Not model performance, not deployable, not used for primary metric or promotion."
+}

@@ -1,9 +1,9 @@
 """Build an independently rechecked pilot report, never synthetic result rows."""
 import csv
+from concurrent.futures import ProcessPoolExecutor
 import hashlib
 import json
 from pathlib import Path
-import subprocess
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import numpy as np
@@ -14,6 +14,20 @@ from scripts.archiveii_frozen_data import load_manifest
 
 METHODS=('base','p_only','mfe','mea','fixed_mix','residual','global_gate','local_gate','safe_local_gate')
 REPORT=ROOT/'reports/direction_a_pilot_2026-10-23'
+OFFICIAL_REFERENCE_SHA256='75c971655e9a12cbbe18d3f75b8377303d0acc1795fab0f0253721ec14b750d0'
+
+def verify_reference(path):
+    actual=file_sha(path);assert actual==OFFICIAL_REFERENCE_SHA256,'Official verifier source changed'
+    return actual
+
+def verify_records(rows,workers=4):
+    """Bounded CPU audit; each original metric function remains unchanged."""
+    chunks=[rows[i:i+32] for i in range(0,len(rows),32)]
+    if not chunks:return dict(passed=True,n=0)
+    with ProcessPoolExecutor(max_workers=min(workers,len(chunks))) as pool:
+        results=list(pool.map(official_verify,chunks))
+    assert all(r['passed'] for r in results) and sum(r['n'] for r in results)==len(rows)
+    return dict(passed=True,n=len(rows))
 
 def write_csv(path,rows):
     assert rows;fields=list(rows[0])
@@ -22,20 +36,28 @@ def write_csv(path,rows):
 
 def build():
     cfg=config();summaries={};sources={};metric_rows=[];diagnostics=[];curves=[];all_rows=0
-    manifest=load_manifest();roles=json.loads((OUT/'pilot_roles.json').read_text());git_ref='917dbaf37cee010e54e65037f851e74cc18252ae'
+    manifest=load_manifest();roles=json.loads((OUT/'pilot_roles.json').read_text())
     official_path='third_party/rinalmo_frozen_reference/sec_struct.py'
-    checked_in=subprocess.check_output(['git','show',git_ref+':'+official_path],cwd=ROOT)
-    official_sha=hashlib.sha256(checked_in).hexdigest();assert file_sha(ROOT/official_path)==official_sha,'Official verifier source changed'
+    # The literal digest was independently extracted from Git917dbaf on the login node.
+    # CPU compute nodes need no Git installation or network access for this verification.
+    official_sha=verify_reference(ROOT/official_path)
     for case in cfg['pilot_development_families']:
         directory=OUT/'pilot'/case/'correction_seed17';p=directory/'development_summary.json';summary=json.loads(p.read_text())
         assert summary['completed'] and not summary['smoke'] and summary['case']==case
         assert file_sha(directory/'development_predictions.json')==summary['predictions_sha256']
         assert file_sha(directory/'choices_sealed.json')==summary['choices_sha256']
+        sealed=json.loads((directory/'choices_sealed.json').read_text())
         predictions=json.loads((directory/'development_predictions.json').read_text());expected=set(roles['cases'][case]['development'])
         assert set(predictions)==set(METHODS)
         for method in METHODS:
             rows=predictions[method]['selected'];assert len(rows)==len(expected) and {r['sample_id'] for r in rows}==expected
-            official_verify(rows);all_rows+=len(rows)
+            verify_records(rows);all_rows+=len(rows)
+            if 'common_base_threshold' in predictions[method]:
+                common=predictions[method]['common_base_threshold'];assert len(common)==len(expected) and {r['sample_id'] for r in common}==expected
+                verify_records(common);all_rows+=len(common)
+                actual_common=aggregate(common)
+                for level in ('equal_family','rna_macro'):
+                    for key,value in actual_common[level].items():assert abs(value-summary['methods'][method]['common_base_threshold'][level][key])<1e-12
             recalculated=[]
             base_rows={r['sample_id']:r for r in predictions['base']['selected']}
             for row in rows:
@@ -60,6 +82,8 @@ def build():
                  precision=values['exact_precision'],recall=values['exact_recall'],harmful_edit_rate=values['harmful_rate'],
                  helpful_edits_per_rna=values['helpful'],harmful_edits_per_rna=values['harmful'],
                  threshold=choice.get('threshold',''),alpha=choice.get('alpha',''),
+                 selected_epoch=sealed['learned'].get(method,{}).get('selected_epoch',''),
+                 calibration_exact_f1=choice.get('equal_family_exact_f1',''),
                  common_threshold_exact_f1=summary['methods'][method].get('common_base_threshold',selected)['equal_family']['exact_f1']))
         for method in ('residual','global_gate','local_gate','safe_local_gate'):
             for line in (directory/method/'epochs.jsonl').read_text().splitlines():
@@ -87,6 +111,7 @@ def build():
         '', '## 成本与限制','',
         f"本报告生成时，pilot已分配GPU时间为{resources['phases']['pilot']['charged_seconds']/3600:.3f}小时，仍在运行作业的剩余预留为{resources['phases']['pilot']['reserved_remaining_seconds']/3600:.3f}小时；上限8小时。smoke另计{resources['phases']['smoke']['charged_seconds']/3600:.3f}小时。所有失败作业保留在资源记录中。",
         '已有通用表征和P缓存被重复利用，此处增量成本不包含历史编码器预训练、权重下载及特征生成。OOF基础模型与完整基础模型的训练家族数量不同，可能产生分数分布偏移。元校准标签可出现在预测另一家族块的基础模型拟合中，不构成独立端到端风险校准。',
+        '本轮开发整体使用了除5S之外八个家族的标签。今后全九折可作为方法开发后的统一基准对照，不能称为九个独立盲确认；只有5S仍完整保留于本阶段方法开发之外。更强论文论断需新外部数据或外层家族专属的嵌套选择。',
         '作业9345因完整基础模型9341尚未结束而提前启动，在读取缺失summary时失败；该次消耗计入预算，后续重试必须在依赖完成后执行。',
         '若本轮未达晋级门槛，停止自动全量扩展，先根据固定融合、局部门控空间变化和有害编辑统计定位原因；最多在原预算内尝试一次明确记录的改动。即使晋级，仍需九折多种子、外部数据和更强头/第二编码器证据后才能评估投稿准备度。',
         '', '## 可复核文件','',

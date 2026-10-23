@@ -16,6 +16,10 @@ class BudgetTests(unittest.TestCase):
         decision=m.budget_decision(jobs,accounting,3600,2.,4)
         self.assertFalse(decision['allowed']);self.assertEqual(decision['charged_seconds'],2400)
         self.assertEqual(decision['reserved_remaining_seconds'],3000)
+    def test_cpu_only_report_does_not_consume_gpu_hours(self):
+        m=self.module();jobs=[dict(job_id='4',wall_seconds=1200,gpus=0)]
+        result=m.budget_decision(jobs,{'4':dict(state='RUNNING',elapsed=300)},0,8.,4)
+        self.assertEqual(result['charged_seconds'],0);self.assertEqual(result['reserved_remaining_seconds'],0)
     def test_unknown_accounting_fails_closed_and_global_concurrency(self):
         m=self.module();jobs=[dict(job_id='1',wall_seconds=3600,gpus=1)]
         with self.assertRaises(ValueError):m.budget_decision(jobs,{},3600,8.,4)

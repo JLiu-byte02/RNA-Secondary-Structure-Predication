@@ -1,0 +1,14 @@
+{
+  "core_question": "How does calibration performance evolve over all15 correction epochs in the tmRNA case? This is not development-test performance.",
+  "archetype": "quantitative grid: single axis",
+  "backend": "Python/matplotlib",
+  "sources": {
+    "learning_curves.csv": "6163e8d62e2c23f7a701955de98baf0e2e6b500f8c5a4e6f8d1813d328de93c5"
+  },
+  "width_mm": 183.0,
+  "height_mm": 90.0,
+  "statistics": "One seed17; predeclared SRP/tmRNA pseudo-OOD development cases. RNA macro within each family. No confidence interval or significance claim.",
+  "data_exclusions": 0,
+  "font_minimum_pt": 7,
+  "editable_text": true
+}
