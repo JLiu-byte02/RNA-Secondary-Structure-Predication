@@ -4,9 +4,27 @@ ThermoFusion 使用 RiNALMo-Giga 编码 RNA 序列，再将基础配对分数、
 
 ![ThermoFusion 模型架构](fig1_architecture.png)
 
-- [PyTorch 模型架构](model.py)
-- [配对解码实现](decode.py)
-- [模型架构、消融设置与完整结果](RESULTS.md)
+- [PyTorch 模型架构](src/model.py)
+- [配对解码实现](src/decode.py)
+- [模型架构、训练方法与完整结果](RESULTS.md)
+
+## 训练与评估
+
+ThermoFusion 在 RiNALMo-Giga 预训练权重上微调。训练从冻结编码器开始，每三轮逐步解冻最后 3、6、9、12 层，使用参考配对矩阵的上三角 BCE 作为损失。每轮在验证集上选择解码阈值，最终用验证集选出的检查点和阈值评估测试集。
+
+| 目录 | 内容 |
+| --- | --- |
+| [`src/`](src/) | 模型、数据加载、训练损失、解码和 F1 指标 |
+| [`scripts/`](scripts/) | 数据准备、ViennaRNA 缓存、训练、评估、推理与权重平均 |
+| [`configs/`](configs/) | ArchiveII 九折、bpRNA 与消融 YAML |
+| [`tests/`](tests/) | 使用合成 RNA 的 CPU 训练和评估测试 |
+
+从仓库根目录执行，数据与权重路径见 [训练准备](TRAINING.md)。
+
+```bash
+python scripts/train.py --config configs/folds/method_bpp_5s.yaml
+python scripts/train.py --config configs/ablations/tr0_thermo_s17.yaml
+```
 
 ## 实验结果
 

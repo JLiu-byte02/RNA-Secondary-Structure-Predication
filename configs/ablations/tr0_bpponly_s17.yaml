@@ -1,0 +1,96 @@
+data:
+  channels:
+  - bpp
+  eval:
+    TS0:
+      glob: data/datasets/official_bprna_test.jsonl.gz
+    bpRNA-new:
+      glob: data/datasets/official_bprna_bprna_new.jsonl.gz
+  max_length: 1024
+  min_sep: 4
+  num_workers: 0
+  require_eligible: false
+  select:
+    glob: data/datasets/official_bprna_valid.jsonl.gz
+  strict_pairs: false
+  strict_sequence: false
+  thermo_dir: data/thermo/all
+  train:
+    glob: data/datasets/official_bprna_train.jsonl.gz
+  use_rinalmo_alphabet: true
+decode:
+  min_sep: 4
+  write_predictions: true
+device: auto
+model:
+  backbone:
+    flash_attn: false
+    gradient_checkpointing: false
+    last_k: 3
+    lm_config: giga
+    mode: frozen
+    pretrained_path: weights/rinalmo_giga_pretrained.pt
+    type: rinalmo
+  channels:
+  - bpp
+  head:
+    type: wide2d
+    kwargs:
+      base_blocks: 2
+      channels:
+      - bpp
+      conv_dim: 64
+      depth: 4
+      kernel_size: 3
+      zero_init: true
+output_dir: runs
+run_name: tr0_bpponly_s17
+seed: 17
+selection:
+  metric: rna_macro_official_flexible_f1
+  thresholds: 0.01:0.29:0.01
+train:
+  batch_size: 1
+  betas:
+  - 0.9
+  - 0.999
+  bf16: true
+  bucket_size: 1
+  clip_grad_norm: 1.0
+  epochs: 15
+  eval_batch_size: 1
+  eval_max_tokens_per_batch: 512
+  grad_accum: 1
+  log_every: 50
+  loss: full_upper_triangle
+  lr: 0.0001
+  max_tokens_per_batch: null
+  min_lr_ratio: 0.1
+  num_workers: 0
+  optimizer: adam
+  patience: 0
+  pos_weight: null
+  scheduler: linear
+  scheduler_total_steps: 7000
+  smoke_epochs: 2
+  smoke_max_length: 512
+  smoke_max_records: 8
+  unfreeze_initial_denom_lr: 10.0
+  unfreeze_schedule:
+    1:
+      mode: frozen
+    4:
+      last_k: 3
+      mode: last_k
+    7:
+      last_k: 6
+      mode: last_k
+    10:
+      last_k: 9
+      mode: last_k
+    13:
+      last_k: 12
+      mode: last_k
+  warmup_steps: 0
+  weight_decay: 0.0
+  save_every_epoch: true

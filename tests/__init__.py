@@ -1,0 +1,1 @@
+"""ThermoFusion smoke tests."""
