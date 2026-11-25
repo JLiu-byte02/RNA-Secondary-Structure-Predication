@@ -1,0 +1,55 @@
+run,purpose,seed,eval_split,exact_f1,official_flex_f1,best_epoch,threshold,status
+tr0_officialhead_s17,official 2-block head control,17,TS0,0.69651,0.74597,15,0.05,completed
+tr0_officialhead_s17,official 2-block head control,17,bpRNA-new,0.39918,0.41382,15,0.05,completed
+tr0_seq_s17,head-matched no-BPP control,17,TS0,0.69654,0.74664,13,0.13,completed
+tr0_seq_s17,head-matched no-BPP control,17,bpRNA-new,0.43674,0.44983,13,0.13,completed
+tr0_seq_s1024,no-BPP control seed 1024,1024,TS0,0.69067,0.74164,11,0.12,completed
+tr0_seq_s1024,no-BPP control seed 1024,1024,bpRNA-new,0.45821,0.47291,11,0.12,completed
+tr0_seq_s2026,no-BPP control seed 2026,2026,TS0,0.69259,0.74563,15,0.06,completed
+tr0_seq_s2026,no-BPP control seed 2026,2026,bpRNA-new,0.42859,0.44331,15,0.06,completed
+tr0_thermo_s17,ThermoFusion seed 17,17,TS0,0.70404,0.76313,15,0.07,completed
+tr0_thermo_s17,ThermoFusion seed 17,17,bpRNA-new,0.52248,0.54967,15,0.07,completed
+tr0_thermo_s1024,ThermoFusion seed 1024,1024,TS0,0.71351,,15,0.08,completed
+tr0_thermo_s1024,ThermoFusion seed 1024,1024,bpRNA-new,0.53697,,15,0.08,completed
+tr0_thermo_s2026,ThermoFusion seed 2026,2026,TS0,0.71056,0.76556,14,0.10,completed
+tr0_thermo_s2026,ThermoFusion seed 2026,2026,bpRNA-new,0.53754,0.55913,14,0.10,completed
+tr0_zerobpp_s17,zero-BPP control,17,TS0,0.69963,0.75178,15,0.08,completed
+tr0_zerobpp_s17,zero-BPP control,17,bpRNA-new,0.44336,0.45877,15,0.08,completed
+tr0_deepseq_s17,6-block equal-capacity control,17,TS0,0.69510,0.74864,15,0.09,completed
+tr0_deepseq_s17,6-block equal-capacity control,17,bpRNA-new,0.40808,,15,0.09,completed
+tr0_nos0_s17,w/o S0 channel,17,TS0,0.71447,0.76671,15,0.06,completed
+tr0_nos0_s17,w/o S0 channel,17,bpRNA-new,0.52790,0.54636,15,0.06,completed
+tr0_nodist_s17,w/o distance channel,17,TS0,0.71176,0.76776,14,0.10,completed
+tr0_nodist_s17,w/o distance channel,17,bpRNA-new,0.55361,0.57573,14,0.10,completed
+tr0_mfe_s17,MFE-replaced channel,17,TS0,0.71064,0.76328,15,0.09,completed
+tr0_mfe_s17,MFE-replaced channel,17,bpRNA-new,0.52632,0.54352,15,0.09,completed
+tr0_bpponly_s17,BPP-only channel,17,TS0,0.71324,0.76515,15,0.08,completed
+tr0_bpponly_s17,BPP-only channel,17,bpRNA-new,0.51851,0.53650,15,0.08,completed
+tr0_nomask_s17,w/o mask channel,17,TS0,0.71419,0.76789,15,0.08,completed
+tr0_nomask_s17,w/o mask channel,17,bpRNA-new,0.53633,0.56202,15,0.08,completed
+tr0_multithermo_s17,multi-thermo bpp+mfe+mea,17,TS0,0.71438,0.76950,15,0.08,completed
+tr0_multithermo_s17,multi-thermo bpp+mfe+mea,17,bpRNA-new,0.54478,0.56609,15,0.08,completed
+tr0_seq_s17+soup13_15,Seq-Only soup 13-15,17,TS0,0.71220,,13,0.13,completed
+tr0_seq_s17+soup13_15,Seq-Only soup 13-15,17,bpRNA-new,0.44430,,13,0.13,completed
+tr0_seq_s17+soup11_15,Seq-Only soup 11-15,17,TS0,0.71250,,13,0.13,completed
+tr0_seq_s17+soup11_15,Seq-Only soup 11-15,17,bpRNA-new,0.45630,,13,0.13,completed
+tr0_thermo_s17+soup13_15,ThermoFusion soup 13-15,17,TS0,0.71980,,15,0.07,completed
+tr0_thermo_s17+soup13_15,ThermoFusion soup 13-15,17,bpRNA-new,0.55630,,15,0.07,completed
+tr0_thermo_s17+soup11_15,ThermoFusion soup 11-15,17,TS0,0.72150,,15,0.07,completed
+tr0_thermo_s17+soup11_15,ThermoFusion soup 11-15,17,bpRNA-new,0.56670,,15,0.07,completed
+tr0_thermo_s17+ensemble,ThermoFusion prob ensemble 13-15,17,TS0,0.71410,,15,0.07,completed
+tr0_thermo_s17+ensemble,ThermoFusion prob ensemble 13-15,17,bpRNA-new,0.57760,,15,0.07,completed
+tr0_thermo_s17+tta,ThermoFusion soup + RC TTA,17,TS0,0.66360,,15,0.07,completed
+tr0_thermo_s17+tta,ThermoFusion soup + RC TTA,17,bpRNA-new,0.58920,,15,0.07,completed
+control_5s_v2,ArchiveII no-BPP control,17,5s,0.85467,0.86648,15,0.16,completed
+control_5s_v2+soup,ArchiveII no-BPP control soup,17,5s,0.86164,0.87184,15,0.16,completed
+control_srp_v2,ArchiveII no-BPP control,17,srp,0.57697,0.60432,14,0.20,completed
+control_srp_v2+soup,ArchiveII no-BPP control soup,17,srp,0.57385,0.60227,14,0.20,completed
+control_RNaseP_v2,ArchiveII no-BPP control,17,RNaseP,0.71145,0.72933,15,0.11,completed
+control_RNaseP_v2+soup,ArchiveII no-BPP control soup,17,RNaseP,0.73276,0.74853,15,0.11,completed
+control_tRNA_v2,ArchiveII no-BPP control,17,tRNA,0.92190,0.92361,15,0.14,completed
+control_tRNA_v2+soup,ArchiveII no-BPP control soup,17,tRNA,0.91905,0.92044,15,0.14,completed
+control_telomerase_v2,ArchiveII no-BPP control,17,telomerase,0.12466,0.12657,15,0.09,completed
+control_telomerase_v2+soup,ArchiveII no-BPP control soup,17,telomerase,0.13024,0.13790,15,0.09,completed
+control_tmRNA_v2,ArchiveII no-BPP control,17,tmRNA,0.69601,0.72471,14,0.19,completed
+control_tmRNA_v2+soup,ArchiveII no-BPP control soup,17,tmRNA,0.70064,0.72977,14,0.19,completed
