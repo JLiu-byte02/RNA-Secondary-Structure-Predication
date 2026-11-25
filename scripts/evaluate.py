@@ -2,7 +2,7 @@
 """scripts/evaluate.py -- frozen checkpoint -> predictions.jsonl + metrics.json.
 
 Any split, any source:
-  * ``--config configs/baseline_e2e.yaml --split TS0`` reuses the config's
+  * ``--config my-run.yaml --split TS0`` reuses the config's
     ``data.eval`` spec (the normal path for the bpRNA benchmarks);
   * ``--split-file NAME=/abs/or/relative/file.jsonl.gz`` scores one explicit file;
   * ``--ct-dir NAME=/path/to/archiveII/<family>/test`` scores an official CT
@@ -14,7 +14,7 @@ recorded as ``threshold_source: "override"`` in ``metrics.json``.
 
 Reverse-complement TTA is opt-in and recorded in ``metrics.json``::
 
-    python scripts/evaluate.py --checkpoint runs/X/best.pt --config configs/baseline_e2e.yaml \
+    python scripts/evaluate.py --checkpoint runs/X/best.pt --config my-run.yaml \
         --split TS0 --tta rc --tta-weight 0.5
 
 The RC view halves are mixed in probability space with weight ``--tta-weight``

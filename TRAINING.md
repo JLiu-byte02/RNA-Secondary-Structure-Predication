@@ -4,9 +4,9 @@
 
 ## 环境与数据
 
-- 安装 PyTorch、NumPy、PyYAML 和 ViennaRNA 的 Python 绑定（导入名 `RNA`），并准备可运行 RiNALMo-Giga 的设备。完整配置在 CUDA 上启用 BF16。
-- 安装 [RiNALMo](https://github.com/lbcb-sci/RiNALMo)，并准备 Giga 预训练权重。默认路径为 `weights/rinalmo_giga_pretrained.pt`，可在 YAML 的 `model.backbone.pretrained_path` 中修改。
-- 准备 ArchiveII 各折的 `data/datasets/archiveii/<family>/{train,valid,test}.jsonl.gz`，以及 bpRNA 的 `data/datasets/official_bprna_{train,valid,test,bprna_new}.jsonl.gz`。这些路径也可在 YAML 的 `data` 项修改。参考配对是从 0 开始的坐标，并满足 `i < j`。
+- 安装 PyTorch、NumPy、PyYAML 和 ViennaRNA 的 Python 绑定（导入名 `RNA`），并准备可运行 RiNALMo-Giga 的设备。完整模型训练在 CUDA 上启用 BF16。
+- 安装 [RiNALMo](https://github.com/lbcb-sci/RiNALMo)，并准备 Giga 预训练权重。在自己的 YAML 中将 `model.backbone.pretrained_path` 指向权重文件，例如 `weights/rinalmo_giga_pretrained.pt`。
+- 准备 ArchiveII 各折的 `data/datasets/archiveii/<family>/{train,valid,test}.jsonl.gz`，以及 bpRNA 的 `data/datasets/official_bprna_{train,valid,test,bprna_new}.jsonl.gz`。在 YAML 的 `data.train`、`data.select` 和 `data.eval` 中指定训练、验证及测试文件。参考配对是从 0 开始的坐标，并满足 `i < j`。
 
 仓库提供数据转换和缓存生成脚本。训练数据、预训练权重、热力学缓存和训练检查点需要单独准备。
 
@@ -21,12 +21,11 @@ python scripts/cache_thermo.py --inputs data/datasets --out data/thermo/all --ma
 
 ### 训练与测试
 
-```bash
-python scripts/train.py --config configs/folds/method_bpp_5s.yaml
-python scripts/evaluate.py --checkpoint runs/method_bpp_5s/best.pt --config configs/folds/method_bpp_5s.yaml --split 5s
+自行准备 `my-run.yaml`，设置 `data`、`model`、`train`、`selection` 和 `decode`。各字段的用途可对照 [训练入口](scripts/train.py) 和 [训练方法](RESULTS.md#训练方法)。以下示例使用默认输出目录，并评估 YAML 中 `data.eval` 下的所有测试集。
 
-python scripts/train.py --config configs/ablations/tr0_thermo_s17.yaml
-python scripts/evaluate.py --checkpoint runs/tr0_thermo_s17/best.pt --config configs/ablations/tr0_thermo_s17.yaml --split TS0 --split bpRNA-new
+```bash
+python scripts/train.py --config my-run.yaml --run-name my-run
+python scripts/evaluate.py --checkpoint runs/my-run/best.pt --config my-run.yaml
 ```
 
 输出写到 `runs/<run_name>/`，包括检查点、训练日志、验证集选择记录和评估指标。ArchiveII 的权重平均入口为 [`scripts/soup.py`](scripts/soup.py)，支持单序列和 FASTA 输入的推理入口为 [`scripts/predict.py`](scripts/predict.py)。

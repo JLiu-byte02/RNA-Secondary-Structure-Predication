@@ -9,9 +9,9 @@ Public entry points:
 * :mod:`src.metrics`-- exact + flexible F1, RNA- and family-macro
 * :mod:`src.official` -- official Zenodo checkpoint loader, decoder and metric replica
 
-Run ``python scripts/train.py --config configs/baseline_e2e.yaml`` to train and
+Run ``python scripts/train.py --config my-run.yaml`` to train and
 ``python scripts/evaluate.py --checkpoint <run>/best.pt --config ... --split TS0``
-to evaluate.  See ``src/README.md`` for the interface contract.
+to evaluate.  See the repository's ``TRAINING.md`` for setup and commands.
 """
 
 __version__ = "0.1.0"

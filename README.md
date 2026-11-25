@@ -16,14 +16,12 @@ ThermoFusion 在 RiNALMo-Giga 预训练权重上微调。训练从冻结编码�
 | --- | --- |
 | [`src/`](src/) | 模型、数据加载、训练损失、解码和 F1 指标 |
 | [`scripts/`](scripts/) | 数据准备、ViennaRNA 缓存、训练、评估、推理与权重平均 |
-| [`configs/`](configs/) | ArchiveII 九折、bpRNA 与消融 YAML |
 | [`tests/`](tests/) | 使用合成 RNA 的 CPU 训练和评估测试 |
 
-从仓库根目录执行，数据与权重路径见 [训练准备](TRAINING.md)。
+准备好自己的 `my-run.yaml` 后，从仓库根目录执行。配置字段、数据与权重路径见 [训练准备](TRAINING.md)。
 
 ```bash
-python scripts/train.py --config configs/folds/method_bpp_5s.yaml
-python scripts/train.py --config configs/ablations/tr0_thermo_s17.yaml
+python scripts/train.py --config my-run.yaml
 ```
 
 ## 实验结果

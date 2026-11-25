@@ -6,7 +6,7 @@ reports exact/flexible/official-flexible F1 (macro over RNAs). Used to separate
 "bad model" from "bad threshold transfer" across families.
 
 Usage (server):
-  python scripts/sweep_thresholds.py --checkpoint runs/X/best.pt --config configs/Y.yaml \
+  python scripts/sweep_thresholds.py --checkpoint runs/X/best.pt --config my-run.yaml \
       --split 5s --out runs/X/sweep_5s.json [--thresholds 0.01:0.40:0.01]
 """
 from __future__ import annotations

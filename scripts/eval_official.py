@@ -29,7 +29,7 @@ Examples
 
     # real Zenodo checkpoint on the official bpRNA test split
     python scripts/eval_official.py --checkpoint weights/rinalmo_giga_ss_bprna_ft.pt \
-        --config configs/baseline_e2e.yaml --split TS0 --out experiments/E0_official
+        --config my-run.yaml --split TS0 --out experiments/E0_official
 """
 from __future__ import annotations
 

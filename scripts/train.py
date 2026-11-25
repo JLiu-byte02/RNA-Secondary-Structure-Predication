@@ -20,9 +20,9 @@ Selection protocol (no test leakage):
 
 Usage
 -----
-    python scripts/train.py --config configs/baseline_e2e.yaml
-    python scripts/train.py --config configs/baseline_e2e.yaml --smoke --device cpu
-    python scripts/train.py --config configs/baseline_e2e.yaml --set model.backbone.mode=last_k
+    python scripts/train.py --config my-run.yaml
+    python scripts/train.py --config my-run.yaml --smoke --device cpu
+    python scripts/train.py --config my-run.yaml --set model.backbone.mode=last_k
 """
 from __future__ import annotations
 
